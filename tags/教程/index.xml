@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>教程 on liwu&#39;s Blog</title>
+    <link>https://muzhi621.github.io/tags/%E6%95%99%E7%A8%8B/</link>
+    <description>Recent content in 教程 on liwu&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>© 本文作者：muzhi  版权所有本站文章均采用 CC BY-NC-SA 4.0 许可协议，请勿用于商业，转载注明出处！</copyright>
+    <lastBuildDate>Fri, 26 Apr 2019 13:46:35 +0800</lastBuildDate>
+    
+	<atom:link href="https://muzhi621.github.io/tags/%E6%95%99%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>自搭建网易云音乐破版权</title>
+      <link>https://muzhi621.github.io/2019/04/26/%E8%87%AA%E6%90%AD%E5%BB%BA%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90%E7%A0%B4%E7%89%88%E6%9D%83/</link>
+      <pubDate>Fri, 26 Apr 2019 13:46:35 +0800</pubDate>
+      
+      <guid>https://muzhi621.github.io/2019/04/26/%E8%87%AA%E6%90%AD%E5%BB%BA%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90%E7%A0%B4%E7%89%88%E6%9D%83/</guid>
+      <description>&lt;p&gt;大家都知道网易云的歌曲如果没有版权或是下架了就是灰色的不能听不能下载，所以有个GitHub开源项目，此项目可以解决网易云灰色歌曲无法下载视听，这里介绍下如何搭建网易云破版权服务器。原理是使用其它音乐平台的歌曲替换网易云音乐无版权歌曲，非常舒服。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>hexo NexT主题配置与美化</title>
+      <link>https://muzhi621.github.io/2019/04/07/hexo-next%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE%E4%B8%8E%E7%BE%8E%E5%8C%96/</link>
+      <pubDate>Sun, 07 Apr 2019 12:34:35 +0800</pubDate>
+      
+      <guid>https://muzhi621.github.io/2019/04/07/hexo-next%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE%E4%B8%8E%E7%BE%8E%E5%8C%96/</guid>
+      <description>&lt;p&gt;Hexo 是高效的静态站点生成框架，她基于 Node.js。 通过 Hexo 你可以轻松地使用 Markdown 编写文章，除了 Markdown 本身的语法之外，还可以使用 Hexo 提供的 标签插件 来快速的插入特定形式的内容。在这篇文章中，假定你已经成功安装了 Hexo，并使用 Hexo 提供的命令创建了一个站点。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>hexo-next添加首页顶部图片轮播</title>
+      <link>https://muzhi621.github.io/2019/03/29/hexo-next%E6%B7%BB%E5%8A%A0%E9%A6%96%E9%A1%B5%E9%A1%B6%E9%83%A8%E5%9B%BE%E7%89%87%E8%BD%AE%E6%92%AD/</link>
+      <pubDate>Fri, 29 Mar 2019 19:34:35 +0800</pubDate>
+      
+      <guid>https://muzhi621.github.io/2019/03/29/hexo-next%E6%B7%BB%E5%8A%A0%E9%A6%96%E9%A1%B5%E9%A1%B6%E9%83%A8%E5%9B%BE%E7%89%87%E8%BD%AE%E6%92%AD/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>GitHub &amp; coding &#43; hexo博客搭建</title>
+      <link>https://muzhi621.github.io/2019/03/21/github-coding-hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</link>
+      <pubDate>Thu, 21 Mar 2019 19:21:35 +0800</pubDate>
+      
+      <guid>https://muzhi621.github.io/2019/03/21/github-coding-hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</guid>
+      <description>&lt;p&gt;使用 GitHub Pages 和 Hexo 搭建免费独立博客的总结。将自己的域名访问 GitHub Pages 上的博客。同时，为了在多台电脑上都可以更新博客，采用两个分支的方式来存放文件，master 分支存放 Hexo 静态文件， 新建的source分支存放源文件。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>传统文化与传统建筑</title>
+      <link>https://muzhi621.github.io/2019/03/18/%E4%BC%A0%E7%BB%9F%E6%96%87%E5%8C%96%E4%B8%8E%E4%BC%A0%E7%BB%9F%E5%BB%BA%E7%AD%91/</link>
+      <pubDate>Mon, 18 Mar 2019 20:34:35 +0800</pubDate>
+      
+      <guid>https://muzhi621.github.io/2019/03/18/%E4%BC%A0%E7%BB%9F%E6%96%87%E5%8C%96%E4%B8%8E%E4%BC%A0%E7%BB%9F%E5%BB%BA%E7%AD%91/</guid>
+      <description>&lt;p&gt;摘要：建筑是文化的载体，文化通过建筑得以体现。中国深厚的文化传统赋予了传统建筑空间深刻内涵，而中国传统建筑直接反映了中国文化的特点。本文通过中西方对比的方式，阐述说明中国传统文化对建筑的影响。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Typora: 所见即所得Markdown编辑器</title>
+      <link>https://muzhi621.github.io/2019/03/18/typora-%E6%89%80%E8%A7%81%E5%8D%B3%E6%89%80%E5%BE%97markdown%E7%BC%96%E8%BE%91%E5%99%A8/</link>
+      <pubDate>Mon, 18 Mar 2019 19:53:35 +0800</pubDate>
+      
+      <guid>https://muzhi621.github.io/2019/03/18/typora-%E6%89%80%E8%A7%81%E5%8D%B3%E6%89%80%E5%BE%97markdown%E7%BC%96%E8%BE%91%E5%99%A8/</guid>
+      <description>&lt;p&gt;​Typora是一款轻便简洁的Markdown编辑器，支持即时渲染技术，这也是与其他Markdown编辑器最显著的区别。即时渲染使得你写Markdown就想是写Word文档一样流畅自如，不像其他编辑器的有编辑栏和显示栏。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Markdown语法</title>
+      <link>https://muzhi621.github.io/2019/03/18/markdown%E8%AF%AD%E6%B3%95/</link>
+      <pubDate>Mon, 18 Mar 2019 14:34:35 +0800</pubDate>
+      
+      <guid>https://muzhi621.github.io/2019/03/18/markdown%E8%AF%AD%E6%B3%95/</guid>
+      <description>&lt;p&gt;Markdown是一种可以使用普通文本编辑器编写的标记语言，通过简单的标记语法，它可以使普通文本内容具有一定的格式。
+Markdown具有一系列衍生版本，用于扩展Markdown的功能（如表格、脚注、内嵌HTML等等），这些功能原初的Markdown尚不具备，它们能让Markdown转换成更多的格式，例如LaTeX，Docbook。Markdown增强版中比较有名的有Markdown Extra、MultiMarkdown、 Maruku等。这些衍生版本要么基于工具，如Pandoc；要么基于网站，如GitHub和Wikipedia，在语法上基本兼容，但在一些语法和渲染效果上有改动。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>onedrive搭建个人云盘</title>
+      <link>https://muzhi621.github.io/2019/03/03/onedrive%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E4%BA%91%E7%9B%98/</link>
+      <pubDate>Sun, 03 Mar 2019 14:34:35 +0800</pubDate>
+      
+      <guid>https://muzhi621.github.io/2019/03/03/onedrive%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E4%BA%91%E7%9B%98/</guid>
+      <description>&lt;p&gt;OneIndex针对Onedrive网盘的一个开源程序。可以将Onedrive存储的文件展示，直连下载。&lt;strong&gt;视频还能在线播放&lt;/strong&gt;！不用服务器空间，不走服务器流量！&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

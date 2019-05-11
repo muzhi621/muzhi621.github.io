@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>java on liwu&#39;s Blog</title>
+    <link>https://muzhi621.github.io/tags/java/</link>
+    <description>Recent content in java on liwu&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>© 本文作者：muzhi  版权所有本站文章均采用 CC BY-NC-SA 4.0 许可协议，请勿用于商业，转载注明出处！</copyright>
+    <lastBuildDate>Wed, 13 Mar 2019 14:34:35 +0800</lastBuildDate>
+    
+	<atom:link href="https://muzhi621.github.io/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>约瑟夫问题</title>
+      <link>https://muzhi621.github.io/2019/03/13/%E7%BA%A6%E7%91%9F%E5%A4%AB%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Wed, 13 Mar 2019 14:34:35 +0800</pubDate>
+      
+      <guid>https://muzhi621.github.io/2019/03/13/%E7%BA%A6%E7%91%9F%E5%A4%AB%E9%97%AE%E9%A2%98/</guid>
+      <description>&lt;p&gt;Josephus 问题（Josephus problem）是下面的游戏：N个人编号从1到N，围坐成一个圆圈。从1号开始传递一个热土豆。经过M次传递后拿着热土豆的人被清除离座，围坐的圆圈缩紧，由坐在被清除的人后面的人拿起热土豆继续进行游戏。最后剩下的人取胜。因此，如果M=0和N=5，则游戏人依序被清除，5号游戏人获胜。如果M=1和N=5，那么被清除的人的顺序是2，4，1，5。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

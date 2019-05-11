@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>嵌入式 on liwu&#39;s Blog</title>
+    <link>https://muzhi621.github.io/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F/</link>
+    <description>Recent content in 嵌入式 on liwu&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>© 本文作者：muzhi  版权所有本站文章均采用 CC BY-NC-SA 4.0 许可协议，请勿用于商业，转载注明出处！</copyright>
+    <lastBuildDate>Wed, 27 Mar 2019 13:34:35 +0800</lastBuildDate>
+    
+	<atom:link href="https://muzhi621.github.io/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>嵌入式智能手环系统设计</title>
+      <link>https://muzhi621.github.io/2019/03/27/%E5%B5%8C%E5%85%A5%E5%BC%8F%E6%99%BA%E8%83%BD%E6%89%8B%E7%8E%AF%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/</link>
+      <pubDate>Wed, 27 Mar 2019 13:34:35 +0800</pubDate>
+      
+      <guid>https://muzhi621.github.io/2019/03/27/%E5%B5%8C%E5%85%A5%E5%BC%8F%E6%99%BA%E8%83%BD%E6%89%8B%E7%8E%AF%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/</guid>
+      <description>&lt;p&gt;摘  要：物联网（IoT）正在推动包括可穿戴设备在内的互联商品的革命。物联网设备构成物理产品网络，将信息传输到连接互联网的服务器，用于数据聚合和存储，商业智能，决策以及所有连接的管理。这些设备正在开创嵌入式设计的新纪元，诸如如可穿戴智能手表和智能眼镜等迅速成为大事件热词，开发人员深入追求挖掘嵌入式世界，寻找更优化的嵌入式系统，以构建更多功能更节能且更具性能的产品智能可穿戴计算设备。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

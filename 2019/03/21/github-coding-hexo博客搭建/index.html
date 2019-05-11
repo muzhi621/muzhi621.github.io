@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+
+  <meta charset="utf-8" />
+
+  
+  <title>GitHub &amp; coding &#43; hexo博客搭建</title>
+
+  
+  
+  <link href="//cdn.jsdelivr.net" rel="dns-prefetch">
+  <link href="//cdnjs.cloudflare.com" rel="dns-prefetch">
+  
+  <link href="//at.alicdn.com" rel="dns-prefetch">
+  
+  <link href="//fonts.googleapis.com" rel="dns-prefetch">
+  <link href="//fonts.gstatic.com" rel="dns-prefetch">
+  <link href="///disqus.com" rel="dns-prefetch">
+  <link href="//c.disquscdn.com" rel="dns-prefetch">
+  
+  <link href="//www.google-analytics.com" rel="dns-prefetch">
+  
+
+  
+
+  
+  <meta name="author" content="muzhi">
+  <meta name="description" content="使用 GitHub Pages 和 Hexo 搭建免费独立博客的总结。将自己的域名访问 GitHub Pages 上的博客。同时，为了在多台电脑上都可以更新博客，采用两个分支的方式来存放文件，master 分支存放 Hexo 静态文件， 新建的source分支存放源文件。
+">
+
+  
+  
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@twitter_username">
+    <meta name="twitter:title" content="GitHub &amp; coding &#43; hexo博客搭建">
+    <meta name="twitter:description" content="使用 GitHub Pages 和 Hexo 搭建免费独立博客的总结。将自己的域名访问 GitHub Pages 上的博客。同时，为了在多台电脑上都可以更新博客，采用两个分支的方式来存放文件，master 分支存放 Hexo 静态文件， 新建的source分支存放源文件。
+">
+    <meta name="twitter:image" content="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2538191405,1268730134&fm=26&gp=0.jpg">
+  
+
+  
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="GitHub &amp; coding &#43; hexo博客搭建">
+  <meta property="og:description" content="使用 GitHub Pages 和 Hexo 搭建免费独立博客的总结。将自己的域名访问 GitHub Pages 上的博客。同时，为了在多台电脑上都可以更新博客，采用两个分支的方式来存放文件，master 分支存放 Hexo 静态文件， 新建的source分支存放源文件。
+">
+  <meta property="og:url" content="https://muzhi621.github.io/2019/03/21/github-coding-hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">
+  <meta property="og:image" content="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2538191405,1268730134&fm=26&gp=0.jpg">
+
+
+
+
+<meta name="generator" content="Hugo 0.55.5">
+
+
+<link rel="canonical" href="https://muzhi621.github.io/2019/03/21/github-coding-hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">
+
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="format-detection" content="telephone=no,email=no,adress=no">
+<meta http-equiv="Cache-Control" content="no-transform">
+
+
+<meta name="robots" content="index,follow">
+<meta name="referrer" content="origin-when-cross-origin">
+<meta name="google-site-verification" content="_moDmnnBNVLBN1rzNxyGUGdPHE20YgbmrtzLIbxaWFc">
+<meta name="msvalidate.01" content="22596E34341DD1D17D6022C44647E587">
+
+
+
+
+
+<meta name="theme-color" content="#02b875">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="liwu&#39;s Blog">
+<meta name="msapplication-tooltip" content="liwu&#39;s Blog">
+<meta name='msapplication-navbutton-color' content="#02b875">
+<meta name="msapplication-TileColor" content="#02b875">
+<meta name="msapplication-TileImage" content="/icons/icon-144x144.png">
+<link rel="icon" href="https://muzhi621.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://muzhi621.github.io/icons/icon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://muzhi621.github.io/icons/icon-32x32.png">
+<link rel="icon" sizes="192x192" href="https://muzhi621.github.io/icons/icon-192x192.png">
+<link rel="apple-touch-icon" href="https://muzhi621.github.io/icons/icon-152x152.png">
+<link rel="manifest" href="https://muzhi621.github.io/manifest.json">
+
+
+<link rel="preload" href="https://muzhi621.github.io/styles/main-rendered.min.css" as="style">
+
+
+<link rel="preload" href="https://fonts.googleapis.com/css?family=Lobster" as="style">
+<link rel="preload" href="https://muzhi621.github.io/images/avatar.png" as="image">
+<link rel="preload" href="https://muzhi621.github.io/images/grey-prism.svg" as="image">
+
+
+<style>
+  body {
+    background: rgb(244, 243, 241) url('/images/grey-prism.svg') repeat fixed;
+  }
+</style>
+<link rel="stylesheet" href="https://muzhi621.github.io/styles/main-rendered.min.css">
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.2/dist/medium-zoom.min.js"></script>
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/video.js@7.3.0/dist/video-js.min.css">
+
+
+
+  
+  
+<!--[if lte IE 8]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/videojs-ie8@1.1.2/dist/videojs-ie8.min.js"></script>
+<![endif]-->
+
+<!--[if lte IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/eligrey-classlist-js-polyfill@1.2.20180112/classList.min.js"></script>
+<![endif]-->
+
+
+</head>
+  <body>
+    <div class="suspension">
+      <a role="button" aria-label="Go to top" title="Go to top" class="to-top is-hide"><span class="icon icon-up" aria-hidden="true"></span></a>
+      
+        
+	<a role="button" aria-label="Go to comments" title="Go to comments" class="to-comment" href="#disqus_thread"><span class="icon icon-comment" aria-hidden="true"></span></a>
+        
+      
+    </div>
+    
+    
+  <header class="site-header">
+  <img class="avatar" src="https://muzhi621.github.io/images/avatar.png" alt="Avatar">
+  
+  <h2 class="title">liwu&#39;s Blog</h2>
+  
+  <p class="subtitle">~ Keep It Simple &amp; Stupid ~</p>
+  <button class="menu-toggle" type="button" aria-label="Main Menu" aria-expanded="false" tab-index="0">
+    <span class="icon icon-menu" aria-hidden="true"></span>
+  </button>
+
+  <nav class="site-menu collapsed">
+    <h2 class="offscreen">Main Menu</h2>
+    <ul class="menu-list">
+      
+      
+      
+      
+        <li class="menu-item
+          
+          
+           is-active">
+          <a href="https://muzhi621.github.io/">首页</a>
+        </li>
+      
+        <li class="menu-item
+          
+          
+          ">
+          <a href="https://pan.myliwu.work">云盘</a>
+        </li>
+      
+        <li class="menu-item
+          
+          
+          ">
+          <a href="https://muzhi621.github.io/tags/">标签</a>
+        </li>
+      
+        <li class="menu-item
+          
+          
+          ">
+          <a href="https://muzhi621.github.io/links/">友链</a>
+        </li>
+      
+        <li class="menu-item
+          
+          
+          ">
+          <a href="https://muzhi621.github.io/about/">关于</a>
+        </li>
+      
+    </ul>
+  </nav>
+  <nav class="social-menu collapsed">
+    <h2 class="offscreen">Social Networks</h2>
+    <ul class="social-list"><li class="social-item">
+          <a href="mailto:muzhi621@qq.com" title="Email" aria-label="Email">
+            <span class="icon icon-email" aria-hidden="true"></span>
+          </a>
+        </li><li class="social-item">
+          <a href="//github.com/muzhi621" rel="me" title="GitHub" aria-label="GitHub">
+	    <span class="icon icon-github" aria-hidden="true"></span>
+          </a>
+        </li><li class="social-item">
+          <a href="//twitter.com/twitter_username" rel="me" title="Twitter" aria-label="Twitter">
+            <span class="icon icon-twitter" aria-hidden="true"></span>
+          </a>
+        </li><li class="social-item">
+          <a href="//weibo.com/weibo_username" rel="me" title="Weibo" aria-label="Weibo">
+            <span class="icon icon-weibo" aria-hidden="true"></span>
+          </a>
+        </li></ul>
+  </nav>
+</header>
+
+  <section class="main post-detail">
+    <header class="post-header">
+      <h1 class="post-title">GitHub &amp; coding &#43; hexo博客搭建</h1>
+      <p class="post-meta">@muzhi · Mar 21, 2019 · 3 min read</p>
+    </header>
+    <article class="post-content"><p>使用 GitHub Pages 和 Hexo 搭建免费独立博客的总结。将自己的域名访问 GitHub Pages 上的博客。同时，为了在多台电脑上都可以更新博客，采用两个分支的方式来存放文件，master 分支存放 Hexo 静态文件， 新建的source分支存放源文件。</p>
+
+<h3 id="必要配置">必要配置</h3>
+
+<p>在自己的 GitHub 账号下创建一个新的仓库，命名为 <a href="http://username.github.io/">username.github.io</a>（username是你的账号名)。</p>
+
+<h3 id="安装-git">安装 Git</h3>
+
+<pre><code>sudo apt-get install git
+</code></pre>
+
+<h3 id="配置-git">配置 Git</h3>
+
+<p>当安装完 Git 应该做的第一件事情就是设置用户名称和邮件地址。这样做很重要，因为每一个 Git 的提交都会使用这些信息，并且它会写入你的每一次提交中，不可更改：</p>
+
+<pre><code>git config --global user.name &quot;username&quot;
+git config --global user.email &quot;username@example.com&quot;
+</code></pre>
+
+<p>对于 user.email，因为在 GitHub 的 commits 信息上是可见的，所以如果你不想让人知道你的 email，可以 Keeping your email address private:</p>
+
+<ol>
+<li>在GitHub右上方点击你的头像，选择<code>Settings</code>；</li>
+<li>在右边的<code>Personal settings</code>侧边栏选择<code>Emails</code>；</li>
+<li>选择<code>Keep my email address private</code>。</li>
+</ol>
+
+<p>这样，你就可以使用如下格式的 email 进行配置：</p>
+
+<pre><code>$ git config --global user.email &quot;username@users.noreply.github.com&quot;
+</code></pre>
+
+<h3 id="git-与-github">Git 与 GitHub</h3>
+
+<h4 id="与github建立联系">与github建立联系</h4>
+
+<p>为了能够在本地使用 git 管理 github 上的项目，需要进行一些配置，这里介绍 SSH 的方法。coding与GitHub类似</p>
+
+<h4 id="检查电脑是否已经有-ssh-keys">检查电脑是否已经有 SSH keys。</h4>
+
+<pre><code>ls ~/.ssh
+# Lists the files in your .ssh directory, if they exist
+</code></pre>
+
+<p>默认情况下，public keys 的文件名是以下的格式之一：id_dsa.pub、id_ecdsa.pub、id_ed25519.pub、id_rsa.pub。因此，如果列出的文件有 public 和 private 钥匙对（例如id_ras.pub和id_rsa），证明已存在 SSH keys。</p>
+
+<h4 id="如果没有-ssh-key-则生成新的-ssh-key">如果没有 SSH key，则生成新的 SSH key。</h4>
+
+<pre><code>ssh-keygen -t rsa -b 4096 -C &quot;your_email@example.com&quot;
+# Creates a new ssh key, using the provided email as a label
+</code></pre>
+
+<p>之后一路回车即可。</p>
+
+<h4 id="向-ssh-agent-添加-key">向 ssh-agent 添加 key。</h4>
+
+<p>首先确保 ssh-agent 可运行：</p>
+
+<pre><code># start the ssh-agent in the background
+ssh-agent -s
+</code></pre>
+
+<p>然后添加 SSH key：</p>
+
+<pre><code>ssh-add ~/.ssh/id_rsa
+</code></pre>
+
+<h4 id="在-github-添加-ssh-key">在 GitHub 添加 SSH key。</h4>
+
+<p>首先，拷贝 key：</p>
+
+<pre><code>sudo cat ~/.ssh/id_rsa.pub
+# Copies the contents of the id_rsa.pub file to your cllipboard
+</code></pre>
+
+<p>然后，在 GitHub 右上方点击头像，选择<code>Settings</code>，在右边的<code>Personal settings</code>侧边栏选择<code>SSH Keys</code>。接着粘贴 key，点击<code>Add key</code>按钮。最后，测试链接：</p>
+
+<pre><code>ssh -T git@github.com
+# Attempts to ssh to GitHub
+</code></pre>
+
+<p>如果你看到：</p>
+
+<pre><code>The authenticity of host 'github.com (207.97.227.239)' can't be established.
+RSA key fingerprint is 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48.
+Are you sure you want to continue connecting (yes/no)?
+</code></pre>
+
+<p>就键入：yes。之后将会看到如下信息：</p>
+
+<pre><code>Hi username! You've successfully authenticated, but GitHub does not
+provide shell access.
+</code></pre>
+
+<h3 id="hexo">Hexo</h3>
+
+<h4 id="搭建-hexo-博客-并创建两个分支-master-与-source">搭建 hexo 博客 并创建两个分支：master 与 source</h4>
+
+<h4 id="首先建立-hexo-博客">首先建立 hexo 博客</h4>
+
+<pre><code>mkdir ~/Documents/Hexo
+cd ~/Documents/Hexo
+sudo npm install -g hexo-cli
+hexo init
+sudo npm install
+sudo npm install hexo-deployer-git
+</code></pre>
+
+<h4 id="创建-source-分支-并使其为默认分支">创建 source 分支，并使其为默认分支：</h4>
+
+<p>可直接在GitHub和coding上操作，并将source设置为默认分支</p>
+
+<pre><code>git init
+git remote add origin git@github.com:username/username.github.io.git
+git add .
+#添加修改
+git commit -m &quot;init hexo&quot;
+#初次提交
+git checkout -b source
+#建立分支 hexo 并切换到分支 hexo
+git push -u origin source
+#将分支 hexo 提交到 github
+</code></pre>
+
+<h4 id="创建-空白分支-master">创建 空白分支 master</h4>
+
+<pre><code>cd ..
+#退回上一级目录
+mkdir new
+#创建一个新的文件夹用以创建空白分支
+cd ~/Documents/new
+git init
+touch README.md
+#随意创建一个文件，用于提交分支
+git add .
+git commit -m &quot;new branch&quot;
+git remote add origin git@github.com:username/username.github.io.git
+git push origin master
+#将分支 master 提交到 github
+rm README.md
+git add .
+git commit -m &quot;clear new branch&quot;
+git push origin master
+cd ~/Documents/
+rm -rf new
+cd Hexo
+git pull
+</code></pre>
+
+<p>执行完成之后，该仓库的默认分支被设为 source，同时还有空白的 master 分支用于存放网页。</p>
+
+<h4 id="设置域名">设置域名</h4>
+
+<p>在 <a href="http://username.github.io/">username.github.io</a> 仓库首页选择<code>Settings</code>，向下拉，在<code>GitHub Pages</code>部分的<code>Custom domain</code>中填上自己的域名，点击<code>save</code>保存。此操作会在 master 分支下生成一个 CNAME 文件，里面就是刚填写的域名。</p>
+
+<h4 id="配置-hexo-提交方式">配置 hexo 提交方式</h4>
+
+<p>编辑该文件夹下的<code>_config.yml</code>的<code>deploy</code>参数，分支应为 master。</p>
+
+<p>默认生成的_config.yml：</p>
+
+<pre><code># Deployment
+## Docs: http://hexo.io/docs/deployment.html
+deploy:
+  type:
+</code></pre>
+
+<p>修改后的_config.yml：</p>
+
+<pre><code>deploy:
+-
+  type: git
+  repository:  
+    #github: git@github.com:muzhi621/muzhi621.github.io.git,master
+    coding: git@git.dev.tencent.com:muzhi621/muzhi621.git,master
+    #oschina: git@gitee.com:muzhi621/muzhi620.git
+  #branch: master
+</code></pre>
+
+<h4 id="修改博客及部署操作">修改博客及部署操作</h4>
+
+<p>修改博客内容后依次执行以下命令来提交网站相关的文件：</p>
+
+<pre><code>git add .
+git commit -m &quot;自定义内容即可&quot;
+git push origin source
+</code></pre>
+
+<p>然后执行以下任意一条生成网站并部署到 GitHub 上。</p>
+
+<pre><code>hexo generate -d
+hexo g -d
+</code></pre>
+
+<p>这样一来，在 GitHub 上的 <a href="http://username.github.io/">username.github.io</a> 仓库就有两个分支，一个 source 分支用来存放网站的原始文件，一个 master 分支用来存放生成的静态网页。</p>
+
+<h4 id="域名重置问题及解决方案">域名重置问题及解决方案</h4>
+
+<h5 id="问题">问题</h5>
+
+<p>每次执行完<code>hexo g -d</code>之后，github 仓库设置中的 <code>Custom domain</code>总是被重置，导致域名访问出现 404 错误。</p>
+
+<h5 id="解决方案">解决方案</h5>
+
+<p>在 Hexo 生成的博客的 source 目录下新建一个 CNAME 文件，里面填上自己的域名即可。</p>
+
+<h4 id="博客管理流程">博客管理流程</h4>
+
+<p>在本地对博客进行修改（添加新博文、修改样式等等）后，通过下面的流程进行管理：</p>
+
+<ol>
+<li>依次执行<code>git add .</code>、<code>git commit -m &quot;...&quot;</code>、<code>git push origin source</code>指令将改动推送到 GitHub（此时当前分支应为 source）；</li>
+<li>然后才执行 <code>hexo g -d</code> 或 <code>hexo generate -d</code> 发布网站到 master 分支上。</li>
+</ol>
+
+<h4 id="更换电脑时">更换电脑时：</h4>
+
+<ol>
+<li>使用 <code>git clone git@github.com:username/username.github.io.git</code> 拷贝仓库（默认分支为 source）；</li>
+<li>在本地新拷贝的<code>username.github.io</code>文件夹下通过终端依次执行下列指令：<code>sudo npm install -g hexo-cli</code>、<code>sudo npm install</code>、<code>sudo npm install hexo-deployer-git</code></li>
+</ol></article>
+    <footer class="post-footer">
+      
+      <ul class="post-tags">
+        
+          <li><a href="https://muzhi621.github.io/tags/%E6%95%99%E7%A8%8B"><span class="tag">教程</span></a></li>
+        
+          <li><a href="https://muzhi621.github.io/tags/%E6%8A%80%E6%9C%AF"><span class="tag">技术</span></a></li>
+        
+          <li><a href="https://muzhi621.github.io/tags/github"><span class="tag">GitHub</span></a></li>
+        
+      </ul>
+      
+      <p class="post-copyright">
+        © 本文作者：muzhi  版权所有本站文章均采用 CC BY-NC-SA 4.0 许可协议，请勿用于商业，转载注明出处！
+      </p>
+    </footer>
+    
+      <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "disqus_shortname" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      
+    
+  </section>
+  
+<footer class="site-footer">
+  <p>© 2017-2019 liwu&#39;s Blog</p>
+  <p>Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> with theme <a href="https://github.com/laozhu/hugo-nuo" target="_blank" rel="noopener">Nuo</a>.</p>
+  
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/smooth-scroll@15.0.0/dist/smooth-scroll.min.js"></script>
+
+
+
+<script async src="https://cdn.jsdelivr.net/npm/video.js@7.3.0/dist/video.min.js"></script>
+
+
+
+
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$'], ['\\[','\\]']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+      extensions: ["AMSmath.js", "AMSsymbols.js"] }
+    },
+  });
+</script>
+<script type="text/x-mathjax-config">
+  // Fix <code> tags after MathJax finishes running. This is a
+  // hack to overcome a shortcoming of Markdown. Discussion at
+  // https://github.com/mojombo/jekyll/issues/199
+  MathJax.Hub.Queue(() => {
+    MathJax.Hub.getAllJax().map(v => v.SourceElement().parentNode.className += ' has-jax');
+  });
+</script>
+
+
+
+<script src="https://muzhi621.github.io/scripts/index.min.js"></script>
+
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('\/service-worker.js').then(function() {
+      console.log('[ServiceWorker] Registered');
+    });
+  }
+</script>
+
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-XXXXXXXX-X', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+
+  </body>
+</html>

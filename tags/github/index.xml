@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>GitHub on liwu&#39;s Blog</title>
+    <link>https://muzhi621.github.io/tags/github/</link>
+    <description>Recent content in GitHub on liwu&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>© 本文作者：muzhi  版权所有本站文章均采用 CC BY-NC-SA 4.0 许可协议，请勿用于商业，转载注明出处！</copyright>
+    <lastBuildDate>Fri, 26 Apr 2019 13:46:35 +0800</lastBuildDate>
+    
+	<atom:link href="https://muzhi621.github.io/tags/github/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>自搭建网易云音乐破版权</title>
+      <link>https://muzhi621.github.io/2019/04/26/%E8%87%AA%E6%90%AD%E5%BB%BA%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90%E7%A0%B4%E7%89%88%E6%9D%83/</link>
+      <pubDate>Fri, 26 Apr 2019 13:46:35 +0800</pubDate>
+      
+      <guid>https://muzhi621.github.io/2019/04/26/%E8%87%AA%E6%90%AD%E5%BB%BA%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90%E7%A0%B4%E7%89%88%E6%9D%83/</guid>
+      <description>&lt;p&gt;大家都知道网易云的歌曲如果没有版权或是下架了就是灰色的不能听不能下载，所以有个GitHub开源项目，此项目可以解决网易云灰色歌曲无法下载视听，这里介绍下如何搭建网易云破版权服务器。原理是使用其它音乐平台的歌曲替换网易云音乐无版权歌曲，非常舒服。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>GitHub &amp; coding &#43; hexo博客搭建</title>
+      <link>https://muzhi621.github.io/2019/03/21/github-coding-hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</link>
+      <pubDate>Thu, 21 Mar 2019 19:21:35 +0800</pubDate>
+      
+      <guid>https://muzhi621.github.io/2019/03/21/github-coding-hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</guid>
+      <description>&lt;p&gt;使用 GitHub Pages 和 Hexo 搭建免费独立博客的总结。将自己的域名访问 GitHub Pages 上的博客。同时，为了在多台电脑上都可以更新博客，采用两个分支的方式来存放文件，master 分支存放 Hexo 静态文件， 新建的source分支存放源文件。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

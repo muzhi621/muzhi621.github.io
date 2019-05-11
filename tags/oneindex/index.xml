@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>oneIndex on liwu&#39;s Blog</title>
+    <link>https://muzhi621.github.io/tags/oneindex/</link>
+    <description>Recent content in oneIndex on liwu&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>© 本文作者：muzhi  版权所有本站文章均采用 CC BY-NC-SA 4.0 许可协议，请勿用于商业，转载注明出处！</copyright>
+    <lastBuildDate>Sun, 03 Mar 2019 14:34:35 +0800</lastBuildDate>
+    
+	<atom:link href="https://muzhi621.github.io/tags/oneindex/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>onedrive搭建个人云盘</title>
+      <link>https://muzhi621.github.io/2019/03/03/onedrive%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E4%BA%91%E7%9B%98/</link>
+      <pubDate>Sun, 03 Mar 2019 14:34:35 +0800</pubDate>
+      
+      <guid>https://muzhi621.github.io/2019/03/03/onedrive%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E4%BA%91%E7%9B%98/</guid>
+      <description>&lt;p&gt;OneIndex针对Onedrive网盘的一个开源程序。可以将Onedrive存储的文件展示，直连下载。&lt;strong&gt;视频还能在线播放&lt;/strong&gt;！不用服务器空间，不走服务器流量！&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

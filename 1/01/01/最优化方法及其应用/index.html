@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+
+  <meta charset="utf-8" />
+
+  
+  <title>最优化方法及其应用</title>
+
+  
+  
+  <link href="//cdn.jsdelivr.net" rel="dns-prefetch">
+  <link href="//cdnjs.cloudflare.com" rel="dns-prefetch">
+  
+  <link href="//at.alicdn.com" rel="dns-prefetch">
+  
+  <link href="//fonts.googleapis.com" rel="dns-prefetch">
+  <link href="//fonts.gstatic.com" rel="dns-prefetch">
+  <link href="///disqus.com" rel="dns-prefetch">
+  <link href="//c.disquscdn.com" rel="dns-prefetch">
+  
+  <link href="//www.google-analytics.com" rel="dns-prefetch">
+  
+
+  
+
+  
+  <meta name="author" content="muzhi">
+  <meta name="description" content="在社会生产以及日常生活中，尤其是经济活动中，通常情况下，做一个决策对策备选方案往往不止一个，则自然你希望所选方案为最佳的，而最优化方法就是从众多可能的方案中选择一个可以达到最优目标的科学，是一门新兴的数学分支。因而最优化方法和最优化理论日趋受到重视，其在社会生活生产中已经渗透到社会中方方面面，包括经济，军事，管理等领域。而伴随着计算机科学的发展，解决最优化方法的工具也日趋完善，MATLAB就是其中最具代表性的最优化工具之一。
+">
+
+  
+  
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@twitter_username">
+    <meta name="twitter:title" content="最优化方法及其应用">
+    <meta name="twitter:description" content="在社会生产以及日常生活中，尤其是经济活动中，通常情况下，做一个决策对策备选方案往往不止一个，则自然你希望所选方案为最佳的，而最优化方法就是从众多可能的方案中选择一个可以达到最优目标的科学，是一门新兴的数学分支。因而最优化方法和最优化理论日趋受到重视，其在社会生活生产中已经渗透到社会中方方面面，包括经济，军事，管理等领域。而伴随着计算机科学的发展，解决最优化方法的工具也日趋完善，MATLAB就是其中最具代表性的最优化工具之一。
+">
+    <meta name="twitter:image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1557568191175&di=0ded4640387d2465897e65798a4d552d&imgtype=0&src=http%3A%2F%2Fimg.it610.com%2Fimage%2Finfo5%2Fdb73fb1fc8b643ae8f6d9b4ae38ffd74.jpg">
+  
+
+  
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="最优化方法及其应用">
+  <meta property="og:description" content="在社会生产以及日常生活中，尤其是经济活动中，通常情况下，做一个决策对策备选方案往往不止一个，则自然你希望所选方案为最佳的，而最优化方法就是从众多可能的方案中选择一个可以达到最优目标的科学，是一门新兴的数学分支。因而最优化方法和最优化理论日趋受到重视，其在社会生活生产中已经渗透到社会中方方面面，包括经济，军事，管理等领域。而伴随着计算机科学的发展，解决最优化方法的工具也日趋完善，MATLAB就是其中最具代表性的最优化工具之一。
+">
+  <meta property="og:url" content="https://muzhi621.github.io/1/01/01/%E6%9C%80%E4%BC%98%E5%8C%96%E6%96%B9%E6%B3%95%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/">
+  <meta property="og:image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1557568191175&di=0ded4640387d2465897e65798a4d552d&imgtype=0&src=http%3A%2F%2Fimg.it610.com%2Fimage%2Finfo5%2Fdb73fb1fc8b643ae8f6d9b4ae38ffd74.jpg">
+
+
+
+
+<meta name="generator" content="Hugo 0.55.5">
+
+
+<link rel="canonical" href="https://muzhi621.github.io/1/01/01/%E6%9C%80%E4%BC%98%E5%8C%96%E6%96%B9%E6%B3%95%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/">
+
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="format-detection" content="telephone=no,email=no,adress=no">
+<meta http-equiv="Cache-Control" content="no-transform">
+
+
+<meta name="robots" content="index,follow">
+<meta name="referrer" content="origin-when-cross-origin">
+<meta name="google-site-verification" content="_moDmnnBNVLBN1rzNxyGUGdPHE20YgbmrtzLIbxaWFc">
+<meta name="msvalidate.01" content="22596E34341DD1D17D6022C44647E587">
+
+
+
+
+
+<meta name="theme-color" content="#02b875">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="liwu&#39;s Blog">
+<meta name="msapplication-tooltip" content="liwu&#39;s Blog">
+<meta name='msapplication-navbutton-color' content="#02b875">
+<meta name="msapplication-TileColor" content="#02b875">
+<meta name="msapplication-TileImage" content="/icons/icon-144x144.png">
+<link rel="icon" href="https://muzhi621.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://muzhi621.github.io/icons/icon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://muzhi621.github.io/icons/icon-32x32.png">
+<link rel="icon" sizes="192x192" href="https://muzhi621.github.io/icons/icon-192x192.png">
+<link rel="apple-touch-icon" href="https://muzhi621.github.io/icons/icon-152x152.png">
+<link rel="manifest" href="https://muzhi621.github.io/manifest.json">
+
+
+<link rel="preload" href="https://muzhi621.github.io/styles/main-rendered.min.css" as="style">
+
+
+<link rel="preload" href="https://fonts.googleapis.com/css?family=Lobster" as="style">
+<link rel="preload" href="https://muzhi621.github.io/images/avatar.png" as="image">
+<link rel="preload" href="https://muzhi621.github.io/images/grey-prism.svg" as="image">
+
+
+<style>
+  body {
+    background: rgb(244, 243, 241) url('/images/grey-prism.svg') repeat fixed;
+  }
+</style>
+<link rel="stylesheet" href="https://muzhi621.github.io/styles/main-rendered.min.css">
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.2/dist/medium-zoom.min.js"></script>
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/video.js@7.3.0/dist/video-js.min.css">
+
+
+
+  
+  
+<!--[if lte IE 8]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/videojs-ie8@1.1.2/dist/videojs-ie8.min.js"></script>
+<![endif]-->
+
+<!--[if lte IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/eligrey-classlist-js-polyfill@1.2.20180112/classList.min.js"></script>
+<![endif]-->
+
+
+</head>
+  <body>
+    <div class="suspension">
+      <a role="button" aria-label="Go to top" title="Go to top" class="to-top is-hide"><span class="icon icon-up" aria-hidden="true"></span></a>
+      
+        
+	<a role="button" aria-label="Go to comments" title="Go to comments" class="to-comment" href="#disqus_thread"><span class="icon icon-comment" aria-hidden="true"></span></a>
+        
+      
+    </div>
+    
+    
+  <header class="site-header">
+  <img class="avatar" src="https://muzhi621.github.io/images/avatar.png" alt="Avatar">
+  
+  <h2 class="title">liwu&#39;s Blog</h2>
+  
+  <p class="subtitle">~ Keep It Simple &amp; Stupid ~</p>
+  <button class="menu-toggle" type="button" aria-label="Main Menu" aria-expanded="false" tab-index="0">
+    <span class="icon icon-menu" aria-hidden="true"></span>
+  </button>
+
+  <nav class="site-menu collapsed">
+    <h2 class="offscreen">Main Menu</h2>
+    <ul class="menu-list">
+      
+      
+      
+      
+        <li class="menu-item
+          
+          
+           is-active">
+          <a href="https://muzhi621.github.io/">首页</a>
+        </li>
+      
+        <li class="menu-item
+          
+          
+          ">
+          <a href="https://pan.myliwu.work">云盘</a>
+        </li>
+      
+        <li class="menu-item
+          
+          
+          ">
+          <a href="https://muzhi621.github.io/tags/">标签</a>
+        </li>
+      
+        <li class="menu-item
+          
+          
+          ">
+          <a href="https://muzhi621.github.io/links/">友链</a>
+        </li>
+      
+        <li class="menu-item
+          
+          
+          ">
+          <a href="https://muzhi621.github.io/about/">关于</a>
+        </li>
+      
+    </ul>
+  </nav>
+  <nav class="social-menu collapsed">
+    <h2 class="offscreen">Social Networks</h2>
+    <ul class="social-list"><li class="social-item">
+          <a href="mailto:muzhi621@qq.com" title="Email" aria-label="Email">
+            <span class="icon icon-email" aria-hidden="true"></span>
+          </a>
+        </li><li class="social-item">
+          <a href="//github.com/muzhi621" rel="me" title="GitHub" aria-label="GitHub">
+	    <span class="icon icon-github" aria-hidden="true"></span>
+          </a>
+        </li><li class="social-item">
+          <a href="//twitter.com/twitter_username" rel="me" title="Twitter" aria-label="Twitter">
+            <span class="icon icon-twitter" aria-hidden="true"></span>
+          </a>
+        </li><li class="social-item">
+          <a href="//weibo.com/weibo_username" rel="me" title="Weibo" aria-label="Weibo">
+            <span class="icon icon-weibo" aria-hidden="true"></span>
+          </a>
+        </li></ul>
+  </nav>
+</header>
+
+  <section class="main post-detail">
+    <header class="post-header">
+      <h1 class="post-title">最优化方法及其应用</h1>
+      <p class="post-meta">@muzhi · Jan 1, 0001 · 5 min read</p>
+    </header>
+    <article class="post-content"><p>在社会生产以及日常生活中，尤其是经济活动中，通常情况下，做一个决策对策备选方案往往不止一个，则自然你希望所选方案为最佳的，而最优化方法就是从众多可能的方案中选择一个可以达到最优目标的科学，是一门新兴的数学分支。因而最优化方法和最优化理论日趋受到重视，其在社会生活生产中已经渗透到社会中方方面面，包括经济，军事，管理等领域。而伴随着计算机科学的发展，解决最优化方法的工具也日趋完善，MATLAB就是其中最具代表性的最优化工具之一。</p>
+
+<h2 id="1-提出问题">1.  提出问题</h2>
+
+<p>​   某商店拟制定某种商品 7-12月的进货，售货计划，已知商品仓库的最大容量为1500件，6月底已存货300件，年底库存不少于300件为宜，以后每个月初进货一次，假设各月份该商品买进，售出单价如下表，若每月的库存费为0.5元，问各月进货，售货各为多少件时，才能使收益最多，试建立数学模型并求解。</p>
+
+<p>表1</p>
+
+<table>
+<thead>
+<tr>
+<th>月份</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+<th>10</th>
+<th>11</th>
+<th>12</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>买进（元/件）</td>
+<td>28</td>
+<td>26</td>
+<td>25</td>
+<td>27</td>
+<td>24</td>
+<td>23.5</td>
+</tr>
+
+<tr>
+<td>售出（元/件）</td>
+<td>29</td>
+<td>27</td>
+<td>26</td>
+<td>28</td>
+<td>25</td>
+<td>25</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>问题来源：</strong>AllExperiments__《数学建模实验》上机实验作业—张勇</p>
+
+<p>实验二 优化模型实验 题目3</p>
+
+<p><a href="https://wenku.baidu.com/view/8f56f49dbed5b9f3f90f1cec.html">https://wenku.baidu.com/view/8f56f49dbed5b9f3f90f1cec.html</a></p>
+
+<h2 id="2-分析问题">2.  分析问题</h2>
+
+<p>​   此问题提出主要解决实际问题中的线性规划中的销售计划问题，在实际生产生活中经常会涉及的一个问题。为使得利润最大化，商人不得不通过合理的买进售出的规划，同时在考虑影响不可消除的成本下，通过合理的规划销售方案使得商品的销售计划达到利润的最大化。解决此类问题主要是通过分析问题，提炼出线性规划模型，然后利用MATLAB工具箱中的linprog函数解决。</p>
+
+<pre><code>MATLAB****中线性规划标准型：**
+
+Min fTx
+
+S.t. Ax&lt;=0
+
+Aeq·x=beq
+
+Lb&lt;=x&lt;=ub
+</code></pre>
+
+<p><strong>linprog</strong><strong>函数：</strong></p>
+
+<p>linprog函数主要用来求解现行规划问题，主要使用方法如下：</p>
+
+<p>注意：</p>
+
+<p>l  目标函数f要写成列矩阵的形式</p>
+
+<p>l  约束要写成&lt;= 的形式</p>
+
+<p>l  函数是为求最小值设置的</p>
+
+<p>调用格式：</p>
+
+<p>x=linprog(f,A,b,Aeq,beq); 求解问题min f*x，约束条件为A*x&lt;=b。</p>
+
+<p>x=linprog(f,A,b,Aeq,beq,lb,ub); 求解上面的问题，但增加等式约束，即Aeq*x=beq。若没有不等式存在，则令A=[ ],b=[ ]。</p>
+
+<p>x=linprog(f,A,b,Aeq,beq,lb,ub,x0); 设置初值为x0.该选项只使用于中型问题，默认时，算法将忽略初值。</p>
+
+<p>x=linprog(f,A,b,Aeq,beq,lb,ub,x0,options); 用options指定的优化参数进行最小化。</p>
+
+<p>[x,fval] = linprog(f,A,b,Aeq,beq,lb,ub)</p>
+
+<p>[x,fval,exitflag,output，lambda]= linprog(f,A,b,Aeq,beq,lb,ub)</p>
+
+<p>l  返回解x处的目标函数值fval。</p>
+
+<p>l  返回exitflag值，描述函数计算的退出条件。</p>
+
+<p>l  返回包含优化信息的输出变量output。</p>
+
+<p>l  lambda参数是解x处的拉格朗日乘子。</p>
+
+<p>其中：</p>
+
+<p>Ø  x返回的是决策向量的取值；</p>
+
+<p>Ø  fval返回的是目标函数的最优值;</p>
+
+<p>Ø  f为价值向量（目标函数）;</p>
+
+<p>Ø  A和b对应的是线性不等式约束;</p>
+
+<p>Ø  Aeq和beq对应的是线性等式约束;</p>
+
+<p>Ø  lb和ub分别对应决策的下界向量和上界向量;</p>
+
+<p><strong>线性规划：</strong></p>
+
+<p>​   现实问题求解最优化问题，就是在一定条件下达到利益最大化的目的。此问题集使得月利润最大，其中需考虑进货，仓储成本以及售出量所决定的利益，以此找到一个最优解使得例如能最大化。由题目问题可得，该问题属于线性规划问题，目标函数可是该商店的纯利润表达式，约束条件是现实问题中，对于利润最大化的限制，例如仓储容量，买进售出量，仓储成本。</p>
+
+<p>还需考虑到问题是：</p>
+
+<ul>
+<li><p>该商品在6-12月每个月中买进售出的价格不随时间变化。</p></li>
+
+<li><p>每月月初计算库存费用为买进的商品量加上库存量。</p></li>
+
+<li><p>不考虑除了仓储成本以及买进该商品的成本外其他影响最终利润的费用支出，诸如人力成本等。</p></li>
+</ul>
+
+<h2 id="3-建立模型">3.  建立模型</h2>
+
+<p>根据线性规划的原理和方法，结合题目具体要求，构建适合的数学模型。</p>
+
+<p>(1) 确定目标函数</p>
+
+<p>设7-12月每个月的该商品的买进量和售出量如下表二所示</p>
+
+<p>设7-12月实际买进售出</p>
+
+<p>表2</p>
+
+<table>
+<thead>
+<tr>
+<th>月份</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+<th>10</th>
+<th>11</th>
+<th>12</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>买进</td>
+<td>X11</td>
+<td>X12</td>
+<td>X13</td>
+<td>X14</td>
+<td>X15</td>
+<td>X16</td>
+</tr>
+
+<tr>
+<td>售出</td>
+<td>X21</td>
+<td>X22</td>
+<td>X23</td>
+<td>X24</td>
+<td>X25</td>
+<td>X26</td>
+</tr>
+</tbody>
+</table>
+
+<p>由题目可得，该商品6月底已存货量为300件，所以得出7-12月月初的库存量如下所示：</p>
+
+<p>表3</p>
+
+<table>
+<thead>
+<tr>
+<th>月份</th>
+<th>库存</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>7</td>
+<td>300+X11</td>
+</tr>
+
+<tr>
+<td>8</td>
+<td>300+X11-X21+X12</td>
+</tr>
+
+<tr>
+<td>9</td>
+<td>300+X11-X21+X12-X22+X13</td>
+</tr>
+
+<tr>
+<td>10</td>
+<td>300+X11-X21+X12-X22+X13-X23+X14</td>
+</tr>
+
+<tr>
+<td>11</td>
+<td>300+X11-X21+X12-X22+X13-X23+X14-X24+X15</td>
+</tr>
+
+<tr>
+<td>12</td>
+<td>300+X11-X21+X12-X22+X13-X23+X14-X24+X15-X25+X16</td>
+</tr>
+
+<tr>
+<td>12月底</td>
+<td>300+X11-X21+X12-X22+X13-X23+X14-X24+X15-X25+X16-X26</td>
+</tr>
+</tbody>
+</table>
+
+<p>为使得该商品的利润达到做大化，利润可简化为：</p>
+
+<p>​     利润=销售利润-仓储成本-买进成本
+$$
+目标函数：</p>
+
+<p>Max F=29X21-28X11+27X22-26X12+26X23-25X13+28X24-27X14+25X25-</p>
+
+<p>24X15+25X26-23.5X16-0.5(300+X11+300+X11-X21+X12+300+X11-X21+X12-X22+X13+300+X11-X21+X12-X22+X13-X23+X14+300+X11-X21+X12-X22+X13-X23+X14-X24+X15+300+X11-X21+X12-X22+X13-X23+X14-X24+X15)</p>
+
+<p>化简Max F’=31.5X21-31X11+29X22-28.5X12+27.5X23-27X13+</p>
+
+<p>29X24-28.5X14+25.5X25-25X15+25X26-24X16-900
+$$</p>
+
+<p>(2) 确定约束条件</p>
+
+<p>约束条件
+$$
+s.t.：</p>
+
+<p>1)  商品仓库的最大容量为1500件</p>
+
+<p>0&lt;=300+X11&lt;=1500</p>
+
+<p>0&lt;=300+X11-X21+X12&lt;=1500</p>
+
+<p>0&lt;=300+X11-X21+X12-X22+X13&lt;=1500</p>
+
+<p>0&lt;=300+X11-X21+X12-X22+X13-X23+X14&lt;=1500</p>
+
+<p>0&lt;=300+X11-X21+X12-X22+X13-X23+X14-X24+X15&lt;=1500</p>
+
+<p>0&lt;=300+X11-X21+X12-X22+X13-X23+X14-X24+X15-X25+X16&lt;=1500</p>
+
+<p>2)  年底库存不少于300件</p>
+
+<p>300+X11-X21+X12-X22+X13-X23+X14-X24+X15-X25+X16-X26&gt;=300</p>
+
+<p>3)  买进和售出该商品不为负</p>
+
+<p>X11 X21 …… X16 X26&gt;=0
+$$</p>
+
+<p>(3) 建立线性规划模型
+$$
+Min C=31X11-31.5X21+28.5X12-29X22+27X13-27.5X23+</p>
+
+<p>28.5X14-29X24+25X15-25.5X25+24X16-25X26+900
+$$
+构建解决模型：
+$$
+Min C’=31X11-31.5X21+28.5X12-29X22+27X13-27.5X23+</p>
+
+<p>28.5X14-29X24+25X15-25.5X25+24X16-25X26</p>
+
+<p>s.t.</p>
+
+<p>X11&lt;=1200</p>
+
+<p>-X11+X21&lt;=300</p>
+
+<p>X11-X21+X12&lt;=1200</p>
+
+<p>-X11+X21-X12+X22&lt;=300</p>
+
+<p>X11-X21+X12-X22+X13&lt;=1200</p>
+
+<p>-X11+X21-X12+X22-X13+X23&lt;=300</p>
+
+<p>X11-X21+X12-X22+X13-X23+X14&lt;=1200</p>
+
+<p>-X11+X21-X12+X22-X13+X23-X14+X24&lt;=300</p>
+
+<p>X11-X21+X12-X22+X13-X23+X14-X24+X15&lt;=1200</p>
+
+<p>-X11+X21-X12+X22-X13+X23-X14+X24-X15+X25&lt;=300</p>
+
+<p>X11-X21+X12-X22+X13-X23+X14-X24+X15-X25+X16&lt;=1200</p>
+
+<p>-X11+X21-X12+X22-X13+X23-X14+X24-X15+X25-X16+X26&lt;=0</p>
+
+<p>-X11 -X21 …… -X16 -x26&lt;=0
+$$</p>
+
+<h2 id="4-问题求解">4. 问题求解</h2>
+
+<p>采用调用工具箱法和修正单纯性函数法求解，见附录</p>
+
+<p>求解可得：xm为：</p>
+
+<p>$$
+1200.00000000000</p>
+
+<p>1500.00000000000</p>
+
+<p>1499.99999999999</p>
+
+<p>1500.00000000000</p>
+
+<p>1500.00000000000</p>
+
+<p>3.32426374296570e-12</p>
+
+<p>5.04039389707337e-12</p>
+
+<p>1500.00000000000</p>
+
+<p>1500.00000000000</p>
+
+<p>1499.99999999999</p>
+
+<p>1500.00000000000</p>
+
+<p>1200.00000000000
+$$</p>
+
+<p>$$
+Fm=-8.549999999999593e+03</p>
+
+<p>C’=fm=-8550</p>
+
+<p>C=C’+900=-8550+900=-7650</p>
+
+<p>利润：Max F=-C=7550
+$$
+所以7-12月该商品买进售出计划如下表</p>
+
+<p>表4</p>
+
+<table>
+<thead>
+<tr>
+<th>月份</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+<th>10</th>
+<th>11</th>
+<th>12</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>买进（件）</td>
+<td>1200</td>
+<td>1500</td>
+<td>1500</td>
+<td>0</td>
+<td>1500</td>
+<td>1500</td>
+</tr>
+
+<tr>
+<td>售出（件）</td>
+<td>1500</td>
+<td>1500</td>
+<td>0</td>
+<td>1500</td>
+<td>1500</td>
+<td>1200</td>
+</tr>
+</tbody>
+</table>
+
+<p>所以该商店出售该商品最大的利润为7550元</p>
+
+<h2 id="5-总结">5.  总结</h2>
+
+<p>​   学习本门最优化课程，收获颇多。在此之前，对于MATLAB这个软件从来都是只闻其名，不见其身，本以为计算机专业学生来使用MATLAB应该上手极快应是，但是结果并不是想象中的那样美好，不过当学习这软件后才发现软件的强大，可以解决许多问题，特别是对于图像图形的绘制，解决了很多，最优化问题归根到底还是数学问题，以前学习数学，基本是用不上的。</p>
+
+<h2 id="6-附录">6.  附录</h2>
+
+<p><strong>调用工具箱法：</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-matlab" data-lang="matlab">zuiyouhua.m<span style="color:#f92672">**</span>
+
+f=[<span style="color:#ae81ff">31</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">31.5</span>,<span style="color:#ae81ff">28.5</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">29</span>,<span style="color:#ae81ff">27</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">27.5</span>,<span style="color:#ae81ff">28.5</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">29</span>,<span style="color:#ae81ff">25</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">25.5</span>,<span style="color:#ae81ff">24</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">25</span>];
+
+A=[ <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span>;
+
+​    <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span>;
+
+​    <span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span>;
+
+​    <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span>;
+
+​    <span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span>;
+
+​    <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span>;
+
+​    <span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span>;
+
+​    <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span>;
+
+​    <span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span>;
+
+​    <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span>;
+
+​    <span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">0</span>;
+
+​    <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#ae81ff">1</span>
+
+​    ];
+b=[<span style="color:#ae81ff">1200</span>;<span style="color:#ae81ff">300</span>;<span style="color:#ae81ff">1200</span>;<span style="color:#ae81ff">300</span>;<span style="color:#ae81ff">1200</span>;<span style="color:#ae81ff">300</span>;<span style="color:#ae81ff">1200</span>;<span style="color:#ae81ff">300</span>;<span style="color:#ae81ff">1200</span>;<span style="color:#ae81ff">300</span>;<span style="color:#ae81ff">1200</span>;<span style="color:#ae81ff">0</span>];
+
+lb=[<span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span>];
+
+[xm,fval,exitflag,output,lambda]=linprog(f,A,b,[],[],lb);</code></pre></div>
+<p><strong>单纯形函数法：</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-matlab" data-lang="matlab">ModifSimpleMthd.m<span style="color:#f92672">**</span>
+
+<span style="color:#66d9ef">function</span>  [x,minf] = <span style="color:#a6e22e">ModifSimpleMthd</span>(A,c,b,baseVector)
+
+<span style="color:#75715e">% A:约束矩阵</span>
+
+<span style="color:#75715e">% c:目标函数系数矩阵</span>
+
+<span style="color:#75715e">% b:约束右端向量</span>
+
+<span style="color:#75715e">% baseVector:初始基向量</span>
+
+<span style="color:#75715e">% x:目标函数取最小值时的自变量的值</span>
+
+<span style="color:#75715e">% minf:目标函数最小值</span>
+
+ 
+
+sz = size(A);
+
+nVia = sz(<span style="color:#ae81ff">2</span>);
+
+n = sz(<span style="color:#ae81ff">1</span>);
+
+xx = <span style="color:#ae81ff">1</span>:nVia;
+
+nobase = zeros(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>);
+
+m = <span style="color:#ae81ff">1</span>;
+
+ 
+
+<span style="color:#66d9ef">if</span> c<span style="color:#f92672">&gt;</span>=<span style="color:#ae81ff">0</span>
+
+​    vr = find(c<span style="color:#f92672">~=</span><span style="color:#ae81ff">0</span> ,<span style="color:#ae81ff">1</span>,<span style="color:#e6db74">&#39;last&#39;</span>);
+
+​    rgv = inv(A(:,(nVia<span style="color:#f92672">-</span>n<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>):nVia))<span style="color:#f92672">*</span>b;
+
+​    <span style="color:#66d9ef">if</span> rgv <span style="color:#f92672">&gt;</span>=<span style="color:#ae81ff">0</span>
+
+​        x = zeros(<span style="color:#ae81ff">1</span>,vr);
+
+​        minf = <span style="color:#ae81ff">0</span>;
+
+​    <span style="color:#66d9ef">else</span>
+
+​        disp(<span style="color:#e6db74">&#39;不存在最优解!&#39;</span>);
+
+​        x = NaN;
+
+​        minf = NaN;
+
+​        <span style="color:#66d9ef">return</span>;
+
+​    <span style="color:#66d9ef">end</span>
+
+<span style="color:#66d9ef">end</span>
+
+ 
+
+<span style="color:#66d9ef">for</span> i=<span style="color:#ae81ff">1</span>:nVia
+
+​    <span style="color:#66d9ef">if</span>(isempty(find(baseVector <span style="color:#f92672">==</span> xx(i),<span style="color:#ae81ff">1</span>)))
+
+​        nobase(m) = i;
+
+​        m = m <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>;
+
+​    <span style="color:#66d9ef">else</span>
+
+​        
+
+​    <span style="color:#66d9ef">end</span>
+
+<span style="color:#66d9ef">end</span>
+
+bCon = <span style="color:#ae81ff">1</span>;
+
+M = <span style="color:#ae81ff">0</span>;
+
+B = A(:,baseVector);
+
+invB = inv(B);
+
+ 
+
+<span style="color:#66d9ef">while</span> bCon
+
+​    nB = A(:,nobase);
+
+​    ncb = c(nobase);
+
+​    B = A(:,baseVector);
+
+​    cb = c(baseVector);
+
+​    xb = invB<span style="color:#f92672">*</span>b;
+
+​    f = cb<span style="color:#f92672">*</span>xb;
+
+​    w = cb<span style="color:#f92672">*</span>invB;
+
+ 
+
+​    <span style="color:#66d9ef">for</span> i=<span style="color:#ae81ff">1</span>:length(nobase)
+
+​        sigma(i) = w<span style="color:#f92672">*</span>nB(:,i)<span style="color:#f92672">-</span>ncb(i);
+
+​    <span style="color:#66d9ef">end</span>
+
+​    [maxs,ind] = max(sigma);
+
+​    <span style="color:#66d9ef">if</span> maxs <span style="color:#f92672">&lt;</span>= <span style="color:#ae81ff">0</span>
+
+​        minf = cb<span style="color:#f92672">*</span>xb;
+
+​        vr = find(c<span style="color:#f92672">~=</span><span style="color:#ae81ff">0</span> ,<span style="color:#ae81ff">1</span>,<span style="color:#e6db74">&#39;last&#39;</span>);
+
+​        <span style="color:#66d9ef">for</span> l=<span style="color:#ae81ff">1</span>:vr
+
+​            <span style="color:#66d9ef">for</span> t=<span style="color:#ae81ff">1</span>:length(baseVector)
+
+​                <span style="color:#66d9ef">if</span>(baseVector(t)<span style="color:#f92672">==</span>l)
+
+​                    x(l)=xb(t);
+
+​                <span style="color:#66d9ef">end</span>
+
+​            <span style="color:#66d9ef">end</span>
+
+​        <span style="color:#66d9ef">end</span>
+
+​        bCon = <span style="color:#ae81ff">0</span>;
+
+​    <span style="color:#66d9ef">else</span>
+
+​        y = inv(B)<span style="color:#f92672">*</span>A(:,nobase(ind));
+
+​        <span style="color:#66d9ef">if</span> y <span style="color:#f92672">&lt;</span>= <span style="color:#ae81ff">0</span>
+
+​            disp(<span style="color:#e6db74">&#39;No solution!&#39;</span>);
+
+​        <span style="color:#66d9ef">else</span>
+
+​            minb = inf;
+
+​            chagB = <span style="color:#ae81ff">0</span>;
+
+​            <span style="color:#66d9ef">for</span> j=<span style="color:#ae81ff">1</span>:length(y)
+
+​                <span style="color:#66d9ef">if</span> y(j)<span style="color:#f92672">&gt;</span><span style="color:#ae81ff">0</span>
+
+​                    bz = xb(j)<span style="color:#f92672">/</span>y(j);
+
+​                    <span style="color:#66d9ef">if</span> bz<span style="color:#f92672">&lt;</span>minb
+
+​                        minb = bz;
+
+​                        chagB = j;
+
+​                    <span style="color:#66d9ef">end</span>
+
+​                <span style="color:#66d9ef">end</span>
+
+​            <span style="color:#66d9ef">end</span>
+
+​            tmp = baseVector(chagB);
+
+​            baseVector(chagB) = nobase(ind);
+
+​            nobase(ind) = tmp;
+
+​              
+
+​            <span style="color:#66d9ef">for</span> j=<span style="color:#ae81ff">1</span>:chagB<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>
+
+​                <span style="color:#66d9ef">if</span> y(j) <span style="color:#f92672">~=</span><span style="color:#ae81ff">0</span>
+
+​                    invB(j,:) = invB(j,:) <span style="color:#f92672">-</span> invB(chagB,:)<span style="color:#f92672">*</span>y(j)<span style="color:#f92672">/</span>y(chagB);
+
+​                <span style="color:#66d9ef">end</span>
+
+​            <span style="color:#66d9ef">end</span>
+
+​            <span style="color:#66d9ef">for</span> j=chagB<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>:length(y)
+
+​                <span style="color:#66d9ef">if</span> y(j) <span style="color:#f92672">~=</span><span style="color:#ae81ff">0</span>
+
+​                    invB(j,:) = invB(j,:) <span style="color:#f92672">-</span> invB(chagB,:)<span style="color:#f92672">*</span>y(j)<span style="color:#f92672">/</span>y(chagB);
+
+​                <span style="color:#66d9ef">end</span>
+
+​            <span style="color:#66d9ef">end</span>
+
+​            invB(chagB,:) =invB(chagB,:)<span style="color:#f92672">/</span>y(chagB);
+
+​        <span style="color:#66d9ef">end</span>
+
+​    <span style="color:#66d9ef">end</span>
+
+​    M = M <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>;
+
+​    <span style="color:#66d9ef">if</span> (M <span style="color:#f92672">==</span> <span style="color:#ae81ff">1000000</span>)
+
+​        disp(<span style="color:#e6db74">&#39;找不到最优解&#39;</span>);
+
+​        x = NaN;
+
+​        minf = NaN;
+
+​        <span style="color:#66d9ef">return</span>;
+
+​    <span style="color:#66d9ef">end</span>
+
+<span style="color:#66d9ef">end</span>
+
+ </code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-matlab" data-lang="matlab"> <span style="color:#f92672">**</span>main.m<span style="color:#f92672">**</span>
+
+c=[<span style="color:#ae81ff">31</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">31.5</span>,<span style="color:#ae81ff">28.5</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">29</span>,<span style="color:#ae81ff">27</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">27.5</span>,<span style="color:#ae81ff">29.5</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">29</span>,<span style="color:#ae81ff">25</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">25.5</span>,<span style="color:#ae81ff">24</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">25</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>];
+
+A=[ <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>;
+
+​    <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>;
+
+​    <span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>;
+
+​    <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>;
+
+​    <span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>;
+
+​    <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>;
+
+​    <span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>;
+
+​    <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>;
+
+​    <span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>;
+
+​    <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>;
+
+​    <span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>;
+
+​    <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>
+
+​    ];
+
+b=[<span style="color:#ae81ff">1200</span>;<span style="color:#ae81ff">300</span>;<span style="color:#ae81ff">1200</span>;<span style="color:#ae81ff">300</span>;<span style="color:#ae81ff">1200</span>;<span style="color:#ae81ff">300</span>;<span style="color:#ae81ff">1200</span>;<span style="color:#ae81ff">300</span>;<span style="color:#ae81ff">1200</span>;<span style="color:#ae81ff">300</span>;<span style="color:#ae81ff">1200</span>;<span style="color:#ae81ff">0</span>];
+
+ [x,minf] = ModifSimpleMthd(A,c,b,[<span style="color:#ae81ff">13</span> <span style="color:#ae81ff">14</span> <span style="color:#ae81ff">15</span> <span style="color:#ae81ff">16</span> <span style="color:#ae81ff">17</span> <span style="color:#ae81ff">18</span> <span style="color:#ae81ff">19</span> <span style="color:#ae81ff">20</span> <span style="color:#ae81ff">21</span> <span style="color:#ae81ff">22</span> <span style="color:#ae81ff">23</span> <span style="color:#ae81ff">24</span>]);</code></pre></div></article>
+    <footer class="post-footer">
+      
+      <ul class="post-tags">
+        
+          <li><a href="https://muzhi621.github.io/tags/%E8%AF%BE%E7%A8%8B"><span class="tag">课程</span></a></li>
+        
+          <li><a href="https://muzhi621.github.io/tags/%E8%AE%BA%E6%96%87"><span class="tag">论文</span></a></li>
+        
+      </ul>
+      
+      <p class="post-copyright">
+        © 本文作者：muzhi  版权所有本站文章均采用 CC BY-NC-SA 4.0 许可协议，请勿用于商业，转载注明出处！This post was published <strong>737189</strong> days ago, content in the post may be inaccurate, even wrong now, please take risk yourself.
+      </p>
+    </footer>
+    
+      <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "disqus_shortname" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      
+    
+  </section>
+  
+<footer class="site-footer">
+  <p>© 2017-2019 liwu&#39;s Blog</p>
+  <p>Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> with theme <a href="https://github.com/laozhu/hugo-nuo" target="_blank" rel="noopener">Nuo</a>.</p>
+  
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/smooth-scroll@15.0.0/dist/smooth-scroll.min.js"></script>
+
+
+
+<script async src="https://cdn.jsdelivr.net/npm/video.js@7.3.0/dist/video.min.js"></script>
+
+
+
+
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$'], ['\\[','\\]']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+      extensions: ["AMSmath.js", "AMSsymbols.js"] }
+    },
+  });
+</script>
+<script type="text/x-mathjax-config">
+  // Fix <code> tags after MathJax finishes running. This is a
+  // hack to overcome a shortcoming of Markdown. Discussion at
+  // https://github.com/mojombo/jekyll/issues/199
+  MathJax.Hub.Queue(() => {
+    MathJax.Hub.getAllJax().map(v => v.SourceElement().parentNode.className += ' has-jax');
+  });
+</script>
+
+
+
+<script src="https://muzhi621.github.io/scripts/index.min.js"></script>
+
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('\/service-worker.js').then(function() {
+      console.log('[ServiceWorker] Registered');
+    });
+  }
+</script>
+
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-XXXXXXXX-X', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+
+  </body>
+</html>

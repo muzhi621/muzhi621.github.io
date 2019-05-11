@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+
+  <meta charset="utf-8" />
+
+  
+  <title>嵌入式智能手环系统设计</title>
+
+  
+  
+  <link href="//cdn.jsdelivr.net" rel="dns-prefetch">
+  <link href="//cdnjs.cloudflare.com" rel="dns-prefetch">
+  
+  <link href="//at.alicdn.com" rel="dns-prefetch">
+  
+  <link href="//fonts.googleapis.com" rel="dns-prefetch">
+  <link href="//fonts.gstatic.com" rel="dns-prefetch">
+  <link href="///disqus.com" rel="dns-prefetch">
+  <link href="//c.disquscdn.com" rel="dns-prefetch">
+  
+  <link href="//www.google-analytics.com" rel="dns-prefetch">
+  
+
+  
+
+  
+  <meta name="author" content="muzhi">
+  <meta name="description" content="摘 要：物联网（IoT）正在推动包括可穿戴设备在内的互联商品的革命。物联网设备构成物理产品网络，将信息传输到连接互联网的服务器，用于数据聚合和存储，商业智能，决策以及所有连接的管理。这些设备正在开创嵌入式设计的新纪元，诸如如可穿戴智能手表和智能眼镜等迅速成为大事件热词，开发人员深入追求挖掘嵌入式世界，寻找更优化的嵌入式系统，以构建更多功能更节能且更具性能的产品智能可穿戴计算设备。
+">
+
+  
+  
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@twitter_username">
+    <meta name="twitter:title" content="嵌入式智能手环系统设计">
+    <meta name="twitter:description" content="摘 要：物联网（IoT）正在推动包括可穿戴设备在内的互联商品的革命。物联网设备构成物理产品网络，将信息传输到连接互联网的服务器，用于数据聚合和存储，商业智能，决策以及所有连接的管理。这些设备正在开创嵌入式设计的新纪元，诸如如可穿戴智能手表和智能眼镜等迅速成为大事件热词，开发人员深入追求挖掘嵌入式世界，寻找更优化的嵌入式系统，以构建更多功能更节能且更具性能的产品智能可穿戴计算设备。
+">
+    <meta name="twitter:image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1557570445937&di=73b3928e78e350ff0aa9a024c19fc38a&imgtype=0&src=http%3A%2F%2Fimg002.hc360.cn%2Fhb%2FMTQ2MjQ1NDIwNzk2NTEyNDc0MzgwMjk%3D.jpg">
+  
+
+  
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="嵌入式智能手环系统设计">
+  <meta property="og:description" content="摘 要：物联网（IoT）正在推动包括可穿戴设备在内的互联商品的革命。物联网设备构成物理产品网络，将信息传输到连接互联网的服务器，用于数据聚合和存储，商业智能，决策以及所有连接的管理。这些设备正在开创嵌入式设计的新纪元，诸如如可穿戴智能手表和智能眼镜等迅速成为大事件热词，开发人员深入追求挖掘嵌入式世界，寻找更优化的嵌入式系统，以构建更多功能更节能且更具性能的产品智能可穿戴计算设备。
+">
+  <meta property="og:url" content="https://muzhi621.github.io/2019/03/27/%E5%B5%8C%E5%85%A5%E5%BC%8F%E6%99%BA%E8%83%BD%E6%89%8B%E7%8E%AF%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/">
+  <meta property="og:image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1557570445937&di=73b3928e78e350ff0aa9a024c19fc38a&imgtype=0&src=http%3A%2F%2Fimg002.hc360.cn%2Fhb%2FMTQ2MjQ1NDIwNzk2NTEyNDc0MzgwMjk%3D.jpg">
+
+
+
+
+<meta name="generator" content="Hugo 0.55.5">
+
+
+<link rel="canonical" href="https://muzhi621.github.io/2019/03/27/%E5%B5%8C%E5%85%A5%E5%BC%8F%E6%99%BA%E8%83%BD%E6%89%8B%E7%8E%AF%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/">
+
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="format-detection" content="telephone=no,email=no,adress=no">
+<meta http-equiv="Cache-Control" content="no-transform">
+
+
+<meta name="robots" content="index,follow">
+<meta name="referrer" content="origin-when-cross-origin">
+<meta name="google-site-verification" content="_moDmnnBNVLBN1rzNxyGUGdPHE20YgbmrtzLIbxaWFc">
+<meta name="msvalidate.01" content="22596E34341DD1D17D6022C44647E587">
+
+
+
+
+
+<meta name="theme-color" content="#02b875">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="liwu&#39;s Blog">
+<meta name="msapplication-tooltip" content="liwu&#39;s Blog">
+<meta name='msapplication-navbutton-color' content="#02b875">
+<meta name="msapplication-TileColor" content="#02b875">
+<meta name="msapplication-TileImage" content="/icons/icon-144x144.png">
+<link rel="icon" href="https://muzhi621.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://muzhi621.github.io/icons/icon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://muzhi621.github.io/icons/icon-32x32.png">
+<link rel="icon" sizes="192x192" href="https://muzhi621.github.io/icons/icon-192x192.png">
+<link rel="apple-touch-icon" href="https://muzhi621.github.io/icons/icon-152x152.png">
+<link rel="manifest" href="https://muzhi621.github.io/manifest.json">
+
+
+<link rel="preload" href="https://muzhi621.github.io/styles/main-rendered.min.css" as="style">
+
+
+<link rel="preload" href="https://fonts.googleapis.com/css?family=Lobster" as="style">
+<link rel="preload" href="https://muzhi621.github.io/images/avatar.png" as="image">
+<link rel="preload" href="https://muzhi621.github.io/images/grey-prism.svg" as="image">
+
+
+<style>
+  body {
+    background: rgb(244, 243, 241) url('/images/grey-prism.svg') repeat fixed;
+  }
+</style>
+<link rel="stylesheet" href="https://muzhi621.github.io/styles/main-rendered.min.css">
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.2/dist/medium-zoom.min.js"></script>
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/video.js@7.3.0/dist/video-js.min.css">
+
+
+
+  
+  
+<!--[if lte IE 8]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/videojs-ie8@1.1.2/dist/videojs-ie8.min.js"></script>
+<![endif]-->
+
+<!--[if lte IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/eligrey-classlist-js-polyfill@1.2.20180112/classList.min.js"></script>
+<![endif]-->
+
+
+</head>
+  <body>
+    <div class="suspension">
+      <a role="button" aria-label="Go to top" title="Go to top" class="to-top is-hide"><span class="icon icon-up" aria-hidden="true"></span></a>
+      
+        
+	<a role="button" aria-label="Go to comments" title="Go to comments" class="to-comment" href="#disqus_thread"><span class="icon icon-comment" aria-hidden="true"></span></a>
+        
+      
+    </div>
+    
+    
+  <header class="site-header">
+  <img class="avatar" src="https://muzhi621.github.io/images/avatar.png" alt="Avatar">
+  
+  <h2 class="title">liwu&#39;s Blog</h2>
+  
+  <p class="subtitle">~ Keep It Simple &amp; Stupid ~</p>
+  <button class="menu-toggle" type="button" aria-label="Main Menu" aria-expanded="false" tab-index="0">
+    <span class="icon icon-menu" aria-hidden="true"></span>
+  </button>
+
+  <nav class="site-menu collapsed">
+    <h2 class="offscreen">Main Menu</h2>
+    <ul class="menu-list">
+      
+      
+      
+      
+        <li class="menu-item
+          
+          
+           is-active">
+          <a href="https://muzhi621.github.io/">首页</a>
+        </li>
+      
+        <li class="menu-item
+          
+          
+          ">
+          <a href="https://pan.myliwu.work">云盘</a>
+        </li>
+      
+        <li class="menu-item
+          
+          
+          ">
+          <a href="https://muzhi621.github.io/tags/">标签</a>
+        </li>
+      
+        <li class="menu-item
+          
+          
+          ">
+          <a href="https://muzhi621.github.io/links/">友链</a>
+        </li>
+      
+        <li class="menu-item
+          
+          
+          ">
+          <a href="https://muzhi621.github.io/about/">关于</a>
+        </li>
+      
+    </ul>
+  </nav>
+  <nav class="social-menu collapsed">
+    <h2 class="offscreen">Social Networks</h2>
+    <ul class="social-list"><li class="social-item">
+          <a href="mailto:muzhi621@qq.com" title="Email" aria-label="Email">
+            <span class="icon icon-email" aria-hidden="true"></span>
+          </a>
+        </li><li class="social-item">
+          <a href="//github.com/muzhi621" rel="me" title="GitHub" aria-label="GitHub">
+	    <span class="icon icon-github" aria-hidden="true"></span>
+          </a>
+        </li><li class="social-item">
+          <a href="//twitter.com/twitter_username" rel="me" title="Twitter" aria-label="Twitter">
+            <span class="icon icon-twitter" aria-hidden="true"></span>
+          </a>
+        </li><li class="social-item">
+          <a href="//weibo.com/weibo_username" rel="me" title="Weibo" aria-label="Weibo">
+            <span class="icon icon-weibo" aria-hidden="true"></span>
+          </a>
+        </li></ul>
+  </nav>
+</header>
+
+  <section class="main post-detail">
+    <header class="post-header">
+      <h1 class="post-title">嵌入式智能手环系统设计</h1>
+      <p class="post-meta">@muzhi · Mar 27, 2019 · 1 min read</p>
+    </header>
+    <article class="post-content"><p>摘  要：物联网（IoT）正在推动包括可穿戴设备在内的互联商品的革命。物联网设备构成物理产品网络，将信息传输到连接互联网的服务器，用于数据聚合和存储，商业智能，决策以及所有连接的管理。这些设备正在开创嵌入式设计的新纪元，诸如如可穿戴智能手表和智能眼镜等迅速成为大事件热词，开发人员深入追求挖掘嵌入式世界，寻找更优化的嵌入式系统，以构建更多功能更节能且更具性能的产品智能可穿戴计算设备。</p>
+
+<p><strong>关键词：物联网；智能手环；嵌入式；可穿戴</strong></p>
+
+<h1 id="1-引言">1 引言</h1>
+
+<p>​   可穿戴设备通常被定义为驻留在人体上并监控内部或外部行为的设备。它们通过本地网关，云连接以促进各种任务，或者可以根据手头的工作使用两者。它们可以用于特定目的（例如，心脏监测器），但是越来越多地整合多种功能（例如，心率腕带），甚至是功能齐全的应用平台（例如，Apple Watch，小米，华为等）。</p>
+
+<p>​   类似便携式产品已存在多年。在本世纪初，笔记本通过WiFi脱离了网线，第一代便携式产品诞生，随后便携式产品开始爆发式增长，如心率监测器和GPS导航系统。智能手机紧随其后，迅速成为第一个无处不在的互联产品。今天，我们正在经历可穿戴设备的体积和复杂性的爆炸式增长。</p>
+
+<p>​   可穿戴设备部分已经包括智能手表，健身和活动追踪器，血糖监测仪，植入式心脏监护仪，增强现实护目镜，智能头盔，智能鞋垫，个人定位产品等。对于这些功能日益强大的设备而言，未来生活充满无限可能。当然，其中一个要求是必须的，设备的功能将随着最终用户的期望而增加，因此性能和电池寿命和可靠性也必须不断提高。</p>
+
+<p>​   目前看来，智能手环应为发展最为迅速的新一代产品，其产业链已经趋于成熟，人们健康意识的不断提高，使用手环来检测身体健康数据正在渐渐成为大家的习惯；另一方面，从安全这个角度上看，老人与儿童也是最大的用户群，一款好用的手环，足以让用户以最快的速度找回走失的家人，并能为警方提供更详细的寻人线索。商业前景是广阔。</p>
+
+<h1 id="2-需求分析">2 需求分析</h1>
+
+<p>​   智能手环产品是面向市场和消费者，并且使用大范围年龄段，不同人群的要求，因此对于智能手环的需求也是多方面的，如下：</p>
+
+<ol>
+<li><p>美学：智能手环主要面向互联网年轻人群，很多人选择产品是外观美学的要求常常位列第一，因此对于智能手环的第一要求是美学上的，是时尚的，并与现有的时尚配饰（如饰品，手表和眼镜）融为一体。产品美学颜值非常重要。 其次对于界面UI的设计必须符合一定的美学要求。</p></li>
+
+<li><p>尺寸：随着智能手机的迅速发展到成熟，人们已经开始厌烦手机在某些方面的的不适用性，因此智能手环的设备尺寸必须很小，以便可以轻松地适应可穿戴。</p></li>
+
+<li><p>耐水性：智能手环必须适应人们使用环境，例如跑步，游泳，自行车，攀登等各种活动，设计时需考虑耐水性，譬如湿气和汗水的环境条件能否正常工作等。</p></li>
+
+<li><p>能量消耗：由于智能手环采用电池供电，因此降低设备的功耗延长待机时间及其重要。与其他移动设备诸如智能手机等不同，智能手环需要始终保持连接，因为智能手环都是监控设备。例如，智能手环需要始终显示时间并通过蓝牙等无线链接连接到手机以接收信息; 对计步器的功能需要连续计算步数并将其报告给手机应用程序; 同样，心率监测器需要始终监测和报告。然而，由于需要减小整体尺寸，电池容量本身就受到限制。因此，这些设备需要以超低功率运行以节省电池寿命。</p></li>
+
+<li><p>无线通信：无线连接包括连接的质量对于智能手环非常重要，因为它们需要与一个或多个其他设备进行交互。根据所提供的类型和功能，该设备需要支持不同的无线协议，如Wi-Fi，，蓝牙低）和移动数据网络，4G，5G等。并且可能根据其他需求需要该设备支持多种协议。例如，手表使用专有无线协议与心率监测通信。</p></li>
+
+<li><p>应用可拓展性：不同的用户有不同的需求，因此需要提供并支持不同应用APP功能使用。</p></li>
+</ol>
+
+<h1 id="3-功能设计">3 功能设计</h1>
+
+<ol>
+<li><p>记录功能：能随时随地记录用户的运动数据，功能包括计步器，卡路里消耗，天气预报，指南针和GPS 等。</p></li>
+
+<li><p>健康监测功能：包括功能心率监测，体温监测和睡眠监测，监测睡眠质量，随时掌握睡眠数据，提高睡眠质量。</p></li>
+
+<li><p>安全功能：包括有防盗、防丢功能，当手机远离您时，手环会以灯光、声音、震动等多种方式及时发出提醒。让您确保手机就在身边，减少焦虑感。</p></li>
+
+<li><p>提醒功能：主要提供智能手机同步（例如，短信，电话或电子邮件警报）和提醒。</p></li>
+
+<li><p>追踪功能：手机可以提示且手机会自动记录手环的地理位置。遇险警报。警报由用户的智能手机传输到指定的联系人。使用手势或者语音识别技术，手环与智能手机连接，提供命令以触发电话呼叫，激活智能手机定位追踪。</p></li>
+</ol>
+
+<h1 id="4-实现设计">4 实现设计</h1>
+
+<h2 id="4-1-框架设计">4.1 框架设计</h2>
+
+<p><img src="http://wx4.sinaimg.cn/mw690/00639ahCgy1g1hallbeuwj30om0o476k.jpg" alt="" /></p>
+
+<h2 id="4-2-传感器">4.2 传感器</h2>
+
+<p>​   传感器是智能手环的核心，也是手环输入数据的主要手段。智能手环的传感器与其他移动电子产品不同，因为需要提供独特的功能，如计步器，心率监测，湿度测试，紫外线测试和温度测试等。</p>
+
+<ul>
+<li><p>运动传感器：包括加速度，陀螺仪，地磁和大气压传感器，手机用户的运动数据。</p></li>
+
+<li><p>生物传感器：包括葡萄糖，血压，心电图，温度传感器，手机用户身体数据。</p></li>
+
+<li><p>环境传感器：例如，温度和湿度，气体，PH，紫外线，环境光，灰尘颗粒和压力传感器，以及麦克风等。手机用户周围环境数据。</p></li>
+</ul>
+
+<p>传感器收集数据并将其传输到CPU或显示处理器。</p>
+
+<h2 id="4-3-屏幕">4.3 屏幕</h2>
+
+<p>​   屏幕是智能手表的主要输入和输出组件。智能手表屏幕可分为两部分：显示屏和电容式触控面板。目前最常用的智能手环屏幕是电子墨水和LED屏幕，因为功耗低。</p>
+
+<h2 id="4-4-模块实现">4.4 模块实现</h2>
+
+<ol>
+<li><p>电池模块，设置为为在智能手环上安装的其余功能模块进行供电；内置充电电池和电源管理电路，对外设置有一个充电接口，可以在插入适配器后，为内部的电池充电。</p></li>
+
+<li><p>显示模块，设置显示对应的信息以提醒用户；</p></li>
+
+<li><p>控制模块，设置为响应用户操作，接收用户的操作，协调多种类型的功能模块之间的信息交互；</p></li>
+
+<li><p>无线通讯模块，设置为与外部设备进行信息交互；例如：蓝牙模块、WIFI模块等；通过蓝牙无线与智能移动终端连接，接收到来自于智能移动终端的未读短信或者未接电话等信息，在屏幕上给予用户提示；且可以将智能手环的数据同步到智能移动终端或个人计算机上，以便于对其进行存储或者做进一步的分析。</p></li>
+
+<li><p>感应模块，设置为使用传感器实时监测用户的状态信息，并根据状态信息向用户反馈提示信息；采集智能手环自身的运动信息，并根据这些运动信息判断出用户当前所处的状态，例如：睡眠、跑步、散步、骑车、开车、爬山、打球等，进而为用户做出适当的提醒，例如：喝水，休息等。</p></li>
+
+<li><p>语音模块，设置为与用户进行语音交互；</p></li>
+
+<li><p>震动模块，设置为采用震动的方式向用户发出提示；</p></li>
+
+<li><p>防护模块，设置为对总线进行防水和防尘保护。并增强手表的整体美感，提升佩戴手表的美观性。</p></li>
+</ol>
+
+<h2 id="4-5-操作系统">4.5 操作系统</h2>
+
+<p>​   根据所提供的功能，智能手环要特定的操作系统。设计配套使用的应用软件，以及满足大多数用户的使用功能。并且具有良好的用户界面（UI）系统。用户如何与智能手环交互是一个重要的考虑因素。交互应尽可能直观，以最大限度地降低复杂性。</p>
+
+<h1 id="4-测试分析">4 测试分析</h1>
+
+<h2 id="4-1-软件测试">4.1 软件测试</h2>
+
+<ol>
+<li><p>极限测试：应用稳定性，持续不间断工作。</p></li>
+
+<li><p>边界测试：应用程序安装，卸载极限测试。</p></li>
+
+<li><p>应用测试数据对运动身体数据测试与标准对比。应用能否正确使用允许打开蓝牙，摄像头，位置GPS，麦克风等。</p></li>
+
+<li><p>智能手环与手机登设备应用连接是否出现连接断开的可能。</p></li>
+
+<li><p>应用软件数据能否正确同步。</p></li>
+
+<li><p>应用软件提醒功能是否正常工作。</p></li>
+
+<li><p>能否查看检测数据。</p></li>
+
+<li><p>应用程序可以具有的不同数据状态在正常工作。</p></li>
+</ol>
+
+<h2 id="4-2-硬件测试">4.2 硬件测试</h2>
+
+<ol>
+<li><p>传感器测试：计步，睡眠，心率监测是够正常持续稳定性工作。</p></li>
+
+<li><p>连接测试：检查不同的连接类型，例如蓝牙，Wi-Fi，NFC是否正常持续稳定性连接。</p></li>
+
+<li><p>语音震动测试：测试软件能否使用语音以及马达震动功能。</p></li>
+
+<li><p>防护测试：对于设备的防水防尘以及防护程度测试。以及抗摔测试，包括不同使用环境中工作的极限测试。</p></li>
+
+<li><p>电源测试：电源功耗是否在设计使用时长范围内，充电测试是否安全，充电次数极限测试，充电时间测试。</p></li>
+
+<li><p>显示测试：屏幕是否显示内容，对于内容清晰度，颜色是否正常，在不同环境，诸如手上存在水等能否正确操作。</p></li>
+
+<li><p>控制测试：操作系统能否控制设备硬件进行工作。</p></li>
+</ol>
+
+<h2 id="4-3-单元测试">4.3  单元测试</h2>
+
+<p>​   对于功能模块与软件结合单一测试，是否能够正常工作与工作极限测试。以及工作环境适用性测试，错误反馈功能测试。</p>
+
+<h1 id="6-结束语">6 结束语</h1>
+
+<p>​   通过这个工作，了解嵌入式系统设计的基本流程，与产品设计过程中的规范问题，以及嵌入式产品设计过程中，课程出现的问题，和问题解决的过程。</p>
+
+<p><center> <b>
+     参考文献
+    </b> </center></p>
+
+<p>[1] 基于单片机的电池多点温度检测[J]. 余岑.  信息系统工程. 2017(07)</p>
+
+<p>[2] 智能手环心率测量系统的设计[J]. 孙超,王游司,陈洪燕,卢宇.  中小企业管理与科技(下旬刊). 2018(08)</p>
+
+<p>[3] 可穿戴设备产品开发设计研究[J]. 韩郭阳.  设计. 2018(01)</p>
+
+<p>[4] 智能穿戴为何智能?[J]. 冉叶兰.  大数据时代. 2018(02)</p>
+
+<p>[5] 腕戴式低功耗无线心率监测装置的研制[J]. 周聪聪,涂春龙,高云,王飞翔,何成,龚红伟,连平,叶学松.  浙江大学学报(工学版). 2015(04)</p>
+
+<p>[6] 基于蓝牙4.0的可穿戴心率监测仪设计[J]. 孙惠康,李庆之,焦良葆,陈瑞.  物联网技术. 2016(03)</p>
+
+<p>[7] 可穿戴式运动健康监护系统的研制[J]. 简婧,彭岚,付伟,叶俪玮,葛雨.  中国新技术新产品. 2018(12)</p>
+
+<p>[8] 可穿戴式心率检测系统的设计[J]. 张家盛,张加岭,禹东川,李杨韬.  自动化与仪器仪表. 2015(02)</p></article>
+    <footer class="post-footer">
+      
+      <ul class="post-tags">
+        
+          <li><a href="https://muzhi621.github.io/tags/%E8%AF%BE%E7%A8%8B"><span class="tag">课程</span></a></li>
+        
+          <li><a href="https://muzhi621.github.io/tags/%E8%AE%BA%E6%96%87"><span class="tag">论文</span></a></li>
+        
+          <li><a href="https://muzhi621.github.io/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F"><span class="tag">嵌入式</span></a></li>
+        
+      </ul>
+      
+      <p class="post-copyright">
+        © 本文作者：muzhi  版权所有本站文章均采用 CC BY-NC-SA 4.0 许可协议，请勿用于商业，转载注明出处！
+      </p>
+    </footer>
+    
+      <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "disqus_shortname" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      
+    
+  </section>
+  
+<footer class="site-footer">
+  <p>© 2017-2019 liwu&#39;s Blog</p>
+  <p>Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> with theme <a href="https://github.com/laozhu/hugo-nuo" target="_blank" rel="noopener">Nuo</a>.</p>
+  
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/smooth-scroll@15.0.0/dist/smooth-scroll.min.js"></script>
+
+
+
+<script async src="https://cdn.jsdelivr.net/npm/video.js@7.3.0/dist/video.min.js"></script>
+
+
+
+
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$'], ['\\[','\\]']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+      extensions: ["AMSmath.js", "AMSsymbols.js"] }
+    },
+  });
+</script>
+<script type="text/x-mathjax-config">
+  // Fix <code> tags after MathJax finishes running. This is a
+  // hack to overcome a shortcoming of Markdown. Discussion at
+  // https://github.com/mojombo/jekyll/issues/199
+  MathJax.Hub.Queue(() => {
+    MathJax.Hub.getAllJax().map(v => v.SourceElement().parentNode.className += ' has-jax');
+  });
+</script>
+
+
+
+<script src="https://muzhi621.github.io/scripts/index.min.js"></script>
+
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('\/service-worker.js').then(function() {
+      console.log('[ServiceWorker] Registered');
+    });
+  }
+</script>
+
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-XXXXXXXX-X', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+
+  </body>
+</html>

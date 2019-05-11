@@ -1,0 +1,3873 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+
+  <meta charset="utf-8" />
+
+  
+  <title>hexo NexT主题配置与美化</title>
+
+  
+  
+  <link href="//cdn.jsdelivr.net" rel="dns-prefetch">
+  <link href="//cdnjs.cloudflare.com" rel="dns-prefetch">
+  
+  <link href="//at.alicdn.com" rel="dns-prefetch">
+  
+  <link href="//fonts.googleapis.com" rel="dns-prefetch">
+  <link href="//fonts.gstatic.com" rel="dns-prefetch">
+  <link href="///disqus.com" rel="dns-prefetch">
+  <link href="//c.disquscdn.com" rel="dns-prefetch">
+  
+  <link href="//www.google-analytics.com" rel="dns-prefetch">
+  
+
+  
+
+  
+  <meta name="author" content="muzhi">
+  <meta name="description" content="Hexo 是高效的静态站点生成框架，她基于 Node.js。 通过 Hexo 你可以轻松地使用 Markdown 编写文章，除了 Markdown 本身的语法之外，还可以使用 Hexo 提供的 标签插件 来快速的插入特定形式的内容。在这篇文章中，假定你已经成功安装了 Hexo，并使用 Hexo 提供的命令创建了一个站点。
+">
+
+  
+  
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@twitter_username">
+    <meta name="twitter:title" content="hexo NexT主题配置与美化">
+    <meta name="twitter:description" content="Hexo 是高效的静态站点生成框架，她基于 Node.js。 通过 Hexo 你可以轻松地使用 Markdown 编写文章，除了 Markdown 本身的语法之外，还可以使用 Hexo 提供的 标签插件 来快速的插入特定形式的内容。在这篇文章中，假定你已经成功安装了 Hexo，并使用 Hexo 提供的命令创建了一个站点。
+">
+    <meta name="twitter:image" content="http://wx4.sinaimg.cn/mw690/00639ahCgy1g2jo924nnwj31hc0u0tbx.jpg">
+  
+
+  
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="hexo NexT主题配置与美化">
+  <meta property="og:description" content="Hexo 是高效的静态站点生成框架，她基于 Node.js。 通过 Hexo 你可以轻松地使用 Markdown 编写文章，除了 Markdown 本身的语法之外，还可以使用 Hexo 提供的 标签插件 来快速的插入特定形式的内容。在这篇文章中，假定你已经成功安装了 Hexo，并使用 Hexo 提供的命令创建了一个站点。
+">
+  <meta property="og:url" content="https://muzhi621.github.io/2019/04/07/hexo-next%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE%E4%B8%8E%E7%BE%8E%E5%8C%96/">
+  <meta property="og:image" content="http://wx4.sinaimg.cn/mw690/00639ahCgy1g2jo924nnwj31hc0u0tbx.jpg">
+
+
+
+
+<meta name="generator" content="Hugo 0.55.5">
+
+
+<link rel="canonical" href="https://muzhi621.github.io/2019/04/07/hexo-next%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE%E4%B8%8E%E7%BE%8E%E5%8C%96/">
+
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="format-detection" content="telephone=no,email=no,adress=no">
+<meta http-equiv="Cache-Control" content="no-transform">
+
+
+<meta name="robots" content="index,follow">
+<meta name="referrer" content="origin-when-cross-origin">
+<meta name="google-site-verification" content="_moDmnnBNVLBN1rzNxyGUGdPHE20YgbmrtzLIbxaWFc">
+<meta name="msvalidate.01" content="22596E34341DD1D17D6022C44647E587">
+
+
+
+
+
+<meta name="theme-color" content="#02b875">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="liwu&#39;s Blog">
+<meta name="msapplication-tooltip" content="liwu&#39;s Blog">
+<meta name='msapplication-navbutton-color' content="#02b875">
+<meta name="msapplication-TileColor" content="#02b875">
+<meta name="msapplication-TileImage" content="/icons/icon-144x144.png">
+<link rel="icon" href="https://muzhi621.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://muzhi621.github.io/icons/icon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://muzhi621.github.io/icons/icon-32x32.png">
+<link rel="icon" sizes="192x192" href="https://muzhi621.github.io/icons/icon-192x192.png">
+<link rel="apple-touch-icon" href="https://muzhi621.github.io/icons/icon-152x152.png">
+<link rel="manifest" href="https://muzhi621.github.io/manifest.json">
+
+
+<link rel="preload" href="https://muzhi621.github.io/styles/main-rendered.min.css" as="style">
+
+
+<link rel="preload" href="https://fonts.googleapis.com/css?family=Lobster" as="style">
+<link rel="preload" href="https://muzhi621.github.io/images/avatar.png" as="image">
+<link rel="preload" href="https://muzhi621.github.io/images/grey-prism.svg" as="image">
+
+
+<style>
+  body {
+    background: rgb(244, 243, 241) url('/images/grey-prism.svg') repeat fixed;
+  }
+</style>
+<link rel="stylesheet" href="https://muzhi621.github.io/styles/main-rendered.min.css">
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.2/dist/medium-zoom.min.js"></script>
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/video.js@7.3.0/dist/video-js.min.css">
+
+
+
+  
+  
+<!--[if lte IE 8]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/videojs-ie8@1.1.2/dist/videojs-ie8.min.js"></script>
+<![endif]-->
+
+<!--[if lte IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/eligrey-classlist-js-polyfill@1.2.20180112/classList.min.js"></script>
+<![endif]-->
+
+
+</head>
+  <body>
+    <div class="suspension">
+      <a role="button" aria-label="Go to top" title="Go to top" class="to-top is-hide"><span class="icon icon-up" aria-hidden="true"></span></a>
+      
+        
+	<a role="button" aria-label="Go to comments" title="Go to comments" class="to-comment" href="#disqus_thread"><span class="icon icon-comment" aria-hidden="true"></span></a>
+        
+      
+    </div>
+    
+    
+  <header class="site-header">
+  <img class="avatar" src="https://muzhi621.github.io/images/avatar.png" alt="Avatar">
+  
+  <h2 class="title">liwu&#39;s Blog</h2>
+  
+  <p class="subtitle">~ Keep It Simple &amp; Stupid ~</p>
+  <button class="menu-toggle" type="button" aria-label="Main Menu" aria-expanded="false" tab-index="0">
+    <span class="icon icon-menu" aria-hidden="true"></span>
+  </button>
+
+  <nav class="site-menu collapsed">
+    <h2 class="offscreen">Main Menu</h2>
+    <ul class="menu-list">
+      
+      
+      
+      
+        <li class="menu-item
+          
+          
+           is-active">
+          <a href="https://muzhi621.github.io/">首页</a>
+        </li>
+      
+        <li class="menu-item
+          
+          
+          ">
+          <a href="https://pan.myliwu.work">云盘</a>
+        </li>
+      
+        <li class="menu-item
+          
+          
+          ">
+          <a href="https://muzhi621.github.io/tags/">标签</a>
+        </li>
+      
+        <li class="menu-item
+          
+          
+          ">
+          <a href="https://muzhi621.github.io/links/">友链</a>
+        </li>
+      
+        <li class="menu-item
+          
+          
+          ">
+          <a href="https://muzhi621.github.io/about/">关于</a>
+        </li>
+      
+    </ul>
+  </nav>
+  <nav class="social-menu collapsed">
+    <h2 class="offscreen">Social Networks</h2>
+    <ul class="social-list"><li class="social-item">
+          <a href="mailto:muzhi621@qq.com" title="Email" aria-label="Email">
+            <span class="icon icon-email" aria-hidden="true"></span>
+          </a>
+        </li><li class="social-item">
+          <a href="//github.com/muzhi621" rel="me" title="GitHub" aria-label="GitHub">
+	    <span class="icon icon-github" aria-hidden="true"></span>
+          </a>
+        </li><li class="social-item">
+          <a href="//twitter.com/twitter_username" rel="me" title="Twitter" aria-label="Twitter">
+            <span class="icon icon-twitter" aria-hidden="true"></span>
+          </a>
+        </li><li class="social-item">
+          <a href="//weibo.com/weibo_username" rel="me" title="Weibo" aria-label="Weibo">
+            <span class="icon icon-weibo" aria-hidden="true"></span>
+          </a>
+        </li></ul>
+  </nav>
+</header>
+
+  <section class="main post-detail">
+    <header class="post-header">
+      <h1 class="post-title">hexo NexT主题配置与美化</h1>
+      <p class="post-meta">@muzhi · Apr 7, 2019 · 37 min read</p>
+    </header>
+    <article class="post-content"><p>Hexo 是高效的静态站点生成框架，她基于 Node.js。 通过 Hexo 你可以轻松地使用 Markdown 编写文章，除了 Markdown 本身的语法之外，还可以使用 Hexo 提供的 标签插件 来快速的插入特定形式的内容。在这篇文章中，假定你已经成功安装了 Hexo，并使用 Hexo 提供的命令创建了一个站点。</p>
+
+<h2 id="1-页面底部添加网站运行时间">1. 页面底部添加网站运行时间</h2>
+
+<ol>
+<li><p>打开<code>themes/next/_config.yml</code>，添加</p>
+
+<pre><code># -------------------------------------------------------------
+# web run time
+# 这是网站开始运行的时间，展示网站运行了多长时间。
+# 格式, 2018-02-13 15:00:00. 如果个数只有一位，需要补零。
+runtime:
+enable: true
+year: 2018
+month: 02
+day: 13
+hour: 15
+minute: 00
+second: 00
+</code></pre></li>
+
+<li><p>在<code>themes\next6\layout\</code>下新建<code>web-runtime.swig</code>，写入如下内容，保存。</p>
+
+<pre><code>&lt;div&gt;
+  &lt;span id=&quot;sitetime&quot;&gt;&lt;/span&gt;
+  // 这里我没有好办法吧swig的值传到JavaScript代码中。如果您会，请帮我改进。
+  &lt;span id=&quot;year&quot; style=&quot;display:none&quot;&gt;{{theme.footer.runtime.year}}&lt;/span&gt; 
+  &lt;span id=&quot;month&quot; style=&quot;display:none&quot;&gt;{{theme.footer.runtime.month}}&lt;/span&gt;   
+  &lt;span id=&quot;day&quot; style=&quot;display:none&quot;&gt;{{theme.footer.runtime.day}}&lt;/span&gt;   
+  &lt;span id=&quot;hour&quot; style=&quot;display:none&quot;&gt;{{theme.footer.runtime.hour}}&lt;/span&gt;   
+  &lt;span id=&quot;minute&quot; style=&quot;display:none&quot;&gt;{{theme.footer.runtime.minute}}&lt;/span&gt;   
+  &lt;span id=&quot;second&quot; style=&quot;display:none&quot;&gt;{{theme.footer.runtime.second}}&lt;/span&gt;   
+&lt;script language=javascript&gt;
+function siteTime(){        
+    window.setTimeout(&quot;siteTime()&quot;, 1000);
+    var seconds = 1000;
+    var minutes = seconds * 60;
+    var hours = minutes * 60;
+    var days = hours * 24;
+    var years = days * 365;
+    var today = new Date();
+    var todayYear = today.getFullYear();
+    var todayMonth = today.getMonth()+1;
+    var todayDate = today.getDate();
+    var todayHour = today.getHours();
+    var todayMinute = today.getMinutes();
+    var todaySecond = today.getSeconds();
+    /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+    year - 作为date对象的年份，为4位年份值
+    month - 0-11之间的整数，做为date对象的月份
+    day - 1-31之间的整数，做为date对象的天数
+    hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+    minutes - 0-59之间的整数，做为date对象的分钟数
+    seconds - 0-59之间的整数，做为date对象的秒数
+    microseconds - 0-999之间的整数，做为date对象的毫秒数 */        
+    var year = document.getElementById(&quot;year&quot;).innerHTML;
+    var month = document.getElementById(&quot;month&quot;).innerHTML;
+    var day = document.getElementById(&quot;day&quot;).innerHTML;
+    var hour = document.getElementById(&quot;hour&quot;).innerHTML;
+    var minute = document.getElementById(&quot;minute&quot;).innerHTML;
+    var second = document.getElementById(&quot;second&quot;).innerHTML;//北京时间2018-2-13 00:00:00
+    var t1 = Date.UTC(year,month,day,hour,minute,second); 
+    var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
+    var diff = t2-t1;
+    var diffYears = Math.floor(diff/years);
+    var diffDays = Math.floor((diff/days)-diffYears*365);
+    var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
+    var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
+    var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
+    if(diffYears==0){
+    document.getElementById(&quot;sitetime&quot;).innerHTML=&quot; Website has run  &quot;/*+diffYears+&quot; year &quot;*/+diffDays+&quot; days &quot;+diffHours+&quot; h &quot;+diffMinutes+&quot; min &quot;+diffSeconds+&quot; s&quot;;
+    } else{
+    document.getElementById(&quot;sitetime&quot;).innerHTML=&quot; Website has run  &quot;+diffYears+&quot; year &quot;+diffDays+&quot; days &quot;+diffHours+&quot; h &quot;+diffMinutes+&quot; min &quot;+diffSeconds+&quot; s&quot;;
+    }
+}
+//siteTime(document.getElementById(&quot;year&quot;).innerHTML,document.getElementById(&quot;year&quot;).innerHTML,document.getElementById(&quot;year&quot;).innerHTML,document.getElementById(&quot;year&quot;).innerHTML,document.getElementById(&quot;year&quot;).innerHTML,0);
+siteTime();
+&lt;/script&gt;
+&lt;/div&gt;
+</code></pre></li>
+
+<li><p>打开<code>themes\next6\_layout\footer.swig</code>，在您想展示的位置，比如备案代码之前，加入如下内容。</p>
+
+<pre><code>{% if theme.footer.runtime.enable %}
+ {% include 'web-runtime.swig' %}  
+{% endif %}
+</code></pre></li>
+
+<li><p>结束，刷新网页查看效果。</p></li>
+</ol>
+
+<h2 id="2-文章结束处添加感谢阅读的提">2. 文章结束处添加感谢阅读的提</h2>
+
+<ol>
+<li><p>打开<code>themes/next/_config.yml</code>，添加</p>
+
+<pre><code># At the end of the article, show thanks for reading
+end_info:
+ enable: true
+ start_info: -------The end of this article
+ icon: paw
+ end_info: Thank you for your reading-------
+</code></pre></li>
+
+<li><p>在<code>themes\next6\_macro\</code>下新建<code>passage-end-tag.swig</code>，写入如下内容，保存。</p>
+
+<pre><code>&lt;div&gt;
+  {% if not is_index %}
+    &lt;div style=&quot;text-align:center;color: #ccc;font-size:14px;&quot;&gt;{{theme.end_info.start_info}}&amp;nbsp;&lt;i class=&quot;fa fa-{{ theme.end_info.icon }}&quot;&gt;&lt;/i&gt;&amp;nbsp;{{theme.end_info.end_info}}&lt;/div&gt;
+{% endif %}
+&lt;/div&gt;
+</code></pre></li>
+
+<li><p>打开<code>themes\next6\_macro\post.swig</code>，在如下代码(相关文章)之前，</p>
+
+<pre><code>{% if theme.related_posts.enable and (theme.related_posts.display_in_home or not is_index) %}
+    {% include 'post-related.swig' with { post: post } %}
+  {% endif %}
+</code></pre></li>
+</ol>
+
+<p>加入</p>
+
+<pre><code>   &lt;div&gt;
+        {% if not is_index and theme.end_info.enable %}
+          {% include 'passage-end-tag.swig' %}
+        {% endif %}
+      &lt;/div&gt;
+</code></pre>
+
+<ol>
+<li>结束，刷新网页查看效果</li>
+</ol>
+
+<h2 id="3-文章中添加对应的多语言版本的链接">3. 文章中添加对应的多语言版本的链接</h2>
+
+<p>这个功能需要手动设置对应文章的<code>abbrlink</code>一致。建议在本地先编译一个语言版本的文件，然后手动修改另一个版本的文章的链接。</p>
+
+<ol>
+<li><p>打开<code>themes/next/_config.yml</code>，添加</p>
+
+<pre><code># Go to another language Page
+  translation:
+     enable: true
+     language: English  # language name
+     icon: globe
+     info: 英文版本 
+     url: https://en.xian6ge.cn # Destination URL
+</code></pre></li>
+
+<li><p>在<code>themes\next6\_partials\</code>下新建<code>post-tran.swig</code>，写入如下内容，保存。</p>
+
+<pre><code>&lt;div&gt;
+  &lt;ul class=&quot;post-copyright&quot;&gt;
+&lt;li class=&quot;post-copyright-link&quot;&gt;
+&lt;strong&gt;&lt;i class=&quot;fa fa-{{ theme.translation.icon }}&quot;&gt;&lt;/i&gt; {{ theme.translation.language + __('symbol.colon') }}&lt;/strong&gt;
+&lt;span id=&quot;url&quot; style=&quot;display:none&quot;&gt;{{theme.translation.url}}&lt;/span&gt; 
+&lt;span id=&quot;path&quot; style=&quot;display:none&quot;&gt;{{post.permalink}}&lt;/span&gt; 
+&lt;span id=&quot;info&quot; style=&quot;display:none&quot;&gt;{{theme.translation.info}}&lt;/span&gt; 
+&lt;span id=&quot;goto&quot;&gt;&lt;/span&gt; 
+&lt;/li&gt;
+&lt;/ul&gt;
+   
+//我不知道怎么整理链接，所以只能用JavaScript重写。
+&lt;script language=javascript&gt;
+var url = document.getElementById(&quot;url&quot;).innerHTML;
+var path = document.getElementById(&quot;path&quot;).innerHTML;
+var info = document.getElementById(&quot;info&quot;).innerHTML;
+path=GetUrlRelativePath(path);
+if(info.length==0){
+infos= url+path;
+}
+else{
+infos=info;
+}
+var str = &quot;&lt;a href='&quot;+url+path+&quot;'&gt;&quot;+infos+&quot;&lt;/a&gt;&quot;
+console.log(str);
+document.getElementById(&quot;goto&quot;).innerHTML=str;
+   
+　　function GetUrlRelativePath()
+　　{
+　　　　var url = document.location.toString();
+　　　　var arrUrl = url.split(&quot;//&quot;);
+   
+　　　　var start = arrUrl[1].indexOf(&quot;/&quot;);
+　　　　var relUrl = arrUrl[1].substring(start);//stop省略，截取从start开始到结尾的所有字符
+   
+　　　　if(relUrl.indexOf(&quot;?&quot;) != -1){
+　　　　　　relUrl = relUrl.split(&quot;?&quot;)[0];
+　　　　}
+　　　　return relUrl;
+　　}
+&lt;/script&gt;
+</code></pre></li>
+
+<li><p>打开<code>themes\next6\_macro\post.swig</code>，在POST BODY之前，加入</p>
+
+<pre><code>{% if theme.translation.enable and not is_index %}
+ &lt;div&gt;
+      {% include '../_partials/post-tran.swig' with { post: post } %}
+      &lt;br/&gt;
+ &lt;/div&gt;
+{% endif %}
+</code></pre></li>
+
+<li><p>结束，刷新网页查看效果</p></li>
+</ol>
+
+<h2 id="4-解决左边工具栏上无法跳转到外部链接的问题">4. 解决左边工具栏上无法跳转到外部链接的问题</h2>
+
+<p>由于NexT6做了设置，左边工具栏上的所有链接将会自动在前面添加上当前域名。对于，“首页”，“关于”这样的链接没有问题。但如果要添加上外链，例如英文页面：<code>https:\\en.myliwu.work</code>，会被自动编译为<code>https:\\en.myliwu.work\https\en.myliwu.work</code>，造成跳转出错。为此，我们可以采用一个折中的办法。</p>
+
+<p>在<code>hexo\source</code>下建立一个<code>en.html</code>文件，在里面通过JavaScript代码跳转。但这样会遇到一个问题，Hexo会编译所有文件，造成其中的Js代码失效。因此，在前面添加<code>layout: false</code>设置，告诉编译器不要编译该HTML文件。具体代码如下。</p>
+
+<pre><code>layout: false
+title: &quot;XianliuGe - Eternal charm, Endless sound.&quot;
+date: 2018-11-13 09:12:12
+---
+&lt;!--上述title采用对应网站的title，以减少跳转时的突兀感。--&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+
+    &lt;head&gt;
+
+        &lt;meta charset=&quot;utf-8&quot;&gt;
+        &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+        &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+        &lt;title&gt;XianliuGe - Eternal charm, Endless sound.&lt;/title&gt;
+        &lt;script type=&quot;text/javascript&quot;&gt;
+            window.location.href = &quot;https://en.myliwu.work&quot;;
+        &lt;/script&gt;
+        &lt;!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries --&gt;
+        &lt;!-- WARNING: Respond.js doesn't work if you view the page via file:// --&gt;
+        &lt;!--[if lt IE 9]&gt;
+            &lt;script src=&quot;https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js&quot;&gt;&lt;/script&gt;
+            &lt;script src=&quot;https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js&quot;&gt;&lt;/script&gt;
+        &lt;![endif]--&gt;
+
+        &lt;!--[if gte IE 9]&gt;
+            &lt;style type=&quot;text/css&quot;&gt;
+                .gradient {
+                    filter: none;
+                }
+            &lt;/style&gt;
+        &lt;![endif]--&gt;
+
+        &lt;!-- Favicon and touch icons --&gt;
+        &lt;!-- &lt;link rel=&quot;shortcut icon&quot; href=&quot;assets/ico/favicon.png&quot;&gt;
+        &lt;link rel=&quot;apple-touch-icon-precomposed&quot; sizes=&quot;144x144&quot; href=&quot;assets/ico/apple-touch-icon-144-precomposed.png&quot;&gt;
+        &lt;link rel=&quot;apple-touch-icon-precomposed&quot; sizes=&quot;114x114&quot; href=&quot;assets/ico/apple-touch-icon-114-precomposed.png&quot;&gt;
+        &lt;link rel=&quot;apple-touch-icon-precomposed&quot; sizes=&quot;72x72&quot; href=&quot;assets/ico/apple-touch-icon-72-precomposed.png&quot;&gt;
+        &lt;link rel=&quot;apple-touch-icon-precomposed&quot; href=&quot;assets/ico/apple-touch-icon-57-precomposed.png&quot;&gt; --&gt;
+
+    &lt;/head&gt;
+
+    &lt;body&gt;
+
+        &lt;!-- Loader --&gt;
+        &lt;h1&gt;前往英文版&lt;/h1&gt;
+        &lt;h2&gt;Go to XianliuGe for English&lt;/h2&gt;        
+
+    &lt;/body&gt;
+
+&lt;/html&gt;
+</code></pre>
+
+<h2 id="5-更新提示">5. 更新提示</h2>
+
+<p>更新会有不确定因素，</p>
+
+<h4 id="其它更新">其它更新</h4>
+
+<ul>
+<li><p>npm 更新全局安装的包：</p>
+
+<pre><code>npm update -g
+</code></pre></li>
+
+<li><p>npm 更新站点文件夹根目录下安装的依赖包：</p>
+
+<pre><code>所在目录：~/blog/npm update
+</code></pre></li>
+
+<li><p>更新 npm 它自己：</p>
+
+<pre><code>npm install npm -g
+</code></pre></li>
+
+<li><p>更新 Node.js 到最新版：</p>
+
+<pre><code>npm install n -g
+
+n latest
+</code></pre></li>
+</ul>
+
+<h4 id="更新主题">更新主题</h4>
+
+<p>进入主题文件夹根目录，然后<code>git pull</code>，发现报错，怎么解决呢？可以先浏览<a href="http://www.01happy.com/git-resolve-conflicts/">这篇文章</a>，然后参考我的操作。</p>
+
+<p>先到主题文件夹根目录：</p>
+
+<pre><code>所在目录：~/blog/themes/next/git pull
+</code></pre>
+
+<p>会发现报错，由于我们更改了相关文件，更新不成功，所以要将本地的所有修改先暂时存储起来：</p>
+
+<pre><code>所在目录：~/blog/themes/next/git stash
+</code></pre>
+
+<p>然后再试一下：</p>
+
+<pre><code>所在目录：~/blog/themes/next/git pull
+</code></pre>
+
+<p>可以了吧，接下来还原暂时存储的内容（即保存我们的所有修改）：</p>
+
+<pre><code>所在目录：~/blog/themes/next/git stash pop
+</code></pre>
+
+<p>如果报<code>CONFLICT</code>，是因为 Git 无法确定一些改动，所以要我们手动解决文件中冲突的部分，这个比较麻烦，可以参考我下面的流程。</p>
+
+<p>首先打开报<code>CONFLICT</code>的文件，Ctrl + F 搜索<code>&gt;&gt;&gt;&gt;&gt;&gt;&gt; Stashed changes</code>，查看从此处到<code>=======</code>之间保存的代码，回忆一下自己当时更改了什么，是为了达到什么功能。</p>
+
+<p>然后查看<code>=======</code>到<code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; Updated upstream</code>之间更新的代码，与下面保存的代码进行对比（也请浏览下所标出代码前后的代码）：</p>
+
+<ol>
+<li>如果改动较大，可能是主题增加了新功能，建议保留更新的代码，然后更改一下，达到自己想要在保存的代码中实现的功能，最后删除保存的代码。</li>
+<li>如果改动较小，建议还是保留更新的代码，然后更改一下，最后删除保存的代码。</li>
+</ol>
+
+<blockquote>
+<p>要是自己不确定，一定记得将<code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; Updated upstream</code>到<code>&gt;&gt;&gt;&gt;&gt;&gt;&gt; Stashed changes</code>之间的代码另存备份，然后进行调试，直到最后确定没有问题。</p>
+</blockquote>
+
+<p>最后：</p>
+
+<pre><code>所在目录：~/blog/themes/next/root@kali:~/blog/themes/next# git pull
+error: Pulling is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm &lt;file&gt;'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+</code></pre>
+
+<p>又报错了</p>
+
+<p>先查看：</p>
+
+<pre><code>所在目录：~/blog/themes/next/root@kali:~/blog/themes/next# git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use &quot;git reset HEAD &lt;file&gt;...&quot; to unstage)
+
+    modified:   layout/_custom/header.swig
+    modified:   layout/_custom/sidebar.swig
+    modified:   layout/_layout.swig
+    modified:   layout/category.swig
+    modified:   layout/tag.swig
+    modified:   source/css/_common/components/post/post-meta.styl
+    modified:   source/css/_common/components/post/post-nav.styl
+    modified:   source/css/_common/scaffolding/base.styl
+    modified:   source/css/_custom/custom.styl
+    deleted:    source/images/avatar.gif
+    modified:   source/lib/Han/dist/han.min.css
+
+Unmerged paths:
+  (use &quot;git reset HEAD &lt;file&gt;...&quot; to unstage)
+  (use &quot;git add &lt;file&gt;...&quot; to mark resolution)
+
+    both modified:   _config.yml
+    both modified:   languages/zh-Hans.yml
+    both modified:   layout/_macro/post-copyright.swig
+    both modified:   layout/_macro/post.swig
+    both modified:   layout/_macro/sidebar.swig
+    both modified:   layout/_partials/footer.swig
+    both modified:   layout/page.swig
+    both modified:   source/css/_variables/base.styl
+
+Untracked files:
+  (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)
+
+    layout/_macro/passage-end-tag.swig
+    source/js/src/love.js
+</code></pre>
+
+<p>看下面<code>Unmerged paths</code>，说<code>git reset HEAD &lt;file&gt;...</code>来取消修改（大概），<code>git add &lt;file&gt;...</code>来 mark 决定（大概），我们当然要保存这些文件的更改，所以：</p>
+
+<pre><code>所在目录：~/blog/themes/next/root@kali:~/blog/themes/next# git add _config.yml languages/zh-Hans.yml layout/_macro/post-copyright.swig layout/_macro/post.swig layout/_macro/sidebar.swig layout/_partials/footer.swig layout/page.swig source/css/_variables/base.styl layout/_macro/passage-end-tag.swig source/js/src/love.js
+</code></pre>
+
+<p>顺便把新加的<code>passage-end-tag.swig</code>和<code>love.js</code>也加进去，最后再来试一下吧：</p>
+
+<pre><code>所在目录：~/blog/themes/next/root@kali:~/blog/themes/next# git pull
+Already up to date.
+</code></pre>
+
+<p>哇，成功更新主题！</p>
+
+<blockquote>
+<p>注意：更新有风险，一定要谨慎处理文件中冲突的部分！</p>
+
+<p>另外：如果更新 NexT 主题后，配置文件有些新功能不会配置，可以查看 <a href="https://github.com/iissnan/hexo-theme-next/releases">Releases</a> 页面，去里面找说明。</p>
+</blockquote>
+
+<h2 id="6-站点配置文件">6. 站点配置文件</h2>
+
+<h2 id="请先查看-hexo-官方文档-https-hexo-io-zh-cn-docs-configuration-html-再查看下面我贴出的-如果这样后你还是对有些地方比较懵-可以自行-google">请先查看 <a href="https://hexo.io/zh-cn/docs/configuration.html">Hexo 官方文档</a>，再查看下面我贴出的，如果这样后你还是对有些地方比较懵，可以自行 Google。</h2>
+
+<p>如果你的文件中没有相关内容，请勿直接添加，且所有的<code>:</code>都为英文字符，它后面都有一个空格。</p>
+
+<pre><code>[2017.11.14 更新] 文件位置：~/blog/_config.yml# Hexo Configuration
+## Docs: https://hexo.io/docs/configuration.html
+## Source: https://github.com/hexojs/hexo/
+
+# Site
+title: muzhi
+subtitle: 
+description: 
+author: muzhi
+language: zh-CN
+timezone:
+
+# URL
+url: https://myliwu.work/
+root: /
+# 博客文章的 URL 结构，请务必写文章之前就想好！
+# 详细参数请查看：https://hexo.io/docs/permalinks.html
+permalink: :category/:year/:month/:day/:title.html
+permalink_defaults:
+
+# Directory
+source_dir: source
+public_dir: public
+tag_dir: tags
+archive_dir: archives
+category_dir: categories
+code_dir: downloads/code
+i18n_dir: :lang
+skip_render:
+
+# Writing
+new_post_name: :title.md # File name of new posts
+default_layout: post
+titlecase: false # Transform title into titlecase
+external_link: true # Open external links in new tab
+filename_case: 0
+render_drafts: false
+post_asset_folder: false
+relative_link: false
+future: true
+# 代码高亮设置
+highlight:
+  enable: true
+  line_number: true
+# 代码自动高亮
+  auto_detect: true
+  tab_replace:
+
+# Home page setting
+# path: Root path for your blogs index page. (default = '')
+# per_page: Posts displayed per page. (0 = disable pagination)
+# order_by: Posts order. (Order by date descending by default)
+index_generator:
+  path: ''
+  per_page: 10
+  order_by: -date
+
+# Category &amp; Tag
+default_category: uncategorized
+# URL 中的分类和标签「翻译」成英文
+# 见：https://github.com/hexojs/hexo/issues/1162
+category_map:
+tag_map:
+
+# Date / Time format
+## Hexo uses Moment.js to parse and display date
+## You can customize the date format as defined in
+## http://momentjs.com/docs/#/displaying/format/
+date_format: YYYY-MM-DD
+time_format: HH:mm:ss
+
+# Pagination
+## Set per_page to 0 to disable pagination
+per_page: 10
+pagination_dir: page
+
+## 修改归档页面、某一分类页面、某一标签页面的显示篇数
+## 参考：http://theme-next.iissnan.com/faqs.html#setting-page-size
+archive_generator:
+  per_page: 0
+  yearly: false
+  monthly: false
+  daily: false
+
+category_generator:
+  per_page: 0
+
+tag_generator:
+  per_page: 0
+
+# Extensions
+## Plugins: https://hexo.io/plugins/
+# RSS，要先进入站点文件夹根目录安装插件
+# npm install hexo-generator-feed --save 即可
+# 无需更多配置
+# 参数说明查看 README：https://github.com/hexojs/hexo-generator-feed
+feed:
+  type: atom
+  path: atom.xml
+# 文章数，0 为全部
+  limit: 0
+  hub:
+# 是否包含文章内容
+  content: true
+
+githubEmojis:
+  enable: true
+  idName: github-emoji
+  unicode: false
+  styles:
+  localEmojis:
+
+## Themes: https://hexo.io/themes/
+# 主题配置
+theme: next
+
+# Deployment
+## Docs: https://hexo.io/docs/deployment.html
+deploy:
+  type: git
+  repository: https://github.com/reuixiy/reuixiy.github.io.git
+  branch: master
+</code></pre>
+
+<h2 id="7-主题配置文件">7. 主题配置文件</h2>
+
+<p>如果你的主题不是 NexT，那么请另 Google。建议先查看 <a href="http://theme-next.iissnan.com/getting-started.html">NexT 官方文档</a>，写的很好，多逗留会没坏处。</p>
+
+<pre><code># ---------------------------------------------------------------
+# Theme Core Configuration Settings
+# ---------------------------------------------------------------
+
+# 更新相关，参考：
+# https://github.com/iissnan/hexo-theme-next/issues/328
+override: false
+
+# ---------------------------------------------------------------
+# Site Information Settings
+# ---------------------------------------------------------------
+
+# 站点图标，直接去 https://realfavicongenerator.net
+# 选项弄好后，下载压缩包，解压复制粘贴
+# 建议放在 hexo-site/source/images/ 里
+# 这样可以避免更新 NexT 主题的时候遇到麻烦
+# 最后记得要稍微改下文件名，与下面的保持一致
+favicon:
+  small: /images/favicon-16x16.png
+  medium: /images/favicon-32x32.png
+  apple_touch_icon: /images/apple-touch-icon.png
+  safari_pinned_tab: /images/safari-pinned-tab.svg
+  android_manifest: /images/manifest.json
+  ms_browserconfig: /images/browserconfig.xml
+
+# Set default keywords (Use a comma to separate)
+# 站点关键字，利于 SEO 大概，记得用英文逗号分隔
+keywords: reuixiy,哲学,Hexo,博客,Coldplay
+
+# Set rss to false to disable feed link.
+# Leave rss as empty to use site's feed link.
+# Set rss to specific value if you have burned your feed already.
+# 则无需在这添加任何东西
+rss:
+
+footer:
+# 页脚配置
+  # Specify the date when the site was setup.
+  # If not defined, current year will be used.
+  # 建站年份
+  since: 2017
+
+  # Icon between year and copyright info.
+  # 年份后面的图标，为 Font Awesome 图标
+  # 自己去纠结 https://fontawesome.com/v4.7.0/
+  # 然后更改名字就行，下面的有关图标的设置都一样
+  icon: heart
+
+  # If not defined, will be used `author` from Hexo main config.
+  # 如果不定义，默认用站点配置文件的 author 名
+  copyright:
+  # -------------------------------------------------------------
+  # Hexo link (Powered by Hexo).
+  # Hexo 的链接
+  powered: false
+
+  theme:
+    # Theme &amp; scheme info link (Theme - NexT.scheme).
+    enable: false
+    # Version info of NexT after scheme info (vX.X.X).
+    version: false
+  # -------------------------------------------------------------
+  # Any custom text can be defined here.
+  # 自定义内容，要加记得把前面的 # 去掉
+  #custom_text:
+
+# ---------------------------------------------------------------
+# SEO Settings
+# ---------------------------------------------------------------
+
+canonical: true
+
+seo: false
+
+# If true, will add site-subtitle to index page, added in main hexo config.
+# subtitle: Subtitle
+index_with_subtitle: false
+
+
+# ---------------------------------------------------------------
+# Menu Settings
+# ---------------------------------------------------------------
+
+# 菜单设置 || 菜单图标设置（图标上面说了，不重复）
+# 项目换行可以更改显示顺序
+# 如果这个项前会显示 .menu
+# 解决方法：编辑 ~/blog/themes/next/languages 下的相应文件
+# 比如添加一个「留言」菜单，站点配置文件的 language 是 zh-CN
+# 则编辑 zh-CN.yml，在 menu: 项内添加一行 留言: 留言
+# 注意空格，且符号 : 为英文字符！
+menu:
+  home: / || home
+  archives: /archives/ || archive
+  categories: /categories/ || th
+  tags: /tags/ || tags
+  top: /top/ || signal
+  about: /about/ || futbol-o
+  #schedule: /schedule/ || calendar
+  #sitemap: /sitemap.xml || sitemap
+  #commonweal: /404/ || heartbeat
+
+# Enable/Disable menu icons.
+# 是否开启菜单图标
+menu_icons:
+  enable: true
+
+# ---------------------------------------------------------------
+# Scheme Settings
+# ---------------------------------------------------------------
+
+# Schemes
+# 设计板式，都长啥样，去 README 里面的链接里看看
+# https://github.com/iissnan/hexo-theme-next#live-preview
+scheme: Muse
+#scheme: Mist
+#scheme: Pisces
+#scheme: Gemini
+
+
+# ---------------------------------------------------------------
+# Sidebar Settings
+# ---------------------------------------------------------------
+
+# 侧栏社交链接设置，与上面菜单差不多，要生效记得把前面的 # 去掉
+#social:
+  #GitHub: https://github.com/yourname || github
+  #E-Mail: mailto:yourname@gmail.com || envelope
+  #Google: https://plus.google.com/yourname || google
+  #Twitter: https://twitter.com/yourname || twitter
+  #FB Page: https://www.facebook.com/yourname || facebook
+  #VK Group: https://vk.com/yourname || vk
+  #StackOverflow: https://stackoverflow.com/yourname || stack-overflow
+  #YouTube: https://youtube.com/yourname || youtube
+  #Instagram: https://instagram.com/yourname || instagram
+  #Skype: skype:yourname?call|chat || skype
+
+# 侧栏社交链接图标设置
+social_icons:
+  enable: true
+  icons_only: false
+  transition: false
+
+# Blog rolls
+# 侧栏友链设置
+links_icon: globe
+links_title: 神奇的链接
+#links_layout: block
+links_layout: inline
+links:
+  网易云音乐: https://music.163.com/#/user/home?id=86590096
+  Coldplay Official Website: http://coldplay.com/
+  获取 Elon Musk 的新闻: https://elonmusknews.org/
+  尼古拉·特斯拉：发明了现代世界的人: http://www.bilibili.com/video/av6211226/
+  关于此博客: https://reuixiy.github.io/about/
+
+# Sidebar Avatar
+# in theme directory(source/images): /images/avatar.gif
+# in site  directory(source/uploads): /uploads/avatar.gif
+# 侧栏头像设置
+# 建议放在 hexo-site/source/uploads/ 里（没有自己建）
+# 这样可以避免更新 NexT 主题的时候遇到麻烦
+avatar: /uploads/avatar.gif
+
+# Table Of Contents in the Sidebar
+# 侧栏文章目录设置（前提是 Markdown 书写正确）
+toc:
+  enable: true
+
+  # Automatically add list number to toc.
+  # 自动加数字序号
+  number: true
+
+  # 如果标题太长，则放到下一行继续显示
+  wrap: true
+
+# Creative Commons 4.0 International License.
+# http://creativecommons.org/
+# Available: by | by-nc | by-nc-nd | by-nc-sa | by-nd | by-sa | zero
+#creative_commons: by-nc-sa
+#creative_commons:
+
+sidebar:
+  # Sidebar Position, available value: left | right (only for Pisces | Gemini).
+  # 侧栏位置设置，可用值：左 | 右（只对 Pisces 和 Gemini 设计版式有效！）
+  position: left
+  #position: right
+
+  # Sidebar Display, available value (only for Muse | Mist):
+  # 侧栏显示方式，post 代表只有点进一篇文章内
+  # 且文章有目录，侧栏才会弹出显示
+  #display: post
+  #display: always
+  display: hide
+  #display: remove
+
+  # Sidebar offset from top menubar in pixels (only for Pisces | Gemini).
+  # 只对 Pisces 和 Gemini 设计版式有效！
+  offset: 12
+
+  # Back to top in sidebar (only for Pisces | Gemini).
+  # 只对 Pisces 和 Gemini 设计版式有效！
+  b2t: false
+
+  # Scroll percent label in b2t button.
+  # 在回到顶部按钮里显示阅读百分比
+  scrollpercent: true
+
+  # Enable sidebar on narrow view (only for Muse | Mist).
+  # 移动端显示侧栏，只对 Muse 和 Mist 设计版式有效！
+  onmobile: true
+
+
+# ---------------------------------------------------------------
+# Post Settings
+# ---------------------------------------------------------------
+
+# Automatically scroll page to section which is under &lt;!-- more --&gt; mark.
+# 点击 [Read More]，页面自动滚动到 &lt;!-- more --&gt; 标记处
+scroll_to_more: false
+
+# Automatically saving scroll position on each post/page in cookies.
+# 用 cookies 保存浏览的位置信息，意味着重新打开这个页面后
+# 页面就会自动滚动到上次的位置，除非读者清理浏览器 cookies
+save_scroll: false
+
+# Automatically excerpt description in homepage as preamble text.
+# 将每篇文章 Front-matter 里 description 的文字作为页面显示的文章摘要
+excerpt_description: false
+
+# Automatically Excerpt. Not recommend.
+# Please use &lt;!-- more --&gt; in the post to control excerpt accurately.
+# 按字数自动加入 [Read More]，不建议！
+# 建议在文章中加入 &lt;!-- more --&gt;
+# 自定义 [Read More] 按钮之前要显示的内容！
+auto_excerpt:
+  enable: false
+  length: 150
+
+# Post meta display settings
+# 文章顶部显示的文章元数据设置
+post_meta:
+  item_text: true
+  created_at: true
+  updated_at: false
+  categories: true
+
+# Post wordcount display settings
+# Dependencies: https://github.com/willin/hexo-wordcount
+# 显示统计字数和估计阅读时长
+# 注意：这个要安装插件，先进入站点文件夹根目录
+# 然后：npm install hexo-wordcount --save
+post_wordcount:
+  item_text: true
+  wordcount: true
+  min2read: false
+  totalcount: false
+  separated_meta: false
+
+# Wechat Subscriber
+
+# Reward
+
+# Declare license on posts
+post_copyright:
+  enable: false
+  license: CC BY-NC-SA 3.0
+  license_url: https://creativecommons.org/licenses/by-nc-sa/3.0/
+
+
+# ---------------------------------------------------------------
+# Misc Theme Settings
+# ---------------------------------------------------------------
+
+# Reduce padding / margin indents on devices with narrow width.
+# 移动端把页面两边留白去除，个人不建议
+# 移动端样式可以参考本文 4.2 节的相关代码
+mobile_layout_economy: false
+
+# Android Chrome header panel color ($black-deep).
+# Android 上 Chrome 浏览器顶部颜色设置
+android_chrome_color: &quot;#fff&quot;
+
+# Custom Logo.
+# !!Only available for Default Scheme currently.
+# Options:
+#   enabled: [true/false] - Replace with specific image
+#   image: url-of-image   - Images's url
+custom_logo:
+  enabled: false
+  image:
+
+# Code Highlight theme
+# Available value:
+#    normal | night | night eighties | night blue | night bright
+# https://github.com/chriskempson/tomorrow-theme
+# 代码高亮主题设置
+# 都长啥样自己点开上面的链接查看
+highlight_theme: normal
+# 注意要先在站点配置文件中设置
+
+
+# ---------------------------------------------------------------
+# Font Settings
+# - Find fonts on Google Fonts (https://www.google.com/fonts)
+# - All fonts set here will have the following styles:
+#     light, light italic, normal, normal italic, bold, bold italic
+# - Be aware that setting too much fonts will cause site running slowly
+# - Introduce in 5.0.1
+# ---------------------------------------------------------------
+font:
+  enable: true
+
+  # Uri of fonts host. E.g. //fonts.googleapis.com (Default)
+  host: https://fonts.loli.net
+
+  # Font options:
+  # `external: true` will load this font family from `host` above.
+  # `family: Times New Roman`. Without any quotes.
+  # `size: xx`. Use `px` as unit.
+
+  # Global font settings used on &lt;body&gt; element.
+  global:
+    external: true
+    family: Lato
+    size:
+
+  # Font settings for Headlines (h1, h2, h3, h4, h5, h6).
+  # Fallback to `global` font settings.
+  headings:
+    external: true
+    family: Roboto Slab
+    size:
+
+  # Font settings for posts.
+  # Fallback to `global` font settings.
+  posts:
+    external: true
+    family:
+
+  # Font settings for Logo.
+  # Fallback to `global` font settings.
+  logo:
+    external: true
+    family:
+    size:
+
+  # Font settings for &lt;code&gt; and code blocks.
+  codes:
+    external: true
+    family: Roboto Mono
+    size:
+
+
+# ---------------------------------------------------------------
+# Third Party Services Settings
+# ---------------------------------------------------------------
+
+# MathJax Support
+mathjax:
+  enable: false
+  per_page: false
+  cdn: //cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML
+
+# Han Support docs: https://hanzi.pro/
+# 汉字标准格式，没用过暂时不了解
+han: false
+
+# Swiftype Search API Key
+
+# Baidu Analytics ID
+
+# Duoshuo ShortName
+
+# Disqus
+
+# Hypercomments
+# 我用的就是这种，特点是可以匿名评论，暂时还没有加入 GFW 名单
+# https://www.hypercomments.com/
+# 自己去网站用 Google 邮箱注册，有啥不懂请留言评论
+# 建议你把 Quote（管理台右上角的 Settings 按钮，然后 Widget 里）关了
+# 鼠标在一些段落上时，这个 Quote 会在后面显示一个图标
+# 或者选中一段文字，会有……
+hypercomments_id:
+
+# changyan
+
+# Valine.
+
+# Support for youyan comments system.
+
+# Support for LiveRe comments system.
+# 来必力评论
+# 参见教程：https://linan.blog/2017/LiveReCommentsSystem/
+#livere_uid: your uid
+
+# Gitment
+
+# Baidu Share
+
+# Share
+
+# Google Webmaster tools verification setting
+# See: https://www.google.com/webmasters/
+# Google 站长工具校验
+# 可以不用这种验证方式，直接先添加下面的 Google Analytics
+# 然后用 Google Analytics 校验
+#google_site_verification:
+
+# Webmaster 是用来提交自己的文章链接给 Google
+# 然后别人就有可能通过 Google 搜索到自己的博客
+# 这个必须做，如果你的文章想被别人看到的话
+
+
+# Google Analytics
+# 去 https://analytics.google.com 注册，自备梯子
+google_analytics:
+
+# Bing Webmaster tools verification setting
+
+# Yandex Webmaster tools verification setting
+
+# CNZZ count
+
+# Application Insights
+
+# Make duoshuo show UA
+
+# Post widgets &amp; FB/VK comments settings.
+# ---------------------------------------------------------------
+# Facebook SDK Support.
+
+# Facebook comments plugin
+
+# VKontakte API Support.
+
+# Star rating support to each article.
+# To get your ID visit https://widgetpack.com
+rating:
+  enable: true
+  id:
+  color:  f79533
+# ---------------------------------------------------------------
+
+# Show number of visitors to each article.
+# You can visit https://leancloud.cn get AppID and AppKey.
+# 可以显示每篇文章的阅读量
+# 然后可以通过阅读量建立 TopX 页面，教程链接：
+# https://notes.wanghao.work/2015-10-21-为NexT主题添加文章阅读量统计功能.html
+leancloud_visitors:
+  enable: true
+  app_id:
+  app_key:
+
+# Another tool to show number of visitors to each article.
+
+# Show PV/UV of the website/page with busuanzi.
+# Get more information on http://ibruce.info/2015/04/04/busuanzi/
+# 不蒜子统计，用于在页脚显示总访客数和总浏览量，将 false 改为 true 就能直接使用
+busuanzi_count:
+  # count values only if the other configs are false
+  enable: true
+  # custom uv span for the whole site
+  site_uv: true
+  site_uv_header: &lt;i class=&quot;fa fa-user-circle-o&quot;&gt;&lt;/i&gt;
+  site_uv_footer:
+  # custom pv span for the whole site
+  site_pv: true
+  site_pv_header:
+  site_pv_footer: &lt;i class=&quot;fa fa-eye&quot;&gt;&lt;/i&gt;
+  # custom pv span for one page only
+  # 页面浏览量，不建议开启，建议用上面的 leancloud_visitors
+  # 首先 leancloud 更稳定，其次 leancloud 便于管理
+  # 最后，可以利用 leancloud 的 api 建立 TopX 页面
+  page_pv: false
+  page_pv_header: &lt;i class=&quot;fa fa-file-o&quot;&gt;&lt;/i&gt;
+  page_pv_footer:
+
+# Tencent analytics ID
+
+# Tencent MTA ID
+
+# Enable baidu push
+baidu_push: false
+
+# Google Calendar
+
+# Algolia Search
+
+# Local search
+# Dependencies: https://github.com/flashlab/hexo-generator-search
+# 要安装插件才能使用，先进入站点文件夹根目录
+# 然后：npm install hexo-generator-searchdb --save
+local_search:
+  enable: true
+  # if auto, trigger search by changing input
+  # if manual, trigger search by pressing enter key or search button
+  trigger: auto
+  # show top n results per article, show all results by setting to -1
+  top_n_per_article: 1
+
+
+# ---------------------------------------------------------------
+# Tags Settings
+# ---------------------------------------------------------------
+
+# External URL with BASE64 encrypt &amp; decrypt.
+# Usage: {% exturl text url &quot;title&quot; %}
+# Alias: {% extlink text url &quot;title&quot; %}
+# 用法见：
+# https://github.com/iissnan/hexo-theme-next/pull/1438
+exturl: false
+
+# Note tag (bs-callout).
+# 主题的标签样式，有 note、label、tabs 三种
+note:
+  style: flat
+  icons: true
+  border_radius: 3
+  light_bg_offset: 0
+
+# Label tag.
+label: true
+
+# Tabs tag.
+tabs:
+  enable: true
+  transition:
+    tabs: true
+    labels: true
+  border_radius: 0
+
+#! ---------------------------------------------------------------
+#! DO NOT EDIT THE FOLLOWING SETTINGS
+#! UNLESS YOU KNOW WHAT YOU ARE DOING
+#! ---------------------------------------------------------------
+
+# Use velocity to animate everything.
+motion:
+  enable: true
+  async: true
+  transition:
+    post_block: perspectiveLeftIn
+    post_header: fadeIn
+    post_body: fadeIn
+    coll_header: perspectiveLeftIn
+    # Only for Pisces | Gemini.
+    sidebar: slideUpIn
+
+# Fancybox
+# 查看图片的
+fancybox: true
+
+
+# Progress bar in the top during page loading.
+# 页面顶部加载条
+pace: true
+pace_theme: pace-theme-flash
+
+# Canvas-nest
+canvas_nest: false
+
+# three_waves
+three_waves: false
+
+# canvas_lines
+canvas_lines: false
+
+# canvas_sphere
+canvas_sphere: false
+
+# Only fit scheme Pisces
+# Canvas-ribbon
+# size: The width of the ribbon.
+# alpha: The transparency of the ribbon.
+# zIndex: The display level of the ribbon.
+canvas_ribbon:
+  enable: false
+  size: 300
+  alpha: 0.6
+  zIndex: -1
+
+# Script Vendors.
+# Set a CDN address for the vendor you want to customize.
+# 相关内容用 CDN 地址取代，加速网站访问，注意版本尽可能要一致
+vendors:
+  # Internal path prefix. Please do not edit it.
+  _internal: lib
+
+  # Internal version: 2.1.3
+  jquery: https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js
+
+  # Internal version: 2.1.5
+  # See: http://fancyapps.com/fancybox/
+  # 自定义 fancybox（暂时）
+  fancybox: https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js
+  fancybox_css: https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css
+
+  # Internal version: 1.0.6
+  # See: https://github.com/ftlabs/fastclick
+  fastclick: https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js
+
+  # Internal version: 1.9.7
+  # See: https://github.com/tuupola/jquery_lazyload
+  lazyload: https://cdnjs.cloudflare.com/ajax/libs/jquery_lazyload/1.9.7/jquery.lazyload.min.js
+
+  # Internal version: 1.2.1
+  # See: http://VelocityJS.org
+  velocity: https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.1/velocity.min.js
+
+  # Internal version: 1.2.1
+  # See: http://VelocityJS.org
+  velocity_ui: https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.1/velocity.ui.min.js
+
+  # Internal version: 0.7.9
+  # See: https://faisalman.github.io/ua-parser-js/
+  ua_parser: https://cdnjs.cloudflare.com/ajax/libs/UAParser.js/0.7.9/ua-parser.min.js
+
+  # Internal version: 4.6.2
+  # See: http://fontawesome.io/
+  fontawesome: https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css
+
+  # Internal version: 1.0.2
+  # See: https://github.com/HubSpot/pace
+  # Or use direct links below:
+  pace: //cdn.bootcss.com/pace/1.0.2/pace.min.js
+  pace_css: //cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-flash.min.css
+
+# Assets
+css: css
+js: js
+images: images
+
+# Theme version
+version: 5.1.3
+
+# 文章末尾添加「本文结束」标记，请勿直接添加，教程链接：
+# http://shenzekun.cn/hexo的next主题个性化配置教程.html
+passage_end_tag:
+  enabled: true
+</code></pre>
+
+<h2 id="8-附上-custom-styl">8. 附上 custom.styl</h2>
+
+<p>一定是先 F12 找到要自定义的元素，调试成自己喜欢的值，然后再复制到<code>custom.styl</code>，而不是直接复制我给出的，我给出的仅供参考。</p>
+
+<p>请先找对元素，不然可能会制造出新 bug，建议大家修改一个，就加个注释，方便以后调试修改。</p>
+
+<pre><code>[2017.12.31 更新] 文件位置：~/blog/themes/next/source/css/_custom/custom.styl// Custom styles
+// 页面最顶部的横线
+.headband {
+    height: 1.5px;
+    background-image: linear-gradient(90deg, #F79533 0%, #F37055 15%, #EF4E7B 30%, #A166AB 44%, #5073B8 58%, #1098AD 72%, #07B39B 86%, #6DBA82 100%);
+}
+// 页面顶部行高
+.header {
+    line-height: 1.5;
+}
+// 页面背景色
+.container {
+    background-color: rgba(0, 0, 0, 0.75);
+}
+// 页面留白更改
+.header-inner {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+.posts-expand {
+    padding-top: 80px;
+}
+.posts-expand .post-meta {
+    margin: 5px 0px 0px 0px;
+}
+.post-button {
+    margin-top: 0px;
+}
+// 顶栏宽度
+.container .header-inner {
+    width: 100%;
+}
+// 渐变菜带，CSS代码copy自https://githubuniverse.com
+.site-meta {
+    background-image: linear-gradient(90deg, #F79533 0%, #F37055 15%, #EF4E7B 30%, #A166AB 44%, #5073B8 58%, #1098AD 72%, #07B39B 86%, #6DBA82 100%);
+}
+// 站点名背景
+.brand{
+    background-color: rgba(255, 255, 255, 0);
+    margin-top: 15px;
+    padding: 0px;
+}
+// 站点名字体
+.site-title {
+    font-size: 75px;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    line-height: 80px;
+    letter-spacing: 3px;
+}
+// 站点子标题
+.site-subtitle{
+    margin: 0px;
+    font-size: 16px;
+    letter-spacing: 1px;
+    padding-bottom: 3px;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    border-bottom-width: 3px;
+    border-bottom-style: solid;
+    border-bottom-color: rgb(161, 102, 171);
+}
+// 菜单
+.menu {
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding: 5px;
+    background-color: rgba(255, 255, 255, 0.75);
+    box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.15);
+}
+// 菜单超链接字体大小
+.menu .menu-item a {
+    font-size: 15px;
+}
+// 菜单各项边距
+.menu .menu-item {
+    margin: 5px 15px;
+}
+// 菜单超链接样式
+.menu .menu-item a:hover {
+    border-bottom-color: rgba(161, 102, 171, 0);
+}
+// 文章
+.post {
+    margin-bottom: 50px;
+    padding: 45px 36px 36px 36px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+    background-color: rgb(255, 255, 255);
+}
+// 文章标题字体
+.posts-expand .post-title {
+    font-size: 26px;
+    font-weight: 700;
+}
+// 文章标题动态效果
+.posts-expand .post-title-link::before {
+    background-image: linear-gradient(90deg, #a166ab 0%, #ef4e7b 25%, #f37055 50%, #ef4e7b 75%, #a166ab 100%);
+}
+// 文章元数据（meta）留白更改
+.posts-expand .post-meta {
+    margin: 10px 0px 20px 0px;
+}
+// 文章的描述description
+.posts-expand .post-meta .post-description {
+    font-style: italic;
+    font-size: 14px;
+    margin-top: 30px;
+    margin-bottom: 0px;
+    color: #666;
+}
+// [Read More]按钮样式
+.post-button .btn {
+    color: #555 !important;
+    background-color: rgb(255, 255, 255);
+    border-radius: 3px;
+    font-size: 15px;
+    box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.35);
+    border: none !important;
+    transition-property: unset;
+    padding: 0px 15px;
+}
+.post-button .btn:hover {
+    color: rgb(255, 255, 255) !important;
+    border-radius: 3px;
+    font-size: 15px;
+    box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.35);
+    background-image: linear-gradient(90deg, #a166ab 0%, #ef4e7b 25%, #f37055 50%, #ef4e7b 75%, #a166ab 100%);
+}
+// 去除在页面文章之间的分割线
+.posts-expand .post-eof {
+    margin: 0px;
+    background-color: rgba(255, 255, 255, 0);
+}
+// 去除页面底部页码上面的横线
+.pagination {
+    border: none;
+    margin: 0px;
+}
+// 页面底部页码
+.pagination .page-number.current {
+    border-radius: 100%;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+    background-color: rgba(255, 255, 255, 0.35);
+}
+.pagination .prev, .pagination .next, .pagination .page-number {
+    margin-bottom: 10px;
+    border: none;
+}
+.pagination .space {
+    color: rgb(255, 255, 255);
+}
+// 页面底部页脚
+.footer {
+    line-height: 1.5;
+    background-color: rgba(255, 255, 255, 0.75);
+    color: #333;
+    border-top-width: 3px;
+    border-top-style: solid;
+    border-top-color: rgb(161, 102, 171);
+    box-shadow: 0px -10px 10px 0px rgba(0, 0, 0, 0.15);
+}
+// 文章底部的tags
+.posts-expand .post-tags a {
+    border-bottom: none;
+    margin-right: 0px;
+    font-size: 13px;
+    padding: 0px 5px;
+    border-radius: 3px;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
+    transition-delay: 0s;
+}
+.posts-expand .post-tags a:hover {
+    background: #eee;
+}
+// 文章底部留白更改
+.post-widgets {
+    padding-top: 0px;
+}
+.post-nav {
+    margin-top: 30px;
+}
+// 文章底部页面跳转
+.post-nav-item a {
+    color: rgb(80, 115, 184);
+    font-weight: bold;
+}
+.post-nav-item a:hover {
+    color: rgb(161, 102, 171);
+    font-weight: bold;
+}
+// 文章底部评论
+.comments {
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.35);
+    margin: 80px 0px 40px 0px;
+}
+// 超链接样式
+a {
+    color: rgb(80, 115, 184);
+    border-bottom-color: rgb(80, 115, 184);
+}
+a:hover {
+    color: rgb(161, 102, 171);
+    border-bottom-color: rgb(161, 102, 171);
+}
+// 分割线样式
+hr {
+    margin: 10px 0px 30px 0px;
+}
+// 文章内标题样式（左边的竖线）
+.post-body h2, h3, h4, h5, h6 {
+    border-left: 4px solid rgb(161, 102, 171);
+    margin-left: -36px;
+    padding-left: 32px;
+}
+// 去掉图片边框
+.posts-expand .post-body img {
+    border: none;
+    padding: 0px;
+}
+.post-gallery .post-gallery-img img {
+    padding: 3px;
+}
+// 文章``代码块的自定义样式
+code {
+    margin: 0px 4px;
+}
+// 文章```代码块顶部样式
+.highlight figcaption {
+    margin: 0em;
+    padding: 0.5em;
+    background: #eee;
+    border-bottom: 1px solid #e9e9e9;
+}
+.highlight figcaption a {
+    color: rgb(80, 115, 184);
+}
+// 文章```代码块diff样式
+pre .addition {
+    background: #e6ffed;
+}
+pre .deletion {
+    background: #ffeef0;
+}
+// 右下角侧栏按钮样式
+.sidebar-toggle {
+    right: 10px;
+    bottom: 43px;
+    background-color: rgba(247, 149, 51, 0.75);
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.35);
+}
+.page-post-detail .sidebar-toggle-line {
+    background: rgb(7, 179, 155);
+}
+// 右下角返回顶部按钮样式
+.back-to-top {
+    line-height: 1.5;
+    right: 10px;
+    padding-right: 5px;
+    padding-left: 5px;
+    padding-top: 2.5px;
+    padding-bottom: 2.5px;
+    background-color: rgba(247, 149, 51, 0.75);
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.35);
+}
+.back-to-top.back-to-top-on {
+    bottom: 10px;
+}
+// 侧栏
+.sidebar {
+    box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.75);
+}
+.sidebar-inner {
+    margin-top: 30px;
+}
+// 侧栏顶部文字
+.sidebar-nav li {
+    font-size: 15px;
+    font-weight: bold;
+    color: rgb(7, 179, 155);
+}
+.sidebar-nav li:hover {
+    color: rgb(161, 102, 171);
+}
+.sidebar-nav .sidebar-nav-active {
+    color: rgb(7, 179, 155);
+    border-bottom-color: rgb(161, 102, 171);
+    border-bottom-width: 1.5px;
+}
+.sidebar-nav .sidebar-nav-active:hover {
+    color: rgb(7, 179, 155);
+}
+// 侧栏站点概况行高
+.site-overview {
+    line-height: 1.3;
+}
+// 侧栏头像（圆形以及旋转效果）
+.site-author-image {
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 100%;
+    transition: transform 1.0s ease-out;
+}
+img:hover {
+    transform: rotateZ(360deg);
+}
+.posts-expand .post-body img:hover {
+    transform: initial;
+}
+// 侧栏站点作者名
+.site-author-name {
+    display: none;
+}
+// 侧栏站点描述
+.site-description {
+    letter-spacing: 5px;
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: 15px;
+    margin-left: 13px;
+    color: rgb(243, 112, 85);
+}
+// 侧栏站点文章、分类、标签
+.site-state {
+    line-height: 1.3;
+    margin-left: 12px;
+}
+.site-state-item {
+    padding: 0px 15px;
+    border-left: 1.5px solid rgb(161, 102, 171);
+}
+// 侧栏RSS按钮样式
+.feed-link {
+    margin-top: 15px;
+    margin-left: 7px;
+}
+.feed-link a {
+    color: rgb(255, 255, 255);
+    border: 1px solid rgb(158, 158, 158) !important;
+    border-radius: 15px;
+}
+.feed-link a:hover {
+    background-color: rgb(161, 102, 171);
+}
+.feed-link a i {
+    color: rgb(255, 255, 255);
+}
+// 侧栏社交链接
+.links-of-author {
+    margin-top: 0px;
+}
+// 侧栏友链标题
+.links-of-blogroll-title {
+    margin-bottom: 10px;
+    margin-top: 15px;
+    color: rgba(7, 179, 155, 0.75);
+    margin-left: 6px;
+    font-size: 15px;
+    font-weight: bold;
+}
+// 侧栏超链接样式（友链的样式）
+.sidebar a {
+    color: #ccc;
+    border-bottom: none;
+}
+.sidebar a:hover {
+    color: rgb(255, 255, 255);
+}
+// 自定义的侧栏时间样式
+#days {
+    display: block;
+    color: rgb(7, 179, 155);
+    font-size: 13px;
+    margin-top: 15px;
+}
+// 侧栏目录链接样式
+.post-toc ol a {
+    color: rgb(7, 179, 155);
+    border-bottom: 1px solid rgb(96, 125, 139);
+}
+.post-toc ol a:hover {
+    color: rgb(161, 102, 171);
+    border-bottom-color: rgb(161, 102, 171);
+}
+// 侧栏目录链接样式之当前目录
+.post-toc .nav .active &gt; a {
+    color: rgb(161, 102, 171);
+    border-bottom-color: rgb(161, 102, 171);
+}
+.post-toc .nav .active &gt; a:hover {
+    color: rgb(161, 102, 171);
+    border-bottom-color: rgb(161, 102, 171);
+}
+/* 修侧栏目录bug，如果主题配置文件_config.yml的toc是wrap: true */
+.post-toc ol {
+    padding: 0px 10px 5px 10px;
+}
+/* 侧栏目录默认全展开，已注释
+.post-toc .nav .nav-child {
+    display: block;
+}
+*/
+// 时间轴样式
+.posts-collapse {
+    margin: 50px 0px;
+}
+@media (max-width: 1023px) {
+    .posts-collapse {
+        margin: 50px 20px;
+    }
+}
+// 时间轴左边线条
+.posts-collapse::after {
+    margin-left: -2px;
+    background-image: linear-gradient(180deg,#f79533 0,#f37055 15%,#ef4e7b 30%,#a166ab 44%,#5073b8 58%,#1098ad 72%,#07b39b 86%,#6dba82 100%);
+}
+// 时间轴左边线条圆点颜色
+.posts-collapse .collection-title::before {
+    background-color: rgb(255, 255, 255);
+}
+// 时间轴文章标题左边圆点颜色
+.posts-collapse .post-header:hover::before {
+    background-color: rgb(161, 102, 171);
+}
+// 时间轴年份
+.posts-collapse .collection-title h1, .posts-collapse .collection-title h2 {
+    color: rgb(255, 255, 255);
+}
+// 时间轴文章标题
+.posts-collapse .post-title a {
+    color: rgb(80, 115, 184);
+}
+.posts-collapse .post-title a:hover {
+    color: rgb(161, 102, 171);
+}
+// 时间轴文章标题底部虚线
+.posts-collapse .post-header:hover {
+    border-bottom-color: rgb(161, 102, 171);
+}
+// archives页面顶部文字
+.page-archive .archive-page-counter {
+    color: rgb(255, 255, 255);
+}
+// archives页面时间轴左边线条第一个圆点颜色
+.page-archive .posts-collapse .archive-move-on {
+    top: 10px;
+    opacity: 1;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+}
+// 分类页面
+.post-block.page {
+    margin-top: 40px;
+}
+.category-all-page {
+    margin: -80px 50px 40px 50px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+    background-color: rgb(255, 255, 255);
+    padding: 86px 36px 36px 36px;
+}
+@media (max-width: 767px) {
+    .category-all-page {
+        margin: -73px 15px 50px 15px;
+    }
+    .category-all-page .category-all-title {
+        margin-top: -5px;
+    }
+}
+// 标签云页面
+.tag-cloud {
+    margin: -80px 50px 40px 50px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+    background-color: rgb(255, 255, 255);
+    padding: 86px 36px 36px 36px;
+}
+.tag-cloud-title {
+    margin-bottom: 15px;
+}
+@media (max-width: 767px) {
+    .tag-cloud {
+        margin: -73px 15px 50px 15px;
+        padding: 86px 5px 36px 5px;
+    }
+}
+// 自定义的TopX页面样式
+#top {
+    display: block;
+    text-align: center;
+    margin: -100px 50px 40px 50px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+    background-color: rgb(255, 255, 255);
+    padding: 106px 36px 10px 36px;
+}
+@media (max-width: 767px) {
+    #top {
+        margin: -93px 15px 50px 15px;
+        padding: 96px 10px 0px 10px;
+    }
+}
+// 自定义ABOUT页面的样式
+.about-page {
+    margin: -80px 0px 60px 0px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+    background-color: rgb(255, 255, 255);
+    padding: 106px 36px 36px 36px;
+}
+@media (max-width: 767px) {
+    .about-page {
+        margin: -73px 0px 50px 0px;
+        padding: 96px 15px 20px 15px;
+    }
+}
+h2.about-title {
+    border-left: none !important;
+    margin-left: 0px !important;
+    padding-left: 0px !important;
+    text-align: center;
+    background-image: linear-gradient(90deg, #a166ab 0%, #a166ab 40%, #ef4e7b 45%, #f37055 50%, #ef4e7b 55%, #a166ab 60%, #a166ab 100%);
+    background-size: cover;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    user-select: none;
+}
+// 本地搜索框
+.local-search-popup .search-icon, .local-search-popup .popup-btn-close {
+    color: rgb(247, 149, 51);
+    margin-top: 7px;
+}
+.local-search-popup .local-search-input-wrapper input {
+    padding: 9px 0px;
+    height: 21px;
+    background-color: rgb(255, 255, 255);
+}
+.local-search-popup .popup-btn-close {
+    border-left: none;
+}
+// 选中文字部分的样式
+::selection {
+    background-color: rgb(255, 241, 89);
+    color: #555;
+}
+/* 设置滚动条的样式 */
+/* 参考https://segmentfault.com/a/1190000003708894 */
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+/* 滚动槽 */
+::-webkit-scrollbar-track {
+    background: #eee;
+}
+/* 滚动条滑块 */
+::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: #ccc;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: rgb(247, 149, 51);
+}
+// 音乐播放器aplayer
+.aplayer {
+    font-family: Lato, -apple-system, BlinkMacSystemFont, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Heiti SC&quot;, STHeiti, &quot;Source Han Sans SC&quot;, &quot;Noto Sans CJK SC&quot;, &quot;WenQuanYi Micro Hei&quot;, &quot;Droid Sans Fallback&quot;, &quot;Microsoft YaHei&quot;, sans-serif !important;
+}
+.aplayer-withlrc.aplayer .aplayer-info {
+    background-color: rgb(255, 255, 255);
+}
+// 音乐播放器aplayer歌单
+.aplayer .aplayer-list ol {
+    background-color: rgb(255, 255, 255);
+}
+// 修视频播放器dplayer页面全屏的bug
+// 已不存在，注释掉了
+// .use-motion .post-body {
+//     transform: inherit !important;
+// }
+// 自定义emoji样式
+img#github-emoji {
+    margin: 0px;
+    padding: 0px;
+    display: inline !important;
+    vertical-align: text-bottom;
+    border: none;
+    cursor: text;
+    box-shadow: none;
+}
+// 文章超链接样式（为emoji特设）
+.post-body a {
+    color: rgb(80, 115, 184);
+    border-bottom: none;
+    text-decoration: underline;
+}
+.post-body a:hover {
+    color: rgb(161, 102, 171);
+    border-bottom: none;
+    text-decoration: underline;
+}
+// 标签云页面超链接样式（为emoji特设）
+.tag-cloud a {
+    border-bottom: 1px solid rgb(80, 115, 184);
+    text-decoration: none;
+}
+.tag-cloud a:hover {
+    border-bottom: 1px solid rgb(161, 102, 171);
+    text-decoration: none;
+}
+// 文章元数据中categories的样式（为emoji特设）
+a.categories {
+    color: rgb(80, 115, 184);
+    border-bottom: none;
+    text-decoration: underline;
+}
+a.categories:hover {
+    color: rgb(161, 102, 171);
+    border-bottom: none;
+    text-decoration: underline;
+}
+// tabs标签（为emoji特设）
+.post-body .tabs ul.nav-tabs li.tab a {
+    text-decoration: none;
+}
+// 图片下方标题设置（为emoji特设）
+a.fancybox{
+    text-decoration: none !important;
+}
+// 按钮样式（为emoji特设）
+.btn {
+    color: #fff !important;
+    text-decoration: none !important;
+    border: 2px solid #222 !important;
+}
+.btn:hover {
+    color: #222 !important;
+}
+// 自定义的页脚微信订阅号样式
+.weixin-box {
+    position: absolute;
+    bottom: 43px;
+    left: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.35);
+}
+.weixin-menu {
+    position: relative;
+    height: 24px;
+    width: 24px;
+    cursor: pointer;
+    background: url(https://微信的logo.svg);
+    background-size: 24px 24px;
+}
+.weixin-hover {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    height: 0px;
+    width: 0px;
+    border-radius: 3px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.35);
+    background: url(https://二维码.svg);
+    background-color: #fff;
+    background-repeat: no-repeat;
+    background-size: 150px 150px;
+    transition: all 0.35s ease-in-out;
+    z-index: 1024;
+    opacity: 0;
+}
+.weixin-menu:hover .weixin-hover {
+    bottom: 24px;
+    left: 24px;
+    height: 170px;
+    width: 150px;
+    opacity: 1;
+}
+.weixin-description {
+    opacity: 0;
+    position: absolute;
+    bottom: 3%;
+    left: 5%;
+    right: 5%;
+    font-size: 12px;
+    transition: all 0.35s cubic-bezier(1, 0, 0, 1);
+}
+.weixin-menu:hover .weixin-description {
+    opacity: 1;
+}
+// 自定义页脚跳动的心样式
+@keyframes heartAnimate {
+    0%,100%{transform:scale(1);}
+    10%,30%{transform:scale(0.9);}
+    20%,40%,60%,80%{transform:scale(1.1);}
+    50%,70%{transform:scale(1.1);}
+}
+#heart {
+    animation: heartAnimate 1.33s ease-in-out infinite;
+}
+.with-love {
+    color: rgb(255, 113, 168);
+}
+// 自定义特别的样式
+h2.love {
+    border-left: none;
+    color: rgb(255, 113, 168);
+    -webkit-text-fill-color: unset;
+}
+// 自定义的引用样式
+blockquote.question {
+    color: #555;
+    border-left: 4px solid rgb(16, 152, 173);
+    background-color: rgb(227, 242, 253);
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    margin-bottom: 20px;
+}
+// 自定义的数字块
+span#inline-toc {
+    display: inline-block;
+    border-radius: 80% 100% 90% 20%;
+    background-color: rgb(227, 242, 253);
+    color: #555;
+    padding: 0.05em 0.4em;
+    margin: 2px 5px 2px 0px;
+    line-height: 1.5;
+}
+// 自定义的文章摘要图片样式
+img.img-topic {
+    width: 100%;
+}
+// 自定义的文章置顶样式
+.post-sticky-flag {
+    font-size: inherit;
+    float: left;
+    color: rgb(0, 0, 0);
+    cursor: help;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
+    transition-delay: 0s;
+}
+.post-sticky-flag:hover {
+    color: #07b39b;
+}
+// 自定义替代description的样式
+p.description{
+    text-align: center;
+    font-size: 14px;
+    font-style: italic;
+    color: #666;
+    margin-top: 30px;
+}
+code.description {
+    padding: 1px 1px 1px 1px;
+    margin: 0px 1px 0px 4px;
+}
+// 移动端样式
+@media (max-width: 1023px) {
+    .container {
+        background-color: rgba(0, 0, 0, 0);
+    }
+    .sidebar {
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+    }
+    .feed-link {
+        display: none !important;
+    }
+}
+@media (max-width: 767px) {
+    .main {
+        padding-bottom: 120px;
+    }
+    .posts-expand {
+        margin: 0px;
+        padding-top: 70px;
+    }
+    .posts-expand .post-title {
+        font-size: 22px;
+    }
+    .posts-expand .post-meta {
+        font-size: 10px;
+    }
+    .post {
+        margin-bottom: 30px !important;
+        padding: 20px 15px 15px 15px !important;
+    }
+    .post-body h2, h3, h4, h5, h6 {
+        margin-left: -15px;
+        padding-left: 11px;
+    }
+    .posts-expand .post-tags {
+        margin-top: 10px;
+    }
+    .post-widgets {
+        margin-top: 10px;
+    }
+    .comments {
+        margin: 40px 0px 40px 0px !important;
+    }
+    .footer {
+        box-shadow: 0px -5px 10px 0px rgba(0, 0, 0, 0.5);
+    }
+}
+.sidebar-active #sidebar-dimmer {
+    opacity: 0;
+}
+// 移动端左上角菜单按钮
+.site-nav-toggle {
+    top: 35px;
+    left: 10px;
+}
+.btn-bar {
+    background-color: rgb(255, 255, 255);
+}
+// 移动端菜单
+@media (max-width: 767px) {
+    .menu {
+        text-align: center;
+        box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+    }
+    .site-nav {
+        top: initial;
+        background-color: rgba(255, 255, 255, 0.75);
+        border-top: none;
+        border-bottom: none;
+        position: relative;
+        z-index: 1024;
+    }
+}
+// 移动端顶部
+@media (max-width: 767px) {
+    .site-title {
+        font-size: 70px !important;
+        letter-spacing: 0px !important;
+    }
+    .site-subtitle{
+        letter-spacing: 0px !important;
+        padding-bottom: 0px !important;
+    }
+    .site-meta {
+        box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+    }
+    .menu .menu-item {
+        margin: 0px 10px !important;
+    }
+}
+</code></pre>
+
+<h2 id="修改字体">修改字体</h2>
+
+<p>优化了这么多，但还有一个最影响博客形象和阅读体验的项没有优化，瓦特？字体！</p>
+
+<p>文章字体大小可以编辑：</p>
+
+<pre><code>文件位置：~/blog/themes/next/source/css/_variables/base.styl$font-size-base           = 16px
+</code></pre>
+
+<p>，推荐阅读：</p>
+
+<ol>
+<li><a href="https://www.voyax.me/posts/59710/">Web中文字体排版指南</a></li>
+<li><a href="https://blog.coding.net/blog/Web-Fonts">Web字体的选择和运用</a></li>
+<li><a href="https://segmentfault.com/a/1190000006110417">如何优雅的选择默认字体(font-family)</a></li>
+<li><a href="http://www.ruanyifeng.com/blog/2014/07/chinese_fonts.html">中文字体网页开发指南</a></li>
+<li><a href="https://csspod.com/using-the-system-font-in-web-content/">在Web内容中使用系统字体</a></li>
+</ol>
+
+<p>首先对于汉字来说，因为其字体库太大，通常都是调用本地中文字体库。然而，不同设备有不同默认中文字体和中文字体库，想要尽可能在不同设备上有较好的显示效果，就要在调用不同设备的本地字体库中显示效果较好的中文字体。</p>
+
+<p>下面附上我的供大家参考：</p>
+
+<pre><code>文件位置：~/blog/themes/next/source/css/_variables/base.styl// Font families.
+$font-family-chinese      = -apple-system, BlinkMacSystemFont, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Heiti SC&quot;, &quot;STHeiti&quot;, &quot;Source Han Sans SC&quot;, &quot;Noto Sans CJK SC&quot;, &quot;WenQuanYi Micro Hei&quot;, &quot;Droid Sans Fallback&quot;, &quot;Microsoft YaHei&quot;
+
+$font-family-base         = $font-family-chinese, sans-serif
+$font-family-base         = get_font_family('global'), $font-family-chinese, sans-serif if get_font_family('global')
+
+$font-family-logo         = $font-family-base
+$font-family-logo         = get_font_family('logo'), $font-family-base if get_font_family('logo')
+
+$font-family-headings     = $font-family-base
+$font-family-headings     = get_font_family('headings'), $font-family-base if get_font_family('headings')
+
+$font-family-posts        = $font-family-base
+$font-family-posts        = get_font_family('posts'), $font-family-base if get_font_family('posts')
+
+$font-family-monospace    = $font-family-chinese, monospace
+$font-family-monospace    = Menlo, Monaco, Consolas, get_font_family('codes'), $font-family-chinese, monospace if get_font_family('codes')
+</code></pre>
+
+<p>注意：要想 NexT 主题的简体中文字体配置生效，站点配置文件中的 language 必须为 zh-CN。</p>
+
+<p>然后对于英文字体，因为其字体库很小，所以想要个性化就简单多了。首先去 <a href="https://fonts.google.com/">Google Fonts</a> 找自己喜欢的英文字体，然后编辑主题配置文件，可以查看一下 <a href="http://theme-next.iissnan.com/theme-settings.html#fonts-customization">NexT 官方文档</a>。</p>
+
+<p>下面附上我的供大家参考：</p>
+
+<pre><code>文件位置：~/blog/themes/next/_config.ymlfont:
+  enable: true
+
+  # Uri of fonts host. E.g. //fonts.googleapis.com (Default)
+  # 亲测这个可用，如果不可用，自己搜索 [Google 字体 国内镜像]，找个能用的就行
+  host: https://fonts.loli.net
+
+  # Global font settings used on &lt;body&gt; element.
+  global:
+    # external: true will load this font family from host.
+    external: true
+    family: Lato
+
+  # Font settings for Headlines (h1, h2, h3, h4, h5, h6)
+  # Fallback to `global` font settings.
+  headings:
+    external: true
+    family: Roboto Slab
+
+  # Font settings for posts
+  # Fallback to `global` font settings.
+  posts:
+    external: true
+    family:
+
+  # Font settings for Logo
+  # Fallback to `global` font settings.
+  # The `size` option use `px` as unit
+  logo:
+    external: true
+    family:
+    size:
+
+  # Font settings for &lt;code&gt; and code blocks.
+  codes:
+    external: true
+    family: Roboto Mono
+    size:
+</code></pre>
+
+<h2 id="9-进阶-高级功能配置">9. 进阶 高级功能配置</h2>
+
+<p>这些功能的配置，大部分都要修改 NexT 主题的一些文件，所以<code>git pull</code>升级主题的时候，会比较麻烦，解决方法见</p>
+
+<h3 id="参考的文章">参考的文章</h3>
+
+<p>更多如外挂一样的功能配置，就直接贴大佬的文章了，哪些功能自己喜欢，按照大佬的教程来配置就行。不过也有坑，比如有些功能（超链接样式、侧栏头像圆形并旋转）可以直接通过在<code>custom.styl</code>添加 CSS 代码实现，无需更改其它文件！</p>
+
+<ol>
+<li><a href="http://cherryblog.site/Hexo-high-level-tutorialcloudmusic,bg-customthemes-statistical.html">hexo高阶教程next主题优化</a></li>
+<li><a href="http://shenzekun.cn/hexo%E7%9A%84next%E4%B8%BB%E9%A2%98%E4%B8%AA%E6%80%A7%E5%8C%96%E9%85%8D%E7%BD%AE%E6%95%99%E7%A8%8B.html">hexo的next主题个性化教程:打造炫酷网站</a></li>
+<li><a href="http://www.dingxuewen.com/categories/Site/">Hexo搭建博客的个性化设置</a></li>
+</ol>
+
+<p>第一篇文章内有 NexT 主题的文件目录说明，这对自己自定义博客有很大帮助。</p>
+
+<h3 id="更改上一篇-下一篇的顺序">更改上一篇，下一篇的顺序</h3>
+
+<p>进入一篇文章，在文章底部，有上下篇的链接（&lt; &gt;），但是点 &gt; 发现进入的是页面中的的上面那篇文章，与操作习惯不符，别扭。</p>
+
+<p>我猜这是从时间角度设计的，&gt; 英语叫 next，而 next 是更新的。不过别扭就改成习惯的好了，从空间位置角度设计。</p>
+
+<p>方法就是修改文件：</p>
+
+<pre><code>文件位置：~/blog/themes/next/layout/_macro/post.swig{% if not is_index and (post.prev or post.next) %}
+  &lt;div class=&quot;post-nav&quot;&gt;
+    &lt;div class=&quot;post-nav-next post-nav-item&quot;&gt;
+-      {% if post.next %}
++      {% if post.prev %}
+-        &lt;a href=&quot;{{ url_for(post.next.path) }}&quot; rel=&quot;next&quot; title=&quot;{{ post.next.title }}&quot;&gt;
++        &lt;a href=&quot;{{ url_for(post.prev.path) }}&quot; rel=&quot;prev&quot; title=&quot;{{ post.prev.title }}&quot;&gt;
+-          &lt;i class=&quot;fa fa-chevron-left&quot;&gt;&lt;/i&gt; {{ post.next.title }}
++          &lt;i class=&quot;fa fa-chevron-left&quot;&gt;&lt;/i&gt; {{ post.prev.title }}
+        &lt;/a&gt;
+      {% endif %}
+    &lt;/div&gt;
+
+    &lt;span class=&quot;post-nav-divider&quot;&gt;&lt;/span&gt;
+
+    &lt;div class=&quot;post-nav-prev post-nav-item&quot;&gt;
+-      {% if post.prev %}
++      {% if post.next %}
+-        &lt;a href=&quot;{{ url_for(post.prev.path) }}&quot; rel=&quot;prev&quot; title=&quot;{{ post.prev.title }}&quot;&gt;
++        &lt;a href=&quot;{{ url_for(post.next.path) }}&quot; rel=&quot;next&quot; title=&quot;{{ post.next.title }}&quot;&gt;
+-          {{ post.prev.title }} &lt;i class=&quot;fa fa-chevron-right&quot;&gt;&lt;/i&gt;
++          {{ post.next.title }} &lt;i class=&quot;fa fa-chevron-right&quot;&gt;&lt;/i&gt;
+        &lt;/a&gt;
+      {% endif %}
+    &lt;/div&gt;
+  &lt;/div&gt;
+{% endif %}
+</code></pre>
+
+<h3 id="移动端显示-back-to-top-按钮和侧栏">移动端显示 back-to-top 按钮和侧栏</h3>
+
+<p>今天更新一下 NexT 主题，发现已经添加这功能，前提是主题的设计模版是 Muse 或 Mist，然后可以直接在主题配置文件中配置：</p>
+
+<pre><code>文件位置：~/blog/themes/next/_config.yml# Enable sidebar on narrow view
+onmobile: true
+</code></pre>
+
+<p>如果你发现你的主题配置文件<code>_config.yml</code>中没有这段内容，</p>
+
+<h4 id="搜索引擎">搜索引擎</h4>
+
+<p>搜索引擎是互联网上寻找资源的重要手段，而要让别人能够在搜索结果中看到自己的博客文章链接，就必须让搜索引擎收录，怎么操作呢？</p>
+
+<p>直接参考<a href="http://www.ehcoo.com/seo.html">这篇文章</a>，学会使用站长工具抓取自己的网页，然后请求搜索引擎收录。博主也是刚接触不久，不太懂，但推荐提交次数尽量多，而且每天尽量都提交一次。</p>
+
+<h4 id="间接影响">间接影响</h4>
+
+<p>另外，SEO 固然重要，但不要小看另一种影响，相比搜索引擎，这种可以称之为间接影响。</p>
+
+<p>这篇文章是一篇技术性的文章，而技术人员经常会用 Google，所以对这篇文章的浏览量，搜索引擎的功劳较大。但是，如果是其他的文章，比如一首诗，那么直接通过 Google 访问的读者几乎没有，那读者哪来？从其它文章上的读者「流」过来的。因为读者浏览着的不是一篇文章，而是一个博客。</p>
+
+<p>而想让博客上的几乎不可能被 Google 的一首诗被浏览，就要这样间接拉读者了，可以称之「引流」。首先对博客上的每篇文章来说，肯定是读者花在自己博客的时间越长，被读到的可能性越大。这就意味着你要尽可能把用户留在自己的博客上，怎么留？</p>
+
+<ol>
+<li>博客要装饰好</li>
+<li>文章质量要高</li>
+</ol>
+
+<p>读者的第二印象是博客的界面，如果界面够特别，也许马上就被加入了书签。第三印象是文章内容，这其实更加重要，如果文章质量很高，那么读者肯定不会让这么好的一篇文章消失在自己的记忆中，即使界面不咋地。第一印象？加载速度，试想点开半天还是空白，那么肯定马上关了。</p>
+
+<p>如果做到上面三点，那么就算好不容易「骗」到一个 Google 浏览量，但是这个读者马上被博客和文章惊呆了，看完文章后，这读者心里美滋滋，认为这么好的文章（博客）必须分享啊</p>
+
+<h4 id="知识平台">知识平台</h4>
+
+<p>直接或间接因为 Google 这样的搜索引擎而来的读者，绝大部分都是技术人员，而他们只希望尽快解决自己的技术问题，这也是他们的目的，这就意味着博客上的一首诗还是很难被欣赏。</p>
+
+<p>而要想照亮他人，他人必须要能懂自己的文章，这样也才可能有更强的交互——评论。所以为了不浪费自己的光能，能把自己的光能完完整整的贡献给文明，那就必须也让一首诗也有评论，怎么做呢？让读者的类型多样化，不限于技术人员。</p>
+
+<h4 id="谷歌分析">谷歌分析</h4>
+
+<p>你怎么知道自己推广的效果？你怎么知道有没有人看了自己的博客？哪篇文章最受欢迎？此时有没有人正浏览着自己的博客？自己的文章有没有被引用？这时最常用的就是强大免费的 <a href="https://analytics.google.com/">Google Analytics</a>，推荐博客建好后，就立即使用。</p>
+
+<p>如何使用？请务必自备梯子查看 <a href="https://analytics.google.com/analytics/academy/course/6">Google 官方的教程</a>，开始使用后一定要按照里面的设置，先添加多份 view（数据视图）。</p>
+
+<p><strong>ATTENTION：</strong>虽然有个复制 view 选项，但由 Google Analytics（分析）帮助中的<a href="https://support.google.com/analytics/answer/3256366?hl=zh-Hans">具体复制内容</a>再加上我的实践，发现（用我这个外行人的话来说）：复制 view 时只会复制它的相关配置，不会复制数据！所以请使用后立即按照官方教程中的方式添加 view ！</p>
+
+<p>博客刚起步，博客的大部分访客都是自己，所以必须添加一个 filter（过滤器），过滤掉自己的访问（比如：过滤掉自己科学上网服务器的 IP）。</p>
+
+<p><strong>ATTENTION：</strong>由 Google Analytics（分析）的<a href="https://support.google.com/analytics/answer/6383007">工作原理</a>可知，filter 是在数据处理时生效的（如上图），也就是说添加 filter 后只能过滤添加它之后的数据，而无法过滤添加它之前的数据（处理后），而 view 是利用处理后的数据生成的，所以要想去除自己访问的影响（在 view 中看不到自己的访问），请添加 view 之后就立即添加 filter ！</p>
+
+<h3 id="时间轴页面的年份分隔">时间轴页面的年份分隔</h3>
+
+<p>在 Archives（归档）页面，文章之间有年份分隔，而某一个 category 和 tag 的时间轴页面却没有。怎么办呢？修改两个文件，加代码即可</p>
+
+<h4 id="category">category</h4>
+
+<p>加到哪？要加两个位置：</p>
+
+<pre><code>文件位置：~/blog/themes/next/layout/category.swig    {% for post in page.posts %}
+              位置A
+      {{ post_template.render(post) }}
+    {% endfor %}
+.
+.
+.（省略好多行）
+.
+.
+位置B（没错最后面）
+</code></pre>
+
+<p>加什么？绿色的自己看着加：</p>
+
+<pre><code>文件位置：~/blog/themes/next/layout/category.swig我不要 + 号！    {% for post in page.posts %}
++
++      {# Show year #}
++      {% set year %}
++      {% set post.year = date(post.date, 'YYYY') %}
++
++      {% if post.year !== year %}
++        {% set year = post.year %}
++        &lt;div class=&quot;collection-title&quot;&gt;
++          &lt;h2 class=&quot;archive-year motion-element&quot; id=&quot;archive-year-{{ year }}&quot;&gt;{{ year }}&lt;/h2&gt;
++        &lt;/div&gt;
++      {% endif %}
++      {# endshow #}
++
+      {{ post_template.render(post) }}
+    {% endfor %}
+.
+.
+.（省略好多行）
+.
+.
++{% block script_extra %}
++  {% if theme.use_motion %}
++    &lt;script type=&quot;text/javascript&quot; id=&quot;motion.page.archive&quot;&gt;
++      $('.archive-year').velocity('transition.slideLeftIn');
++    &lt;/script&gt;
++  {% endif %}
++{% endblock %}
+</code></pre>
+
+<h4 id="tag">tag</h4>
+
+<p>文件位置：<code>~/blog/themes/next/layout/tag.swig</code>，其它与的 category 修改完全一样。</p>
+
+<h3 id="文章底部加上评分小星星">文章底部加上评分小星星</h3>
+
+<p>淘宝买东西，作为消费者的我们，看评价很重要。现在作为博主，写了一篇文章，很期待读者的反馈。而与淘宝一样，确认收货后，相比评论，更愿意五星好评。那么博客文章怎么加上呢？</p>
+
+<p>首先打开主题配置文件：</p>
+
+<pre><code>文件位置：~/blog/themes/next/_config.yml# Star rating support to each article.
+# To get your ID visit https://widgetpack.com
+rating:
+  enable: true
+  id:     
+  color: f79533
+</code></pre>
+
+<p>先去注释中的网站，首页点 Rating，然后注册个帐号，填一下自己博客的信息，左上角有个 ID，填进主题配置文件中就行，<code>color</code>改成自己喜欢的即可。另：</p>
+
+<ol>
+<li>可以配置评分方式，侧栏 &gt; Rating &gt; Setting，建议用 IP address 或 Device(cookie)，免登录，毕竟 Socials 里面的选项几乎都被墙，不适合国内网络环境。</li>
+<li>建议 侧栏 &gt; Site &gt; Setting 中勾选 Private 选项。</li>
+<li>上面两步勾选后别忘了点击页面右下方的 <strong>SAVE SETTING</strong> 绿色按钮保存。</li>
+</ol>
+
+<p>如果感觉上下留白太多，咋整？浏览器 F12 找元素，调成自己喜欢的值，然后 Copy 到<code>custom.styl</code>即可，</p>
+
+<p>首先打开文件：</p>
+
+<pre><code>文件位置：~/blog/themes/next/layout/_macro/post.swig        {% if theme.rating.enable %}
+          &lt;div class=&quot;wp_rating&quot;&gt;
++            &lt;div style=&quot;color: rgba(0, 0, 0, 0.75); font-size:13px; letter-spacing:3px&quot;&gt;(&amp;gt;看完记得五星好评哦亲&amp;lt;)&lt;/div&gt;
+            &lt;div id=&quot;wpac-rating&quot;&gt;&lt;/div&gt;
+          &lt;/div&gt;
+        {% endif %}
+</code></pre>
+
+<p>然后 Ctrl + F 搜索<code>rating</code>，找到这段，对比我给出的，在绿色这行所示的位置，加上自己想要的说明和样式即可。</p>
+
+<h3 id="侧栏加入已运行的时间">侧栏加入已运行的时间</h3>
+
+<p>首先要加入下面代码：</p>
+
+<pre><code>文件位置：~/blog/themes/next/layout/_custom/sidebar.swig&lt;div id=&quot;days&quot;&gt;&lt;/div&gt;
+&lt;script&gt;
+function show_date_time(){
+window.setTimeout(&quot;show_date_time()&quot;, 1000);
+BirthDay=new Date(&quot;05/27/2017 15:13:14&quot;);
+today=new Date();
+timeold=(today.getTime()-BirthDay.getTime());
+sectimeold=timeold/1000
+secondsold=Math.floor(sectimeold);
+msPerDay=24*60*60*1000
+e_daysold=timeold/msPerDay
+daysold=Math.floor(e_daysold);
+e_hrsold=(e_daysold-daysold)*24;
+hrsold=setzero(Math.floor(e_hrsold));
+e_minsold=(e_hrsold-hrsold)*60;
+minsold=setzero(Math.floor((e_hrsold-hrsold)*60));
+seconds=setzero(Math.floor((e_minsold-minsold)*60));
+document.getElementById('days').innerHTML=&quot;已运行 &quot;+daysold+&quot; 天 &quot;+hrsold+&quot; 小时 &quot;+minsold+&quot; 分 &quot;+seconds+&quot; 秒&quot;;
+}
+function setzero(i){
+if (i&lt;10)
+{i=&quot;0&quot; + i};
+return i;
+}
+show_date_time();
+&lt;/script&gt;
+</code></pre>
+
+<p>上面<code>Date</code>的值记得改为你自己的，且按上面格式，然后修改：</p>
+
+<pre><code>文件位置：~/blog/themes/next/layout/_macro/sidebar.swig        {# Blogroll #}
+        {% if theme.links %}
+          &lt;div class=&quot;links-of-blogroll motion-element {{ &quot;links-of-blogroll-&quot; + theme.links_layout | default('inline') }}&quot;&gt;
+            &lt;div class=&quot;links-of-blogroll-title&quot;&gt;
+              &lt;i class=&quot;fa  fa-fw fa-{{ theme.links_icon | default('globe') | lower }}&quot;&gt;&lt;/i&gt;
+              {{ theme.links_title }}&amp;nbsp;
+              &lt;i class=&quot;fa  fa-fw fa-{{ theme.links_icon | default('globe') | lower }}&quot;&gt;&lt;/i&gt;
+            &lt;/div&gt;
+            &lt;ul class=&quot;links-of-blogroll-list&quot;&gt;
+              {% for name, link in theme.links %}
+                &lt;li class=&quot;links-of-blogroll-item&quot;&gt;
+                  &lt;a href=&quot;{{ link }}&quot; title=&quot;{{ name }}&quot; target=&quot;_blank&quot;&gt;{{ name }}&lt;/a&gt;
+                &lt;/li&gt;
+              {% endfor %}
+            &lt;/ul&gt;
++        {% include '../_custom/sidebar.swig' %}
+          &lt;/div&gt;
+         {% endif %}
+
+-        {% include '../_custom/sidebar.swig' %}
+</code></pre>
+
+<p>这样就可以了！当然，要是不喜欢颜色，感觉不好看，就可以在上文所提的<code>custom.styl</code>加入：</p>
+
+<pre><code>文件位置：~/blog/themes/next/source/css/_custom/custom.styl// 自定义的侧栏时间样式
+#days {
+    display: block;
+    color: rgb(7, 179, 155);
+    font-size: 13px;
+    margin-top: 15px;
+}
+</code></pre>
+
+<p>里面的值 F12 调成自己喜欢的，然后更改即可。要是不想放在侧栏，想放在页脚</p>
+
+<h3 id="添加-topx-页面">添加 TopX 页面</h3>
+
+<p>博客已有的分类，如 categories 和 tags，都是基于博主的，那么有没有一种分类是基于读者的呢？有，一种是搜索，另一种就是这里的文章阅读量排行榜。</p>
+
+<p>前提是在主题配置文件中配置了 leancloud_visitors，</p>
+
+<p>首先新建页面：</p>
+
+<pre><code>所在目录：~/blog/hexo new page &quot;top&quot;
+</code></pre>
+
+<p>然后在主题配置文件中加上菜单 top 和它的 icon：</p>
+
+<pre><code>文件位置：~/blog/themes/next/_config.ymlmenu:
+  top: /top/ || signal
+</code></pre>
+
+<p>接着在语言翻译文件中加上菜单 top：</p>
+
+<p>注意：如果你的站点配置文件中的 languages 写的不是 zh-CN，那么这里请更改相应语言配置文件。</p>
+
+<pre><code>文件位置：~/blog/themes/next/languages/zh_Hans.ymlmenu:
+  home: 首页
+  archives: 归档
+  categories: 分类
+  tags: 标签
+  about: 关于
+  search: 搜索
+  schedule: 日程表
+  sitemap: 站点地图
+  commonweal: 公益404
+  top: TopX /* 可以不为 TopX，随便取 */
+</code></pre>
+
+<p>最后，编辑第一步新建页面生成的文件：</p>
+
+<pre><code>文件位置：~/blog/source/top/index.md---
+title: TopX /* 可以不为 TopX，随便取 */
+comments: false
+keywords: top,文章阅读量排行榜
+description: 博客文章阅读量排行榜
+---
+&lt;div id=&quot;top&quot;&gt;&lt;/div&gt;
+&lt;script src=&quot;//cdn1.lncld.net/static/js/3.0.4/av-min.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;AV.initialize(&quot;app_id&quot;, &quot;app_key&quot;);&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+  var time=0
+  var title=&quot;&quot;
+  var url=&quot;&quot;
+  var query = new AV.Query('Counter');
+  query.notEqualTo('id',0);
+  query.descending('time');
+  query.limit(1000);
+  query.find().then(function (todo) {
+    for (var i=0;i&lt;1000;i++){
+      var result=todo[i].attributes;
+      time=result.time;
+      title=result.title;
+      url=result.url;
+      var content=&quot;&lt;a href='&quot;+&quot;https://reuixiy.github.io&quot;+url+&quot;'&gt;&quot;+title+&quot;&lt;/a&gt;&quot;+&quot;&lt;br /&gt;&quot;+&quot;&lt;font color='#555'&gt;&quot;+&quot;阅读次数：&quot;+time+&quot;&lt;/font&gt;&quot;+&quot;&lt;br /&gt;&lt;br /&gt;&quot;;
+      document.getElementById(&quot;top&quot;).innerHTML+=content
+    }
+  }, function (error) {
+    console.log(&quot;error&quot;);
+  });
+&lt;/script&gt;
+
+&lt;style&gt;.post-description { display: none; }&lt;/style&gt;
+</code></pre>
+
+<p>必须将里面的里面的<code>app_id</code>和<code>app_key</code>替换为你的主题配置文件中的值，必须替换里面博客的链接，<code>1000</code>是显示文章的数量，其它可以自己看情况更改。</p>
+
+<p>最后，修改样式可以在<code>custom.styl</code>中加入自定义代码</p>
+
+<p>Okay! 完成了！不过还有几点需要注意：</p>
+
+<ol>
+<li>如果在 设置 &gt; 安全中心 中，设置了 Web 安全域名，但没有将<code>http://localhost:4000</code>加入，那么本地调试将看不到，可以先将之加入，调试完后删除。</li>
+<li>如果你发现文章标题显示不对，这是由于更改过文章标题导致的，在 存储 &gt; Counter 双击<code>title</code>修改即可。</li>
+</ol>
+
+<h3 id="利用-gulp-压缩代码">利用 gulp 压缩代码</h3>
+
+<p>右键查看网页源代码发现有大量留白，咋整？利用 gulp。</p>
+
+<p>首先任意目录全局安装：</p>
+
+<pre><code>npm install gulp -g
+</code></pre>
+
+<p>然后到站点文件夹根目录：</p>
+
+<pre><code>所在目录：~/blog/npm install gulp gulp-minify-css gulp-htmlmin gulp-htmlclean --save
+</code></pre>
+
+<p>接着在站点文件夹根目录新建 gulpfile.js：</p>
+
+<pre><code>文件位置：~/blog/gulpfile.jsvar gulp = require('gulp');
+var minifycss = require('gulp-minify-css');
+var htmlmin = require('gulp-htmlmin');
+var htmlclean = require('gulp-htmlclean');
+gulp.task('minify-css', function() {
+    return gulp.src('./public/**/*.css')
+        .pipe(minifycss())
+        .pipe(gulp.dest('./public'))
+});
+gulp.task('minify-html', function() {
+  return gulp.src('./public/**/*.html')
+    .pipe(htmlclean())
+    .pipe(htmlmin({
+         removeComments: true,
+         minifyJS: true,
+         minifyCSS: true,
+         minifyURLs: true
+    }))
+    .pipe(gulp.dest('./public'))
+});
+gulp.task('default', ['minify-html', 'minify-css']);
+</code></pre>
+
+<p>最后部署到 GitHub Pages 上查看效果：</p>
+
+<pre><code>所在目录：~/blog/hexo clean &amp;&amp; hexo g &amp;&amp; gulp &amp;&amp; hexo d
+</code></pre>
+
+<p>我没有压缩 JavaScript，因为我发现会报错，实际也并不需要，因为大部分 JavaScript 都已压缩过。</p>
+
+<p>这里的这段代码执行 gulp 后不支持 hexo s 本地调试，记得在哪看过解决方法，需要的自己 Google。</p>
+
+<p>另外，可能会产生一些奇怪的 bugs，没看到最好，要是看到了的话就自己解决吧～[逃……]</p>
+
+<h3 id="让页脚的心跳动起来">让页脚的心跳动起来</h3>
+
+<p>世界上有一种伟大的力量，它的名字无人不晓，就是……爱～</p>
+
+<p>更新 NexT 主题后，发现默认的<code>icon</code>变成了（user），不过这可阻挡不了爱的力量！</p>
+
+<p>首先编辑主题配置文件：</p>
+
+<pre><code>文件位置：~/blog/themes/next/_config.ymlfooter:
+-  icon: user
++  icon: heart
+</code></pre>
+
+<p>然后编辑：</p>
+
+<pre><code>文件位置：~/blog/themes/next/layout/_partials/footer.swig- &lt;span class=&quot;with-love&quot;&gt;
++ &lt;span class=&quot;with-love&quot; id=&quot;heart&quot;&gt;
+</code></pre>
+
+<p>接着编辑<code>custom.styl</code>，加入：</p>
+
+<pre><code>文件位置：~/blog/themes/next/source/css/_custom/custom.styl// 自定义页脚跳动的心样式
+@keyframes heartAnimate {
+    0%,100%{transform:scale(1);}
+    10%,30%{transform:scale(0.9);}
+    20%,40%,60%,80%{transform:scale(1.1);}
+    50%,70%{transform:scale(1.1);}
+}
+#heart {
+    animation: heartAnimate 1.33s ease-in-out infinite;
+}
+.with-love {
+    color: rgb(255, 113, 168);
+}
+</code></pre>
+
+<p>color 的值可以改成你自己喜欢的，灵感来自 <a href="https://diygod.me/">DIYgod</a> 大佬的博客，CSS 代码参考<a href="http://www.jianshu.com/p/73b46c376188">这篇文章</a>。</p>
+
+<h3 id="页脚加上微信二维码">页脚加上微信二维码</h3>
+
+<p>主题默认的微信订阅个人感觉不美观，看到很多网站都是在页脚有个微信的 Logo，然后鼠标移动到上面便会显示二维码，这样感觉很棒。</p>
+
+<p>首先编辑文件，在文件最后加上下面代码：</p>
+
+<pre><code>文件位置：~/blog/themes/next/layout/_partials/footer.swig&lt;div class=&quot;weixin-box&quot;&gt;
+  &lt;div class=&quot;weixin-menu&quot;&gt;
+    &lt;div class=&quot;weixin-hover&quot;&gt;
+      &lt;div class=&quot;weixin-description&quot;&gt;微信扫一扫，订阅本博客&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<p>然后编辑<code>custom.styl</code>，加入：</p>
+
+<pre><code>文件位置：~/blog/themes/next/source/css/_custom/custom.styl// 自定义的页脚微信订阅号样式
+.weixin-box {
+    position: absolute;
+    bottom: 43px;
+    left: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.35);
+}
+.weixin-menu {
+    position: relative;
+    height: 24px;
+    width: 24px;
+    cursor: pointer;
+    background: url(https://微信的logo.svg);
+    background-size: 24px 24px;
+}
+.weixin-hover {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    height: 0px;
+    width: 0px;
+    border-radius: 3px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.35);
+    background: url(https://二维码.svg);
+    background-color: #fff;
+    background-repeat: no-repeat;
+    background-size: 150px 150px;
+    transition: all 0.35s ease-in-out;
+    z-index: 1024;
+    opacity: 0;
+}
+.weixin-menu:hover .weixin-hover {
+    bottom: 24px;
+    left: 24px;
+    height: 170px;
+    width: 150px;
+    opacity: 1;
+}
+.weixin-description {
+    opacity: 0;
+    position: absolute;
+    bottom: 3%;
+    left: 5%;
+    right: 5%;
+    font-size: 12px;
+    transition: all 0.35s cubic-bezier(1, 0, 0, 1);
+}
+.weixin-menu:hover .weixin-description {
+    opacity: 1;
+}
+</code></pre>
+
+<p>图片务必用矢量图 svg 格式，否则手机上显示效果很差，其它的自己看情况更改。</p>
+
+<h3 id="更改标签云-tagcloud-的颜色">更改标签云（tagcloud）的颜色</h3>
+
+<p>如果你和我一样个性化了博客的整体布局颜色，那么默认的标签云页面可能看起来很丑，怎么更改？</p>
+
+<p>修改下文件：</p>
+
+<pre><code>文件位置：~/blog/themes/next/layout/page.swig{{ tagcloud({min_font: 13, max_font: 31, amount: 1000, color: true, start_color: '#9733EE', end_color: '#FF512F'}) }}
+</code></pre>
+
+<p>修改对应参数值即可，参数说明见 <a href="https://hexo.io/zh-cn/docs/helpers.html#tagcloud">Hexo 官方文档</a>，颜色可以参考<a href="https://uigradients.com/">这个网站</a>，自己去纠结……</p>
+
+<h3 id="点击侧栏头像回到博客首页">点击侧栏头像回到博客首页</h3>
+
+<p>不知道为什么，我看到侧栏头像的第一反应是点击，然后心理预期会跳到博客首页，可惜也仅是预期，那么开始动手吧～</p>
+
+<p>首先要在主题配置文件中配置好，比如我把头像<code>avatar.gif</code>放在<code>~/blog/source/uploads/</code>下，则：</p>
+
+<pre><code>文件位置：~/blog/themes/next/_config.yml# Sidebar Avatar
+# in theme directory(source/images): /images/avatar.gif
+# in site  directory(source/uploads): /uploads/avatar.gif
+-#avatar: /images/avatar.gif
++avatar: /uploads/avatar.gif
+</code></pre>
+
+<p>然后编辑文件：</p>
+
+<pre><code>文件位置：~/blog/themes/next/layout/_macro/sidebar.swig+        &lt;a href=&quot;/&quot;&gt;
+          &lt;img class=&quot;site-author-image&quot; itemprop=&quot;image&quot;
+               src=&quot;{{ url_for( theme.avatar | default(theme.images + '/avatar.gif') ) }}&quot;
+               alt=&quot;{{ theme.author }}&quot; /&gt;
++        &lt;/a&gt;
+</code></pre>
+
+<p>最后就 OK 了～</p>
+
+<h3 id="文章摘要图片">文章摘要图片</h3>
+
+<p>俗话说：「图文并茂」，现实中用笔书写文章实现起来比较困难，但在博客上可以很轻松实现。</p>
+
+<p>首先，文章摘要（excerpt）是指每篇文章在页面（page）上显示的那部分内容，也就是 [Read More] 之前的文章内容。由于它会展示在页面，因此在每篇文章的文章摘要中加一张图片，页面看起来就很美观。</p>
+
+<p>但是有时候可能会出现一个问题：你想从文章中选一张图片作为文章摘要图片，而这张图片由于写作要求，必须添加在文章的末尾，这样点 [Read More] 查看文章时，这张图片就会重复出现了。咋办？</p>
+
+<p>前提是在主题配置文件中：</p>
+
+<pre><code>文件位置：~/blog/themes/next/_config.ymlexcerpt_description: false
+
+auto_excerpt:
+  enable: false
+</code></pre>
+
+<p>首先加代码：</p>
+
+<pre><code>文件位置：~/blog/themes/next/layout/_macro/post.swig      {% if is_index %}
+        {% if post.description and theme.excerpt_description %}
+          {{ post.description }}
+          &lt;!--noindex--&gt;
+          &lt;div class=&quot;post-button text-center&quot;&gt;
+            &lt;a class=&quot;btn&quot; href=&quot;{{ url_for(post.path) }}&quot;&gt;
+              {{ __('post.read_more') }} &amp;raquo;
+            &lt;/a&gt;
+          &lt;/div&gt;
+          &lt;!--/noindex--&gt;
+        {% elif post.excerpt  %}
+          {{ post.excerpt }}
++          
++        {% if post.image %}
++        &lt;div class=&quot;out-img-topic&quot;&gt;
++          &lt;img src={{ post.image }} class=&quot;img-topic&quot; /&gt;
++        &lt;/div&gt;
++        {% endif %}
++          
+          &lt;!--noindex--&gt;
+          &lt;div class=&quot;post-button text-center&quot;&gt;
+            &lt;a class=&quot;btn&quot; href=&quot;{{ url_for(post.path) }}{% if theme.scroll_to_more %}#{{ __('post.more') }}{% endif %}&quot; rel=&quot;contents&quot;&gt;
+              {{ __('post.read_more') }} &amp;raquo;
+            &lt;/a&gt;
+          &lt;/div&gt;
+          &lt;!--/noindex--&gt;
+</code></pre>
+
+<p>为了防止有的图片宽度不够导致风格不够统一，页面不美观，需要在<code>custom.styl</code>中加入：</p>
+
+<pre><code>文件位置：~/blog/themes/next/source/css/_custom/custom.styl// 自定义的文章摘要图片样式
+img.img-topic {
+    width: 100%;
+}
+</code></pre>
+
+<p>最后编辑有这需求的相关文章时，在<code>Front-matter</code>（文件最上方以<code>---</code>分隔的区域）加上一行：</p>
+
+<pre><code>image: url
+</code></pre>
+
+<p><code>url</code>即图片的链接地址～</p>
+
+<p>参考：</p>
+
+<ol>
+<li>issue：<a href="https://github.com/iissnan/hexo-theme-next/issues/1190">https://github.com/iissnan/hexo-theme-next/issues/1190</a></li>
+<li>文章：<a href="http://wellliu.com/2016/12/30/%E3%80%90%E8%BD%AC%E3%80%91Blog%E6%91%98%E8%A6%81%E9%85%8D%E5%9B%BE/">http://wellliu.com/2016/12/30/【转】Blog摘要配图/</a></li>
+</ol>
+
+<h3 id="文章置顶">文章置顶</h3>
+
+<p>由于博客的首页可能是被浏览最多的页面，所以首页的前几篇文章被阅读的可能性比较大。可以利用这个特点，通过将自己认为重要的文章放在首页，从而让重要的文章被阅读的可能性增大。</p>
+
+<p>但是，默认的排序只有一个维度——时间，两种选择——正序和倒序，这就造成自己的得意之作被「埋没」了，怎么办呢，如何实现文章的置顶？</p>
+
+<p>NexT 主题以前有过这个功能，然而由于一些 bugs（<a href="https://github.com/iissnan/hexo-theme-next/issues/415">issue</a>）被去掉了。不过在这个丰富的 issue 中，我自己摸索出了一种解决方法，参考了 issue 中的那篇<a href="http://www.netcan666.com/2015/11/22/%E8%A7%A3%E5%86%B3Hexo%E7%BD%AE%E9%A1%B6%E9%97%AE%E9%A2%98/">文章</a>。</p>
+
+<p>首先移除默认安装的插件：</p>
+
+<pre><code>所在目录：~/blog/npm uninstall hexo-generator-index --save
+</code></pre>
+
+<p>然后安装新插件：</p>
+
+<pre><code>所在目录：~/blog/npm install hexo-generator-index-pin-top --save
+</code></pre>
+
+<p>最后编辑有这需求的相关文章时，在<code>Front-matter</code>（文件最上方以<code>---</code>分隔的区域）加上一行：</p>
+
+<pre><code>top: true
+</code></pre>
+
+<p>然后就行了，如果你置顶了多篇，怎么控制顺序呢？设置<code>top</code>的值（大的在前面），比如：</p>
+
+<pre><code># Post a.md
+title: a
+top: 1
+
+# Post b.md
+title: b
+top: 10
+</code></pre>
+
+<p>那么文章 b 便会显示在文章 a 的前面。</p>
+
+<p>还好 NexT 原有的置顶功能有考虑到这个，且置顶的样式没有被移除，所以可以直接利用，编辑文件：</p>
+
+<pre><code>文件位置：~/blog/node_modules/hexo-generator-index-pin-top/lib/generator.js'use strict';
+var pagination = require('hexo-pagination');
+module.exports = function(locals){
+  var config = this.config;
+  var posts = locals.posts;
+    posts.data = posts.data.sort(function(a, b) {
+        if(a.sticky &amp;&amp; b.sticky) { // 两篇文章sticky都有定义
+            if(a.sticky == b.sticky) return b.date - a.date; // 若sticky值一样则按照文章日期降序排
+            else return b.sticky - a.sticky; // 否则按照sticky值降序排
+        }
+        else if(a.sticky &amp;&amp; !b.sticky) { // 以下是只有一篇文章sticky有定义，那么将有sticky的排在前面（这里用异或操作居然不行233）
+            return -1;
+        }
+        else if(!a.sticky &amp;&amp; b.sticky) {
+            return 1;
+        }
+        else return b.date - a.date; // 都没定义按照文章日期降序排
+    });
+  var paginationDir = config.pagination_dir || 'page';
+  return pagination('', posts, {
+    perPage: config.index_generator.per_page,
+    layout: ['index', 'archive'],
+    format: paginationDir + '/%d/',
+    data: {
+      __index: true
+    }
+  });
+};
+</code></pre>
+
+<p>也就是将插件的<code>top</code>全部替换为 NexT 原有的<code>sticky</code>，然后将<code>Front-matter</code>中的<code>top</code>替换为<code>sticky</code>，就能调用 NexT 主题原有的置顶样式了。</p>
+
+<p>最后可以自定义一下样式：</p>
+
+<pre><code>文件位置：~/blog/themes/next/source/css/_custom/custom.styl// 自定义的文章置顶样式
+.post-sticky-flag {
+    font-size: inherit;
+    float: left;
+    color: rgb(0, 0, 0);
+    cursor: help;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
+    transition-delay: 0s;
+}
+.post-sticky-flag:hover {
+    color: #07b39b;
+}
+</code></pre>
+
+<p>已发现的 bug：新安装的插件无法实现站点配置文件中<code>order_by: date</code>，即文章按时间从旧到新排列的配置，也就意味着文章只能按默认的时间从新到旧排列。</p>
+
+<h3 id="背景图片">背景图片</h3>
+
+<p>通过 jquery-backstretch，具体操作呢，编辑文件：</p>
+
+<pre><code>文件位置：~/blog/themes/next/layout/_layout.swig+  &lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js&quot;&gt;&lt;/script&gt;
++  &lt;script&gt;
++  $(&quot;body&quot;).backstretch(&quot;https://背景图.jpg&quot;);
++  &lt;/script&gt;
+&lt;/body&gt;
+</code></pre>
+
+<p>加入到文件最后面<code>&lt;/body&gt;</code>前面即可。</p>
+
+<p>你可以浏览器按 F12 查看我的页面，就可以在<code>&lt;/body&gt;</code>前发现。</p>
+
+<p>幻灯片等更多用法请自行查看 GitHub 上的 <a href="https://github.com/jquery-backstretch/jquery-backstretch">README</a>。</p>
+
+<h3 id="动态效果">动态效果</h3>
+
+<p>可以在主题配置文件<code>_config.yml</code>里的<code>motion</code>中配置，但是如果你和我一样更改了博客的背景色，可能不能达到很好的效果，怎么办呢？参考<a href="https://github.com/iissnan/hexo-theme-next/pull/1829/files">这里</a>，修改下面两个文件的相应内容。</p>
+
+<ol>
+<li>~/blog/themes/next/source/css/_common/components/post/post.styl</li>
+<li>~/blog/themes/next/source/js/src/motion.js</li>
+</ol>
+
+<h3 id="相关-热门-推荐文章">相关/热门/推荐文章</h3>
+
+<p><a href="https://reuixiy.github.io/technology/computer/computer-aided-art/2018/05/09/related-popular-recommended-posts.html">https://reuixiy.github.io/technology/computer/computer-aided-art/2018/05/09/related-popular-recommended-posts.html</a></p>
+
+<h3 id="mathjax-的静态显示-svg">MathJax 的静态显示（svg）</h3>
+
+<p><a href="https://reuixiy.github.io/technology/computer/computer-aided-art/2018/05/16/hexo-mathjax-svg.html">https://reuixiy.github.io/technology/computer/computer-aided-art/2018/05/16/hexo-mathjax-svg.html</a></p>
+
+<h3 id="加速-hexo-博客">加速 Hexo 博客</h3>
+
+<p><a href="https://reuixiy.github.io/technology/computer/computer-aided-art/2018/05/30/speed-up-hexo.html">https://reuixiy.github.io/technology/computer/computer-aided-art/2018/05/30/speed-up-hexo.html</a></p>
+
+<h3 id="萌萌哒十二生">萌萌哒十二生</h3>
+
+<p><a href="https://reuixiy.github.io/technology/computer/computer-aided-art/2018/08/27/add-chinese-zodiac-to-next.html">https://reuixiy.github.io/technology/computer/computer-aided-art/2018/08/27/add-chinese-zodiac-to-next.html</a></p>
+
+<h2 id="进阶-写出优雅文章">进阶 写出优雅文章</h2>
+
+<p>博客搭好了，只能说有个漂亮的外壳，内容丰富且颜值高的文章才是真正的精华。文章内容只能靠自己，不过这里教你几招提高文章颜值的方法。</p>
+
+<p>写文章前请先查看 Hexo 官方文档之<a href="https://hexo.io/zh-cn/docs/writing.html">写作</a>，写的很棒！然后再来细细讲讲文章（post）的模版文件，因为文章模版文件的个性化会直接影响文章（post）的主要布局，甚至是页面（page）的主要布局。</p>
+
+<h3 id="文章的模版文件-必读">文章的模版文件（必读）</h3>
+
+<p>如果你是在站点文件夹根目录用<code>hexo new post &lt;title&gt;</code>新建的文章，那么其实它就是将文章的模版文件<code>post.md</code>「复制」了一份到<code>~/blog/source/_posts/</code>下，所以这也意味着：</p>
+
+<ol>
+<li>你可以直接通过在<code>~/blog/source/_posts/</code>下新建<code>.md</code>结尾的文件来写新的文章。</li>
+<li>你可以通过自定义文章的模版文件，从而每次命令行新建的文章都会有你自定义的内容。</li>
+</ol>
+
+<p>注意：如果自己直接新建文件，一定要记得加上文件最上方的参数，即下面的相关内容，还有编码请用 UTF-8。</p>
+
+<p>关于文件最上方的参数，参见 Hexo 官方文档的 <a href="https://hexo.io/docs/front-matter.html">Front-matter</a> 和<a href="https://hexo.io/zh-cn/docs/variables.html#页面变量">页面变量</a>，下面是我的总结：</p>
+
+<pre><code>/* ！！！！！！！！！！
+** 每一项的 : 后面均有一个空格
+** 且 : 为英文符号
+** ！！！！！！！！！！
+*/
+
+title:
+/* 文章标题，可以为中文 */
+
+date:
+/* 建立日期，如果自己手动添加，请按固定格式
+** 就算不写，页面每篇文章顶部的发表于……也能显示
+** 只要在主题配置文件中，配置了 created_at 就行
+** 那为什么还要自己加上？
+** 自定义文章发布的时间
+*/
+
+updated:
+/* 更新日期，其它与上面的建立日期类似
+** 不过在页面每篇文章顶部，是更新于……
+** 在主题配置文件中，是 updated_at
+*/
+
+permalink:
+/* 若站点配置文件下的 permalink 配置了 title
+** 则可以替换文章 URL 里面的 title（文章标题）
+*/
+
+categories:
+/* 分类，支持多级，比如：
+- technology
+- computer
+- computer-aided-art
+则为technology/computer/computer-aided-art
+（不适用于 layout: page）
+*/
+
+tags:
+/* 标签
+** 多个可以这样写[标签1,标签2,标签3]
+** （不适用于 layout: page）
+*/
+
+description:
+/* 文章的描述，在每篇文章标题下方显示
+** 并且作为网页的 description 元数据
+** 如果不写，则自动取 &lt;!-- more --&gt;
+** 之前的文字作为网页的 description 元数据
+** 建议每篇文章都务必加上！
+*/
+
+keywords:
+/* 关键字，并且作为网页的 keywords 元数据
+** 如果不写，则自动取 tags 里的项
+** 作为网页的 keywords 元数据
+*/
+
+comments:
+/* 是否开启评论
+** 默认值是 true
+** 要关闭写 false
+*/
+
+layout:
+/* 页面布局，默认值是 post，默认值可以在
+** 站点配置文件中修改 default_layout
+** 另：404 页面可能用到，将其值改为 false
+*/
+
+type:
+/* categories，目录页面
+** tags，标签页面
+** picture，用来生成 group-pictures
+** quote？
+** https://reuixiy.github.io/uncategorized/2010/01/01/test.html
+*/
+
+photos:
+/* Gallery support，用来支持画廊 / 相册，用法如下：
+- photo_url_1
+- photo_url_2
+- photo_url_3
+https://reuixiy.github.io/uncategorized/2010/01/01/test.html
+*/
+
+link:
+/* 文章的外部链接
+** https://reuixiy.github.io/uncategorized/2010/01/01/test.html
+*/
+
+image:
+/* 自定义的文章摘要图片，只在页面展示，文章内消失
+** 
+*/
+
+sticky:
+/* 文章置顶
+** 
+*/
+
+password:
+/* 文章密码，此项只有参考教程：
+** http://shenzekun.cn/hexo的next主题个性化配置教程.html
+** 
+*/
+</code></pre>
+
+<p>基于你自己博客的功能需求，以及自己对页面布局和文章布局的理解（审美观），将上面这些自己需要的加到自己的文章模版文件中即可，最后贴出我的文章模版文件：</p>
+
+<pre><code>文件位置：~/blog/scaffolds/post.md---
+title: {{ title }}
+date: {{ date }}
+permalink:
+categories:
+tags: []
+description:
+image:
+---
+&lt;p class=&quot;description&quot;&gt;&lt;/p&gt;
+
+&lt;img src=&quot;https://&quot; alt=&quot;&quot; style=&quot;width:100%&quot; /&gt;
+
+&lt;!-- more --&gt;
+
+##
+
+##
+
+##
+
+&lt;hr /&gt;
+</code></pre>
+
+<p>但为什么说文章模版文件的个性化会直接影响文章（post）的主要布局，甚至是页面（page）的主要布局呢？哈哈哈，让我来解释一番我的文章模版文件，你就知道了～</p>
+
+<ul>
+<li><strong>Front-matter</strong></li>
+</ul>
+
+<p>先起好文章的<code>title</code>（中文），然后补上<code>permalink</code>（英文），这是因为我在站点配置文件将 title 加进了文章的 URL 中，然而我不希望文章的 URL 中出现中文，相当于将 URL 中的中文翻译成英文。</p>
+
+<p><code>date</code>可以方便自定义文章的发布时间，接下来是<a href="https://reuixiy.github.io/philosophy/how/2017/12/11/categories+tags.html">两种不同的分类方式</a>——<code>categories</code>和<code>tags</code>（分类和标签），<code>description</code>是文章的描述，建议务必写上！原因上面说了～</p>
+
+<ul>
+<li><strong><p></strong></li>
+</ul>
+
+<p>由于文章的描述（<code>description</code>）有时候并不能满足我的需求有时候我需要将「文章的描述」写在文章中，并放在<code>&lt;!-- more --&gt;</code>之前作为文章摘要，但为了保证在文章（ post ）中与正文区分开来，我自己在<code>custom.styl</code>中自定义了一个<code>&lt;p&gt;</code>标签的样），用来模仿 description 的显示效果。</p>
+
+<p>而且，由于如果不写<code>description</code>，则自动取<code>&lt;!-- more --&gt;</code>之前的文字作为网页的 description 元数据，外观和功能兼得，完美替代啊</p>
+
+<ul>
+<li><strong>图片</strong></li>
+</ul>
+
+<p>由于<code>&lt;!-- more --&gt;</code>之前的文章内容会作为文章摘要（excerpt）显示在页面（page）中，会影响页面的主要布局，所以我在它前面加上了图片，为显示在页面的每篇文章的文章摘要配一张图片，保证博客页面的美观。有的图片宽度不够导致风格不够统一，页面不美观咋办？加上<code>width:100%</code>。</p>
+
+<p>但是，有些情况下，也许你会从文章中选一张图片作为文章摘要图片，而这张图片由于写作要求，必须添加在文章的末尾，这样点 [Read More] 查看文章时，这张图片就会重复出现了，那怎么办？用[文章摘要图片 <code>image</code></p>
+
+<ul>
+<li><strong><!-- more --></strong></li>
+</ul>
+
+<p>之后的是文章的主要内容，文章的主要内容一般都可以分成几个部分，每一部分都可以概括出一个小标题，所以先将三个<code>##</code>（二级标题）加上咯～</p>
+
+<ul>
+<li><strong>hr</strong></li>
+</ul>
+
+<p>最后加上<code>&lt;hr /&gt;</code>作为分隔线，可以将文章内容与它下面的非文章内容分隔开来，</p>
+
+<p><strong>既然自定义的<p>能替代description，那还有必要用description吗？</strong></p>
+
+<h3 id="使用-markdown">使用 Markdown</h3>
+
+<p>用 Hexo 写文章是直接用 Markdown 写的，而不是像 WordPress 有一个类似 Word 一样的文字编辑器，所以第一次用会感觉有点难，但你熟练之后，就会觉得文字编辑器都是辣鸡</p>
+
+<h4 id="markdown-简介">Markdown 简介</h4>
+
+<p>Markdown 的目标是实现「易读易写」。</p>
+
+<p>不过最需要强调的便是它的可读性。一份使用 Markdown 格式撰写的文件应该可以直接以纯文字发布，并且看起来不会像是由许多标签或是格式指令所构成。Markdown 语法受到一些既有 text-to-HTML 格式的影响，包括 Setext、atx、Textile、reStructuredText、Grutatext 和 EtText，然而最大灵感来源其实是纯文字的电子邮件格式。</p>
+
+<p>因此 Markdown 的语法全由标点符号所组成，并经过严谨慎选，是为了让它们看起来就像所要表达的意思。像是在文字两旁加上星号，看起来就像<strong>强调</strong>。Markdown 的清单看起来，嗯，就是清单。假如你有使用过电子邮件，区块引言看起来就真的像是引用一段文字。</p>
+
+<h4 id="总结">总结</h4>
+
+<p>首先是基础但重要：</p>
+
+<ol>
+<li>文章内标题请从二级标题（<code>##</code>）开始！</li>
+<li>英语单词、数字左右看情况加上空格！</li>
+<li>Markdwon 文档写完一段回车后务必再回车一次空一行！</li>
+</ol>
+
+<p>然后如果有些用 Markdwon 的语法却达不到预期效果（甚至产生奇怪的 bugs），或者用 Markdwon 的语法无法实现，这时就可以考虑用 HTML 和 CSS。</p>
+
+<ul>
+<li><p>分隔线和空行</p>
+
+<pre><code>/* 分隔线 */
+&lt;hr /&gt;
+/* 注意事项[6]：在XHTML 中，&lt;hr&gt; 必须被正确地关闭，比如 &lt;hr /&gt; */
+
+/* 空行 */
+&lt;br /&gt;
+/* 注意事项同上 */
+</code></pre></li>
+
+<li><p>引用</p>
+
+<pre><code>&lt;blockquote&gt;引用内容&lt;/blockquote&gt;
+
+/* 如果上下间距很小，可以像下面这样写 */
+&lt;p&gt;&lt;blockquote&gt;引用内容&lt;/blockquote&gt;&lt;/p&gt;
+</code></pre></li>
+
+<li><p>居中和右对齐</p>
+
+<pre><code>/* 居中 */
+&lt;center&gt;内容&lt;/center&gt;
+
+/* 右对齐 */
+&lt;p style=&quot;text-align:right&quot;&gt;内容&lt;/p&gt;
+</code></pre></li>
+
+<li><p>字体大小和颜色</p>
+
+<pre><code>&lt;font color=&quot;#xxxxxx&quot; size=&quot;number&quot;&gt;内容&lt;/font&gt;
+/* 详细请查看 http://www.w3school.com.cn/tags/tag_font.asp */
+</code></pre></li>
+
+<li><p>Todo list</p>
+
+<pre><code>&lt;ul&gt;
+&lt;li&gt;&lt;i class=&quot;fa fa-check-square&quot;&gt;&lt;/i&gt; 已完成&lt;/li&gt;
+&lt;li&gt;&lt;i class=&quot;fa fa-square&quot;&gt;&lt;/i&gt; 未完成&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre></li>
+</ul>
+
+<h3 id="插入音乐和视频">插入音乐和视频</h3>
+
+<p>音乐的话，网易云音乐的外链很好用，不仅有可以单曲，还能有歌单，有兴趣的自己去<a href="https://music.163.com/">网易云音乐</a>找首歌尝试。但是有一些音乐因为版权原因放不了，还有就是不完全支持 https，导致小绿锁不见了。要解决这些缺点，就需要安装插件</p>
+
+<h4 id="音乐">音乐</h4>
+
+<p>可以直接用 HTML 的标签，写法如下：</p>
+
+<pre><code>&lt;audio src=&quot;https://什么什么什么.mp3&quot; style=&quot;max-height :100%; max-width: 100%; display: block; margin-left: auto; margin-right: auto;&quot; controls=&quot;controls&quot; loop=&quot;loop&quot; preload=&quot;meta&quot;&gt;Your browser does not support the audio tag.&lt;/audio&gt;
+</code></pre>
+
+<p>用插件，有显示歌词功能，也美观，建议使用这种方法。</p>
+
+<p>首先在站点文件夹根目录安装插件：</p>
+
+<pre><code>所在目录：~/blog/npm install hexo-tag-aplayer --save
+</code></pre>
+
+<p>然后文章中的写法：</p>
+
+<pre><code>{% aplayer &quot;歌曲名&quot; &quot;歌手名&quot; &quot;https://什么什么什么.mp3&quot; &quot;https://封面图.jpg&quot; &quot;lrc:https://歌词.lrc&quot; %}
+</code></pre>
+
+<p>效果，在这博客的标签里自己找一篇文章看看。</p>
+
+<p>另外可以支持歌单：</p>
+
+<pre><code>{% aplayerlist %}
+{
+    &quot;autoplay&quot;: false,
+    &quot;showlrc&quot;: 3,
+    &quot;mutex&quot;: true,
+    &quot;music&quot;: [
+        {
+            &quot;title&quot;: &quot;歌曲名&quot;,
+            &quot;author&quot;: &quot;歌手名&quot;,
+            &quot;url&quot;: &quot;https://什么什么什么.mp3&quot;,
+            &quot;pic&quot;: &quot;https://封面图.jpg&quot;,
+            &quot;lrc&quot;: &quot;https://歌词.lrc&quot;
+        },
+        {
+            &quot;title&quot;: &quot;歌曲名&quot;,
+            &quot;author&quot;: &quot;歌手名&quot;,
+            &quot;url&quot;: &quot;https://什么什么什么.mp3&quot;,
+            &quot;pic&quot;: &quot;https://封面图.jpg&quot;,
+            &quot;lrc&quot;: &quot;https://歌词.lrc&quot;
+        }
+    ]
+}
+{% endaplayerlist %}
+</code></pre>
+
+<h4 id="视频">视频</h4>
+
+<p>可以直接用 HTML 的标签，写法如下：</p>
+
+<pre><code>&lt;video poster=&quot;https://封面图.jpg&quot; src=&quot;https://什么什么什么.mp4&quot; style=&quot;max-height :100%; max-width: 100%; display: block; margin-left: auto; margin-right: auto;&quot; controls=&quot;controls&quot; loop=&quot;loop&quot; preload=&quot;meta&quot;&gt;Your browser does not support the video tag.&lt;/video&gt;
+</code></pre>
+
+<p>用插件，功能更加强大，比如可以弹幕，非常建议食用。</p>
+
+<p>首先在站点文件夹根目录安装插件：</p>
+
+<pre><code>所在目录：~/blog/npm install hexo-tag-dplayer --save
+</code></pre>
+
+<p>然后文章中的写法：</p>
+
+<pre><code>{% dplayer &quot;url=https://什么什么什么.mp4&quot; &quot;https://封面图.jpg&quot; &quot;api=https://api.prprpr.me/dplayer/&quot; &quot;id=&quot; &quot;loop=false&quot; %}
+</code></pre>
+
+<p>要使用弹幕，必须有<code>api</code>和<code>id</code>两项，并且若使用的是官方的 api 地址（即上面的），id 的值不能与<a href="https://api.prprpr.me/dplayer/list">这个列表</a>的值一样。id 的值自己随便取，唯一要求就是前面这点。</p>
+
+<h4 id="主题自带样式-代码块高亮">主题自带样式 代码块高亮</h4>
+
+<p>先看效果：</p>
+
+<pre><code>Java代码来自这/**
+ * @author John Smith &lt;john.smith@example.com&gt;
+*/
+package l2f.gameserver.model;
+
+public abstract class L2Char extends L2Object {
+  public static final Short ERROR = 0x0001;
+
+  public void moveTo(int x, int y, int z) {
+    _ai = null;
+    log(&quot;Should not be called&quot;);
+    if (1 &gt; 5) { // wtf!?
+      return;
+    }
+  }
+}
+</code></pre>
+
+<p>这里指的是```<code>代码块，而不是行内代码块（</code>代码``），它的用法如下：</p>
+
+<p>```<code>[language] [title] [url] [link-text]</code></p>
+
+<pre><code>代码
+</code></pre>
+
+<p>`````</p>
+
+<ul>
+<li>[language] 是代码语言的名称，用来设置代码块颜色高亮，非必须；</li>
+<li>[title] 是顶部左边的说明，非必须；</li>
+<li>[url] 是顶部右边的超链接地址，非必须；</li>
+<li>[link text] 如它的字面意思，超链接的名称，非必须。</li>
+</ul>
+
+<p>亲测这 4 项应该是根据空格来分隔，而不是<code>[]</code>，故请不要加<code>[]</code>。除非如果你想写后面两个，但不想写前面两个，那么就必须加<code>[]</code>了，要这样写：<code>[] [] [url] [link text]</code>。</p>
+
+<p>首先关于代码块颜色高亮，高亮的模式可以在主题配置文件中设置：</p>
+
+<pre><code># Code Highlight theme
+# Available value:
+#    normal | night | night eighties | night blue | night bright
+# https://github.com/chriskempson/tomorrow-theme
+
+highlight_theme: normal
+</code></pre>
+
+<p>要颜色正确高亮，代码语言的名称肯定要写对，各种支持语言的名称可以查看<a href="https://almostover.ru/2016-07/hexo-highlight-code-styles/">这篇文章</a>。当然，如果你和我一样懒，可以在站点配置文件<code>_config.yml</code>中设置自动高亮：</p>
+
+<pre><code>文件位置：~/blog/_config.ymlhighlight:
+  enable: true
+  line_number: true
+# 代码自动高亮
+-  auto_detect: false
++  auto_detect: true
+</code></pre>
+
+<p><code>diff</code>，所以你只需在 [language] 这写<code>diff</code>，然后在相应代码前面加上<code>-</code>和<code>+</code>就行了。不过默认的<code>-</code>是绿色，<code>+</code>是红色，与 GitHub 上相反，别扭就自己改成 GitHub 的咯：</p>
+
+<pre><code>文件位置：~/blog/themes/next/source/css/_custom/custom.styl// 文章```代码块diff样式
+pre .addition {
+    background: #e6ffed;
+}
+pre .deletion {
+    background: #ffeef0;
+}
+</code></pre>
+
+<p>当然，要是你不满意顶部的文字样式，也可以自己在<code>custom.styl</code>自定义：</p>
+
+<pre><code>文件位置：~/blog/themes/next/source/css/_custom/custom.styl// 文章```代码块顶部样式
+.highlight figcaption {
+    margin: 0em;
+    padding: 0.5em;
+    background: #eee;
+    border-bottom: 1px solid #e9e9e9;
+}
+.highlight figcaption a {
+    color: rgb(80, 115, 184);
+}
+</code></pre>
+
+<p>参考了 Hexo 官方文档的<a href="https://hexo.io/zh-cn/docs/tag-plugins.html#代码块">标签插件</a>页面，这个页面还有更多的 Hexo 标签插件（Tag Plugins）的用法，请自行查看。</p>
+
+<p>关于代码块高亮的高级个性化，请查看大佬的文章——<a href="https://www.ofind.cn/blog/HEXO/HEXO%E4%B8%8B%E7%9A%84%E8%AF%AD%E6%B3%95%E9%AB%98%E4%BA%AE%E6%8B%93%E5%B1%95%E4%BF%AE%E6%94%B9.html">HEXO下的语法高亮拓展修改</a>。</p>
+
+<h4 id="主题自带样式-文本居中引用">主题自带样式 文本居中引用</h4>
+
+<p>效果：</p>
+
+<blockquote>
+<p>人生乃是一面镜子，
+从镜子里认识自己，
+我要称之为头等大事，
+也只是我们追求的目的！</p>
+</blockquote>
+
+<p>源码：</p>
+
+<pre><code>{% cq %}
+人生乃是一面镜子，
+从镜子里认识自己，
+我要称之为头等大事，
+也只是我们追求的目的！
+{% endcq %}
+</code></pre>
+
+<p>更多 NexT 主题自带的标签样式，请点击：<a href="http://theme-next.iissnan.com/tag-plugins.html">http://theme-next.iissnan.com/tag-plugins.html</a></p>
+
+<h4 id="主题自带样式-note-标签">主题自带样式 note 标签</h4>
+
+<p>在主题配置文件<code>_config.yml</code>里有一个关于这个的配置，但官方文档没有提供 HTML 的使用方式，个人认为这种方式更简单，也不会产生一些奇怪的显示 bugs……</p>
+
+<p>default</p>
+
+<pre><code>&lt;div class=&quot;note default&quot;&gt;&lt;p&gt;default&lt;/p&gt;&lt;/div&gt;
+</code></pre>
+
+<p>primary</p>
+
+<pre><code>&lt;div class=&quot;note primary&quot;&gt;&lt;p&gt;primary&lt;/p&gt;&lt;/div&gt;
+</code></pre>
+
+<p>success</p>
+
+<pre><code>&lt;div class=&quot;note success&quot;&gt;&lt;p&gt;success&lt;/p&gt;&lt;/div&gt;
+</code></pre>
+
+<p>info</p>
+
+<pre><code>&lt;div class=&quot;note info&quot;&gt;&lt;p&gt;info&lt;/p&gt;&lt;/div&gt;
+</code></pre>
+
+<p>warning</p>
+
+<pre><code>&lt;div class=&quot;note warning&quot;&gt;&lt;p&gt;warning&lt;/p&gt;&lt;/div&gt;
+</code></pre>
+
+<p>danger</p>
+
+<pre><code>&lt;div class=&quot;note danger&quot;&gt;&lt;p&gt;danger&lt;/p&gt;&lt;/div&gt;
+</code></pre>
+
+<p>danger no-icon</p>
+
+<pre><code>&lt;div class=&quot;note danger no-icon&quot;&gt;&lt;p&gt;danger no-icon&lt;/p&gt;&lt;/div&gt;
+</code></pre>
+
+<p>首先可以在主题配置文件中需要配置下，贴上我的：</p>
+
+<pre><code>文件位置：~/blog/themes/next/_config.yml# Note tag (bs-callout).
+note:
+  # 风格
+  style: flat
+  # 要不要图标
+  icons: true
+  # 圆角矩形
+  border_radius: 3
+  light_bg_offset:
+</code></pre>
+
+<p>里面的三种风格长啥样？开启图标长啥样？可以查看<a href="https://github.com/iissnan/hexo-theme-next/pull/1697">这个页面</a>，更多的介绍也在这个页面，请自行查看。</p>
+
+<h4 id="主题自带样式-label-标签">主题自带样式 label 标签</h4>
+
+<p>首先可以在主题配置文件中有配置，需要配置下，贴上我的：</p>
+
+<pre><code>文件位置：~/blog/themes/next/_config.yml# Label tag.
+label: true
+</code></pre>
+
+<p>然后效果如下（@ 前面的是<code>label</code>的名字，后面的是要显示的文字）：</p>
+
+<ul>
+<li><p>default</p>
+
+<pre><code>{% label default@default %}
+</code></pre></li>
+
+<li><p>primary</p>
+
+<pre><code>{% label primary@primary %}
+
+</code></pre></li>
+
+<li><p>success</p>
+
+<pre><code>{% label success@success %}
+
+</code></pre></li>
+
+<li><p>info</p>
+
+<pre><code>{% label info@info %}
+
+</code></pre></li>
+
+<li><p>warning</p>
+
+<pre><code>{% label warning@warning %}
+
+</code></pre></li>
+
+<li><p>danger</p>
+
+<pre><code>{% label danger@danger %}
+
+</code></pre></li>
+</ul>
+
+<p>目前博主发现个 bug，如果把它加在一段文字的段首，则会有点问题，<a href="https://github.com/iissnan/hexo-theme-next/issues/2022">issue</a> 页面。</p>
+
+<h4 id="主题自带样式-tabs-标签">主题自带样式 tabs 标签</h4>
+
+<p>效果：</p>
+
+<ul>
+<li><a href="https://reuixiy.github.io/technology/computer/computer-aided-art/2017/06/09/hexo-next-optimization.html#选项卡-1">选项卡 1</a></li>
+<li><a href="https://reuixiy.github.io/technology/computer/computer-aided-art/2017/06/09/hexo-next-optimization.html#选项卡-2">选项卡 2</a></li>
+<li><a href="https://reuixiy.github.io/technology/computer/computer-aided-art/2017/06/09/hexo-next-optimization.html#选项卡-3">选项卡 3</a></li>
+</ul>
+
+<p><strong>这是选项卡 2</strong></p>
+
+<p>源码：</p>
+
+<pre><code>{% tabs 选项卡, 2 %}
+&lt;!-- tab --&gt;
+**这是选项卡 1** 呵呵哈哈哈哈哈哈哈哈呵呵哈哈哈哈哈哈哈哈呵呵哈哈哈哈哈哈哈哈呵呵哈哈哈哈哈哈哈哈呵呵哈哈哈哈哈哈哈哈呵呵哈哈哈哈哈哈哈哈……
+&lt;!-- endtab --&gt;
+&lt;!-- tab --&gt;
+**这是选项卡 2**
+&lt;!-- endtab --&gt;
+&lt;!-- tab --&gt;
+**这是选项卡 3** 哇，你找到我了！φ(≧ω≦*)♪～
+&lt;!-- endtab --&gt;
+{% endtabs %}
+
+</code></pre>
+
+<p>首先可以在主题配置文件中有配置，需要配置下，贴上我的：</p>
+
+<pre><code>文件位置：~/blog/themes/next/_config.yml# Tabs tag.
+tabs:
+  enable: true
+  transition:
+    tabs: true
+    labels: true
+  border_radius: 0
+
+</code></pre>
+
+<p>然后上面源码中<code>, 2</code>表示一开始在第二个选项卡，非必须，若数值为<code>-1</code>则隐藏选项卡内容。更多用法请查看<a href="https://almostover.ru/2016-01/hexo-theme-next-test/#Tab-tag-test">这个页面</a>。</p>
+
+<h4 id="主题自带样式-按钮">主题自带样式 按钮</h4>
+
+<p>源码：</p>
+
+<pre><code>{% btn https://www.baidu.com, 点击下载百度, download fa-lg fa-fw %}
+
+</code></pre>
+
+<p>效果：<a href="https://www.baidu.com/">点击下载百度</a></p>
+
+<p>关于按钮的更多使用可以前往<a href="https://almostover.ru/2016-01/hexo-theme-next-test/#Button-tag-test">这个页面</a>查看。</p>
+
+<h4 id="自定义样式-引用">自定义样式 引用</h4>
+
+<p>首先由于是自定义的样式，故要自己将 CSS 代码加到<code>custom.styl</code>中，下文的自定义样式都是如此。为什么可以自定义呢？如果你是一个和我一样的小白，可以<a href="http://www.divcss5.com/rumen/r3.shtml">点击这里</a>了解了解 CSS 中<code>id</code>和<code>class</code>的知识。</p>
+
+<p>需加入<code>custom.styl</code>的代码：</p>
+
+<pre><code>文件位置：~/blog/themes/next/source/css/_custom/custom.styl// 自定义的引用样式
+blockquote.question {
+    color: #555;
+    border-left: 4px solid rgb(16, 152, 173);
+    background-color: rgb(227, 242, 253);
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    margin-bottom: 20px;
+}
+
+</code></pre>
+
+<ul>
+<li>文字颜色改<code>color</code>的值</li>
+<li>背景色改<code>background-color</code>的值</li>
+<li>边框颜色和粗细改<code>border-left</code>的值</li>
+</ul>
+
+<p>效果：</p>
+
+<blockquote>
+<p>内容</p>
+</blockquote>
+
+<pre><code>&lt;blockquote class=&quot;question&quot;&gt;内容&lt;/blockquote&gt;
+
+</code></pre>
+
+<h4 id="自定义样式-数字块">自定义样式 数字块</h4>
+
+<p>需加入<code>custom.styl</code>的代码：</p>
+
+<pre><code>文件位置：~/blog/themes/next/source/css/_custom/custom.styl// 自定义的数字块
+span#inline-toc {
+    display: inline-block;
+    border-radius: 80% 100% 90% 20%;
+    background-color: rgb(227, 242, 253);
+    color: #555;
+    padding: 0.05em 0.4em;
+    margin: 2px 5px 2px 0px;
+    line-height: 1.5;
+}
+
+</code></pre>
+
+<p>1.左边是效果。</p>
+
+<p>源码：</p>
+
+<pre><code>&lt;span id=&quot;inline-toc&quot;&gt;1.&lt;/span&gt;
+
+</code></pre>
+
+<p>参考：<a href="https://qianling.pw/style/#TOC数字块">https://qianling.pw/style/#TOC数字块</a></p>
+
+<h2 id="转载">转载</h2>
+
+<hr />
+
+<ol>
+<li><p><a href="https://xian6ge.cn/posts/5b8c41e7/">https://xian6ge.cn/posts/5b8c41e7/</a></p></li>
+
+<li><p><a href="https://reuixiy.github.io/technology/computer/computer-aided-art/2017/06/09/hexo-next-optimization.html#附上我的-custom-styl">https://reuixiy.github.io/technology/computer/computer-aided-art/2017/06/09/hexo-next-optimization.html#附上我的-custom-styl</a></p></li>
+
+<li><p><a href="https://www.bluelzy.com/articles/change_to_next_theme.html">https://www.bluelzy.com/articles/change_to_next_theme.html</a></p></li>
+</ol></article>
+    <footer class="post-footer">
+      
+      <ul class="post-tags">
+        
+          <li><a href="https://muzhi621.github.io/tags/%E6%95%99%E7%A8%8B"><span class="tag">教程</span></a></li>
+        
+          <li><a href="https://muzhi621.github.io/tags/hexo"><span class="tag">Hexo</span></a></li>
+        
+      </ul>
+      
+      <p class="post-copyright">
+        © 本文作者：muzhi  版权所有本站文章均采用 CC BY-NC-SA 4.0 许可协议，请勿用于商业，转载注明出处！
+      </p>
+    </footer>
+    
+      <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "disqus_shortname" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      
+    
+  </section>
+  
+<footer class="site-footer">
+  <p>© 2017-2019 liwu&#39;s Blog</p>
+  <p>Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> with theme <a href="https://github.com/laozhu/hugo-nuo" target="_blank" rel="noopener">Nuo</a>.</p>
+  
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/smooth-scroll@15.0.0/dist/smooth-scroll.min.js"></script>
+
+
+
+<script async src="https://cdn.jsdelivr.net/npm/video.js@7.3.0/dist/video.min.js"></script>
+
+
+
+
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$'], ['\\[','\\]']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+      extensions: ["AMSmath.js", "AMSsymbols.js"] }
+    },
+  });
+</script>
+<script type="text/x-mathjax-config">
+  // Fix <code> tags after MathJax finishes running. This is a
+  // hack to overcome a shortcoming of Markdown. Discussion at
+  // https://github.com/mojombo/jekyll/issues/199
+  MathJax.Hub.Queue(() => {
+    MathJax.Hub.getAllJax().map(v => v.SourceElement().parentNode.className += ' has-jax');
+  });
+</script>
+
+
+
+<script src="https://muzhi621.github.io/scripts/index.min.js"></script>
+
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('\/service-worker.js').then(function() {
+      console.log('[ServiceWorker] Registered');
+    });
+  }
+</script>
+
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-XXXXXXXX-X', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+
+  </body>
+</html>
