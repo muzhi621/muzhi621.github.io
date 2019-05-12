@@ -13,12 +13,12 @@
     
     
     <item>
-      <title>友链</title>
+      <title>阅读</title>
       <link>https://muzhi621.github.io/links/</link>
       <pubDate>Wed, 09 Apr 2014 00:00:00 +0000</pubDate>
       
       <guid>https://muzhi621.github.io/links/</guid>
-      <description>Ritchie and his friends.</description>
+      <description> 2019 年 读书  《三体》 《东京梦华录》 《人性的弱点》  观影  《无名之辈》 《我不是药神》 《流浪地球》 《大人物》 《大佛普拉斯》 《2018微信公开课》 《影》 《白蛇：缘起》 《飞驰人生》 《赌神2》 《疯狂外星人》  </description>
     </item>
     
     <item>
@@ -30,15 +30,6 @@
       <description>Hugo is a static site engine written in Go.
 It makes use of a variety of open source projects including:
  Cobra Viper J Walter Weatherman Cast  Learn more and contribute on GitHub.</description>
-    </item>
-    
-    <item>
-      <title>读书</title>
-      <link>https://muzhi621.github.io/reading/</link>
-      <pubDate>Wed, 09 Apr 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://muzhi621.github.io/reading/</guid>
-      <description> 2019 年 读书  《三体》 《东京梦华录》 《人性的弱点》  观影  《无名之辈》 《我不是药神》 《流浪地球》 《大人物》 《大佛普拉斯》 《2018微信公开课》 《影》 《白蛇：缘起》 《飞驰人生》 《赌神2》 《疯狂外星人》  </description>
     </item>
     
     <item>
