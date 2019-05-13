@@ -13,29 +13,20 @@
     
     
     <item>
-      <title>tagA</title>
-      <link>https://muzhi621.github.io/tags/taga/</link>
-      <pubDate>Mon, 13 May 2019 19:00:53 +0800</pubDate>
-      
-      <guid>https://muzhi621.github.io/tags/taga/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>tagB</title>
-      <link>https://muzhi621.github.io/tags/tagb/</link>
-      <pubDate>Mon, 13 May 2019 19:00:53 +0800</pubDate>
-      
-      <guid>https://muzhi621.github.io/tags/tagb/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>GitHub</title>
       <link>https://muzhi621.github.io/tags/github/</link>
-      <pubDate>Fri, 26 Apr 2019 13:46:35 +0800</pubDate>
+      <pubDate>Mon, 13 May 2019 19:00:53 +0800</pubDate>
       
       <guid>https://muzhi621.github.io/tags/github/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>教程</title>
+      <link>https://muzhi621.github.io/tags/%E6%95%99%E7%A8%8B/</link>
+      <pubDate>Mon, 13 May 2019 19:00:53 +0800</pubDate>
+      
+      <guid>https://muzhi621.github.io/tags/%E6%95%99%E7%A8%8B/</guid>
       <description></description>
     </item>
     
@@ -45,15 +36,6 @@
       <pubDate>Fri, 26 Apr 2019 13:46:35 +0800</pubDate>
       
       <guid>https://muzhi621.github.io/tags/%E6%8A%80%E6%9C%AF/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>教程</title>
-      <link>https://muzhi621.github.io/tags/%E6%95%99%E7%A8%8B/</link>
-      <pubDate>Fri, 26 Apr 2019 13:46:35 +0800</pubDate>
-      
-      <guid>https://muzhi621.github.io/tags/%E6%95%99%E7%A8%8B/</guid>
       <description></description>
     </item>
     
