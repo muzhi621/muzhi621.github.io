@@ -7,10 +7,28 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>© 本文作者：muzhi  版权所有本站文章均采用 CC BY-NC-SA 4.0 许可协议，请勿用于商业，转载注明出处！</copyright>
-    <lastBuildDate>Fri, 26 Apr 2019 13:46:35 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 13 May 2019 19:00:53 +0800</lastBuildDate>
     
 	<atom:link href="https://muzhi621.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>tagA</title>
+      <link>https://muzhi621.github.io/tags/taga/</link>
+      <pubDate>Mon, 13 May 2019 19:00:53 +0800</pubDate>
+      
+      <guid>https://muzhi621.github.io/tags/taga/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tagB</title>
+      <link>https://muzhi621.github.io/tags/tagb/</link>
+      <pubDate>Mon, 13 May 2019 19:00:53 +0800</pubDate>
+      
+      <guid>https://muzhi621.github.io/tags/tagb/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>GitHub</title>

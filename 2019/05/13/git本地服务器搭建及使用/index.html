@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+
+  <meta charset="utf-8" />
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+  
+  <title>Git本地服务器搭建及使用</title>
+
+  
+  
+  <link href="//cdn.jsdelivr.net" rel="dns-prefetch">
+  <link href="//cdnjs.cloudflare.com" rel="dns-prefetch">
+  
+  <link href="//at.alicdn.com" rel="dns-prefetch">
+  
+  <link href="//fonts.googleapis.com" rel="dns-prefetch">
+  <link href="//fonts.gstatic.com" rel="dns-prefetch">
+  
+  
+  
+  <link href="//www.google-analytics.com" rel="dns-prefetch">
+  <link href="//hm.baidu.com" rel="dns-prefetch">
+
+  
+
+  
+  <meta name="author" content="muzhi">
+  <meta name="description" content="Git是一款免费、开源的分布式版本控制系统。众所周知的Github便是基于Git的开源代码库以及版本控制系统，由于其远程托管服务仅对开源免费，所以搭建本地Git服务器也是个较好的选择。github是目前世界上最大的代码托管平台，对个人也提供了非常丰富的功能；git客户端是windows系统下与github仓库传输数据的客户端工具
+">
+
+  
+  
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@twitter_username">
+    <meta name="twitter:title" content="Git本地服务器搭建及使用">
+    <meta name="twitter:description" content="Git是一款免费、开源的分布式版本控制系统。众所周知的Github便是基于Git的开源代码库以及版本控制系统，由于其远程托管服务仅对开源免费，所以搭建本地Git服务器也是个较好的选择。github是目前世界上最大的代码托管平台，对个人也提供了非常丰富的功能；git客户端是windows系统下与github仓库传输数据的客户端工具
+">
+    <meta name="twitter:image" content="https://i.loli.net/2019/05/13/5cd950f34014796294.jpg">
+  
+
+  
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Git本地服务器搭建及使用">
+  <meta property="og:description" content="Git是一款免费、开源的分布式版本控制系统。众所周知的Github便是基于Git的开源代码库以及版本控制系统，由于其远程托管服务仅对开源免费，所以搭建本地Git服务器也是个较好的选择。github是目前世界上最大的代码托管平台，对个人也提供了非常丰富的功能；git客户端是windows系统下与github仓库传输数据的客户端工具
+">
+  <meta property="og:url" content="https://muzhi621.github.io/2019/05/13/git%E6%9C%AC%E5%9C%B0%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E5%8F%8A%E4%BD%BF%E7%94%A8/">
+  <meta property="og:image" content="https://i.loli.net/2019/05/13/5cd950f34014796294.jpg">
+
+
+
+
+<meta name="generator" content="Hugo 0.55.5">
+
+
+<link rel="canonical" href="https://muzhi621.github.io/2019/05/13/git%E6%9C%AC%E5%9C%B0%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E5%8F%8A%E4%BD%BF%E7%94%A8/">
+
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="format-detection" content="telephone=no,email=no,adress=no">
+<meta http-equiv="Cache-Control" content="no-transform">
+
+
+<meta name="robots" content="index,follow">
+<meta name="referrer" content="origin-when-cross-origin">
+<meta name="google-site-verification" content="_moDmnnBNVLBN1rzNxyGUGdPHE20YgbmrtzLIbxaWFc">
+<meta name="msvalidate.01" content="22596E34341DD1D17D6022C44647E587">
+
+
+
+
+
+<meta name="theme-color" content="#02b875">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="liwu&#39;s Blog">
+<meta name="msapplication-tooltip" content="liwu&#39;s Blog">
+<meta name='msapplication-navbutton-color' content="#02b875">
+<meta name="msapplication-TileColor" content="#02b875">
+<meta name="msapplication-TileImage" content="/icons/icon-144x144.png">
+<link rel="icon" href="https://muzhi621.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://muzhi621.github.io/icons/icon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://muzhi621.github.io/icons/icon-32x32.png">
+<link rel="icon" sizes="192x192" href="https://muzhi621.github.io/icons/icon-192x192.png">
+<link rel="apple-touch-icon" href="https://muzhi621.github.io/icons/icon-152x152.png">
+<link rel="manifest" href="https://muzhi621.github.io/manifest.json">
+
+
+<link rel="preload" href="https://muzhi621.github.io/styles/main-rendered.min.css" as="style">
+
+
+<link rel="preload" href="https://fonts.googleapis.com/css?family=Lobster" as="style">
+<link rel="preload" href="https://muzhi621.github.io/images/avatar.png" as="image">
+<link rel="preload" href="https://muzhi621.github.io/images/grey-prism.svg" as="image">
+
+
+<style>
+  body {
+    background: rgb(244, 243, 241) url('/images/grey-prism.svg') repeat fixed;
+  }
+</style>
+<link rel="stylesheet" href="https://muzhi621.github.io/styles/main-rendered.min.css">
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.2/dist/medium-zoom.min.js"></script>
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/video.js@7.3.0/dist/video-js.min.css">
+
+
+
+  
+  
+<!--[if lte IE 8]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/videojs-ie8@1.1.2/dist/videojs-ie8.min.js"></script>
+<![endif]-->
+
+<!--[if lte IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/eligrey-classlist-js-polyfill@1.2.20180112/classList.min.js"></script>
+<![endif]-->
+
+
+</head>
+  <body>
+    <div class="suspension">
+      <a role="button" aria-label="Go to top" title="Go to top" class="to-top is-hide"><span class="icon icon-up" aria-hidden="true"></span></a>
+      
+        
+      
+    </div>
+    
+    
+  <header class="site-header">
+  <img class="avatar" src="https://muzhi621.github.io/images/avatar.png" alt="Avatar">
+  
+  <h2 class="title">liwu&#39;s Blog</h2>
+  
+  <p class="subtitle">~ Keep It Simple &amp; Stupid ~</p>
+  <button class="menu-toggle" type="button" aria-label="Main Menu" aria-expanded="false" tab-index="0">
+    <span class="icon icon-menu" aria-hidden="true"></span>
+  </button>
+
+
+  <nav class="site-menu collapsed">
+    <h2 class="offscreen">Main Menu</h2>
+    <ul class="menu-list">
+      
+      
+      
+      
+        <li class="menu-item
+          
+          
+           is-active">
+          <a href="https://muzhi621.github.io/">首页</a>
+        </li>
+      
+        <li class="menu-item
+          
+          
+          ">
+          <a href="https://muzhi621.github.io/tags/">标签</a>
+        </li>
+      
+        <li class="menu-item
+          
+          
+          ">
+          <a href="https://muzhi621.github.io/reading/">阅读</a>
+        </li>
+      
+        <li class="menu-item
+          
+          
+          ">
+          <a href="https://pan.myliwu.work">云盘</a>
+        </li>
+      
+        <li class="menu-item
+          
+          
+          ">
+          <a href="https://muzhi621.github.io/links/">友链</a>
+        </li>
+      
+        <li class="menu-item
+          
+          
+          ">
+          <a href="https://muzhi621.github.io/about/">关于</a>
+        </li>
+      
+    </ul>
+  </nav>
+  <nav class="social-menu collapsed">
+    <h2 class="offscreen">Social Networks</h2>
+    <ul class="social-list"><li class="social-item">
+          <a href="mailto:muzhi621@qq.com" title="Email" aria-label="Email">
+            <span class="icon icon-email" aria-hidden="true"></span>
+          </a>
+        </li><li class="social-item">
+          <a href="//github.com/muzhi621" rel="me" title="GitHub" aria-label="GitHub">
+	    <span class="icon icon-github" aria-hidden="true"></span>
+          </a>
+        </li><li class="social-item">
+          <a href="//twitter.com/twitter_username" rel="me" title="Twitter" aria-label="Twitter">
+            <span class="icon icon-twitter" aria-hidden="true"></span>
+          </a>
+        </li><li class="social-item">
+          <a href="//weibo.com/weibo_username" rel="me" title="Weibo" aria-label="Weibo">
+            <span class="icon icon-weibo" aria-hidden="true"></span>
+          </a>
+        </li></ul>
+  </nav>
+</header>
+
+  <section class="main post-detail">
+    <header class="post-header">
+      <h1 class="post-title">Git本地服务器搭建及使用</h1>
+      <p class="post-meta">@muzhi · May 13, 2019 · 1 min read 
+   <span id="/2019/05/13/git%E6%9C%AC%E5%9C%B0%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E5%8F%8A%E4%BD%BF%E7%94%A8/" class="leancloud_visitors" data-flag-title="Git本地服务器搭建及使用">
+  
+    <span class="leancloud-visitors-count"> </span>
+	<span class="post-meta-item-text">  VIEWS </span>
+
+    </p>
+	
+  </span>
+	
+	</header>
+    <article class="post-content"><p>Git是一款免费、开源的分布式版本控制系统。众所周知的<a href="https://github.com/">Github</a>便是基于Git的开源代码库以及版本控制系统，由于其远程托管服务仅对开源免费，所以搭建本地Git服务器也是个较好的选择。github是目前世界上最大的代码托管平台，对个人也提供了非常丰富的功能；<a href="https://www.git-scm.com/">git客户端</a>是windows系统下与github仓库传输数据的客户端工具</p>
+
+<h1 id="1-下载">1.下载</h1>
+
+<p><a href="https://link.jianshu.com?t=https://git-scm.com/download/win">git for windows下载地址</a></p>
+
+<h1 id="2-安装">2.安装</h1>
+
+<p>打开exe格式的安装包后，除了修改安装目录意外，其他选项全部默认即可，一路next后等待安装即可。</p>
+
+<h1 id="3-初始配置">3.初始配置</h1>
+
+<h3 id="a-申请一个github账号">a.申请一个github账号</h3>
+
+<p>因为git和github是穿一条裤子的，所以有必要先申请一个github的账号，然后记下你的用户名和你申请账号时用的邮箱（即是你的gihub登陆账号），而且对于学习编程的人来说github是最好的开源社区。如果有github账号的人请忽略这一步。</p>
+
+<h3 id="b-在git上配置你的用户名和邮箱">b.在git上配置你的用户名和邮箱</h3>
+
+<p>打开 git bash,输入以下两条命令</p>
+
+<blockquote>
+<p>git config &ndash;global user.name &ldquo;yourname&rdquo;
+ git config &ndash;global user.email &ldquo;youremail&rdquo;</p>
+</blockquote>
+
+<p>这里有几个注意事项：
+ （1）yourname处填写你的github用户名，youremail处填写你的github账号
+ （2）global前面是有两条横杠的
+ 你可以使用下面这条命令来查看当前的所有配置</p>
+
+<blockquote>
+<p>git config &ndash;list</p>
+</blockquote>
+
+<p>如果你发现用户名或者email手贱打错了，还是用上面那两条指令重新设置就可以了</p>
+
+<h3 id="c-在本地创建一个保存git项目的文件夹">c.在本地创建一个保存git项目的文件夹</h3>
+
+<p>我专门建了一个文件夹用于保存那些要使用git来管理版本控制的项目</p>
+
+<pre><code>cd \e      //转到E盘目录下
+mkdir git_repository  //新建一个名叫git_repository的文件夹
+</code></pre>
+
+<p>当然你也可以直接使用eclipse等IDE的project location中的项目文件夹做版本控制，这时候就不需要进行这一步</p>
+
+<h3 id="d-初始化">d.初始化</h3>
+
+<p>在你的项目文件夹下执行下面这个指令初始化git，这个指令会在当前文件夹下新建一个名叫.git的文件夹，里面放置的都是git进行版本控制的文件，这个文件夹是一个隐藏文件夹，需要点击文件夹上方的“查看”，勾选“隐藏的项目”才能看到它</p>
+
+<pre><code>git init
+</code></pre>
+
+<h3 id="e-往仓库里添加要进行版本控制的文件">e.往仓库里添加要进行版本控制的文件</h3>
+
+<p>好了终于开始进行版本控制的正题了，如果你是新建的一个文件夹没有任何文件，那么你只要把你想进行版本控制的文件扔进来，然后执行下面这条命令，在原项目文件夹进行版本控制的同学直接执行下面这条命令即可</p>
+
+<pre><code>git add xxxx
+</code></pre>
+
+<p>xxxx就是你要添加的文件，包括文件名和后缀哦，比如hello.txt，然后这样就完了吗？并不是，这条命令只是把文件扔进缓存区而已，还要执行下面这条指令提交到版本控制仓库</p>
+
+<pre><code>git commit -m  &quot;备注信息&quot;
+</code></pre>
+
+<p>备注信息处换成你要写的信息即可，比如第一次提交“first commit”</p>
+
+<h3 id="f-查看当前文件状态">f.查看当前文件状态</h3>
+
+<p>执行下面这条命令可以看见已经提交的文件和缓存区中有什么文件</p>
+
+<pre><code>git status
+</code></pre>
+
+<p>如果你修改了文件然而还没有add，可以看见&rdquo;1 file modified but not commit&rdquo;等字样，也就是说你修改文件的操作git都知道</p>
+
+<h3 id="g-查看修改部分">g.查看修改部分</h3>
+
+<p>假设现在你在本地仓库里修改了文件，commit后可以查看修改了什么内容，执行下面这条指令即可</p>
+
+<pre><code>git diff
+</code></pre>
+
+<p>被修改的内容会用绿色字标出来</p>
+
+<p>至此你已经学会了如何在本地进行基本的版本管理了，那么我想和github上的项目或者我自己的服务器同步应该怎么办呢</p>
+
+<h1 id="4-和服务器同步">4.和服务器同步</h1>
+
+<p>因为我没有其他服务器，所以只用了github为我提供的，github为每个免费用户提供了300M的服务器空间，那么要怎么做才能同步呢？</p>
+
+<h3 id="a-初始化操作">a.初始化操作</h3>
+
+<p>首先你得先生成一个ssh密钥，请务必执行下面这些语句：</p>
+
+<pre><code>cd ~/.ssh                             //转到C：\用户\你的用户名\.ssh文件夹
+ssh-keygen -C &quot;XX@gmail.com&quot; -t rsa   //生成ssh密钥，这条语句会在.ssh文件夹中生成两个必要的文件：id_rsa和id_rsa.pub，
+                                     //这是用rsa算法生成的公钥和私钥
+</code></pre>
+
+<p>其中-C后面那个邮箱使用你自己的github账号
+ 执行完上面两条语句后一路按ENTER键即可，然后复制生成的密钥，由于命令行中不能使用ctrl+c和ctrl+v，所以需要执行下面这条指令：</p>
+
+<pre><code>clip &lt; ~/.ssh/id_rsa.pub
+</code></pre>
+
+<p>然后在浏览器上登陆你的github账户，然后点击右上角的头像，选择Your profile</p>
+
+<p><img src="https:////upload-images.jianshu.io/upload_images/1467278-7683da6de8ef17ca.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/413/format/webp" alt="img" /></p>
+
+<p>然后点击右上角的Edit profile</p>
+
+<p><img src="https:////upload-images.jianshu.io/upload_images/1467278-6dcd438697170358.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/275/format/webp" alt="img" /></p>
+
+<p>然后再左边菜单栏选择SSH and GPG keys
+ 进去之后在SSH keys那里点击右上角的new SSH keys
+ 然后按ctrl+v把你的密钥复制进去，title可以随便命名，然后点击add，这时候github会验证你是不是本人让你重新输入登录密码，输完就可以了。
+ 至此本地和github上的初始化操作就算完成了，下面就来连接一下两者</p>
+
+<h3 id="b-连接本地和github服务器">b.连接本地和github服务器</h3>
+
+<p>执行下面这条指令连接github</p>
+
+<pre><code>ssh -T git@github.com
+</code></pre>
+
+<p>如果连接成功会提示&rdquo;You&rsquo;ve successfully anthenticated&rdquo;</p>
+
+<h3 id="c-将服务器上的项目同步到本地仓库">c.将服务器上的项目同步到本地仓库</h3>
+
+<p>如果本地一个项目文件都没有，需要将服务器上的整个项目同步到本地，请使用下面这个指令：</p>
+
+<pre><code>git clone 你的github项目的网址
+</code></pre>
+
+<p>这样就会把整个项目保存在本地仓库中了
+ 如果是本地和服务器都有项目文件，只是想获取本地没有的文件，那么先执行下面这条语句：</p>
+
+<pre><code>git remote add origin 你的github项目的网址.git
+</code></pre>
+
+<p>注意要在网址后面加上.git，否则会失败，origin是远程主机的名字，你可以把它理解为当前项目的别名你也可以起其他名字，origin是git上原本存在的一个名字，这个步骤会弹出一个窗口让你登陆github，完毕之后就将origin和你的项目匹配起来了</p>
+
+<p>然后有两种方式可以同步github上的项目到本地
+ 一种是使用fetch指令</p>
+
+<pre><code>git fetch origin
+</code></pre>
+
+<p>fetch之后你会发现此时在你本地文件夹中找不到想要同步的项目，因为此时它还在缓存区，你要把它和当前分支合并才行，执行下面这条指令合并分支</p>
+
+<pre><code>git merge origin/master
+</code></pre>
+
+<p>执行完毕之后你就能在本地文件夹看到它了
+ 这里的master是本地仓库的主分支</p>
+
+<p>还有一种更简单的方式，使用pull指令，这样一条指令就够了</p>
+
+<pre><code>git pull origin master
+</code></pre>
+
+<p>这条指令等价于上一种方法的两条指令的效果</p>
+
+<h3 id="d-将本地项目同步到github服务器">d.将本地项目同步到github服务器</h3>
+
+<p>使用push指令将本地项目同步到服务器</p>
+
+<pre><code>git push origin master
+</code></pre>
+
+<p>这里的master是你github上的项目主分支master</p>
+
+<p>至此入门教程就完了，下面再总结一些比较常用的指令</p>
+
+<h1 id="5-常用命令">5.常用命令</h1>
+
+<pre><code>git help &lt;verb&gt; //查看git的命令手册
+git help config  //查看配置命令
+git log //查看在历史日志
+git branch -a   //查看当前所有分支
+git branch -d 分支名   //删除某个分支
+git checkout 分支名    //切换到某个分支
+touch 文件名 //在本地新建一个空白文件
+git add .文件后缀   //将当前目录中的所有.文件后缀的文件加入到缓存区
+</code></pre>
+
+<p>链接：<a href="https://www.jianshu.com/p/662d9bb9cadc">https://www.jianshu.com/p/662d9bb9cadc</a></p></article>
+    <footer class="post-footer">
+      
+      <ul class="post-tags">
+        
+          <li><a href="https://muzhi621.github.io/tags/taga"><span class="tag">TagA</span></a></li>
+        
+          <li><a href="https://muzhi621.github.io/tags/tagb"><span class="tag">TagB</span></a></li>
+        
+      </ul>
+      
+      <p class="post-copyright">
+        © 本文作者：muzhi  版权所有本站文章均采用 CC BY-NC-SA 4.0 许可协议，请勿用于商业，转载注明出处！
+      </p>
+    </footer>
+    
+      
+    
+	
+	
+  <span id="/2019/05/13/git%E6%9C%AC%E5%9C%B0%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E5%8F%8A%E4%BD%BF%E7%94%A8/" class="leancloud_visitors" data-flag-title="Git本地服务器搭建及使用">
+   
+	
+  </span>
+  <div id="vcomments"></div>
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+  <script type="text/javascript">
+    new Valine({
+        el: '#vcomments' ,
+        appId: 'rIOXeftjd0ODtxrjVCPeYhMQ-gzGzoHsz',
+        appKey: 'k4OQq3C7OdQRIWohmIWBb5Fd',
+        notify:  false , 
+        verify:  false , 
+        avatar:'mm', 
+        placeholder: '说点什么吧...',
+        visitor:  true 
+    });
+  </script>
+	
+  </section>
+  
+<footer class="site-footer">
+  <p>© 2017-2019 liwu&#39;s Blog</p>
+  <p>Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> with theme <a href="https://github.com/laozhu/hugo-nuo" target="_blank" rel="noopener">Nuo</a>.</p>
+  
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/smooth-scroll@15.0.0/dist/smooth-scroll.min.js"></script>
+
+
+
+<script async src="https://cdn.jsdelivr.net/npm/video.js@7.3.0/dist/video.min.js"></script>
+
+
+
+
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$'], ['\\[','\\]']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+      extensions: ["AMSmath.js", "AMSsymbols.js"] }
+    },
+  });
+</script>
+<script type="text/x-mathjax-config">
+  // Fix <code> tags after MathJax finishes running. This is a
+  // hack to overcome a shortcoming of Markdown. Discussion at
+  // https://github.com/mojombo/jekyll/issues/199
+  MathJax.Hub.Queue(() => {
+    MathJax.Hub.getAllJax().map(v => v.SourceElement().parentNode.className += ' has-jax');
+  });
+</script>
+
+
+
+<script src="https://muzhi621.github.io/scripts/index.min.js"></script>
+
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('\/service-worker.js').then(function() {
+      console.log('[ServiceWorker] Registered');
+    });
+  }
+</script>
+
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-137387609-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?e21dc1e8a592188271b615159dc88af7";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+  </body>
+</html>
