@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+
+  <meta charset="utf-8" />
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+  
+  <title>智能交通设计</title>
+
+  
+  
+  
+  <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  
+  <link href="//cdn.jsdelivr.net" rel="dns-prefetch">
+  <link href="//cdnjs.cloudflare.com" rel="dns-prefetch">
+  
+  <link href="//at.alicdn.com" rel="dns-prefetch">
+  
+  <link href="//fonts.googleapis.com" rel="dns-prefetch">
+  <link href="//fonts.gstatic.com" rel="dns-prefetch">
+  
+  
+  
+  <link href="//www.google-analytics.com" rel="dns-prefetch">
+  <link href="//hm.baidu.com" rel="dns-prefetch">
+
+  
+
+  
+  <meta name="author" content="muzhi">
+  <meta name="description" content="摘要：随着日益增加的交通压力，以及带来的交通管理挑战，为了应对传统交通体系无法解决现代化交通问题的情况下，基于物联网的智能交通应运而生，智能交通是一种关键的物联网垂直应用，是指现代技术和管理策略在交通系统中的综合应用。其极大的缓解交通压力。其提出一个城市智能交通的框架以及其主要功能介绍，为建立智慧后才能是提供基础建设。
+">
+
+  
+  
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@twitter_username">
+    <meta name="twitter:title" content="智能交通设计">
+    <meta name="twitter:description" content="摘要：随着日益增加的交通压力，以及带来的交通管理挑战，为了应对传统交通体系无法解决现代化交通问题的情况下，基于物联网的智能交通应运而生，智能交通是一种关键的物联网垂直应用，是指现代技术和管理策略在交通系统中的综合应用。其极大的缓解交通压力。其提出一个城市智能交通的框架以及其主要功能介绍，为建立智慧后才能是提供基础建设。
+">
+    <meta name="twitter:image" content="https://img1002-c.pocoimg.cn/image/poco/works/81/2019/0512/20/15576631964358692_173636313_H800.jpg">
+  
+
+  
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="智能交通设计">
+  <meta property="og:description" content="摘要：随着日益增加的交通压力，以及带来的交通管理挑战，为了应对传统交通体系无法解决现代化交通问题的情况下，基于物联网的智能交通应运而生，智能交通是一种关键的物联网垂直应用，是指现代技术和管理策略在交通系统中的综合应用。其极大的缓解交通压力。其提出一个城市智能交通的框架以及其主要功能介绍，为建立智慧后才能是提供基础建设。
+">
+  <meta property="og:url" content="https://muzhi621.github.io/2019/05/17/%E6%99%BA%E8%83%BD%E4%BA%A4%E9%80%9A%E8%AE%BE%E8%AE%A1/">
+  <meta property="og:image" content="https://img1002-c.pocoimg.cn/image/poco/works/81/2019/0512/20/15576631964358692_173636313_H800.jpg">
+
+
+
+
+<meta name="generator" content="Hugo 0.55.5">
+
+
+<link rel="canonical" href="https://muzhi621.github.io/2019/05/17/%E6%99%BA%E8%83%BD%E4%BA%A4%E9%80%9A%E8%AE%BE%E8%AE%A1/">
+
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="format-detection" content="telephone=no,email=no,adress=no">
+<meta http-equiv="Cache-Control" content="no-transform">
+
+
+<meta name="robots" content="index,follow">
+<meta name="referrer" content="origin-when-cross-origin">
+
+
+
+
+
+
+
+<meta name="theme-color" content="#02b875">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="liwu&#39;s Blog">
+<meta name="msapplication-tooltip" content="liwu&#39;s Blog">
+<meta name='msapplication-navbutton-color' content="#02b875">
+<meta name="msapplication-TileColor" content="#02b875">
+<meta name="msapplication-TileImage" content="/icons/icon-144x144.png">
+<link rel="icon" href="https://muzhi621.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://muzhi621.github.io/icons/icon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://muzhi621.github.io/icons/icon-32x32.png">
+<link rel="icon" sizes="192x192" href="https://muzhi621.github.io/icons/icon-192x192.png">
+<link rel="apple-touch-icon" href="https://muzhi621.github.io/icons/icon-152x152.png">
+<link rel="manifest" href="https://muzhi621.github.io/manifest.json">
+
+
+<link rel="preload" href="https://muzhi621.github.io/styles/main-rendered.min.css" as="style">
+
+
+<link rel="preload" href="https://fonts.googleapis.com/css?family=Lobster" as="style">
+<link rel="preload" href="https://muzhi621.github.io/images/avatar.png" as="image">
+<link rel="preload" href="https://muzhi621.github.io/images/grey-prism.svg" as="image">
+
+
+<style>
+  body {
+    background: rgb(244, 243, 241) url('/images/grey-prism.svg') repeat fixed;
+  }
+</style>
+<link rel="stylesheet" href="https://muzhi621.github.io/styles/main-rendered.min.css">
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.2/dist/medium-zoom.min.js"></script>
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/video.js@7.3.0/dist/video-js.min.css">
+
+
+
+  
+  
+<!--[if lte IE 8]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/videojs-ie8@1.1.2/dist/videojs-ie8.min.js"></script>
+<![endif]-->
+
+<!--[if lte IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/eligrey-classlist-js-polyfill@1.2.20180112/classList.min.js"></script>
+<![endif]-->
+
+
+</head>
+  <body>
+    <div class="suspension">
+      <a role="button" aria-label="Go to top" title="Go to top" class="to-top is-hide"><span class="icon icon-up" aria-hidden="true"></span></a>
+      
+        
+      
+    </div>
+    
+    
+  <header class="site-header">
+  <img class="avatar" src="https://muzhi621.github.io/images/avatar.png" alt="Avatar">
+  
+  <h2 class="title">liwu&#39;s Blog</h2>
+  
+  <p class="subtitle">~ Keep It Simple &amp; Stupid ~</p>
+  <button class="menu-toggle" type="button" aria-label="Main Menu" aria-expanded="false" tab-index="0">
+    <span class="icon icon-menu" aria-hidden="true"></span>
+  </button>
+
+
+  <nav class="site-menu collapsed">
+    <h2 class="offscreen">Main Menu</h2>
+    <ul class="menu-list">
+      
+      
+      
+      
+        <li class="menu-item
+          
+          
+           is-active">
+          <a href="https://muzhi621.github.io/">首页</a>
+        </li>
+      
+        <li class="menu-item
+          
+          
+          ">
+          <a href="https://muzhi621.github.io/tags/">标签</a>
+        </li>
+      
+        <li class="menu-item
+          
+          
+          ">
+          <a href="https://muzhi621.github.io/reading/">阅读</a>
+        </li>
+      
+        <li class="menu-item
+          
+          
+          ">
+          <a href="https://pan.myliwu.work">云盘</a>
+        </li>
+      
+        <li class="menu-item
+          
+          
+          ">
+          <a href="https://muzhi621.github.io/links/">友链</a>
+        </li>
+      
+        <li class="menu-item
+          
+          
+          ">
+          <a href="https://muzhi621.github.io/about/">关于</a>
+        </li>
+      
+    </ul>
+  </nav>
+  <nav class="social-menu collapsed">
+    <h2 class="offscreen">Social Networks</h2>
+    <ul class="social-list"><li class="social-item">
+          <a href="mailto:muzhi621@qq.com" title="Email" aria-label="Email">
+            <span class="icon icon-email" aria-hidden="true"></span>
+          </a>
+        </li><li class="social-item">
+          <a href="//github.com/muzhi621" rel="me" title="GitHub" aria-label="GitHub">
+	    <span class="icon icon-github" aria-hidden="true"></span>
+          </a>
+        </li><li class="social-item">
+          <a href="//twitter.com/twitter_username" rel="me" title="Twitter" aria-label="Twitter">
+            <span class="icon icon-twitter" aria-hidden="true"></span>
+          </a>
+        </li><li class="social-item">
+          <a href="//weibo.com/weibo_username" rel="me" title="Weibo" aria-label="Weibo">
+            <span class="icon icon-weibo" aria-hidden="true"></span>
+          </a>
+        </li></ul>
+	
+	
+
+  </nav>
+  
+  <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?14fd9d3b2b19ff0085e0751c0a5cd3af";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+</header>
+
+  <section class="main post-detail">
+    <header class="post-header">
+      <h1 class="post-title">智能交通设计</h1>
+      <p class="post-meta">@muzhi · May 17, 2019 · 2 min read 
+   <span id="/2019/05/17/%E6%99%BA%E8%83%BD%E4%BA%A4%E9%80%9A%E8%AE%BE%E8%AE%A1/" class="leancloud_visitors" data-flag-title="智能交通设计">
+  
+    <span class="leancloud-visitors-count"> </span>
+	<span class="post-meta-item-text">  VIEWS </span>
+
+    </p>
+	
+  </span>
+	
+	</header>
+    <article class="post-content"><p>摘要：随着日益增加的交通压力，以及带来的交通管理挑战，为了应对传统交通体系无法解决现代化交通问题的情况下，基于物联网的智能交通应运而生，智能交通是一种关键的物联网垂直应用，是指现代技术和管理策略在交通系统中的综合应用。其极大的缓解交通压力。其提出一个城市智能交通的框架以及其主要功能介绍，为建立智慧后才能是提供基础建设。</p>
+
+<p><strong>关键词：物联网；智能交通；智慧城市；智能化</strong></p>
+
+<h1 id="1-引言">1 引言</h1>
+
+<p>目前社会上的共享单车和共享电车已经司空见惯，共享交通已经逐渐按需移动，但这是否意味着交通变得智能？</p>
+
+<p>智能交通是新时代构建智慧城市的基础。但是“智能”到底意味着什么呢？谁负责在整个城市建立和维护不断增长的交通方式网络？下一代移动性时的传统智能是按需，共享，和自治之间存在这种趋势。</p>
+
+<p>随着城市化进程，交通工具增长迅速，交通车辆日益见增，极大的浪费的人们的时间效率，同时也给交通体系带来巨大的压力，当传统交通体系无法满足现代化交通需求，基于物联网系统而形成的现代化智慧交通体系逐渐浮出水面。</p>
+
+<p>交通诱导系统是目前解决现代城市交通问题的有效解决方案之一，将成为一种新型的交通管理控制模式，能够正确引导交通参与者到达目的地，避免交通堵塞通。本文阐述了智能交通系统的设计理念。分析了各种交通控制与指导的和谐研究。实践表明，城市交通智能导航系统可以有效避免交通导航系统与交通控制分离的交通管理模式引起的通信资源浪费。它可以充分平衡系统计算资源，实现交通控制与交通诱导系统之间的信息共享。</p>
+
+<h1 id="2-智能交通系统介绍">2 智能交通系统介绍</h1>
+
+<p>ITS（智能交通系统）自20世纪70年代初开始发展，使人，车，路联合和谐，建立了更广泛，更高效，实时，准确的信息管理系统。</p>
+
+<p>智能交通是一系列技术，可以有效地管理现有的和新的交通系统，以提高运营效率，提供更好的安全性，并以低廉的成本减轻通勤者的运输需求。智能交通技术包括所有交通道路，铁路，航空和海运模式的解决方案和服务。运输业技术进步的改善对运输业产生了重大影响。智能技术在运输业中的应用被广泛采用，以将传统的运输系统数字化地转换为智能运输系统。</p>
+
+<p>智能交通是一种关键的物联网垂直应用，是指现代技术和管理策略在交通系统中的综合应用。</p>
+
+<p>“智能交通系统”（ITS）是指将信息，通信和传感器技术应用于车辆和交通基础设施的努力，以便为道路使用者和交通系统运营商提供实时信息以做出更好的决策。ITS旨在提高交通安全，缓解交通拥堵，减少空气污染，提高能源效率，改善国土安全。ITS包含一系列满足上述目标的措施：先进的交通管理系统，先进的交通参与者信息系统，先进的公共交通系统。应用于交通运输，使系统更安全，更高效，更可靠，更环保，无需在物理上改变现有基础设施。所涉及的技术范围包括传感器和控制技术，通信和计算机信息学以及跨学科的跨越，如运输，工程，电信，计算机科学，金融，电子商务和汽车制造。</p>
+
+<h1 id="3-需求分析">3 需求分析</h1>
+
+<h2 id="3-1-用户需求分析">3.1 用户需求分析</h2>
+
+<p>随着城市化进程，城市交通已不堪重负，但是城市基本格局已经固定，这就导致城市规划与交通量严重不符合，造成大量的车辆拥堵，特别是在路口位置。文中构建路口诱导系统，旨在解决通过路口车辆和行人效率最大化。诱导系统负责对车辆以及行人进行主动预测引导，实现交通资源均衡配置。</p>
+
+<p>由分析系统计算的引导信息需要及时推送给交通参与者。交通信息发布功能是向交通参与者传输各种交通信息的主要且重要的方式。交通信息发布系统根据每个交通显示屏幕的具体位置，以及所辐射的范围，时间，制定具体，有针对性的信息发布策略，实现指导信息的有效传播。</p>
+
+<p>诱导信息发布系统通过各种信息数据，生成不同需求的交通信息，最后发布指导信息，帮助交通参与者合理选择出行路线，缓解交通拥堵，有效控制交通运行，实现道路安全和畅通。可以在信息发布功能上提供以下需求方法。</p>
+
+<ol>
+<li><p>自动引导显示。根据交通数据和交通拥堵信息自动生成引导信息，并将信息其发送到信息显示屏上进行显示。</p></li>
+
+<li><p>手动引导显示。将诸如突发事件，天气突发状况，紧急预警的信息手动发送到诱导屏上。它可以设置为在控制系统发送或在预定时间显示后立即显示。</p></li>
+
+<li><p>一般信息显示。可显示一般情况下的交通需求信息，如交通规则，宣传标语等。</p></li>
+
+<li><p>将显示的内容预先存储到信息发布屏的本地存储中。如果通信断开，则根据本地存储的内容显示引导屏幕。</p></li>
+
+<li><p>在关键导流交叉口前方安装导向屏（重要导流点，主要交通源，频繁拥堵点，交通敏感区域），释放主要道路和次要主要道路附近的道路交通状况，为移动车辆提供道路选择。</p></li>
+
+<li><p>信息发布点应在路网转移点的适当位置之前，给看到信息的驾驶员留出足够的时间做出决定并采取行动。</p></li>
+
+<li><p>实时动态的诱导信息和丰富的表达形式，诸如文字、图形、数字，语音等相结合的复合诱导形式。准确及时的将信息送达至参与者手中。</p></li>
+
+<li><p>根据信息设定的级别自动设定信息播放参数，如播放时长、频率，以文字或图形，并带有有效时段、单次播放时长、颜色等参数等发布。</p></li>
+
+<li><p>具有友好的人机交互界面，尽可能避免出现繁琐操作。</p></li>
+
+<li><p>信息显示屏可显示交通事件信息，到达重要标志性地点最优化线路以及预估时间，交通安全宣传信息。</p></li>
+
+<li><p>指示基本驾驶规则操作。</p></li>
+</ol>
+
+<h2 id="3-2-产品需求分析">3.2 产品需求分析</h2>
+
+<ol>
+<li><p>对于产品需求需要满足本系统多种信息采集，包括车辆，道路，行人，以及发布信息平台。</p></li>
+
+<li><p>实时采集交通路口道路车辆通行信息，车辆速度，车辆密度，交通事故，道路交通等信息，应急车辆信息。</p></li>
+
+<li><p>实时采集路口行人数量，行人聚集密度。</p></li>
+
+<li><p>实时采集车辆车牌，车身大小，时间，行驶方向，车道信息。</p></li>
+
+<li><p>对显示屏等能够显示文字，图像，语音，数字等信息。</p></li>
+
+<li><p>摄像头能够完成视频监控，语音广播等。</p></li>
+</ol>
+
+<h1 id="4-功能设计">4 功能设计</h1>
+
+<p>交通诱导系统是均衡道路流量、缓解交通拥堵的重要手段。该系统首先通过RFID，磁感线圈视频等检测技术实时获取交通流量、平均车速、车道占有率、车型等交通信息；</p>
+
+<p>诱导系统包括交通信息采集、信息处理、信息发布三部分。交通信息采集系统的主要功能是对于过往车辆进行计数、测速、车型分类，然后分析计算占道信息、单位时间内车流量、车流平均速度等，以此判断道路拥挤状况，以便合理调整道路承载的交通流量，优化道路交通组织，减少和避免拥堵的发生。</p>
+
+<p>系统的分析结果可以作为交警支队指挥中心路口高清监控系统的有效补充，当道路车流平均速度及路口通过时间达到预设阈值时将发出道路拥堵的预警，为领导的指挥决策、路面大队预先投入警力疏导排堵提供更多客观和科学的参考依据。</p>
+
+<h2 id="4-1-信息采集">4.1 信息采集</h2>
+
+<p>车辆磁检测器</p>
+
+<ul>
+<li><p>车辆存在：地球的磁场在宽广的区域内是均匀的，但其方向在赤道处从水平方向变为在磁极处垂直方向。车辆通过探测器时，产生磁异常，这会集中或扭曲地球磁场的磁感线，并增加磁通密度。靠近或低于车辆的磁传感器将检测到地球磁场的这种变化。</p></li>
+
+<li><p>方向检测：由于地球磁场中的失真主要集中在发动机附近和高铁含量的车轮上，因此传感器安装在道路一侧或停车位中间，车辆越过它。由移动车辆产生的磁场干扰可以通过计算分析获得车辆行驶方向。</p></li>
+
+<li><p>车型检测：由于不同车辆，小车，卡车，大型货车的高含铁量会有明显不同，因此通过的车辆对磁场干扰的波动大小，可以将车辆的车型进行划分。</p></li>
+
+<li><p>车流量：流量即为统计周期内通过线圈车辆的数量。通过车辆对磁场造成干扰的频率，通过时间周期可以计算车辆量。</p></li>
+</ul>
+
+<h2 id="4-2-信息发布">4.2 信息发布</h2>
+
+<p>将处理后的信息通过路口显示屏，进行实时更新，并根据信息级别自动设定信息采用何种信息发布，以及播放参数，如播放时长、频率。同时将路口信息，包括可能预测情况及时推送至其他车辆手机或者其他终端。以引导交通参与者合理选择出行行车路线，从而达到缓解拥堵。</p>
+
+<ul>
+<li><p>信号灯：发布行人欲车辆通过与否信号。</p></li>
+
+<li><p>显示屏：发布当前路口线路的拥堵情况，并根据拥堵情况高低，为路口线路进行颜色区分，提高交通参与者的信息获取容易度。并根据拥堵度对信息播放频次进行发布。</p></li>
+
+<li><p>语音：发布交通指挥者指挥命令。</p></li>
+
+<li><p>手机终端：联合地道导航厂家，对路口周围一定距离的车辆进行精准推送，并以语音或者文字的形式播放路口交通情况，并诱导车辆决定是否改变行驶路线等。</p></li>
+</ul>
+
+<h1 id="5-结构设计">5 结构设计</h1>
+
+<h2 id="5-1-系统结构模型">5.1     系统结构模型</h2>
+
+<p><img src="https://i.loli.net/2019/05/17/5cde6e28d003797082.jpg" alt="" /></p>
+
+<pre><code>                                            图1 系统结构图
+</code></pre>
+
+<ol>
+<li>感知层</li>
+<li>通过传感器和摄像头采集路口交通信息，并汇聚传输如信息平台以供信息网络中心处理应用融合。</li>
+<li>网络层</li>
+<li>对网络信息进行分析和处理融合, 并将处理后信息分发至应用层，提供给应层所需要数据。并接受应用层回调信息，加入数据库中供信息处理融合使用。</li>
+<li>应用层</li>
+<li>将网络层传递信息转化成资源, 实现更为专业化的服务。例如规划变道信息、诱导信息和应急管理。</li>
+<li>信息发布层</li>
+</ol>
+
+<p>通过处理后的信息中心，并根据信息不同发布至不同的信息平台，以供交通参与者与交通管理者使用获取。</p>
+
+<p>该系统可以通过各种数据采集技术从大城市区域获取实时交通流量数据;通过分析历史流量数据，建立初始指导案例库和流量状态库。具有强大的决策支持工具，所有控制都是根据数据状态进行的。</p>
+
+<h2 id="5-1-系统结构流程">5.1     系统结构流程</h2>
+
+<p><img src="https://i.loli.net/2019/05/17/5cde6ed867f3111797.png" alt="" /></p>
+
+<pre><code>                                                   图2 系统流程图
+</code></pre>
+
+<p>系统运行流程如图，在路口的交通流通过检测器，获得当前路口所知的车辆信息，车流信息，以及行人信息等其他信息，并将信息发送传递至数据中心处理以待处理，并存入数据库以待历史查询备份使用，通过应用层将诱导信息发布至不同平台，对交通参与者进行变道，路况信息，行驶路径进行诱导。引导行人和车辆避开拥堵。恢复路口交通无序状态。</p>
+
+<h1 id="6-概略设计">6 概略设计</h1>
+
+<p>由于城市中大量且不断增长的车辆交通建成了“智能化”的交叉点。车辆和行人的移动由驾驶员实时管理。控制器根据外围设备，探测器提供的数据做出决策。由于这些传感器对天气条件和机械非常敏感。经常向数据中心传输错误数据，或根本不进行通信。在这些数据管理设备的基础上运行有缺陷，或者顺序错误。</p>
+
+<h2 id="6-1-车辆检测">6.1 车辆检测</h2>
+
+<p>汽车由于型号和大小以及厂家的不同，因而具有不同的结构，但汽车中均包含的高铁磁性物质。汽车在路面行驶过程中，由于铁磁物质的存在会对车辆周围环境中的地磁场产生影响，将探测器安置于道路的适当位置处，以便可感应到地磁场受到车辆干扰而发生的变化，通过磁敏器件的输出信号，可以判断出车辆通过的情况，从而实现对车流量进行监测。</p>
+
+<p>车辆探测器需要提供有关车辆占道和交通流量的基本信息。为了覆盖缺乏合适电气基础设施的大面积路面区域，有线传感器网络由于其高昂的部署和维护成本而不切实际。用于车辆的检测器应该小巧，坚固，低功率，成本有效且易于安装和维护。目前可用的基于感应回路，超声波，红外或磁传感器的车辆检测器不满足上述要求，因此采用磁性车辆检测器KSK-S02传感器可以更合适。</p>
+
+<p>其参数如下：</p>
+
+<ul>
+<li>工作频率：2.4 GHz</li>
+<li>检测方法：磁性</li>
+<li>尺寸：110毫米x 90毫米</li>
+<li>颜色黑色</li>
+<li>紧密度：IP67，NEMA 6P</li>
+<li>最佳电池的工作温度：-35 - + 60℃</li>
+<li>传感器允许的最高和最低工作温度： -      41 - + 81℃</li>
+<li>基站的通信范围：100米</li>
+<li>电源：可更换锂电池（4件）</li>
+<li>电池寿命：5 - 8年</li>
+<li>检测性能约为98％</li>
+<li>机械阻力：IEC 68-2-6和IEC 68-2-7：3 g，11      ms halfsine，18次冲击</li>
+<li>抗振性：0.5 mm pp，10 Hz至60</li>
+<li>保修期：3年</li>
+</ul>
+
+<p>所有公路车辆的结构和零件都含有大量的黑色金属，并产生磁异常，因为它们的磁导率远高于周围的空气和土壤。这会集中和/或扭曲地球磁场的磁通线，并增加磁通密度（或磁感应强度）的车内和车辆附近。靠近或低于车辆的磁传感器将检测到地球磁场的这种变化。</p>
+
+<p>地球的磁场在宽广的区域内是均匀的，但其矢量方向在赤道处从水平方向变为在磁极处几乎垂直方向。因此，当车辆通过或停在传感器上时，传感器可以感测垂直分量并检测其变化。</p>
+
+<p>首先需确定调试检测器的参数，确保传感器探测趋于限制在需要检测的车道，以避免被紧邻车道的车辆激活传感器，传感器的时间激活确定车辆的速度和干扰值决定其质量。此信息被获取后被发送到数据中心。</p>
+
+<p><img src="https://i.loli.net/2019/05/17/5cde6f66e978b73915.png" alt="" /></p>
+
+<pre><code>                                               图3 检测器参数配置
+</code></pre>
+
+<p>探测器的工作原理是测量地球的磁场。迎面而来的车辆扰乱了现场，实现了有效的检测。如下图：</p>
+
+<p><img src="https://i.loli.net/2019/05/17/5cde6f671edd172547.png" alt="" /></p>
+
+<pre><code>                                               图4 小车对磁场的影响
+</code></pre>
+
+<p>可以识别车辆的类型（摩托车，汽车，卡车），因为它们对磁场的干扰程度不同。必须确定每个传感器的参数，以使得不被其他车道中的车辆激活。但是，在某些情况下，可能会出现意外。当通过大质量的车辆时可能会干扰相邻的场传感器。虽然可以降低灵敏度可以解决这个问题，但这会可能会导致检测车辆的质量发生误差。</p>
+
+<p><img src="https://i.loli.net/2019/05/17/5cde6f6713c2b27662.png" alt="" /></p>
+
+<pre><code>                                         图5 大型车辆对邻近车道的影响
+</code></pre>
+
+<p>为了正确检测多车道道路上的车辆，必要建立一个智能传感器网络，该网络远离地球磁场变形的繁忙状态。收集装置比较相邻传感器的信号差异，并且在此基础上是否是产生通知的一个或两个车辆。繁忙道路上的信息可以通过无线电传输到基站。此用于现有交叉路口。该装置包括在道路基础中的小孔腔和传感器具有其自身电池功率的位置。具有小面积并且组装安装成本的简单性，耐久性和抗破坏性。</p>
+
+<p>对于无线信息通信，CPU必须使用2.4 GHz无线基站与磁传感器通信。CPU向车辆检测器拓展卡提供关于车辆的信息，该车辆检测器拓展卡与主交叉口控制器通信。</p>
+
+<p>车辆探测器拓展卡 - 其任务是将从传感器/ CPU接收的信息直接传输到主控制器管理交叉点。一张卡最多支持8个传感器，并直接连接到后导轨CAN总线。</p>
+
+<p><img src="https://i.loli.net/2019/05/17/5cde6f670ac8980649.png" alt="" /></p>
+
+<pre><code>                                                       图6 路口无线传感器节点框图                             
+</code></pre>
+
+<h2 id="6-2-视频检测">6.2 视频检测</h2>
+
+<p><img src="https://i.loli.net/2019/05/17/5cde71e19d7f569335.jpg" alt="" /></p>
+
+<ul>
+<li>基于覆盖视频图像的检测区域的光学网格运行。</li>
+<li>每个摄像头可为其分配特定的交通方向。</li>
+<li>只记录那些沿相关区域定义的方向移动的车辆和行人。</li>
+<li>快速安装，易于配置和操作。</li>
+<li>可在全天候和任何天气下进行可靠的检测。</li>
+<li>可用于检测距离为50米或更远的车辆。</li>
+</ul>
+
+<h1 id="7-结束语">7 结束语</h1>
+
+<p>信息技术革命作为当代信息科技革命的中心，信息，知识已成为世界上最明显的特征。实现城市交通网络的智能控制将是发展的必然趋势。传输系统的复杂性，随机性，实时性和非线性等特征决定了我们必须使用大规模的系统理论和知识来控制它。</p>
+
+<p>智能交通系统解决的根本问题是道路畅通，而交通诱导系统是智能交通系统的重要组成部分，涉及交通，电子，通信，计算机，地理等诸多学科，综合应用领域。通过路线引导系统的应用可以提高出行效率，减少出行时间和成本，是目前解决城市交通问题可行的最佳方案之一，也越来越受到社会的关注。</p>
+
+<p><center> <b>
+     参考文献
+    </b> </center></p>
+
+<p>[1] 新一代城市交通流诱导系统框架研究[J]. 王少飞,张卫兵,张继先,陈新海.  公路交通技术. 2015(06)</p>
+
+<p>[2] 北京市VMS布局规划设置研究[J]. 张荣光,乔梁.  道路交通与安全. 2010(03)</p>
+
+<p>[3] 基于地磁感应的新型无线车辆检测器设计[J]. 王志超,刘波,汤亮,朱谦威.  计算机测量与控制. 2014(11)</p>
+
+<p>[4] 基于磁阻传感器的无线车辆检测器的设计[J]. 陈强,陶海鹏,王志明.  传感器与微系统. 2011(06)</p>
+
+<p>[5] 智能交通视频监控系统通信网络设计[D]. 洪霞.兰州交通大学 2016</p>
+
+<p>[6] 诱导信息条件下驾驶员路径选择对交通流分布的影响研究[D]. 史国强.重庆交通大学 2016</p>
+
+<p>[7] 基于无线传感器网络的交通信息采集系统[D]. 蔡增增.重庆大学 2012</p>
+
+<p>[8] 基于物联网的城市交通改善对策研究[D]. 刘泽东.兰州交通大学 2015</p>
+
+<p>[9] 基于磁阻传感器的车流量检测系统的设计与应用[J]. 肖宝森,程兵兵,陈泽坤,林玮萍,陈振隆,黄文腾,刘宝林.  厦门大学学报(自然科学版). 2013(03)</p>
+
+<p>[10] 基于地磁信息的车型识别技术的研究[D]. 李盼.北京交通大学 2015</p>
+
+<p>[11] 考虑交叉口转向延误的城市交通路径规划[D]. 张望.浙江大学 2015</p>
+
+<p>[12] 基于云计算的智能交通系统[D]. 汤博蔚.南京邮电大学 2015</p>
+
+<p>[13] 车路协同环境下交通控制与诱导协同研究[D]. 王川.兰州理工大学 2014</p>
+
+<p>[14] 交通流诱导中运动车辆检测与跟踪方法的研究[D]. 杜盼.长安大学 2011</p></article>
+    <footer class="post-footer">
+      
+      <ul class="post-tags">
+        
+          <li><a href="https://muzhi621.github.io/tags/%E8%AF%BE%E7%A8%8B"><span class="tag">课程</span></a></li>
+        
+          <li><a href="https://muzhi621.github.io/tags/%E8%AE%BA%E6%96%87"><span class="tag">论文</span></a></li>
+        
+          <li><a href="https://muzhi621.github.io/tags/%E7%89%A9%E8%81%94%E7%BD%91"><span class="tag">物联网</span></a></li>
+        
+      </ul>
+      
+      <p class="post-copyright">
+        © 本文作者：muzhi  版权所有本站文章均采用 CC BY-NC-SA 4.0 许可协议，请勿用于商业，转载注明出处！
+      </p>
+    </footer>
+    
+      
+    
+	
+	
+  <span id="/2019/05/17/%E6%99%BA%E8%83%BD%E4%BA%A4%E9%80%9A%E8%AE%BE%E8%AE%A1/" class="leancloud_visitors" data-flag-title="智能交通设计">
+   
+	
+  </span>
+  <div id="vcomments"></div>
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+  <script type="text/javascript">
+    new Valine({
+        el: '#vcomments' ,
+        appId: 'rIOXeftjd0ODtxrjVCPeYhMQ-gzGzoHsz',
+        appKey: 'k4OQq3C7OdQRIWohmIWBb5Fd',
+        notify:  false , 
+        verify:  false , 
+        avatar:'mm', 
+        placeholder: '说点什么吧...',
+        visitor:  true 
+    });
+  </script>
+	
+  </section>
+  
+<footer class="site-footer">
+  <p>© 2017-2019 liwu&#39;s Blog</p>
+  <p>Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> with theme <a href="https://github.com/laozhu/hugo-nuo" target="_blank" rel="noopener">Nuo</a>.</p>
+  
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/smooth-scroll@15.0.0/dist/smooth-scroll.min.js"></script>
+
+
+
+<script async src="https://cdn.jsdelivr.net/npm/video.js@7.3.0/dist/video.min.js"></script>
+
+
+
+
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$'], ['\\[','\\]']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+      extensions: ["AMSmath.js", "AMSsymbols.js"] }
+    },
+  });
+</script>
+<script type="text/x-mathjax-config">
+  // Fix <code> tags after MathJax finishes running. This is a
+  // hack to overcome a shortcoming of Markdown. Discussion at
+  // https://github.com/mojombo/jekyll/issues/199
+  MathJax.Hub.Queue(() => {
+    MathJax.Hub.getAllJax().map(v => v.SourceElement().parentNode.className += ' has-jax');
+  });
+</script>
+
+
+
+<script src="https://muzhi621.github.io/scripts/index.min.js"></script>
+
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('\/service-worker.js').then(function() {
+      console.log('[ServiceWorker] Registered');
+    });
+  }
+</script>
+
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-137387609-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?14fd9d3b2b19ff0085e0751c0a5cd3af";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+    
+      
+
+  </body>
+</html>

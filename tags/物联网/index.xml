@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>© 本文作者：muzhi  版权所有本站文章均采用 CC BY-NC-SA 4.0 许可协议，请勿用于商业，转载注明出处！</copyright>
-    <lastBuildDate>Sat, 23 Mar 2019 16:34:35 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 17 May 2019 16:00:09 +0800</lastBuildDate>
     
 	<atom:link href="https://muzhi621.github.io/tags/%E7%89%A9%E8%81%94%E7%BD%91/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>智能交通设计</title>
+      <link>https://muzhi621.github.io/2019/05/17/%E6%99%BA%E8%83%BD%E4%BA%A4%E9%80%9A%E8%AE%BE%E8%AE%A1/</link>
+      <pubDate>Fri, 17 May 2019 16:00:09 +0800</pubDate>
+      
+      <guid>https://muzhi621.github.io/2019/05/17/%E6%99%BA%E8%83%BD%E4%BA%A4%E9%80%9A%E8%AE%BE%E8%AE%A1/</guid>
+      <description>&lt;p&gt;摘要：随着日益增加的交通压力，以及带来的交通管理挑战，为了应对传统交通体系无法解决现代化交通问题的情况下，基于物联网的智能交通应运而生，智能交通是一种关键的物联网垂直应用，是指现代技术和管理策略在交通系统中的综合应用。其极大的缓解交通压力。其提出一个城市智能交通的框架以及其主要功能介绍，为建立智慧后才能是提供基础建设。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>智能路口诱导系统框架设计</title>
