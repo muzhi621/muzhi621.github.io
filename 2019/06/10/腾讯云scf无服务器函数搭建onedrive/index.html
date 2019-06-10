@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+
+  <meta charset="utf-8" />
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+  
+  <title>腾讯云SCF无服务器函数搭建OneDrive</title>
+
+  
+  
+  
+  <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  
+  <link href="//cdn.jsdelivr.net" rel="dns-prefetch">
+  <link href="//cdnjs.cloudflare.com" rel="dns-prefetch">
+  
+  <link href="//at.alicdn.com" rel="dns-prefetch">
+  
+  <link href="//fonts.googleapis.com" rel="dns-prefetch">
+  <link href="//fonts.gstatic.com" rel="dns-prefetch">
+  
+  
+  
+  <link href="//www.google-analytics.com" rel="dns-prefetch">
+  <link href="//hm.baidu.com" rel="dns-prefetch">
+
+  
+
+  
+  <meta name="author" content="muzhi">
+  <meta name="description" content="本搭建方法用腾讯云的无服务器云函数配合API网关实现, 不需要自己的服务器，0成本搭建, 实测运行机器的配置 8核16G内存(可以运行 system命令链接shell看), 因此此方法搭建自己的大型网站完全够用。
+目前无服务器云函数 SCF 处于公测阶段，并未正式收费，所有用户均可以放心使用。
+">
+
+  
+  
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@twitter_username">
+    <meta name="twitter:title" content="腾讯云SCF无服务器函数搭建OneDrive">
+    <meta name="twitter:description" content="本搭建方法用腾讯云的无服务器云函数配合API网关实现, 不需要自己的服务器，0成本搭建, 实测运行机器的配置 8核16G内存(可以运行 system命令链接shell看), 因此此方法搭建自己的大型网站完全够用。
+目前无服务器云函数 SCF 处于公测阶段，并未正式收费，所有用户均可以放心使用。
+">
+    <meta name="twitter:image" content="https://img1002-c.pocoimg.cn/image/poco/works/61/2019/0527/10/15589224513253033_178932010_H800.jpg">
+  
+
+  
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="腾讯云SCF无服务器函数搭建OneDrive">
+  <meta property="og:description" content="本搭建方法用腾讯云的无服务器云函数配合API网关实现, 不需要自己的服务器，0成本搭建, 实测运行机器的配置 8核16G内存(可以运行 system命令链接shell看), 因此此方法搭建自己的大型网站完全够用。
+目前无服务器云函数 SCF 处于公测阶段，并未正式收费，所有用户均可以放心使用。
+">
+  <meta property="og:url" content="https://muzhi621.github.io/2019/06/10/%E8%85%BE%E8%AE%AF%E4%BA%91scf%E6%97%A0%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%87%BD%E6%95%B0%E6%90%AD%E5%BB%BAonedrive/">
+  <meta property="og:image" content="https://img1002-c.pocoimg.cn/image/poco/works/61/2019/0527/10/15589224513253033_178932010_H800.jpg">
+
+
+
+
+<meta name="generator" content="Hugo 0.55.5">
+
+
+<link rel="canonical" href="https://muzhi621.github.io/2019/06/10/%E8%85%BE%E8%AE%AF%E4%BA%91scf%E6%97%A0%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%87%BD%E6%95%B0%E6%90%AD%E5%BB%BAonedrive/">
+
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="format-detection" content="telephone=no,email=no,adress=no">
+<meta http-equiv="Cache-Control" content="no-transform">
+
+
+<meta name="robots" content="index,follow">
+<meta name="referrer" content="origin-when-cross-origin">
+
+
+
+
+
+
+
+<meta name="theme-color" content="#02b875">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="liwu&#39;s Blog">
+<meta name="msapplication-tooltip" content="liwu&#39;s Blog">
+<meta name='msapplication-navbutton-color' content="#02b875">
+<meta name="msapplication-TileColor" content="#02b875">
+<meta name="msapplication-TileImage" content="/icons/icon-144x144.png">
+<link rel="icon" href="https://muzhi621.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://muzhi621.github.io/icons/icon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://muzhi621.github.io/icons/icon-32x32.png">
+<link rel="icon" sizes="192x192" href="https://muzhi621.github.io/icons/icon-192x192.png">
+<link rel="apple-touch-icon" href="https://muzhi621.github.io/icons/icon-152x152.png">
+<link rel="manifest" href="https://muzhi621.github.io/manifest.json">
+
+
+<link rel="preload" href="https://muzhi621.github.io/styles/main-rendered.min.css" as="style">
+
+
+<link rel="preload" href="https://fonts.googleapis.com/css?family=Lobster" as="style">
+<link rel="preload" href="https://muzhi621.github.io/images/avatar.png" as="image">
+<link rel="preload" href="https://muzhi621.github.io/images/grey-prism.svg" as="image">
+
+
+<style>
+  body {
+    background: rgb(244, 243, 241) url('/images/grey-prism.svg') repeat fixed;
+  }
+</style>
+<link rel="stylesheet" href="https://muzhi621.github.io/styles/main-rendered.min.css">
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.2/dist/medium-zoom.min.js"></script>
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/video.js@7.3.0/dist/video-js.min.css">
+
+
+
+  
+  
+<!--[if lte IE 8]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/videojs-ie8@1.1.2/dist/videojs-ie8.min.js"></script>
+<![endif]-->
+
+<!--[if lte IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/eligrey-classlist-js-polyfill@1.2.20180112/classList.min.js"></script>
+<![endif]-->
+
+
+</head>
+  <body>
+    <div class="suspension">
+      <a role="button" aria-label="Go to top" title="Go to top" class="to-top is-hide"><span class="icon icon-up" aria-hidden="true"></span></a>
+      
+        
+      
+    </div>
+    
+    
+  <header class="site-header">
+  <img class="avatar" src="https://muzhi621.github.io/images/avatar.png" alt="Avatar">
+  
+  <h2 class="title">liwu&#39;s Blog</h2>
+  
+  <p class="subtitle">~ Keep It Simple &amp; Stupid ~</p>
+  <button class="menu-toggle" type="button" aria-label="Main Menu" aria-expanded="false" tab-index="0">
+    <span class="icon icon-menu" aria-hidden="true"></span>
+  </button>
+
+
+  <nav class="site-menu collapsed">
+    <h2 class="offscreen">Main Menu</h2>
+    <ul class="menu-list">
+      
+      
+      
+      
+        <li class="menu-item
+          
+          
+           is-active">
+          <a href="https://muzhi621.github.io/">首页</a>
+        </li>
+      
+        <li class="menu-item
+          
+          
+          ">
+          <a href="https://muzhi621.github.io/tags/">标签</a>
+        </li>
+      
+        <li class="menu-item
+          
+          
+          ">
+          <a href="https://muzhi621.github.io/reading/">阅读</a>
+        </li>
+      
+        <li class="menu-item
+          
+          
+          ">
+          <a href="https://pan.myliwu.work">云盘</a>
+        </li>
+      
+        <li class="menu-item
+          
+          
+          ">
+          <a href="https://muzhi621.github.io/links/">友链</a>
+        </li>
+      
+        <li class="menu-item
+          
+          
+          ">
+          <a href="https://muzhi621.github.io/about/">关于</a>
+        </li>
+      
+    </ul>
+  </nav>
+  <nav class="social-menu collapsed">
+    <h2 class="offscreen">Social Networks</h2>
+    <ul class="social-list"><li class="social-item">
+          <a href="mailto:muzhi621@qq.com" title="Email" aria-label="Email">
+            <span class="icon icon-email" aria-hidden="true"></span>
+          </a>
+        </li><li class="social-item">
+          <a href="//github.com/muzhi621" rel="me" title="GitHub" aria-label="GitHub">
+	    <span class="icon icon-github" aria-hidden="true"></span>
+          </a>
+        </li><li class="social-item">
+          <a href="//twitter.com/twitter_username" rel="me" title="Twitter" aria-label="Twitter">
+            <span class="icon icon-twitter" aria-hidden="true"></span>
+          </a>
+        </li><li class="social-item">
+          <a href="//weibo.com/weibo_username" rel="me" title="Weibo" aria-label="Weibo">
+            <span class="icon icon-weibo" aria-hidden="true"></span>
+          </a>
+        </li></ul>
+	
+	
+
+  </nav>
+  
+  <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?14fd9d3b2b19ff0085e0751c0a5cd3af";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+</header>
+
+  <section class="main post-detail">
+    <header class="post-header">
+      <h1 class="post-title">腾讯云SCF无服务器函数搭建OneDrive</h1>
+      <p class="post-meta">@muzhi · Jun 10, 2019 · 1 min read 
+   <span id="/2019/06/10/%E8%85%BE%E8%AE%AF%E4%BA%91scf%E6%97%A0%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%87%BD%E6%95%B0%E6%90%AD%E5%BB%BAonedrive/" class="leancloud_visitors" data-flag-title="腾讯云SCF无服务器函数搭建OneDrive">
+  
+    
+	<span class="post-meta-item-text"> · VIEWS </span>
+	<span class="leancloud-visitors-count"> </span>
+
+    </p>
+	
+  </span>
+	
+	</header>
+    <article class="post-content"><p>本搭建方法用腾讯云的无服务器云函数配合API网关实现, 不需要自己的服务器，0成本搭建, 实测运行机器的配置 8核16G内存(可以运行 system命令链接shell看), 因此此方法搭建自己的大型网站完全够用。</p>
+
+<p>目前无服务器云函数 SCF 处于公测阶段，并未正式收费，所有用户均可以放心使用。</p>
+
+<p>腾讯云无服务器云函数（Serverless Cloud Function，SCF）是腾讯云为企业和开发者们提供的无服务器执行环境，帮助您在无需购买和管理服务器的情况下运行代码。您只需使用平台支持的语言编写核心代码并设置代码运行的条件，即可在腾讯云基础设施上弹性、安全地运行代码。SCF 是实时文件处理和数据处理等场景下理想的计算平台。</p>
+
+<p>无服务器云函数配合API网关实现, 不需要自己的服务器.</p>
+
+<p>我们还要有一个onedrive的账号，免费可以申请到1T容量的和5T容量的，完全够用了吧。</p>
+
+<p>实测运行 system命令链接shell看到机器的配置 8核16G内存</p>
+
+<p><strong>注意如果你想要绑定自己的域名的话，已备案的域名选择SCF地点的时候可以选择国内，未备案的话请选择香港。</strong></p>
+
+<p>LOC的风铃大佬写了前端Index的代码</p>
+
+<p>基于SCF的OneDrive Index项目地址</p>
+
+<p><a href="https://github.com/Tai7sy/OneDrive_SCF">https://github.com/Tai7sy/OneDrive_SCF</a></p>
+
+<p>我们先把压缩包下载好之后解压</p>
+
+<p>然后登陆腾讯云SCF</p>
+
+<p><a href="https://cloud.tencent.com/product/scf">https://cloud.tencent.com/product/scf</a></p>
+
+<p>gif视频教程</p>
+
+<p><img src="https://img.108105.xyz/2019/06/02/5cf3b5255079a.gif" alt="" /></p>
+
+<h3 id="自定义域名配置">自定义域名配置</h3>
+
+<p>1、域名添加解析记录</p>
+
+<p>2、在API函数里面新建自定义域名</p>
+
+<p><img src="https://img.108105.xyz/2019/06/02/5cf3bc206bbc8.png" alt="腾讯云SCF无需服务器搭建自己的0成本OneDrive网盘" /></p>
+
+<p>3、添加域名
+选择自定义路径,协议选择http，因为https要证书，不知道怎么添加</p>
+
+<p><img src="https://img.108105.xyz/2019/06/02/5cf3bc4784c62.png" alt="腾讯云SCF无需服务器搭建自己的0成本OneDrive网盘" /></p>
+
+<p>4、修改api网关的路径</p>
+
+<p><img src="https://img.108105.xyz/2019/06/02/5cf3bc7374fca.png" alt="腾讯云SCF无需服务器搭建自己的0成本OneDrive网盘" /></p>
+
+<p>修改为斜杠</p>
+
+<p><img src="https://img.108105.xyz/2019/06/02/5cf3bc73c461d.png" alt="腾讯云SCF无需服务器搭建自己的0成本OneDrive网盘" />
+修改以后记得发布服务</p>
+
+<p>5、修改SCF的环境变量
+修改完以后记得发布新版本，使其生效</p>
+
+<p><img src="https://img.108105.xyz/2019/06/02/5cf3bcaf1cb45.png" alt="腾讯云SCF无需服务器搭建自己的0成本OneDrive网盘" /></p>
+
+<p>参考：</p>
+
+<p><a href="https://nnboli.com/976.html">https://nnboli.com/976.html</a></p></article>
+    <footer class="post-footer">
+      
+      <ul class="post-tags">
+        
+          <li><a href="https://muzhi621.github.io/tags/%E6%8A%80%E6%9C%AF"><span class="tag">技术</span></a></li>
+        
+          <li><a href="https://muzhi621.github.io/tags/%E6%95%99%E7%A8%8B"><span class="tag">教程</span></a></li>
+        
+      </ul>
+      
+      <p class="post-copyright">
+        © 本文作者：muzhi  版权所有本站文章均采用 CC BY-NC-SA 4.0 许可协议，请勿用于商业，转载注明出处！
+      </p>
+    </footer>
+    
+      
+    
+	
+	
+  <span id="/2019/06/10/%E8%85%BE%E8%AE%AF%E4%BA%91scf%E6%97%A0%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%87%BD%E6%95%B0%E6%90%AD%E5%BB%BAonedrive/" class="leancloud_visitors" data-flag-title="腾讯云SCF无服务器函数搭建OneDrive">
+   
+	
+  </span>
+  <div id="vcomments"></div>
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+  <script type="text/javascript">
+    new Valine({
+        el: '#vcomments' ,
+        appId: 'rIOXeftjd0ODtxrjVCPeYhMQ-gzGzoHsz',
+        appKey: 'k4OQq3C7OdQRIWohmIWBb5Fd',
+        notify:  false , 
+        verify:  false , 
+        avatar:'mm', 
+        placeholder: '说点什么吧...',
+        visitor:  true 
+    });
+  </script>
+	
+  </section>
+  
+<footer class="site-footer">
+  <p>© 2017-2019 liwu&#39;s Blog</p>
+  <p>Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> with theme <a href="https://github.com/laozhu/hugo-nuo" target="_blank" rel="noopener">Nuo</a>.</p>
+  
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/smooth-scroll@15.0.0/dist/smooth-scroll.min.js"></script>
+
+
+
+<script async src="https://cdn.jsdelivr.net/npm/video.js@7.3.0/dist/video.min.js"></script>
+
+
+
+
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$'], ['\\[','\\]']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+      extensions: ["AMSmath.js", "AMSsymbols.js"] }
+    },
+  });
+</script>
+<script type="text/x-mathjax-config">
+  // Fix <code> tags after MathJax finishes running. This is a
+  // hack to overcome a shortcoming of Markdown. Discussion at
+  // https://github.com/mojombo/jekyll/issues/199
+  MathJax.Hub.Queue(() => {
+    MathJax.Hub.getAllJax().map(v => v.SourceElement().parentNode.className += ' has-jax');
+  });
+</script>
+
+
+
+<script src="https://muzhi621.github.io/scripts/index.min.js"></script>
+
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('\/service-worker.js').then(function() {
+      console.log('[ServiceWorker] Registered');
+    });
+  }
+</script>
+
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-137387609-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?14fd9d3b2b19ff0085e0751c0a5cd3af";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+    
+      
+
+  </body>
+</html>

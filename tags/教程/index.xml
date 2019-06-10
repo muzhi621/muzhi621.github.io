@@ -7,10 +7,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>© 本文作者：muzhi  版权所有本站文章均采用 CC BY-NC-SA 4.0 许可协议，请勿用于商业，转载注明出处！</copyright>
-    <lastBuildDate>Mon, 13 May 2019 19:00:53 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 10 Jun 2019 16:08:10 +0800</lastBuildDate>
     
 	<atom:link href="https://muzhi621.github.io/tags/%E6%95%99%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>腾讯云SCF无服务器函数搭建OneDrive</title>
+      <link>https://muzhi621.github.io/2019/06/10/%E8%85%BE%E8%AE%AF%E4%BA%91scf%E6%97%A0%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%87%BD%E6%95%B0%E6%90%AD%E5%BB%BAonedrive/</link>
+      <pubDate>Mon, 10 Jun 2019 16:08:10 +0800</pubDate>
+      
+      <guid>https://muzhi621.github.io/2019/06/10/%E8%85%BE%E8%AE%AF%E4%BA%91scf%E6%97%A0%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%87%BD%E6%95%B0%E6%90%AD%E5%BB%BAonedrive/</guid>
+      <description>&lt;p&gt;本搭建方法用腾讯云的无服务器云函数配合API网关实现, 不需要自己的服务器，0成本搭建, 实测运行机器的配置 8核16G内存(可以运行 system命令链接shell看), 因此此方法搭建自己的大型网站完全够用。&lt;/p&gt;
+
+&lt;p&gt;目前无服务器云函数 SCF 处于公测阶段，并未正式收费，所有用户均可以放心使用。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Git本地服务器搭建及使用</title>
