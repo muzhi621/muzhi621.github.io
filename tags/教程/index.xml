@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>© 本文作者：muzhi  版权所有本站文章均采用 CC BY-NC-SA 4.0 许可协议，请勿用于商业，转载注明出处！</copyright>
-    <lastBuildDate>Mon, 10 Jun 2019 16:08:10 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 10 Jun 2019 18:23:27 +0800</lastBuildDate>
     
 	<atom:link href="https://muzhi621.github.io/tags/%E6%95%99%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>BBR原版魔改Plus锐速四合一加速脚本</title>
+      <link>https://muzhi621.github.io/2019/06/10/bbr%E5%8E%9F%E7%89%88%E9%AD%94%E6%94%B9plus%E9%94%90%E9%80%9F%E5%9B%9B%E5%90%88%E4%B8%80%E5%8A%A0%E9%80%9F%E8%84%9A%E6%9C%AC/</link>
+      <pubDate>Mon, 10 Jun 2019 18:23:27 +0800</pubDate>
+      
+      <guid>https://muzhi621.github.io/2019/06/10/bbr%E5%8E%9F%E7%89%88%E9%AD%94%E6%94%B9plus%E9%94%90%E9%80%9F%E5%9B%9B%E5%90%88%E4%B8%80%E5%8A%A0%E9%80%9F%E8%84%9A%E6%9C%AC/</guid>
+      <description>&lt;p&gt;BBR是来自于Google的黑科技，目的是通过优化和控制TCP的拥塞，充分利用带宽并降低延迟，起到神奇般的加速效果。在BBR出来之前，就只有锐速比较好用，但是锐速是一个国产的闭源软件。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>腾讯云SCF无服务器函数搭建OneDrive</title>
