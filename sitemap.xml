@@ -257,12 +257,6 @@
   </url>
   
   <url>
-    <loc>https://muzhi621.github.io/tags/hugo/</loc>
-    <lastmod>2014-07-17T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://muzhi621.github.io/2014/07/17/hugo-nuo-post-preview/</loc>
     <lastmod>2014-07-17T00:00:00+00:00</lastmod>
   </url>
@@ -274,7 +268,7 @@
   </url>
   
   <url>
-    <loc>https://muzhi621.github.io/tags/theme/</loc>
+    <loc>https://muzhi621.github.io/tags/hugo/</loc>
     <lastmod>2014-07-17T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>

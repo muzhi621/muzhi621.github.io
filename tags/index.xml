@@ -157,15 +157,6 @@
     </item>
     
     <item>
-      <title>Hugo</title>
-      <link>https://muzhi621.github.io/tags/hugo/</link>
-      <pubDate>Thu, 17 Jul 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://muzhi621.github.io/tags/hugo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Markdown</title>
       <link>https://muzhi621.github.io/tags/markdown/</link>
       <pubDate>Thu, 17 Jul 2014 00:00:00 +0000</pubDate>
@@ -175,11 +166,11 @@
     </item>
     
     <item>
-      <title>Theme</title>
-      <link>https://muzhi621.github.io/tags/theme/</link>
+      <title>hugo</title>
+      <link>https://muzhi621.github.io/tags/hugo/</link>
       <pubDate>Thu, 17 Jul 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://muzhi621.github.io/tags/theme/</guid>
+      <guid>https://muzhi621.github.io/tags/hugo/</guid>
       <description></description>
     </item>
     
