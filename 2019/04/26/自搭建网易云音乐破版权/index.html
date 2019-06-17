@@ -292,11 +292,36 @@ var _hmt = _hmt || [];
 
 <p>Win + R 键启动“运行”，输入 cmd 打开命令行窗口。 输入命令后回车：ping music.163.com，得到网易云IP</p>
 
+<p><img src="https://i.niupic.com/images/2019/06/17/_4234.jpg" alt="" /></p>
+
+<p><strong>5. 制作bat脚本 &amp; vbs脚本</strong></p>
+
 <ol>
-<li>启动使用 PowerShell 启动 UnblockNeteaseMusic</li>
+<li><p>新建一个文本文档，把以下代码复制进去命名保存</p></li>
+
+<li><p>文件后缀改成 .bat 格式</p>
+
+<pre><code>@echo off
+cd C:\Program Files\cloudmusic\UnblockNeteaseMusic
+node app.js -p 45116 -f 59.111.160.197
+</code></pre></li>
+
+<li><p>新建一个文本文档，把以下代码复制进去命名保存</p></li>
+
+<li><p>文件后缀改成 .vbs 格式</p>
+
+<pre><code>Set ws = CreateObject(&quot;Wscript.Shell&quot;)  
+ws.run &quot;cmd /c lpssxs.bat&quot;,vbhide   
+</code></pre></li>
+
+<li><p>bat &amp; vbs 文件请放一个文件夹中</p></li>
 </ol>
 
-<p>按 Win + X 键选择“Windows PowerShell(管理员)”，输入： clear; cd 步骤一的路径; node app.js -p 25435 -f 步骤四的IP</p>
+<p><img src="https://i.niupic.com/images/2019/06/17/_4263.jpg" alt="" /></p>
+
+<p><strong>6. 执行脚本</strong></p>
+
+<p>​          右键以管理员权限运行bat即可</p>
 
 <ol>
 <li>配置网易云代理</li>
@@ -304,37 +329,19 @@ var _hmt = _hmt || [];
 
 <p>设置——工具——自定义代理，服务器填入127.0.0.1，端口为自己设置的端口。</p>
 
-<ol>
-<li>设置开机启动</li>
-</ol>
+<p><img src="https://i.niupic.com/images/2019/06/17/_4290.jpg" alt="" />8. 设置开机启动</p>
 
-<p>可使用批处理，代码如下</p>
+<p>将vbs创建快捷方式放到自启文件夹即可</p>
 
-<pre><code>   @echo off
-   cd C:\Program Files\cloudmusic\UnblockNeteaseMusic-master
-   node app.js -p 45116 -f 59.111.160.197
-   
-</code></pre>
+<p>Windows自启文件夹路径</p>
 
-<p>右击“我的电脑”——“管理”，找到“任务计划程序”——“创建基本任务”</p>
+<p>C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp</p>
 
-<ol>
-<li><p>任务名称随意</p></li>
+<p><img src="https://i.niupic.com/images/2019/06/17/_4310.jpg" alt="" /></p>
 
-<li><p>开始时间为“计算机启动时”或“用户登录时”</p></li>
+<p>点确定后。 设置完成后，请务必重启电脑，然后直接运行网易云测试。 这样设置后，每次开机时就会自动运行，非常方便~ 如果设置完计划任务重启后无效，请看步骤一，确认 UnblockNeteaseMusic 文件夹存放位置。</p>
 
-<li><p>选择“启动程序”</p></li>
-
-<li><p>“程序或脚本”浏览选择自己放置 .bat 文件的位置即可</p></li>
-
-<li><p>任务建立完成后，双击任务名称打开属性，勾选这两个：</p>
-
-<p><img src="https://i.loli.net/2019/05/12/5cd7d7813e128.jpg" alt="" /></p></li>
-
-<li><p>点确定后会提示输入密码，登录了微软账号的，直接填微软密码即可。 设置完成后，请务必重启电脑，然后直接运行网易云测试。 这样设置后，每次开机时就会自动运行，非常方便~ 如果设置完计划任务重启后无效，请看步骤一，确认 UnblockNeteaseMusic 文件夹存放位置。</p></li>
-</ol>
-
-<p>### 2. 服务器搭建流程：</p>
+<h3 id="2-服务器搭建流程">2. 服务器搭建流程：</h3>
 
 <ol>
 <li>首先你的准备一台服务器不用太高配置。服务器安装好宝塔面板，然后在宝塔面板的软件管理页面安装<strong>PM2管理器</strong></li>
@@ -371,7 +378,9 @@ var _hmt = _hmt || [];
 
 <p><a href="https://vipiu.net/archives/2019/04/13/1504.html">https://vipiu.net/archives/2019/04/13/1504.html</a></p>
 
-<p><a href="https://52youliao.com/thread-360.htm">https://52youliao.com/thread-360.htm</a></p></article>
+<p><a href="https://52youliao.com/thread-360.htm">https://52youliao.com/thread-360.htm</a></p>
+
+<p><a href="https://mp.weixin.qq.com/s/YV5ce1_qqRek8r-gowDWyQ">https://mp.weixin.qq.com/s/YV5ce1_qqRek8r-gowDWyQ</a></p></article>
     <footer class="post-footer">
       
       <ul class="post-tags">
