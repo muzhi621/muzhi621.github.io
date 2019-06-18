@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+
+  <meta charset="utf-8" />
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+  
+  <title>Git基本操作及版本控制</title>
+
+  
+  
+  
+  <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  
+  <link href="//cdn.jsdelivr.net" rel="dns-prefetch">
+  <link href="//cdnjs.cloudflare.com" rel="dns-prefetch">
+  
+  <link href="//at.alicdn.com" rel="dns-prefetch">
+  
+  <link href="//fonts.googleapis.com" rel="dns-prefetch">
+  <link href="//fonts.gstatic.com" rel="dns-prefetch">
+  
+  
+  
+  <link href="//www.google-analytics.com" rel="dns-prefetch">
+  <link href="//hm.baidu.com" rel="dns-prefetch">
+
+  
+
+  
+  <meta name="author" content="muzhi">
+  <meta name="description" content="">
+
+  
+  
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@twitter_username">
+    <meta name="twitter:title" content="Git基本操作及版本控制">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:image" content="https://hbimg.huabanimg.com/819356f3f3fdedd942330fb7adfd2c06dca30da7484e6-ybwUaN_fw658">
+  
+
+  
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Git基本操作及版本控制">
+  <meta property="og:description" content="">
+  <meta property="og:url" content="https://muzhi621.github.io/2019/06/18/git%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E5%8F%8A%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/">
+  <meta property="og:image" content="https://hbimg.huabanimg.com/819356f3f3fdedd942330fb7adfd2c06dca30da7484e6-ybwUaN_fw658">
+
+
+
+
+<meta name="generator" content="Hugo 0.55.5">
+
+
+<link rel="canonical" href="https://muzhi621.github.io/2019/06/18/git%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E5%8F%8A%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/">
+
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="format-detection" content="telephone=no,email=no,adress=no">
+<meta http-equiv="Cache-Control" content="no-transform">
+
+
+<meta name="robots" content="index,follow">
+<meta name="referrer" content="origin-when-cross-origin">
+
+
+
+
+
+
+
+<meta name="theme-color" content="#02b875">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="liwu&#39;s Blog">
+<meta name="msapplication-tooltip" content="liwu&#39;s Blog">
+<meta name='msapplication-navbutton-color' content="#02b875">
+<meta name="msapplication-TileColor" content="#02b875">
+<meta name="msapplication-TileImage" content="/icons/icon-144x144.png">
+<link rel="icon" href="https://muzhi621.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://muzhi621.github.io/icons/icon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://muzhi621.github.io/icons/icon-32x32.png">
+<link rel="icon" sizes="192x192" href="https://muzhi621.github.io/icons/icon-192x192.png">
+<link rel="apple-touch-icon" href="https://muzhi621.github.io/icons/icon-152x152.png">
+<link rel="manifest" href="https://muzhi621.github.io/manifest.json">
+
+
+<link rel="preload" href="https://muzhi621.github.io/styles/main-rendered.min.css" as="style">
+
+
+<link rel="preload" href="https://fonts.googleapis.com/css?family=Lobster" as="style">
+<link rel="preload" href="https://muzhi621.github.io/images/avatar.png" as="image">
+<link rel="preload" href="https://muzhi621.github.io/images/grey-prism.svg" as="image">
+
+
+<style>
+  body {
+    background: rgb(244, 243, 241) url('/images/grey-prism.svg') repeat fixed;
+  }
+</style>
+<link rel="stylesheet" href="https://muzhi621.github.io/styles/main-rendered.min.css">
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.2/dist/medium-zoom.min.js"></script>
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/video.js@7.3.0/dist/video-js.min.css">
+
+
+
+  
+  
+<!--[if lte IE 8]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/videojs-ie8@1.1.2/dist/videojs-ie8.min.js"></script>
+<![endif]-->
+
+<!--[if lte IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/eligrey-classlist-js-polyfill@1.2.20180112/classList.min.js"></script>
+<![endif]-->
+
+
+</head>
+  <body>
+    <div class="suspension">
+      <a role="button" aria-label="Go to top" title="Go to top" class="to-top is-hide"><span class="icon icon-up" aria-hidden="true"></span></a>
+      
+        
+      
+    </div>
+    
+    
+  <header class="site-header">
+  <img class="avatar" src="https://muzhi621.github.io/images/avatar.png" alt="Avatar">
+  
+  <h2 class="title">liwu&#39;s Blog</h2>
+  
+  <p class="subtitle">~ Keep It Simple &amp; Stupid ~</p>
+  <button class="menu-toggle" type="button" aria-label="Main Menu" aria-expanded="false" tab-index="0">
+    <span class="icon icon-menu" aria-hidden="true"></span>
+  </button>
+
+
+  <nav class="site-menu collapsed">
+    <h2 class="offscreen">Main Menu</h2>
+    <ul class="menu-list">
+      
+      
+      
+      
+        <li class="menu-item
+          
+          
+           is-active">
+          <a href="https://muzhi621.github.io/">首页</a>
+        </li>
+      
+        <li class="menu-item
+          
+          
+          ">
+          <a href="https://muzhi621.github.io/tags/">标签</a>
+        </li>
+      
+        <li class="menu-item
+          
+          
+          ">
+          <a href="https://muzhi621.github.io/reading/">阅读</a>
+        </li>
+      
+        <li class="menu-item
+          
+          
+          ">
+          <a href="https://yun.myliwu.work">云盘</a>
+        </li>
+      
+        <li class="menu-item
+          
+          
+          ">
+          <a href="https://muzhi621.github.io/links/">友链</a>
+        </li>
+      
+        <li class="menu-item
+          
+          
+          ">
+          <a href="https://muzhi621.github.io/about/">关于</a>
+        </li>
+      
+    </ul>
+  </nav>
+  <nav class="social-menu collapsed">
+    <h2 class="offscreen">Social Networks</h2>
+    <ul class="social-list"><li class="social-item">
+          <a href="mailto:muzhi621@qq.com" title="Email" aria-label="Email">
+            <span class="icon icon-email" aria-hidden="true"></span>
+          </a>
+        </li><li class="social-item">
+          <a href="//github.com/muzhi621" rel="me" title="GitHub" aria-label="GitHub">
+	    <span class="icon icon-github" aria-hidden="true"></span>
+          </a>
+        </li><li class="social-item">
+          <a href="//twitter.com/twitter_username" rel="me" title="Twitter" aria-label="Twitter">
+            <span class="icon icon-twitter" aria-hidden="true"></span>
+          </a>
+        </li><li class="social-item">
+          <a href="//weibo.com/weibo_username" rel="me" title="Weibo" aria-label="Weibo">
+            <span class="icon icon-weibo" aria-hidden="true"></span>
+          </a>
+        </li></ul>
+	
+	
+
+  </nav>
+  
+  <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?14fd9d3b2b19ff0085e0751c0a5cd3af";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+</header>
+
+  <section class="main post-detail">
+    <header class="post-header">
+      <h1 class="post-title">Git基本操作及版本控制</h1>
+      <p class="post-meta">@muzhi · Jun 18, 2019 · 2 min read 
+   <span id="/2019/06/18/git%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E5%8F%8A%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/" class="leancloud_visitors" data-flag-title="Git基本操作及版本控制">
+  
+    
+	<span class="post-meta-item-text"> · VIEWS </span>
+	<span class="leancloud-visitors-count"> </span>
+
+    </p>
+	
+  </span>
+	
+	</header>
+    <article class="post-content"><p>配置</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git config --list  <span style="color:#75715e">#查看配置的信息</span>
+
+git config --global user.name Nick <span style="color:#75715e">#设置用户名</span>
+
+git config --global user.email nick_php@163.com <span style="color:#75715e">#设置邮箱</span>
+
+git help config <span style="color:#75715e">#获取帮助信息</span></code></pre></div>
+<p>普通操作</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git status <span style="color:#75715e">#查看已添加到暂存区文件状态</span>
+
+git diff <span style="color:#75715e">#查看未添加暂存区文件状态</span>
+
+git add file <span style="color:#75715e">#添加文件</span>
+
+git add . <span style="color:#75715e">#添加当前目录下所有文件到版本库</span>
+
+git add -A <span style="color:#75715e">#添加所有文件到版本库</span>
+
+git commit -m <span style="color:#e6db74">&#39;注释&#39;</span> <span style="color:#75715e">#提交</span>
+
+git push <span style="color:#75715e">#推送到仓库</span>
+
+git pull <span style="color:#75715e">#拉取当前分支仓库最新代码</span>
+
+git pull dev <span style="color:#75715e">#拉取指定分支的代码与本地分支合并</span>
+
+git reset --hard <span style="color:#75715e">#回滚到上版本</span>
+
+git reset --hard af442cb672b02cdfca1fcb <span style="color:#75715e">#回滚到指定的版本</span>
+
+git checkout . <span style="color:#75715e">#恢复暂存区的所有文件到工作区</span>
+
+git checkout file <span style="color:#75715e">#恢复暂存区的指定文件到工作区</span>
+
+git checkout af442cb672b02cdfca1fcb index.php 恢复某个 commit 的指定文件到暂存区和工作区</code></pre></div>
+<p>新建仓库</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">mkdir www <span style="color:#f92672">&amp;&amp;</span> cd www
+
+git init <span style="color:#75715e">#初始化</span>
+
+git status <span style="color:#75715e">#查看文件状态</span>
+
+git add file <span style="color:#75715e">#.或*代表全部添加</span>
+
+git commit -m <span style="color:#e6db74">&#34;message&#34;</span><span style="color:#75715e">#此处注意乱码</span>
+
+git remote add origin git@github.com:username/project.git <span style="color:#75715e">#关联远程仓库</span>
+
+git push -u origin master <span style="color:#75715e">#第一次推送文件到远程仓库</span></code></pre></div>
+<p>克隆仓库</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git clone https://github.com/Nick233333/gitbook.git <span style="color:#75715e">#克隆远程仓库</span>
+
+git clone https://github.com/Nick233333/gitbook.git linux <span style="color:#75715e">#克隆并指定目录名称</span></code></pre></div>
+<p>日志</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git log <span style="color:#75715e">#查看提交日志</span>
+
+git reflog <span style="color:#75715e">#查看提交日志 git reset 回滚版本依然有日志，可以撤销回滚</span>
+
+git log --pretty<span style="color:#f92672">=</span>oneline <span style="color:#75715e">#单行显示提交日志</span>
+
+git log --author<span style="color:#f92672">=</span>nick <span style="color:#75715e">#查看指定用户的日志</span>
+
+git log -p filename <span style="color:#75715e">#查看文件每次提交的修改部分</span></code></pre></div>
+<p>分支</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git branch <span style="color:#75715e">#查看本地分支</span>
+
+git branch -r <span style="color:#75715e">#查看远端分支</span>
+
+git branch -a <span style="color:#75715e">#查看所有分支</span>
+
+git branch test <span style="color:#75715e">#新建 test 分支</span>
+
+git checkout -b dev <span style="color:#75715e">##新建 dev 分支并切换</span>
+
+git checkout - <span style="color:#75715e">#切换到上一个分支</span>
+
+git checkout -b test dev <span style="color:#75715e">#基于 dev 新建 test 分支，并切换</span>
+
+git merge test <span style="color:#75715e">#将test分支合并到当前分支</span>
+
+git branch -m old new <span style="color:#75715e">#重命名分支</span>
+
+git branch -M old new <span style="color:#75715e">#强制重命名分支</span>
+
+git push origin branch <span style="color:#75715e">#推送分支到远程</span>
+
+git branch -d branch <span style="color:#75715e">#删除本地分支</span>
+
+git branch -D branch <span style="color:#75715e">#强制删除本地分支(当分支内容有修改并且已经 commit 时，分支没有合并，需要强制删除)</span>
+
+git push origin :branch <span style="color:#75715e">#删除远程分支</span></code></pre></div>
+<p>标签</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git tag <span style="color:#75715e">#列出现有标签</span>
+
+git tag v0.1#新建标签
+
+git tag -a v0.1 -m <span style="color:#e6db74">&#39;my version 1.4&#39;</span><span style="color:#75715e">#新建带注释标签</span>
+
+git checkout tagname <span style="color:#75715e">#切换到标签</span>
+
+git push origin v1.5 <span style="color:#75715e">#推送分支到源上</span>
+
+git push origin --tags <span style="color:#75715e">#一次性推送所有分支</span>
+
+git tag -d tag <span style="color:#75715e">#删除本地 tag</span>
+
+git push origin :tag <span style="color:#75715e">#删除远程 tag</span></code></pre></div>
+<p>关联远程仓库</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git remote -v <span style="color:#75715e">#查看全部远程仓库</span>
+
+git remote add origin https://github.com/Nick233333/gitbook.git <span style="color:#75715e">#添加本地仓库与远程仓库关联</span>
+
+git remote rename origin github <span style="color:#75715e">#重命名</span>
+
+git remote remove origin <span style="color:#75715e">#取消与远程仓库关联</span></code></pre></div></article>
+    <footer class="post-footer">
+      
+      <ul class="post-tags">
+        
+          <li><a href="https://muzhi621.github.io/tags/%E6%95%99%E7%A8%8B"><span class="tag">教程</span></a></li>
+        
+          <li><a href="https://muzhi621.github.io/tags/%E6%8A%80%E6%9C%AF"><span class="tag">技术</span></a></li>
+        
+      </ul>
+      
+      <p class="post-copyright">
+        © 本文作者：muzhi  版权所有本站文章均采用 CC BY-NC-SA 4.0 许可协议，请勿用于商业，转载注明出处！
+      </p>
+    </footer>
+    
+      
+    
+	
+	
+  <span id="/2019/06/18/git%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E5%8F%8A%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/" class="leancloud_visitors" data-flag-title="Git基本操作及版本控制">
+   
+	
+  </span>
+  <div id="vcomments"></div>
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+  <script type="text/javascript">
+    new Valine({
+        el: '#vcomments' ,
+        appId: 'rIOXeftjd0ODtxrjVCPeYhMQ-gzGzoHsz',
+        appKey: 'k4OQq3C7OdQRIWohmIWBb5Fd',
+        notify:  false , 
+        verify:  false , 
+        avatar:'mm', 
+        placeholder: '说点什么吧...',
+        visitor:  true 
+    });
+  </script>
+	
+  </section>
+  
+<footer class="site-footer">
+  <p>© 2017-2019 liwu&#39;s Blog</p>
+  <p>Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> with theme <a href="https://github.com/laozhu/hugo-nuo" target="_blank" rel="noopener">Nuo</a>.</p>
+  
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/smooth-scroll@15.0.0/dist/smooth-scroll.min.js"></script>
+
+
+
+<script async src="https://cdn.jsdelivr.net/npm/video.js@7.3.0/dist/video.min.js"></script>
+
+
+
+
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$'], ['\\[','\\]']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+      extensions: ["AMSmath.js", "AMSsymbols.js"] }
+    },
+  });
+</script>
+<script type="text/x-mathjax-config">
+  // Fix <code> tags after MathJax finishes running. This is a
+  // hack to overcome a shortcoming of Markdown. Discussion at
+  // https://github.com/mojombo/jekyll/issues/199
+  MathJax.Hub.Queue(() => {
+    MathJax.Hub.getAllJax().map(v => v.SourceElement().parentNode.className += ' has-jax');
+  });
+</script>
+
+
+
+<script src="https://muzhi621.github.io/scripts/index.min.js"></script>
+
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('\/service-worker.js').then(function() {
+      console.log('[ServiceWorker] Registered');
+    });
+  }
+</script>
+
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-137387609-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?14fd9d3b2b19ff0085e0751c0a5cd3af";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+    
+      
+
+  </body>
+</html>

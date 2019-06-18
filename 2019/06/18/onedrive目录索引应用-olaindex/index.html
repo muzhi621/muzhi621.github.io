@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+
+  <meta charset="utf-8" />
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+  
+  <title>OneDrive目录索引应用 OLAINDEX</title>
+
+  
+  
+  
+  <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  
+  <link href="//cdn.jsdelivr.net" rel="dns-prefetch">
+  <link href="//cdnjs.cloudflare.com" rel="dns-prefetch">
+  
+  <link href="//at.alicdn.com" rel="dns-prefetch">
+  
+  <link href="//fonts.googleapis.com" rel="dns-prefetch">
+  <link href="//fonts.gstatic.com" rel="dns-prefetch">
+  
+  
+  
+  <link href="//www.google-analytics.com" rel="dns-prefetch">
+  <link href="//hm.baidu.com" rel="dns-prefetch">
+
+  
+
+  
+  <meta name="author" content="muzhi">
+  <meta name="description" content="之前使用的最多的OneDrive目录列表程序就是Oneindex，已经了很多使用教程了，最近有大佬受Oneindex启发，功能借鉴其思想，写出一个基于laravel5框架的OneDrive目录列表程序
+">
+
+  
+  
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@twitter_username">
+    <meta name="twitter:title" content="OneDrive目录索引应用 OLAINDEX">
+    <meta name="twitter:description" content="之前使用的最多的OneDrive目录列表程序就是Oneindex，已经了很多使用教程了，最近有大佬受Oneindex启发，功能借鉴其思想，写出一个基于laravel5框架的OneDrive目录列表程序
+">
+    <meta name="twitter:image" content="https://hbimg.huabanimg.com/250403a4f5f16c14193aa5046e20652bafd23366d9910-cHPZXS_fw658">
+  
+
+  
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="OneDrive目录索引应用 OLAINDEX">
+  <meta property="og:description" content="之前使用的最多的OneDrive目录列表程序就是Oneindex，已经了很多使用教程了，最近有大佬受Oneindex启发，功能借鉴其思想，写出一个基于laravel5框架的OneDrive目录列表程序
+">
+  <meta property="og:url" content="https://muzhi621.github.io/2019/06/18/onedrive%E7%9B%AE%E5%BD%95%E7%B4%A2%E5%BC%95%E5%BA%94%E7%94%A8-olaindex/">
+  <meta property="og:image" content="https://hbimg.huabanimg.com/250403a4f5f16c14193aa5046e20652bafd23366d9910-cHPZXS_fw658">
+
+
+
+
+<meta name="generator" content="Hugo 0.55.5">
+
+
+<link rel="canonical" href="https://muzhi621.github.io/2019/06/18/onedrive%E7%9B%AE%E5%BD%95%E7%B4%A2%E5%BC%95%E5%BA%94%E7%94%A8-olaindex/">
+
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="format-detection" content="telephone=no,email=no,adress=no">
+<meta http-equiv="Cache-Control" content="no-transform">
+
+
+<meta name="robots" content="index,follow">
+<meta name="referrer" content="origin-when-cross-origin">
+
+
+
+
+
+
+
+<meta name="theme-color" content="#02b875">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="liwu&#39;s Blog">
+<meta name="msapplication-tooltip" content="liwu&#39;s Blog">
+<meta name='msapplication-navbutton-color' content="#02b875">
+<meta name="msapplication-TileColor" content="#02b875">
+<meta name="msapplication-TileImage" content="/icons/icon-144x144.png">
+<link rel="icon" href="https://muzhi621.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://muzhi621.github.io/icons/icon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://muzhi621.github.io/icons/icon-32x32.png">
+<link rel="icon" sizes="192x192" href="https://muzhi621.github.io/icons/icon-192x192.png">
+<link rel="apple-touch-icon" href="https://muzhi621.github.io/icons/icon-152x152.png">
+<link rel="manifest" href="https://muzhi621.github.io/manifest.json">
+
+
+<link rel="preload" href="https://muzhi621.github.io/styles/main-rendered.min.css" as="style">
+
+
+<link rel="preload" href="https://fonts.googleapis.com/css?family=Lobster" as="style">
+<link rel="preload" href="https://muzhi621.github.io/images/avatar.png" as="image">
+<link rel="preload" href="https://muzhi621.github.io/images/grey-prism.svg" as="image">
+
+
+<style>
+  body {
+    background: rgb(244, 243, 241) url('/images/grey-prism.svg') repeat fixed;
+  }
+</style>
+<link rel="stylesheet" href="https://muzhi621.github.io/styles/main-rendered.min.css">
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.2/dist/medium-zoom.min.js"></script>
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/video.js@7.3.0/dist/video-js.min.css">
+
+
+
+  
+  
+<!--[if lte IE 8]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/videojs-ie8@1.1.2/dist/videojs-ie8.min.js"></script>
+<![endif]-->
+
+<!--[if lte IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/eligrey-classlist-js-polyfill@1.2.20180112/classList.min.js"></script>
+<![endif]-->
+
+
+</head>
+  <body>
+    <div class="suspension">
+      <a role="button" aria-label="Go to top" title="Go to top" class="to-top is-hide"><span class="icon icon-up" aria-hidden="true"></span></a>
+      
+        
+      
+    </div>
+    
+    
+  <header class="site-header">
+  <img class="avatar" src="https://muzhi621.github.io/images/avatar.png" alt="Avatar">
+  
+  <h2 class="title">liwu&#39;s Blog</h2>
+  
+  <p class="subtitle">~ Keep It Simple &amp; Stupid ~</p>
+  <button class="menu-toggle" type="button" aria-label="Main Menu" aria-expanded="false" tab-index="0">
+    <span class="icon icon-menu" aria-hidden="true"></span>
+  </button>
+
+
+  <nav class="site-menu collapsed">
+    <h2 class="offscreen">Main Menu</h2>
+    <ul class="menu-list">
+      
+      
+      
+      
+        <li class="menu-item
+          
+          
+           is-active">
+          <a href="https://muzhi621.github.io/">首页</a>
+        </li>
+      
+        <li class="menu-item
+          
+          
+          ">
+          <a href="https://muzhi621.github.io/tags/">标签</a>
+        </li>
+      
+        <li class="menu-item
+          
+          
+          ">
+          <a href="https://muzhi621.github.io/reading/">阅读</a>
+        </li>
+      
+        <li class="menu-item
+          
+          
+          ">
+          <a href="https://yun.myliwu.work">云盘</a>
+        </li>
+      
+        <li class="menu-item
+          
+          
+          ">
+          <a href="https://muzhi621.github.io/links/">友链</a>
+        </li>
+      
+        <li class="menu-item
+          
+          
+          ">
+          <a href="https://muzhi621.github.io/about/">关于</a>
+        </li>
+      
+    </ul>
+  </nav>
+  <nav class="social-menu collapsed">
+    <h2 class="offscreen">Social Networks</h2>
+    <ul class="social-list"><li class="social-item">
+          <a href="mailto:muzhi621@qq.com" title="Email" aria-label="Email">
+            <span class="icon icon-email" aria-hidden="true"></span>
+          </a>
+        </li><li class="social-item">
+          <a href="//github.com/muzhi621" rel="me" title="GitHub" aria-label="GitHub">
+	    <span class="icon icon-github" aria-hidden="true"></span>
+          </a>
+        </li><li class="social-item">
+          <a href="//twitter.com/twitter_username" rel="me" title="Twitter" aria-label="Twitter">
+            <span class="icon icon-twitter" aria-hidden="true"></span>
+          </a>
+        </li><li class="social-item">
+          <a href="//weibo.com/weibo_username" rel="me" title="Weibo" aria-label="Weibo">
+            <span class="icon icon-weibo" aria-hidden="true"></span>
+          </a>
+        </li></ul>
+	
+	
+
+  </nav>
+  
+  <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?14fd9d3b2b19ff0085e0751c0a5cd3af";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+</header>
+
+  <section class="main post-detail">
+    <header class="post-header">
+      <h1 class="post-title">OneDrive目录索引应用 OLAINDEX</h1>
+      <p class="post-meta">@muzhi · Jun 18, 2019 · 1 min read 
+   <span id="/2019/06/18/onedrive%E7%9B%AE%E5%BD%95%E7%B4%A2%E5%BC%95%E5%BA%94%E7%94%A8-olaindex/" class="leancloud_visitors" data-flag-title="OneDrive目录索引应用 OLAINDEX">
+  
+    
+	<span class="post-meta-item-text"> · VIEWS </span>
+	<span class="leancloud-visitors-count"> </span>
+
+    </p>
+	
+  </span>
+	
+	</header>
+    <article class="post-content"><p>之前使用的最多的<code>OneDrive</code>目录列表程序就是<a href="https://www.moerats.com/archives/592/">Oneindex</a>，已经了很多使用教程了，最近有大佬受<code>Oneindex</code>启发，功能借鉴其思想，写出一个基于<code>laravel5</code>框架的<code>OneDrive</code>目录列表程序</p>
+
+<p>✨ Another OneDrive Directory Index.</p>
+
+<p><a href="https://packagist.org/packages/wangningkai/olaindex"><img src="https://poser.pugx.org/wangningkai/olaindex/v/stable" alt="Latest Stable Version" /></a> <a href="https://github.com/WangNingkai/OLAINDEX/stargazers"><img src="https://img.shields.io/github/stars/WangNingkai/OLAINDEX.svg?style=flat-square" alt="GitHub stars" /></a> <a href="https://github.com/WangNingkai/OLAINDEX/network"><img src="https://img.shields.io/github/forks/WangNingkai/OLAINDEX.svg?style=flat-square" alt="GitHub forks" /></a> <a href="https://github.com/WangNingkai/OLAINDEX/blob/master/LICENSE"><img src="https://img.shields.io/github/license/WangNingkai/OLAINDEX.svg?style=flat-square" alt="GitHub license" /></a></p>
+
+<p><img src="https://i.loli.net/2019/06/15/5d049d72309c376133.png" alt="OLAINDEX" /></p>
+
+<blockquote>
+<p>👋 本项目受 Oneindex 启发，借鉴其部分功能，在这里感谢。 项目持续开发，会加入更多功能，欢迎大家提交 issue.</p>
+</blockquote>
+
+<h2 id="简介">简介</h2>
+
+<p>一款 <code>OneDrive</code> 目录文件索引应用，基于优雅的 <code>PHP</code> 框架 <code>Laravel5.7</code> 搭建，并通过 <code>Microsoft Graph</code> 接口获取数据展示，支持多类型帐号登录，多种主题显示，简单而强大。</p>
+
+<h2 id="项目地址">项目地址</h2>
+
+<ul>
+<li><a href="https://github.com/WangNingkai/OLAINDEX">https://github.com/WangNingkai/OLAINDEX</a></li>
+</ul>
+
+<h2 id="预览">预览</h2>
+
+<p><img src="https://i.loli.net/2018/11/11/5be82800ce8b5.png" alt="预览" /> <a href="https://app.fossa.io/projects/git%2Bgithub.com%2FWangNingkai%2FOLAINDEX?ref=badge_shield"><img src="https://app.fossa.io/api/projects/git%2Bgithub.com%2FWangNingkai%2FOLAINDEX.svg?type=shield" alt="FOSSA Status" /></a></p>
+
+<h2 id="演示地址">演示地址</h2>
+
+<ul>
+<li><a href="https://dev.ningkai.wang/">https://dev.ningkai.wang</a></li>
+</ul>
+
+<h2 id="功能">功能</h2>
+
+<ul>
+<li>OneDrive 目录查看索引分页查看；</li>
+<li>支持代码、图片、文本文件即时预览、图片列表栏展示；</li>
+<li>支持音视频播放（兼容大部分格式），视频播放采用 Dplayer.js，音乐播放采用 Aplayer；</li>
+<li>支持自定义创建文件夹、文件夹加密、文件/文件夹删除、文件/文件夹的复制与移动；</li>
+<li>支持文件搜索、文件上传、文件直链分享与删除、文件直链一键下载；</li>
+<li>支持管理 readme/head 说明文件；</li>
+<li>支持图床；</li>
+<li>支持命令行操作；</li>
+<li>支持文件离线下载（个人版）；</li>
+<li>后台基本显示管理，多主题管理，文件预览管理等等（清理缓存后及时生效）；</li>
+<li>支持世纪互联；</li>
+<li>支持多种缓存系统（Redis、Memcached等）；</li>
+<li>更多功能欢迎亲自尝试。</li>
+</ul>
+
+<p>注： 部分功能需登录。</p>
+
+<h2 id="更新">更新</h2>
+
+<p>本次更新进行部分重构，不再兼容老版本，请删除原先代码重新拉取部署更新</p>
+
+<p>v4.0</p>
+
+<ol>
+<li>搜索功能增强(前台可搜索、后台设置搜索频次)</li>
+<li>目录额外功能优化（文件隐藏、加密）</li>
+<li>文件排序功能加强</li>
+<li>静态资源CDN更换</li>
+<li>路径优化（可自定义兼容模式）</li>
+<li>后台刷新任务执行</li>
+<li>整合部分命令</li>
+<li>上传、搜索频次设置</li>
+<li>更换信息存储为数据库存储</li>
+<li>添加第三方接口</li>
+</ol>
+
+<h2 id="安装">安装</h2>
+
+<blockquote>
+<p>本项目基于 Laravel 开发，新手建议查看 laravel 的环境要求再进行部署。</p>
+</blockquote>
+
+<p>强调：Wiki 中包含常见的错误与解决，以及安装。如出现错误提示，建议到issues提供完整截图或相关完整报错代码，并仔细参考 wiki 说明，进行修改！</p>
+
+<p>帮助文档 ：</p>
+
+<p><a href="https://wangningkai.github.io/OLAINDEX/">帮助文档</a></p>
+
+<h2 id="更新升级">更新升级</h2>
+
+<p>版本升级：</p>
+
+<pre><code>git pull 
+composer install -vvv # 无版本更新只需执行到此（同时执行最后两条权限命令）
+
+php artisan od:update # 跨版本更新
+
+chmod -R 755 storage # 补充，保证缓存的写入权限，否则500
+chown -R www:www *
+</code></pre>
+
+<h2 id="分支说明">分支说明</h2>
+
+<ul>
+<li>release: 稳定版</li>
+<li>master: 开发版</li>
+<li>test: 测试版（不推荐使用）</li>
+</ul>
+
+<h2 id="捐赠">捐赠</h2>
+
+<p>项目开发纯属个人爱好，如果你喜欢此项目，欢迎捐赠。</p>
+
+<p>同时捐赠可以获得一次安装技术服务。</p>
+
+<p>另可根据需求提供付费定制服务。</p>
+
+<p>捐赠 ： <a href="https://pay.ningkai.wang/">https://pay.ningkai.wang</a></p>
+
+<h2 id="问题反馈">问题反馈</h2>
+
+<blockquote>
+<p>进行任何操作前请先阅读 <a href="https://github.com/ruby-china/How-To-Ask-Questions-The-Smart-Way/blob/master/README-zh_CN.md">《提问的智慧》</a></p>
+</blockquote>
+
+<p>当前获取帮助有三种方式：</p>
+
+<ol>
+<li>通过 <a href="https://github.com/WangNingkai/OLAINDEX/issues">GitHub issue</a> 提交问题（仅限问题反馈）</li>
+<li>通过 <a href="https://imwnk.cn/">个人博客</a> 评论留言 或者 <a href="https://olaindex.ningkai.wang/">关于&amp;反馈</a> 页面最下角留言</li>
+<li>通过个人邮箱联系（每周不定时查看）</li>
+</ol>
+
+<p>无论采用哪种方式，请务必注意自己的言行举止，尊重他人，遵守最基本的社区行为规范。 在求(伸)助(手)前请确保已经仔细 <a href="https://github.com/WangNingkai/OLAINDEX/wiki">Github Wiki</a> 内的所有说明。 使用 <a href="https://github.com/WangNingkai/OLAINDEX/issues">GitHub issue</a> 提交问题时请确保提供信息完整准确，否则不予跟进。</p>
+
+<p>Blog : <a href="https://imwnk.cn/">https://imwnk.cn</a></p>
+
+<p>Email : <a href="mailto:imwnk@live.com">imwnk@live.com</a></p>
+
+<h3 id="其他">其他：</h3>
+
+<ol>
+<li>本项目同样存在命令行版本，包含基本的显示下载，功能与此版本一致。项目地址 <a href="https://git.io/OLACMD">OLAINDEX-CMD</a></li>
+<li>本软件仅供日常学习使用，不得用于任何商业用途；学习使用请遵守您所在国家的法律，任何非法行为由使用者本身承担。</li>
+<li>如使用本应用，请保留底部版权，并分享给更多人，谢谢。</li>
+</ol>
+
+<hr />
+
+<h2 id="license">License</h2>
+
+<p>The OLAINDEX is open-source software licensed under the MIT license.</p></article>
+    <footer class="post-footer">
+      
+      <ul class="post-tags">
+        
+          <li><a href="https://muzhi621.github.io/tags/%E6%95%99%E7%A8%8B"><span class="tag">教程</span></a></li>
+        
+          <li><a href="https://muzhi621.github.io/tags/%E6%8A%80%E6%9C%AF"><span class="tag">技术</span></a></li>
+        
+      </ul>
+      
+      <p class="post-copyright">
+        © 本文作者：muzhi  版权所有本站文章均采用 CC BY-NC-SA 4.0 许可协议，请勿用于商业，转载注明出处！
+      </p>
+    </footer>
+    
+      
+    
+	
+	
+  <span id="/2019/06/18/onedrive%E7%9B%AE%E5%BD%95%E7%B4%A2%E5%BC%95%E5%BA%94%E7%94%A8-olaindex/" class="leancloud_visitors" data-flag-title="OneDrive目录索引应用 OLAINDEX">
+   
+	
+  </span>
+  <div id="vcomments"></div>
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+  <script type="text/javascript">
+    new Valine({
+        el: '#vcomments' ,
+        appId: 'rIOXeftjd0ODtxrjVCPeYhMQ-gzGzoHsz',
+        appKey: 'k4OQq3C7OdQRIWohmIWBb5Fd',
+        notify:  false , 
+        verify:  false , 
+        avatar:'mm', 
+        placeholder: '说点什么吧...',
+        visitor:  true 
+    });
+  </script>
+	
+  </section>
+  
+<footer class="site-footer">
+  <p>© 2017-2019 liwu&#39;s Blog</p>
+  <p>Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> with theme <a href="https://github.com/laozhu/hugo-nuo" target="_blank" rel="noopener">Nuo</a>.</p>
+  
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/smooth-scroll@15.0.0/dist/smooth-scroll.min.js"></script>
+
+
+
+<script async src="https://cdn.jsdelivr.net/npm/video.js@7.3.0/dist/video.min.js"></script>
+
+
+
+
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$'], ['\\[','\\]']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+      extensions: ["AMSmath.js", "AMSsymbols.js"] }
+    },
+  });
+</script>
+<script type="text/x-mathjax-config">
+  // Fix <code> tags after MathJax finishes running. This is a
+  // hack to overcome a shortcoming of Markdown. Discussion at
+  // https://github.com/mojombo/jekyll/issues/199
+  MathJax.Hub.Queue(() => {
+    MathJax.Hub.getAllJax().map(v => v.SourceElement().parentNode.className += ' has-jax');
+  });
+</script>
+
+
+
+<script src="https://muzhi621.github.io/scripts/index.min.js"></script>
+
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('\/service-worker.js').then(function() {
+      console.log('[ServiceWorker] Registered');
+    });
+  }
+</script>
+
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-137387609-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?14fd9d3b2b19ff0085e0751c0a5cd3af";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+    
+      
+
+  </body>
+</html>
