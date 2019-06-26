@@ -246,7 +246,7 @@ var _hmt = _hmt || [];
   <section class="main post-detail">
     <header class="post-header">
       <h1 class="post-title">自搭建网易云音乐破版权</h1>
-      <p class="post-meta">@muzhi · Apr 26, 2019 · 1 min read 
+      <p class="post-meta">@muzhi · Apr 26, 2019 · 2 min read 
    <span id="/2019/04/26/%E8%87%AA%E6%90%AD%E5%BB%BA%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90%E7%A0%B4%E7%89%88%E6%9D%83/" class="leancloud_visitors" data-flag-title="自搭建网易云音乐破版权">
   
     
@@ -372,6 +372,120 @@ ws.run &quot;cmd /c lpssxs.bat&quot;,vbhide
 <li>然后在客户端设置相应的代理，然后确定</li>
 </ol>
 
+<h3 id="3-linux服务器安装部署">3. Linux服务器安装部署</h3>
+
+<p>依次执行以下</p>
+
+<pre><code>curl -o- https:*//raw.githubusercontent.com/creationix/nvm/v0.33.0/install.sh | bash*
+
+nvm install 10.16.0
+
+git **clone** https:*//github.com/nondanee/UnblockNeteaseMusic.git*
+
+cd UnblockNeteaseMusic
+
+npm install pm2 -g
+
+npm install 
+
+pm2 start app.js
+</code></pre>
+
+<p>其他同上，这里多再多说明了！</p>
+
+<h2 id="docker安装">Docker安装</h2>
+
+<p><strong>1、安装Docker</strong></p>
+
+<pre><code>#CentOS 6
+rpm -iUvh http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
+yum update -y
+yum -y install docker-io
+service docker start
+chkconfig docker on
+
+#CentOS 7、Debian、Ubuntu
+curl -sSL https://get.docker.com/ | sh
+systemctl start docker
+systemctl enable docker
+</code></pre>
+
+<p><strong>2、运行镜像</strong></p>
+
+<pre><code>docker run --name unmusic -d -p 4567:8080 nondanee/unblockneteasemusic
+</code></pre>
+
+<p>运行端口<code>4567</code>，自行修改。</p>
+
+<h2 id="使用">使用</h2>
+
+<pre><code>提示：使用方法可以选择修改Hosts或者设置代理的方式，自己挑选一种比较会的吧。
+</code></pre>
+
+<p><strong>1、修改Hosts</strong>
+找到<code>Hosts</code>路径，大致位置：</p>
+
+<pre><code>Windows系统：位于C:\Windows\System32\drivers\etc\hosts
+Android系统：位于/system/etc/hosts
+Mac系统：位于/etc/hosts
+IOS系统：位于/etc/hosts
+Linux系统：位于/etc/hosts
+</code></pre>
+
+<p>向<code>hosts</code>文件添加两条规则</p>
+
+<pre><code>#将前面参数修改为服务器IP
+&lt;Server IP&gt; music.163.com
+&lt;Server IP&gt; interface.music.163.com
+</code></pre>
+
+<p>使用此方法必须监听<code>80</code>端口，也就是使用<code>-p 80</code>参数指定<code>80</code>端口运行。</p>
+
+<p><strong>2、设置代理</strong>
+安卓系统：</p>
+
+<pre><code>#设置方法
+手机设置 &gt; WLAN &gt; 网络设置 &gt; 高级选项 &gt; 代理
+
+一般安卓手机设置代理类型的时候分2种，手动代理和自动代理，有的手机可能只有手动代理，大致设置如下：
+手动代理 &gt; 只需要填上你的服务器IP和端口就可以了。
+自动代理 &gt; 填上你的PAC地址就行了，地址：http://&lt;Server Name:PORT&gt;/proxy.pac，修改为你的ip、运行端口。
+
+如果你发现设置后不能使用或者出现其它网络问题，带了-s参数的不妨去掉后再试试。
+</code></pre>
+
+<p>Windows系统：</p>
+
+<pre><code>#设置方法
+网易云客户端设置 &gt; 工具 &gt; 自定义代理 &gt; HTTP代理
+这里只需要填上你的服务器ip和端口，保存即可。
+</code></pre>
+
+<h2 id="问题补充">问题补充</h2>
+
+<p>1、如果设置好了后，打开客户端提示网络问题的话，稍等片刻就好了，如果过会还是不行，就检查下操作啥的，比如防火墙。</p>
+
+<p>一般情况下<code>CentOS</code>防火墙还需要开启运行端口，比如博主用的<code>4567</code>，使用命令：</p>
+
+<pre><code>#CentOS 6
+iptables -I INPUT -p tcp --dport 4567 -j ACCEPT
+service iptables save
+service iptables restart
+
+#CentOS 7
+firewall-cmd --zone=public --add-port=4567/tcp --permanent
+firewall-cmd --reload
+</code></pre>
+
+<p>宝塔的话可以直接面板左侧-安全-开启对应的端口即可。</p>
+
+<p>2、上面只提到了安卓<code>WLAN</code>下的使用方法，这里再补充个手机数据下的使用方法，建议配合<code>Xndroid</code>工具，最新版<code>APP</code>下载地址→<a href="https://github.com/XndroidDev/Xndroid/releases">传送门</a>，大致设置如下：</p>
+
+<pre><code>打开Xndroid &gt; 点击左侧Fqrouter &gt; 添加个人代理(只需要填服务器ip和端口即可) &gt; 代理列表配置项(将高级设置里面全部关掉) &gt; 软件右上角代理设置(只代理网易云音乐)
+</code></pre>
+
+<p>设置完成后你还可以在右上角启动设置中，关掉<code>xx-net</code>和<code>fqrouter</code>里面的所有启动项，这样开启软件速度也会快很多。</p>
+
 <p><strong>参考：</strong></p>
 
 <p><a href="https://github.com/nondanee/UnblockNeteaseMusic">https://github.com/nondanee/UnblockNeteaseMusic</a></p>
@@ -380,7 +494,11 @@ ws.run &quot;cmd /c lpssxs.bat&quot;,vbhide
 
 <p><a href="https://52youliao.com/thread-360.htm">https://52youliao.com/thread-360.htm</a></p>
 
-<p><a href="https://mp.weixin.qq.com/s/YV5ce1_qqRek8r-gowDWyQ">https://mp.weixin.qq.com/s/YV5ce1_qqRek8r-gowDWyQ</a></p></article>
+<p><a href="https://mp.weixin.qq.com/s/YV5ce1_qqRek8r-gowDWyQ">https://mp.weixin.qq.com/s/YV5ce1_qqRek8r-gowDWyQ</a></p>
+
+<p><a href="https://www.moerats.com/archives/938/">https://www.moerats.com/archives/938/</a></p>
+
+<p><a href="https://www.daniao.org/4962.html">https://www.daniao.org/4962.html</a></p></article>
     <footer class="post-footer">
       
       <ul class="post-tags">
