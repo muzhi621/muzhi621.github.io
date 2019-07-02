@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+
+  <meta charset="utf-8" />
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+  
+  <title>CentOS7一键安装Caddy&#43;Aria2&#43;AriaNg实现离线下载</title>
+
+  
+  
+  
+  <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  
+  <link href="//cdn.jsdelivr.net" rel="dns-prefetch">
+  <link href="//cdnjs.cloudflare.com" rel="dns-prefetch">
+  
+  <link href="//at.alicdn.com" rel="dns-prefetch">
+  
+  <link href="//fonts.googleapis.com" rel="dns-prefetch">
+  <link href="//fonts.gstatic.com" rel="dns-prefetch">
+  
+  
+  
+  <link href="//www.google-analytics.com" rel="dns-prefetch">
+  <link href="//hm.baidu.com" rel="dns-prefetch">
+
+  
+
+  
+  <meta name="author" content="muzhi">
+  <meta name="description" content="Aria2是一款自由、跨平台命令行界面命令行界面)的下载管理器，该软件根据GPLv2许可证进行分发。支持的下载协议有：HTTP、HTTPS、FTP、Bittorrent和Metalink。不同于Wget这样的的命令行界面下载器，Aria2不仅支持BitTorrent，还能够从各种来源多路检索所请求的文件。
+">
+
+  
+  
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@twitter_username">
+    <meta name="twitter:title" content="CentOS7一键安装Caddy&#43;Aria2&#43;AriaNg实现离线下载">
+    <meta name="twitter:description" content="Aria2是一款自由、跨平台命令行界面命令行界面)的下载管理器，该软件根据GPLv2许可证进行分发。支持的下载协议有：HTTP、HTTPS、FTP、Bittorrent和Metalink。不同于Wget这样的的命令行界面下载器，Aria2不仅支持BitTorrent，还能够从各种来源多路检索所请求的文件。
+">
+    <meta name="twitter:image" content="https://hbimg.huabanimg.com/bb169d30f7cae9e0a10a7043a991ed7a32f514dd42ff3-uekmYM_fw658">
+  
+
+  
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="CentOS7一键安装Caddy&#43;Aria2&#43;AriaNg实现离线下载">
+  <meta property="og:description" content="Aria2是一款自由、跨平台命令行界面命令行界面)的下载管理器，该软件根据GPLv2许可证进行分发。支持的下载协议有：HTTP、HTTPS、FTP、Bittorrent和Metalink。不同于Wget这样的的命令行界面下载器，Aria2不仅支持BitTorrent，还能够从各种来源多路检索所请求的文件。
+">
+  <meta property="og:url" content="https://muzhi621.github.io/2019/07/02/centos7%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85caddy-aria2-ariang%E5%AE%9E%E7%8E%B0%E7%A6%BB%E7%BA%BF%E4%B8%8B%E8%BD%BD/">
+  <meta property="og:image" content="https://hbimg.huabanimg.com/bb169d30f7cae9e0a10a7043a991ed7a32f514dd42ff3-uekmYM_fw658">
+
+
+
+
+<meta name="generator" content="Hugo 0.55.5">
+
+
+<link rel="canonical" href="https://muzhi621.github.io/2019/07/02/centos7%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85caddy-aria2-ariang%E5%AE%9E%E7%8E%B0%E7%A6%BB%E7%BA%BF%E4%B8%8B%E8%BD%BD/">
+
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="format-detection" content="telephone=no,email=no,adress=no">
+<meta http-equiv="Cache-Control" content="no-transform">
+
+
+<meta name="robots" content="index,follow">
+<meta name="referrer" content="origin-when-cross-origin">
+
+
+
+
+
+
+
+<meta name="theme-color" content="#02b875">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="liwu&#39;s Blog">
+<meta name="msapplication-tooltip" content="liwu&#39;s Blog">
+<meta name='msapplication-navbutton-color' content="#02b875">
+<meta name="msapplication-TileColor" content="#02b875">
+<meta name="msapplication-TileImage" content="/icons/icon-144x144.png">
+<link rel="icon" href="https://muzhi621.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://muzhi621.github.io/icons/icon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://muzhi621.github.io/icons/icon-32x32.png">
+<link rel="icon" sizes="192x192" href="https://muzhi621.github.io/icons/icon-192x192.png">
+<link rel="apple-touch-icon" href="https://muzhi621.github.io/icons/icon-152x152.png">
+<link rel="manifest" href="https://muzhi621.github.io/manifest.json">
+
+
+<link rel="preload" href="https://muzhi621.github.io/styles/main-rendered.min.css" as="style">
+
+
+<link rel="preload" href="https://fonts.googleapis.com/css?family=Lobster" as="style">
+<link rel="preload" href="https://muzhi621.github.io/images/avatar.png" as="image">
+<link rel="preload" href="https://muzhi621.github.io/images/grey-prism.svg" as="image">
+
+
+<style>
+  body {
+    background: rgb(244, 243, 241) url('/images/grey-prism.svg') repeat fixed;
+  }
+</style>
+<link rel="stylesheet" href="https://muzhi621.github.io/styles/main-rendered.min.css">
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.2/dist/medium-zoom.min.js"></script>
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/video.js@7.3.0/dist/video-js.min.css">
+
+
+
+  
+  
+<!--[if lte IE 8]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/videojs-ie8@1.1.2/dist/videojs-ie8.min.js"></script>
+<![endif]-->
+
+<!--[if lte IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/eligrey-classlist-js-polyfill@1.2.20180112/classList.min.js"></script>
+<![endif]-->
+
+
+</head>
+  <body>
+    <div class="suspension">
+      <a role="button" aria-label="Go to top" title="Go to top" class="to-top is-hide"><span class="icon icon-up" aria-hidden="true"></span></a>
+      
+        
+      
+    </div>
+    
+    
+  <header class="site-header">
+  <img class="avatar" src="https://muzhi621.github.io/images/avatar.png" alt="Avatar">
+  
+  <h2 class="title">liwu&#39;s Blog</h2>
+  
+  <p class="subtitle">~ Keep It Simple &amp; Stupid ~</p>
+  <button class="menu-toggle" type="button" aria-label="Main Menu" aria-expanded="false" tab-index="0">
+    <span class="icon icon-menu" aria-hidden="true"></span>
+  </button>
+
+
+  <nav class="site-menu collapsed">
+    <h2 class="offscreen">Main Menu</h2>
+    <ul class="menu-list">
+      
+      
+      
+      
+        <li class="menu-item
+          
+          
+           is-active">
+          <a href="https://muzhi621.github.io/">首页</a>
+        </li>
+      
+        <li class="menu-item
+          
+          
+          ">
+          <a href="https://muzhi621.github.io/tags/">标签</a>
+        </li>
+      
+        <li class="menu-item
+          
+          
+          ">
+          <a href="https://muzhi621.github.io/reading/">阅读</a>
+        </li>
+      
+        <li class="menu-item
+          
+          
+          ">
+          <a href="https://yun.myliwu.work">云盘</a>
+        </li>
+      
+        <li class="menu-item
+          
+          
+          ">
+          <a href="https://muzhi621.github.io/links/">友链</a>
+        </li>
+      
+        <li class="menu-item
+          
+          
+          ">
+          <a href="https://muzhi621.github.io/about/">关于</a>
+        </li>
+      
+    </ul>
+  </nav>
+  <nav class="social-menu collapsed">
+    <h2 class="offscreen">Social Networks</h2>
+    <ul class="social-list"><li class="social-item">
+          <a href="mailto:muzhi621@qq.com" title="Email" aria-label="Email">
+            <span class="icon icon-email" aria-hidden="true"></span>
+          </a>
+        </li><li class="social-item">
+          <a href="//github.com/muzhi621" rel="me" title="GitHub" aria-label="GitHub">
+	    <span class="icon icon-github" aria-hidden="true"></span>
+          </a>
+        </li><li class="social-item">
+          <a href="//twitter.com/twitter_username" rel="me" title="Twitter" aria-label="Twitter">
+            <span class="icon icon-twitter" aria-hidden="true"></span>
+          </a>
+        </li><li class="social-item">
+          <a href="//weibo.com/weibo_username" rel="me" title="Weibo" aria-label="Weibo">
+            <span class="icon icon-weibo" aria-hidden="true"></span>
+          </a>
+        </li></ul>
+	
+	
+
+  </nav>
+  
+  <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?14fd9d3b2b19ff0085e0751c0a5cd3af";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+</header>
+
+  <section class="main post-detail">
+    <header class="post-header">
+      <h1 class="post-title">CentOS7一键安装Caddy&#43;Aria2&#43;AriaNg实现离线下载</h1>
+      <p class="post-meta">@muzhi · Jul 2, 2019 · 2 min read 
+   <span id="/2019/07/02/centos7%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85caddy-aria2-ariang%E5%AE%9E%E7%8E%B0%E7%A6%BB%E7%BA%BF%E4%B8%8B%E8%BD%BD/" class="leancloud_visitors" data-flag-title="CentOS7一键安装Caddy&#43;Aria2&#43;AriaNg实现离线下载">
+  
+    
+	<span class="post-meta-item-text"> · VIEWS </span>
+	<span class="leancloud-visitors-count"> </span>
+
+    </p>
+	
+  </span>
+	
+	</header>
+    <article class="post-content"><p>Aria2是一款自由、跨平台命令行界面命令行界面)的下载管理器，该软件根据<a href="https://zh.wikipedia.org/wiki/GPLv2">GPLv2</a><a href="https://zh.wikipedia.org/wiki/软件许可证">许可证</a>进行分发。支持的下载协议有：<a href="https://zh.wikipedia.org/wiki/HTTP">HTTP</a>、<a href="https://zh.wikipedia.org/wiki/HTTPS">HTTPS</a>、<a href="https://zh.wikipedia.org/wiki/FTP">FTP</a>、<a href="https://zh.wikipedia.org/wiki/BitTorrent_(协议)">Bittorrent</a>和<a href="https://zh.wikipedia.org/w/index.php?title=Metalink&amp;action=edit&amp;redlink=1">Metalink</a>。不同于<a href="https://zh.wikipedia.org/wiki/Wget">Wget</a>这样的的命令行界面下载器，Aria2不仅支持BitTorrent，还能够从各种来源多路检索所请求的文件。</p>
+
+<p>包括HTTP，HTTPS，FTP和BitTorrent协议。aria2使用Metalink数据块的校验和自动查验BitTorrent下载的数据部分。</p>
+
+<p>Aria2的另一个特性便是可以使用<a href="https://zh.wikipedia.org/wiki/JSON-RPC">JSON-RPC</a>和<a href="https://zh.wikipedia.org/wiki/XML-RPC">XML-RPC</a>进行HTTP远程下载控制，JSON-RPC接口可通过<a href="https://zh.wikipedia.org/wiki/WebSocket">WebSocket</a>获得。</p>
+
+<p><strong>主要功能</strong></p>
+
+<blockquote>
+<p>支持HTTP/HTTPS/FTP/BT/磁力链接等离线下载，断点续传等
+文件管理、视频在线播放</p>
+</blockquote>
+
+<h1 id="安装ccaa">安装CCAA</h1>
+
+<p>复制下面的命令，一行一个：</p>
+
+<pre><code>yum -y install wget unzip curl
+wget https://github.com/helloxz/ccaa/archive/master.zip
+unzip master.zip &amp;&amp; cd ccaa-master &amp;&amp; sh ccaa.sh
+</code></pre>
+
+<p><strong>输入1安装CCAA</strong>
+<img src="https://i.niupic.com/images/2019/07/02/_2194.jpg" alt="img" />￼
+根据提示设置下载路径、RPC密钥、用户名、密码，稍后需要用到。
+<img src="https://i.niupic.com/images/2019/07/02/_2195.jpg" alt="img" />￼
+安装完成后会看到如下提示，请务必牢记RPC密钥、用户名、密码等信息。
+<img src="https://i.niupic.com/images/2019/07/02/_2196.jpg" alt="img" />￼</p>
+
+<p>根据提示输入<a href="http://IP：6080/打开AriaNg界面，并输入上一个步骤中设置的Caddy用户名和密码。">http://IP：6080/打开AriaNg界面，并输入上一个步骤中设置的Caddy用户名和密码。</a>
+<img src="https://i.niupic.com/images/2019/07/02/_2197.jpg" alt="img" />￼</p>
+
+<p>打开AriaNg设置 - RPC ，填写Aria2 RPC 密钥，然后刷新页面，至此已经完成，可以愉快的开始下片啦。
+<img src="https://i.niupic.com/images/2019/07/02/_2209.jpg" alt="img" />￼</p>
+
+<p>文件管理
+点击右上角文件管理按钮会跳转到Caddy filemanager进行文件管理，或者手动输入地址<a href="http://IP:6080/admin也可以进入Caddy">http://IP:6080/admin也可以进入Caddy</a> filemanager
+<img src="https://i.niupic.com/images/2019/07/02/_2210.jpg" alt="img" />￼</p>
+
+<p>常用命令</p>
+
+<pre><code>#查看ccaa状态
+ccaa status
+#启动ccaa
+ccaa start
+#停止ccaa
+ccaa stop
+#重启ccaa
+ccaa restart
+</code></pre>
+
+<h1 id="注意事项">注意事项</h1>
+
+<blockquote>
+<p>如果服务器有启用安全组，请务必在安全组放行以下端口：6080/6800/6998/51413
+大部分服务商是禁止下载BT的，若因违规使用导致服务器被封本人不承担任何责任</p>
+</blockquote>
+
+<h1 id="ccaa使用说明">CCAA使用说明</h1>
+
+<h3 id="新建下载">新建下载</h3>
+
+<p>在AriaNg页面点击新建按钮，输入链接即可下载，支持HTTP/HTTPS/FTP/磁力、BT等。
+<img src="https://i.niupic.com/images/2019/07/02/_2199.jpg" alt="img" />￼
+点击右上角文件管理按钮会跳转到Caddy filemanager进行文件管理，或者手动输入地址<a href="http://IP:6080/admin也可以进入Caddy">http://IP:6080/admin也可以进入Caddy</a> filemanager
+<img src="https://i.niupic.com/images/2019/07/02/_2210.jpg" alt="img" />￼
+<img src="https://i.niupic.com/images/2019/07/02/_2198.jpg" alt="img" />￼</p>
+
+<h3 id="更新bt-tracker">更新BT Tracker</h3>
+
+<p>BT Tracker简单来说就是BT服务器，如果没有BT服务器那么将无法下载BT、磁力链接，默认情况CCAA安装后已经内置最新可用的BT Tracker列表。</p>
+
+<p>但随着时间推移BT Tracker列表中很多服务器会失效，因此当BT无法下载或者下载慢的时候可尝试更新BT Tracker列表。（<strong>建议每周更新一次，不要每天都更新，没啥意义</strong>）</p>
+
+<p>输入/etc/ccaa/upbt.sh命令即可自动更新BT Tracker列表：</p>
+
+<pre><code>[root@li1438-176 ~]# /etc/ccaa/upbt.sh
+--2018-10-01 05:56:28--  https://api.xiaoz.org/trackerslist/
+Resolving api.xiaoz.org (api.xiaoz.org)... 162.220.14.19
+Connecting to api.xiaoz.org (api.xiaoz.org)|162.220.14.19|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: ‘/tmp/trackers_best.txt’
+
+    [ &lt;=&gt;                                                                                                                                                                                                                                 ] 789         --.-K/s   in 0s      
+
+2018-10-01 05:56:29 (47.3 MB/s) - ‘/tmp/trackers_best.txt’ saved [789]
+
+-------------------------------------
+bt-tracker update completed.
+-------------------------------------
+</code></pre>
+
+<h1 id="ccaa管理-维护">CCAA管理 &amp; 维护</h1>
+
+<h3 id="文件说明">文件说明</h3>
+
+<p>CCAA所有配置文件位于<code>/etc/ccaa/</code>，无特殊情况一般不用修改.</p>
+
+<pre><code>[root@li1438-176 ~]# ll /etc/ccaa/
+total 64
+-rw-r--r--. 1 root root  4475 Oct  1 05:56 aria2.conf
+-rw-r--r--. 1 root root   231 Oct  1 05:33 aria2.log
+-rw-r--r--. 1 root root     0 Oct  1 05:33 aria2.session
+drwxr-xr-x. 6 root root  4096 Sep 28 20:13 AriaNg
+-rw-r--r--. 1 root root   379 Oct  1 05:32 caddy.conf
+-rw-r--r--. 1 root root   207 Oct  1 05:32 caddy.log
+-rw-------. 1 root root 65536 Oct  1 05:32 ccaa.db
+-rwxr-xr-x. 1 root root   603 Oct  1 05:31 upbt.sh
+aria2.conf : Aria2配置文件
+aria2.log : Aria2日志文件（排查Aria2错误需要）
+aria2.session : Aria2 session文件
+AriaNg : AriaNg WEB目录
+caddy.conf : Caddy配置文件（记录了用户名、密码等信息）
+caddy.log : Caddy日志文件（排查Caddy错误需要）
+ccaa.db : Caddy数据库
+upbt.sh : BT Tracker更新脚本
+</code></pre>
+
+<h3 id="查看密码">查看密码</h3>
+
+<pre><code>#查看Aria2 RPC 密钥
+cat /etc/ccaa/aria2.conf | grep 'rpc-secret='
+# 查看Caddy用户名、密码
+cat /etc/ccaa/caddy.conf | grep 'basicauth'
+</code></pre>
+
+<h3 id="修改密码">修改密码</h3>
+
+<pre><code>1.如果需要修改Aria2 RPC 密钥密钥，请编辑/etc/ccaa/aria2.conf，找到rpc-secret=进行修改
+2.如果需要修改Caddy用户名、密码，请编辑/etc/ccaa/caddy.conf ，找到basicauth
+3.修改配置后需要输入命令ccaa restart重启服务生效
+</code></pre>
+
+<h3 id="开机启动ccaa">开机启动CCAA</h3>
+
+<p>CCAA默认没有设置开机自启，如果有需要，可通过如下方法完成。（仅在CentOS 7下测试过）</p>
+
+<pre><code>#设置权限
+chmod +x /etc/rc.d/rc.local
+#设置开机启动
+echo &quot;/usr/sbin/ccaa start&quot; &gt;&gt; /etc/rc.d/rc.local
+</code></pre>
+
+<h3 id="自动更新bt-tracker列表">自动更新BT Tracker列表</h3>
+
+<p>使用crontab可以设置自动更新BT Tracker列表，输入下面的命令：</p>
+
+<pre><code>#安装crontab，如已安装请跳过
+yum -y install crontabs
+#新增计划任务
+crontab -e
+#添加如下内容
+* 2 * * 7 /etc/ccaa/upbt.sh &gt; /dev/null
+#重启crontab服务
+service crond reload     #CentOS 6
+systemctl reload crond    #CentOS 7
+</code></pre>
+
+<h3 id="卸载ccaa">卸载CCAA</h3>
+
+<p>进入CCAA的脚本目录，然后重新执行ccaa.sh脚本根据提示完成，命令如下：</p>
+
+<pre><code>#进入ccaa目录
+cd ccaa-master
+#执行脚本
+sh ccaa.sh
+</code></pre>
+
+<h1 id="其它说明">其它说明</h1>
+
+<p>Aria2 &amp; YAAW 使用说明：<a href="https://aria2c.com/usage.html">https://aria2c.com/usage.html</a></p>
+
+<p>项目地址：<a href="https://github.com/helloxz/ccaa">https://github.com/helloxz/ccaa</a></p>
+
+<p>注：本文转自<a href="https://www.xiaoz.me/archives/11250">https://www.xiaoz.me/archives/11250</a></p></article>
+    <footer class="post-footer">
+      
+      <ul class="post-tags">
+        
+          <li><a href="https://muzhi621.github.io/tags/%E6%95%99%E7%A8%8B"><span class="tag">教程</span></a></li>
+        
+          <li><a href="https://muzhi621.github.io/tags/%E6%8A%80%E6%9C%AF"><span class="tag">技术</span></a></li>
+        
+      </ul>
+      
+      <p class="post-copyright">
+        © 本文作者：muzhi  版权所有本站文章均采用 CC BY-NC-SA 4.0 许可协议，请勿用于商业，转载注明出处！
+      </p>
+    </footer>
+    
+      
+    
+	
+	
+  <span id="/2019/07/02/centos7%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85caddy-aria2-ariang%E5%AE%9E%E7%8E%B0%E7%A6%BB%E7%BA%BF%E4%B8%8B%E8%BD%BD/" class="leancloud_visitors" data-flag-title="CentOS7一键安装Caddy&#43;Aria2&#43;AriaNg实现离线下载">
+   
+	
+  </span>
+  <div id="vcomments"></div>
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+  <script type="text/javascript">
+    new Valine({
+        el: '#vcomments' ,
+        appId: 'rIOXeftjd0ODtxrjVCPeYhMQ-gzGzoHsz',
+        appKey: 'k4OQq3C7OdQRIWohmIWBb5Fd',
+        notify:  false , 
+        verify:  false , 
+        avatar:'mm', 
+        placeholder: '说点什么吧...',
+        visitor:  true 
+    });
+  </script>
+	
+  </section>
+  
+<footer class="site-footer">
+  <p>© 2017-2019 liwu&#39;s Blog</p>
+  <p>Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> with theme <a href="https://github.com/laozhu/hugo-nuo" target="_blank" rel="noopener">Nuo</a>.</p>
+  
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/smooth-scroll@15.0.0/dist/smooth-scroll.min.js"></script>
+
+
+
+<script async src="https://cdn.jsdelivr.net/npm/video.js@7.3.0/dist/video.min.js"></script>
+
+
+
+
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$'], ['\\[','\\]']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+      extensions: ["AMSmath.js", "AMSsymbols.js"] }
+    },
+  });
+</script>
+<script type="text/x-mathjax-config">
+  // Fix <code> tags after MathJax finishes running. This is a
+  // hack to overcome a shortcoming of Markdown. Discussion at
+  // https://github.com/mojombo/jekyll/issues/199
+  MathJax.Hub.Queue(() => {
+    MathJax.Hub.getAllJax().map(v => v.SourceElement().parentNode.className += ' has-jax');
+  });
+</script>
+
+
+
+<script src="https://muzhi621.github.io/scripts/index.min.js"></script>
+
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('\/service-worker.js').then(function() {
+      console.log('[ServiceWorker] Registered');
+    });
+  }
+</script>
+
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-137387609-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?14fd9d3b2b19ff0085e0751c0a5cd3af";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+    
+      
+
+  </body>
+</html>
