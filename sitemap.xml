@@ -14,19 +14,36 @@
   
   <url>
     <loc>https://muzhi621.github.io/post/</loc>
-    <lastmod>2019-08-25T18:55:32+08:00</lastmod>
+    <lastmod>2019-09-09T15:51:23+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://muzhi621.github.io/tags/</loc>
-    <lastmod>2019-08-25T18:55:32+08:00</lastmod>
+    <lastmod>2019-09-09T15:51:23+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://muzhi621.github.io/</loc>
-    <lastmod>2019-08-25T18:55:32+08:00</lastmod>
+    <lastmod>2019-09-09T15:51:23+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://muzhi621.github.io/tags/%E6%95%99%E7%A8%8B/</loc>
+    <lastmod>2019-09-09T15:51:23+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://muzhi621.github.io/2019/09/09/%E7%AD%91%E7%B4%ABa%E4%B8%B8%E6%97%A5%E7%B3%BB%E4%B8%AD%E8%8B%B1%E6%96%87%E5%A4%9A%E5%AD%97%E9%87%8D-android/</loc>
+    <lastmod>2019-09-09T15:51:23+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://muzhi621.github.io/tags/%E8%B5%84%E6%BA%90/</loc>
+    <lastmod>2019-09-09T15:51:23+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -53,12 +70,6 @@
   </url>
   
   <url>
-    <loc>https://muzhi621.github.io/tags/%E6%95%99%E7%A8%8B/</loc>
-    <lastmod>2019-07-05T16:20:42+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://muzhi621.github.io/2019/07/02/centos7%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85caddy-aria2-ariang%E5%AE%9E%E7%8E%B0%E7%A6%BB%E7%BA%BF%E4%B8%8B%E8%BD%BD/</loc>
     <lastmod>2019-07-02T16:24:06+08:00</lastmod>
   </url>
@@ -72,12 +83,6 @@
   <url>
     <loc>https://muzhi621.github.io/2019/06/22/%E6%9A%B416-13.8m%E6%9C%AC%E5%9C%B0%E6%97%A0%E8%81%94%E7%BD%91%E6%97%A0%E5%B9%BF%E5%91%8A%E5%8E%BB%E5%8D%87%E7%BA%A7%E7%89%88/</loc>
     <lastmod>2019-06-22T16:58:27+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://muzhi621.github.io/tags/%E8%B5%84%E6%BA%90/</loc>
-    <lastmod>2019-06-22T16:58:27+08:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
