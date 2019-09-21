@@ -7,10 +7,30 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>© 本文作者：muzhi  版权所有本站文章均采用 CC BY-NC-SA 4.0 许可协议，请勿用于商业，转载注明出处！</copyright>
-    <lastBuildDate>Mon, 09 Sep 2019 15:51:23 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 21 Sep 2019 16:08:24 +0800</lastBuildDate>
     
 	<atom:link href="https://muzhi621.github.io/tags/%E6%95%99%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>V2Ray一键安装脚本和管理脚本</title>
+      <link>https://muzhi621.github.io/2019/09/21/v2ray%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85%E8%84%9A%E6%9C%AC%E5%92%8C%E7%AE%A1%E7%90%86%E8%84%9A%E6%9C%AC/</link>
+      <pubDate>Sat, 21 Sep 2019 16:08:24 +0800</pubDate>
+      
+      <guid>https://muzhi621.github.io/2019/09/21/v2ray%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85%E8%84%9A%E6%9C%AC%E5%92%8C%E7%AE%A1%E7%90%86%E8%84%9A%E6%9C%AC/</guid>
+      <description>&lt;p&gt;支持 V2Ray 绝大多数传输协议，WebSocket + TLS，HTTP/2，Shadowsocks，动态端口，集成 BBR 和锐速优化等。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>VPS主机性能和速度测试方法脚本</title>
+      <link>https://muzhi621.github.io/2019/09/21/vps%E4%B8%BB%E6%9C%BA%E6%80%A7%E8%83%BD%E5%92%8C%E9%80%9F%E5%BA%A6%E6%B5%8B%E8%AF%95%E6%96%B9%E6%B3%95%E8%84%9A%E6%9C%AC/</link>
+      <pubDate>Sat, 21 Sep 2019 15:57:14 +0800</pubDate>
+      
+      <guid>https://muzhi621.github.io/2019/09/21/vps%E4%B8%BB%E6%9C%BA%E6%80%A7%E8%83%BD%E5%92%8C%E9%80%9F%E5%BA%A6%E6%B5%8B%E8%AF%95%E6%96%B9%E6%B3%95%E8%84%9A%E6%9C%AC/</guid>
+      <description>&lt;p&gt;主机VPS的一些工具和命令，一来给自己做一个备忘录，自己购买的VPS主机到底值不值这个价格，用这几个工具一测试便知，而且操作简单，只需要几个命令即可完成。&lt;/p&gt;
+
+&lt;p&gt;需要提醒的是，关于IO读写速度的测试，根据以往的经验，像谷歌云服务器、亚马逊服务器等，IO读写速度都比较低，而SSD在IO方面表现出色。另外，国外的VPS主机的速度很大程度上取决于线路的好坏，并且晚上和白天的测试速度会差别比较大。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>筑紫A丸日系中英文多字重 Android</title>
