@@ -7,10 +7,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>© 本文作者：muzhi  版权所有本站文章均采用 CC BY-NC-SA 4.0 许可协议，请勿用于商业，转载注明出处！</copyright>
-    <lastBuildDate>Sat, 21 Sep 2019 16:08:24 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 13 Oct 2019 16:18:34 +0800</lastBuildDate>
     
 	<atom:link href="https://muzhi621.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>OneDrive API和SCF免费搭建个人网盘2.0</title>
+      <link>https://muzhi621.github.io/2019/10/13/onedriveapi%E5%92%8Cscf%E5%85%8D%E8%B4%B9%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%9B%98/</link>
+      <pubDate>Sun, 13 Oct 2019 16:18:34 +0800</pubDate>
+      
+      <guid>https://muzhi621.github.io/2019/10/13/onedriveapi%E5%92%8Cscf%E5%85%8D%E8%B4%B9%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%9B%98/</guid>
+      <description>&lt;p&gt;本搭建方法用腾讯云的无服务器云函数配合API网关实现, 不需要自己的服务器，0成本搭建, 实测运行机器的配置 8核16G内存(可以运行 system命令链接shell看), 因此此方法搭建自己的大型网站完全够用。&lt;/p&gt;
+
+&lt;p&gt;目前无服务器云函数 SCF 处于公测阶段，并未正式收费，所有用户均可以放心使用。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>V2Ray一键安装脚本和管理脚本</title>
