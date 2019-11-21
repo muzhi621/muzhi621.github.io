@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+
+  <meta charset="utf-8" />
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+  
+  <title>矿渣猫盘刷机轻NAS</title>
+
+  
+  
+  
+  <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  
+  <link href="//cdn.jsdelivr.net" rel="dns-prefetch">
+  <link href="//cdnjs.cloudflare.com" rel="dns-prefetch">
+  
+  <link href="//at.alicdn.com" rel="dns-prefetch">
+  
+  <link href="//fonts.googleapis.com" rel="dns-prefetch">
+  <link href="//fonts.gstatic.com" rel="dns-prefetch">
+  
+  
+  
+  <link href="//www.google-analytics.com" rel="dns-prefetch">
+  <link href="//hm.baidu.com" rel="dns-prefetch">
+
+  
+
+  
+  <meta name="author" content="muzhi">
+  <meta name="description" content="猫盘是什么东西，其实之前它是用来挖矿的，这不碰到矿难，大量的猫盘等待再利用， 总体性价比还不错，简单实用，当然跟专业NAS还是差点意思，不过胜在便宜 。所谓人生在于折腾，很多人本来把猫盘刷到群晖，但一用又觉得还是one space X3P好(简称X3P），其实这是两个不同的私有云管理系统，总的来讲X3P比较简洁，缺点也就是太简洁了，功能自然也就少了，群晖的操作界面大气，同步文件非常强大，但就是因为它功能多，对硬件的配置就会有些要求，如果是入门配置的话就稍显吃力，比较起来，为了体验群晖的话，建议刷群晖固件，如果是为了日常稳定使用，还是建议刷X3P系统，
+">
+
+  
+  
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@gohugoio">
+    <meta name="twitter:title" content="矿渣猫盘刷机轻NAS">
+    <meta name="twitter:description" content="猫盘是什么东西，其实之前它是用来挖矿的，这不碰到矿难，大量的猫盘等待再利用， 总体性价比还不错，简单实用，当然跟专业NAS还是差点意思，不过胜在便宜 。所谓人生在于折腾，很多人本来把猫盘刷到群晖，但一用又觉得还是one space X3P好(简称X3P），其实这是两个不同的私有云管理系统，总的来讲X3P比较简洁，缺点也就是太简洁了，功能自然也就少了，群晖的操作界面大气，同步文件非常强大，但就是因为它功能多，对硬件的配置就会有些要求，如果是入门配置的话就稍显吃力，比较起来，为了体验群晖的话，建议刷群晖固件，如果是为了日常稳定使用，还是建议刷X3P系统，
+">
+    <meta name="twitter:image" content="https://hbimg.huabanimg.com/35ed39f2d906dbf9e6d4fdced050e9f567b34896638d-NfjUxL_fw658">
+  
+
+  
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="矿渣猫盘刷机轻NAS">
+  <meta property="og:description" content="猫盘是什么东西，其实之前它是用来挖矿的，这不碰到矿难，大量的猫盘等待再利用， 总体性价比还不错，简单实用，当然跟专业NAS还是差点意思，不过胜在便宜 。所谓人生在于折腾，很多人本来把猫盘刷到群晖，但一用又觉得还是one space X3P好(简称X3P），其实这是两个不同的私有云管理系统，总的来讲X3P比较简洁，缺点也就是太简洁了，功能自然也就少了，群晖的操作界面大气，同步文件非常强大，但就是因为它功能多，对硬件的配置就会有些要求，如果是入门配置的话就稍显吃力，比较起来，为了体验群晖的话，建议刷群晖固件，如果是为了日常稳定使用，还是建议刷X3P系统，
+">
+  <meta property="og:url" content="https://muzhi621.github.io/2019/11/21/%E7%9F%BF%E6%B8%A3%E7%8C%AB%E7%9B%98%E5%88%B7%E6%9C%BA%E8%BD%BBnas/">
+  <meta property="og:image" content="https://hbimg.huabanimg.com/35ed39f2d906dbf9e6d4fdced050e9f567b34896638d-NfjUxL_fw658">
+
+
+
+
+<meta name="generator" content="Hugo 0.55.5">
+
+
+<link rel="canonical" href="https://muzhi621.github.io/2019/11/21/%E7%9F%BF%E6%B8%A3%E7%8C%AB%E7%9B%98%E5%88%B7%E6%9C%BA%E8%BD%BBnas/">
+
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="format-detection" content="telephone=no,email=no,adress=no">
+<meta http-equiv="Cache-Control" content="no-transform">
+
+
+<meta name="robots" content="index,follow">
+<meta name="referrer" content="origin-when-cross-origin">
+
+
+
+
+
+
+
+<meta name="theme-color" content="#02b875">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="liwu&#39;s Blog">
+<meta name="msapplication-tooltip" content="liwu&#39;s Blog">
+<meta name='msapplication-navbutton-color' content="#02b875">
+<meta name="msapplication-TileColor" content="#02b875">
+<meta name="msapplication-TileImage" content="/icons/icon-144x144.png">
+<link rel="icon" href="https://muzhi621.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://muzhi621.github.io/icons/icon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://muzhi621.github.io/icons/icon-32x32.png">
+<link rel="icon" sizes="192x192" href="https://muzhi621.github.io/icons/icon-192x192.png">
+<link rel="apple-touch-icon" href="https://muzhi621.github.io/icons/icon-152x152.png">
+<link rel="manifest" href="https://muzhi621.github.io/manifest.json">
+
+
+<link rel="preload" href="https://muzhi621.github.io/styles/main-rendered.min.css" as="style">
+
+
+<link rel="preload" href="https://fonts.googleapis.com/css?family=Lobster" as="style">
+<link rel="preload" href="https://muzhi621.github.io/images/avatar.png" as="image">
+<link rel="preload" href="https://muzhi621.github.io/images/grey-prism.svg" as="image">
+
+
+<style>
+  body {
+    background: rgb(244, 243, 241) url('/images/grey-prism.svg') repeat fixed;
+  }
+</style>
+<link rel="stylesheet" href="https://muzhi621.github.io/styles/main-rendered.min.css">
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.2/dist/medium-zoom.min.js"></script>
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/video.js@7.3.0/dist/video-js.min.css">
+
+
+
+
+
+  
+  
+<!--[if lte IE 8]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/videojs-ie8@1.1.2/dist/videojs-ie8.min.js"></script>
+<![endif]-->
+
+<!--[if lte IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/eligrey-classlist-js-polyfill@1.2.20180112/classList.min.js"></script>
+<![endif]-->
+
+
+</head>
+  <body>
+    <div class="suspension">
+      <a role="button" aria-label="Go to top" title="Go to top" class="to-top is-hide"><span class="icon icon-up" aria-hidden="true"></span></a>
+      
+        
+      
+    </div>
+    
+    
+  <header class="site-header">
+  <img class="avatar" src="https://muzhi621.github.io/images/avatar.png" alt="Avatar">
+  
+  <h2 class="title">liwu&#39;s Blog</h2>
+  
+  <p class="subtitle">~ Keep It Simple &amp; Stupid ~</p>
+  <button class="menu-toggle" type="button" aria-label="Main Menu" aria-expanded="false" tab-index="0">
+    <span class="icon icon-menu" aria-hidden="true"></span>
+  </button>
+
+
+  <nav class="site-menu collapsed">
+    <h2 class="offscreen">Main Menu</h2>
+    <ul class="menu-list">
+      
+      
+      
+      
+        <li class="menu-item
+          
+          
+           is-active">
+          <a href="https://muzhi621.github.io/">首页</a>
+        </li>
+      
+        <li class="menu-item
+          
+          
+          ">
+          <a href="https://muzhi621.github.io/tags/">标签</a>
+        </li>
+      
+        <li class="menu-item
+          
+          
+          ">
+          <a href="https://muzhi621.github.io/reading/">阅读</a>
+        </li>
+      
+        <li class="menu-item
+          
+          
+          ">
+          <a href="https://yun.myliwu.work">云盘</a>
+        </li>
+      
+        <li class="menu-item
+          
+          
+          ">
+          <a href="https://muzhi621.github.io/links/">友链</a>
+        </li>
+      
+        <li class="menu-item
+          
+          
+          ">
+          <a href="https://muzhi621.github.io/about/">关于</a>
+        </li>
+      
+    </ul>
+  </nav>
+  <nav class="social-menu collapsed">
+    <h2 class="offscreen">Social Networks</h2>
+    <ul class="social-list"><li class="social-item">
+          <a href="mailto:muzhi621@qq.com" title="Email" aria-label="Email">
+            <span class="icon icon-email" aria-hidden="true"></span>
+          </a>
+        </li><li class="social-item">
+          <a href="//github.com/muzhi621" rel="me" title="GitHub" aria-label="GitHub">
+	    <span class="icon icon-github" aria-hidden="true"></span>
+          </a>
+        </li></ul>
+	
+	
+
+  </nav>
+  
+  <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?14fd9d3b2b19ff0085e0751c0a5cd3af";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+
+</header>
+
+  <section class="main post-detail">
+    <header class="post-header">
+      <h1 class="post-title">矿渣猫盘刷机轻NAS</h1>
+      <p class="post-meta">@muzhi · Nov 21, 2019 · 1 min read 
+   <span id="/2019/11/21/%E7%9F%BF%E6%B8%A3%E7%8C%AB%E7%9B%98%E5%88%B7%E6%9C%BA%E8%BD%BBnas/" class="leancloud_visitors" data-flag-title="矿渣猫盘刷机轻NAS">
+  
+    
+	<span class="post-meta-item-text"> · VIEWS </span>
+	<span class="leancloud-visitors-count"> </span>
+
+    </p>
+	
+  </span>
+	
+	</header>
+    <article class="post-content"><p>猫盘是什么东西，其实之前它是用来挖矿的，这不碰到矿难，大量的猫盘等待再利用，  总体性价比还不错，简单实用，当然跟专业NAS还是差点意思，不过胜在便宜 。所谓人生在于折腾，很多人本来把猫盘刷到群晖，但一用又觉得还是one space X3P好(简称X3P），其实这是两个不同的私有云管理系统，总的来讲X3P比较简洁，缺点也就是太简洁了，功能自然也就少了，群晖的操作界面大气，同步文件非常强大，但就是因为它功能多，对硬件的配置就会有些要求，如果是入门配置的话就稍显吃力，比较起来，为了体验群晖的话，建议刷群晖固件，如果是为了日常稳定使用，还是建议刷X3P系统，</p>
+
+<p>配置：</p>
+
+<p>CPU: Marvell ARMADA A3720 1.0Ghz 2xCortex-A53</p>
+
+<p>RAM: 512M DDR3</p>
+
+<p>eMMC: 8G HS200</p>
+
+<p>网络: Marvell 88e1512 千兆phy</p>
+
+<p>外设: 原生SATA，主板引出USB2.0和TTL，带1个风扇和aw2013控制的三色LED</p>
+
+<p>电源: 5V3A</p>
+
+<p>1、小巧不占地方，735g重量。</p>
+
+<p>2、有群晖、X3P、Armbian、OpenWRT多种固件可刷，X3P和群晖的扩展性不用多说，下载、影音播放、存储、建站。。。</p>
+
+<p>OneSpace X3+，这个产品是英莱合创出品的私有云盘，配置几乎一模一样，唯一区别的事X3+带USB3接口。</p>
+
+<p>3、省电低功耗，10W功耗。</p>
+
+<p>4、高性价比。同样配置的群晖DS119j使用同款CPU，但是内存只有256MB，价格要在700+元，猫盘只需要50元左右。</p>
+
+<p><img src="https://www.huakings.cn/zb_users/upload/2019/10/201910101570670659635370.png" alt="" /></p>
+
+<ol>
+<li><strong>必须关闭防火墙，必须的。</strong></li>
+
+<li><p>已经刷过X3P的 可以直接选择单刷SPI，有单独选项。
+下载刷机工具，解压之后鼠标右键-以管理员身份运行CatDrive_flasher.exe程序，开始进行刷机。</p>
+
+<ol>
+<li>首先保证猫盘（现在不插硬盘）和电脑在同一个局域网内，然后进入路由器获取电脑和猫盘的IP信息，如图所示勾选刷X3P，填入猫盘和电脑的IP，以及想刷的Mac、SN等信息，然后点击刷机即可。</li>
+</ol></li>
+
+<li><p>刷机完成后，需要拔掉电源，找到猫盘reset（复位）键，按住reset同时插电，保持按住reset 15秒以上再放手，此时猫盘进入刷机状态，静静等待15-20分钟，直到路由器中看到一个名为onespace的设备获取到IP，表明刷机已经完成，在浏览器输入猫盘IP即可进入X3P管理页面，默认账号：admin，密码：123456。</p></li>
+
+<li><p>登陆X3P后，进入系统管理，系统版本5.0.0-20180412即为刷机成功，若出现点击登陆无反应，登陆后系统版本显示为4.x.x之类的问题，可能在刷机过程哪步出了错误，导致刷机失败。需要刷回猫盘重刷，刷机方式跟上面刷X3P类似，勾选刷猫盘，然后一样的流程刷完后，再将猫盘刷为X3P，一般都可以成功。</p></li>
+
+<li><p>刷机成功之后我们需要对X3P系统进行升级，升到20190125才能控制风扇。升级之前需要插入硬盘（需格式化为EXT4格式），然后点击系统管理-上传APP包-开始安装（一般就几秒），请按照升级顺序一个个升级，否则会出问题。</p></li>
+
+<li><p>风扇控制。在系统管理，更多设置里找到风扇阀值，建议将启动温度和高速温度设为同一个值，比你的硬盘温度低几度就行，关机温度不用改动。</p></li>
+</ol>
+
+<p>完成之后</p>
+
+<p><img src="https://www.huakings.cn/zb_users/upload/2019/11/201911101573316122619784.png" alt="" /></p>
+
+<p>进去X3P后，可以通过应用管理进行相应的安装卸载，但是有些app没有，那么我们需要安装离线包，进入系统管理，上传离线包，安装即可</p>
+
+<p>主要的离线包有:emby（多媒体管理件）、qbittorrent（PT下载工具）、workress（博客）、discuz（论坛）、frpc(内网穿透）</p>
+
+<ol>
+<li>刷机完成后，别急，先拔掉猫盘的电源，然后按住猫盘的复位键不要动，再插上猫盘电源，多按一下，按住10秒以上：当网线的绿色小灯快速闪烁，代表猫盘正在刷机了！等5-15分钟，机器会自动重启，注意网线等变正常后，就可以到路由器里找到猫盘ip，输入ip就进入到x3p了：默认用户：admin 密码：123456</li>
+</ol>
+
+<p><img src="http://www.junwen.bid:5800/usr/uploads/2019/08/1929079595.png" alt="" /></p>
+
+<ol>
+<li><p>然后进入系统后台，点击系统管理，查看系统版本是否是5.0，如图，如果不是，那就返回重新刷机：</p></li>
+
+<li><p>由于一键刷机完成后存在一些bug，所以给出类如下升级文件修复这bug。</p></li>
+</ol>
+
+<p>注：需严格按照如下图的版本顺序逐步升级，没升级一个文件需要重启一次，在升级系统时如果没有提示成功，那么刷新一下网页，再次升级当前文件！</p>
+
+<p><img src="http://www.junwen.bid:5800/usr/uploads/2019/08/265536606.png" alt="" /></p>
+
+<p><strong>==0830&ndash;&gt;0103&ndash;&gt;0122&ndash;&gt;0125==</strong></p>
+
+<ol>
+<li>猫盘刷xp3升级修复如下bug：</li>
+</ol>
+
+<p>190125(网页升级版本)（系统设置那里上传升级，升级完成后需要重启系统，清除浏览器缓存生效）</p>
+
+<p>1.修复关机处理脚本</p>
+
+<p>2.更新内置远程访问sdvn程序和配置</p>
+
+<p>3.修复sdvn程序导致用户dns不能修改的问题</p>
+
+<p>20190122(网页升级版本)</p>
+
+<p>1.修改afp配置，增加支持mac系统通过afp访问公共目录</p>
+
+<p>2.修改samba配置，支持windows xp和某些win7系统通过samba共享访问</p>
+
+<p>3.增加用户网页设置风扇控制温度值（系统设置-&gt;更多设置）</p>
+
+<p>20190103(网页升级版本)</p>
+
+<p>1.修复txt文件在线打开的问题</p>
+
+<p>2.修复m4a文件类型关联</p>
+
+<p>3.更新内置远程访问程序</p>
+
+<p>4.修复aria2部分下载文件问题</p>
+
+<p>5.优化了sata接口策略和samba性能，对samba文件夹小文件传输可靠性能有很大提升</p>
+
+<p>20180830(网页升级版本)（系统设置那里上传升级，升级完成后需要重启系统，清除浏览器缓存生效）</p>
+
+<p>1.修复重置的时候会进入测试模式（三色灯闪）的问题</p>
+
+<p>2.修复afp的问题</p>
+
+<p>3.修复主机名问题</p>
+
+<p>4.更新内核配置文件</p>
+
+<p>5.修复aria2部分问题</p>
+
+<p>6.更新内置远程访问程序</p>
+
+<p>7.修复长时间开机偶尔不能访问的问题</p>
+
+<p>8.修复usb移动硬盘偶尔不能挂载问题</p>
+
+<ol>
+<li>问题整理一：</li>
+</ol>
+
+<p>a.如出现猫盘xp3 webui无法登录或者硬盘无法格式化，解决办法：格式化硬盘为EXT4后插上猫盘，重新执行一键刷机</p>
+
+<p>b.已知问题，由于使用了 收时光的破烂王 提供的SPI，所以SN以及mac全部一样。下面有自己修改mac方法。（2.0工具可直接修改后刷入）</p>
+
+<p>c.请勿使用官方带穿透的手机APP，切记！(不过现在xp3已经挂了，没所谓了)</p>
+
+<p>2.理论上是不会变砖的，但是不排除人品问题。 整个刷机时间是根据网络决定的，所以预计时间为5-20分钟，刷机过程五断电，如果砖了，可以编程器恢复。</p>
+
+<p>3.说一下bug。默认2018系统。风扇不转。需要更新到最新系统。手动设置。根据自己硬盘温度设置。比如。硬盘显示温度50度。你就设置比50低点。不能低太多。不然系统以为高温。自动关机。</p>
+
+<p>4.升级到2019125的。再设置里面找到风扇温度设置。根据自己硬盘温度来设置。比如硬盘显示40度。你就设置35 35 60。设置错了要不风扇不转。要不自动关机保护。 如果关机保护了（自动关机）取下硬盘开机。改一下温度设置就好了。</p>
+
+<p>##### 猫盘Mac修改（可以完全升级后进行修改）</p>
+
+<p>为了不影响更新系统，只需要修改后6位，例如：78：c2:c0:xx:xx:xx</p>
+
+<p>1、 root登陆（默认账号：root 默认密码：Etech12）</p>
+
+<p>2、 mount -o remount,rw /</p>
+
+<p>3、 vi /etc/init.d/S21wire</p>
+
+<p>4.按‘i’进入编辑。修改红框内为自己猫盘的mac，例如：00:00:00：00:00:00</p>
+
+<p>5.按 esc 输入’:qw’ 保存退出</p>
+
+<p>6.Reboot重启</p>
+
+<ol>
+<li>猫盘2.0刷机的两点总结：</li>
+</ol>
+
+<p>1、 不少猫盘系统因为升级后存在差异，导致刷机后系统版本错误。解决的方法就是再刷回一次猫盘系统。但是猫盘刷机费时很久，而且版本错误出现的几率很高。所以建议刷机的时候，第一次就选刷猫盘系统，然后再刷一次x3p，这样两次肯定成功。</p>
+
+<p>2、 个别人会遇到无论怎么刷，猫盘按复位键刷机后都无法获得ip地址的问题。这种是因为猫盘的uboot差异，导致无法刷入系统（特征就是没有ip，即网口只亮绿灯，不亮黄灯），如果这种状态你等待时间超过20分钟，基本就是这种情况。解决方法：直接拔掉电源，重新开机，一般能重新获得ip，选刷成猫盘系统，同时勾选“刷x3p-spi”（这个是关键刷了spi后uboot就是可以正常刷机的版本了），点刷机，然后按正常刷机流程走就是了。如果还不行，就基本变砖了，按救砖教程尝试吧。</p></article>
+    <footer class="post-footer">
+      
+      <ul class="post-tags">
+        
+          <li><a href="https://muzhi621.github.io/tags/%E6%95%99%E7%A8%8B"><span class="tag">教程</span></a></li>
+        
+          <li><a href="https://muzhi621.github.io/tags/%E6%8A%98%E8%85%BE"><span class="tag">折腾</span></a></li>
+        
+      </ul>
+      
+      <p class="post-copyright">
+        © 本文作者：muzhi  版权所有本站文章均采用 CC BY-NC-SA 4.0 许可协议，请勿用于商业，转载注明出处！
+      </p>
+    </footer>
+    
+      
+    
+	
+	
+  <span id="/2019/11/21/%E7%9F%BF%E6%B8%A3%E7%8C%AB%E7%9B%98%E5%88%B7%E6%9C%BA%E8%BD%BBnas/" class="leancloud_visitors" data-flag-title="矿渣猫盘刷机轻NAS">
+   
+	
+  </span>
+  <div id="vcomments"></div>
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+  <script type="text/javascript">
+    new Valine({
+        el: '#vcomments' ,
+        appId: 'rIOXeftjd0ODtxrjVCPeYhMQ-gzGzoHsz',
+        appKey: 'k4OQq3C7OdQRIWohmIWBb5Fd',
+        notify:  false , 
+        verify:  false , 
+        avatar:'mm', 
+        placeholder: '说点什么吧...',
+        visitor:  true 
+    });
+  </script>
+	
+  </section>
+  
+<footer class="site-footer">
+  <p>© 2017-2019 liwu&#39;s Blog</p>
+  <p>Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> with theme <a href="https://github.com/laozhu/hugo-nuo" target="_blank" rel="noopener">Nuo</a>.</p>
+  
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/smooth-scroll@15.0.0/dist/smooth-scroll.min.js"></script>
+
+
+
+<script async src="https://cdn.jsdelivr.net/npm/video.js@7.3.0/dist/video.min.js"></script>
+
+
+
+
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$'], ['\\[','\\]']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+      extensions: ["AMSmath.js", "AMSsymbols.js"] }
+    },
+  });
+</script>
+<script type="text/x-mathjax-config">
+  // Fix <code> tags after MathJax finishes running. This is a
+  // hack to overcome a shortcoming of Markdown. Discussion at
+  // https://github.com/mojombo/jekyll/issues/199
+  MathJax.Hub.Queue(() => {
+    MathJax.Hub.getAllJax().map(v => v.SourceElement().parentNode.className += ' has-jax');
+  });
+</script>
+
+
+
+<script src="https://muzhi621.github.io/scripts/index.min.js"></script>
+
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('\/service-worker.js').then(function() {
+      console.log('[ServiceWorker] Registered');
+    });
+  }
+</script>
+
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-137387609-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?14fd9d3b2b19ff0085e0751c0a5cd3af";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+  
+
+  </body>
+</html>
